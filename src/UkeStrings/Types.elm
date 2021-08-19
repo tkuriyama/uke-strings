@@ -62,10 +62,12 @@ type Brand
     | Aquila
     | Daddario
     | Fremont
+    | GHS
     | Kamaka
     | KoAloha
     | Koolau
     | LivingWater
+    | Oasis
     | Martin
     | PhD
     | Worth

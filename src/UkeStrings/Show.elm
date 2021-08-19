@@ -20,11 +20,13 @@ brandPairs =
     , ( Aquila, "Aquila" )
     , ( Daddario, "D'Addario" )
     , ( Fremont, "Fremont" )
+    , ( GHS, "GHS" )
     , ( Kamaka, "Kamaka" )
     , ( KoAloha, "Ko'Aloha" )
     , ( Koolau, "Ko'olau" )
     , ( LivingWater, "Living Water")
     , ( Martin, "Martin" )
+    , ( Oasis, "Oasis" )
     , ( PhD, "PhD" )
     , ( Worth, "Worth" )
     ]

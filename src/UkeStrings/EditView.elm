@@ -111,25 +111,47 @@ checkboxSize : String -> Bool -> E.Element Msg
 checkboxSize s b =
     checkbox s (UpdateEditSize s) b
 
+
 --------------------------------------------------------------------------------
 -- String Element
 
 stringRow : String -> UkeString -> E.Element Msg
 stringRow pos string =
     E.row
-        ( rowAttrs )
+        ( rowAttrs ++ [ E.width E.fill ] )
             [ E.el [ Font.heavy ] (E.text <| "String " ++ pos)
             , pitchChoice pos string
+            , diameterText pos string
+            , tensionText pos string
             ]
 
 
 pitchChoice: String -> UkeString -> E.Element Msg
 pitchChoice pos string =
     choice
-        "Pitch"
+        ""
         ( \p -> UpdateEditString pos { string | pitch = p } )
         ( List.map genOption Show.pitchPairs )
         string.pitch
+
+
+diameterText : String -> UkeString -> E.Element Msg
+diameterText pos string =
+    floatSlider
+        "Diameter (mm)"
+        ( \d -> UpdateEditString pos { string | diameter = d } )
+        ( 0.45, 0.95 )
+        string.diameter
+
+
+tensionText : String -> UkeString -> E.Element Msg
+tensionText pos string =
+    floatSlider
+        "Tension (kg)"
+        ( \t -> UpdateEditString pos { string | tension = t } )
+        ( 2.8, 7.0 )
+        string.tension
+
 
 --------------------------------------------------------------------------------
 -- Input Constructors
@@ -175,6 +197,41 @@ textInput title msg current =
         , label = titleLabel title
         }
 
+
+floatSlider : String
+            -> ( Float -> Msg )
+            -> ( Float, Float )
+            -> Float
+            -> E.Element Msg
+floatSlider title msg (min_, max_) current =
+    Input.slider
+        [ E.height <| E.px 30
+        , E.behindContent sliderElement
+        , E.width E.fill
+        ]
+        { onChange = msg
+        , label = titleLabel (title ++ ": " ++ String.fromFloat current)
+        , min = min_
+        , max = max_
+        , step = Just 0.01
+        , value = current
+        , thumb =
+            Input.defaultThumb
+        }
+
+
+sliderElement : E.Element msg
+sliderElement =
+    E.el
+        [ E.width E.fill
+        , E.height <| E.px 10
+        , E.centerY
+        , Background.color <| E.rgb255 66 135 245
+        , Border.rounded 2
+        ]
+        E.none
+
+
 --------------------------------------------------------------------------------
 -- Helpers
 
@@ -187,7 +244,7 @@ titleLabel s =
         ]
         (E.text s)
 
-            
+
 genOption : (a, String) -> Input.Option a Msg
 genOption (x, str) =
     Input.option x ( E.text str )
