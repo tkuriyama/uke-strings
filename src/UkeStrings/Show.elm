@@ -1,18 +1,20 @@
-module UkeStrings.Show exposing ( .. )
+module UkeStrings.Show exposing (..)
 
 import List.Extra as LE
 import String.Format as Fmt
-import UkeStrings.Types exposing ( .. )
+import UkeStrings.Types exposing (..)
+
+
 
 --------------------------------------------------------------------------------
 -- Model
+
 
 modelToString : StringSet -> String
 modelToString model =
     """
      { brand = {{brand}}
      , color = {{color}}
-     , highG = {{highG}}
      , material = {{material}}
      , modelCode = "{{modelCode}}"
      , name = "{{modelName}}"
@@ -25,7 +27,6 @@ modelToString model =
     """
         |> Fmt.namedValue "brand" (brandToTypeString model.brand)
         |> Fmt.namedValue "color" (colorToTypeString model.color)
-        |> Fmt.namedValue "highG" (boolToString model.highG)
         |> Fmt.namedValue "material" (materialToTypeString model.material)
         |> Fmt.namedValue "modelCode" model.modelCode
         |> Fmt.namedValue "modelName" model.name
@@ -45,10 +46,10 @@ genStringsString strings =
          , four = {{four}}
          }
      """
-         |> Fmt.namedValue "one" (genStringString strings.one)
-         |> Fmt.namedValue "two" (genStringString strings.two)
-         |> Fmt.namedValue "three" (genStringString strings.three)
-         |> Fmt.namedValue "four" (genStringString strings.four)
+        |> Fmt.namedValue "one" (genStringString strings.one)
+        |> Fmt.namedValue "two" (genStringString strings.two)
+        |> Fmt.namedValue "three" (genStringString strings.three)
+        |> Fmt.namedValue "four" (genStringString strings.four)
 
 
 genStringString : UkeString -> String
@@ -70,7 +71,12 @@ genSizesString sizes =
 
 boolToString : Bool -> String
 boolToString b =
-    if b then "True" else "False"
+    if b then
+        "True"
+
+    else
+        "False"
+
 
 
 --------------------------------------------------------------------------------
@@ -105,6 +111,7 @@ brandToTypeString =
     strLookup third brandRecords "Unknown"
 
 
+
 --------------------------------------------------------------------------------
 -- Colors
 
@@ -125,6 +132,7 @@ colorToString =
 colorToTypeString : StringColor -> String
 colorToTypeString =
     strLookup third colorRecords "Other"
+
 
 
 --------------------------------------------------------------------------------
@@ -150,11 +158,12 @@ materialToTypeString =
     strLookup third materialRecords "Other"
 
 
+
 --------------------------------------------------------------------------------
 -- Tuning
 
-tuningRecords : List ( Tuning, String, String )
 
+tuningRecords : List ( Tuning, String, String )
 tuningRecords =
     [ ( Linear, "Linear", "Linear" )
     , ( Reentrant, "Reentrant", "Reentrant" )
@@ -171,8 +180,10 @@ tuningToTypeString =
     strLookup third tuningRecords "Reentrant"
 
 
+
 --------------------------------------------------------------------------------
 -- Pitch
+
 
 pitchRecords : List ( Pitch, String, String )
 pitchRecords =
@@ -186,7 +197,7 @@ pitchRecords =
     ]
 
 
-pitchToString : Pitch-> String
+pitchToString : Pitch -> String
 pitchToString =
     strLookup second pitchRecords "G"
 
@@ -201,20 +212,23 @@ pitchToTypeString =
 -- Helpers
 
 
-strLookup : ((a, String, String) -> String)
-          -> List (a, String, String)
-          -> String
-          -> a
-          -> String
+strLookup :
+    (( a, String, String ) -> String)
+    -> List ( a, String, String )
+    -> String
+    -> a
+    -> String
 strLookup extract xs default x =
-    LE.find (\(x_, _, _) -> x_ ==  x) xs
-            |> Maybe.map extract
-            |> Maybe.withDefault default
+    LE.find (\( x_, _, _ ) -> x_ == x) xs
+        |> Maybe.map extract
+        |> Maybe.withDefault default
 
 
-second : (a, b, c) -> b
-second (a, b, c) = b
+second : ( a, b, c ) -> b
+second ( a, b, c ) =
+    b
 
 
-third : (a, b, c) -> c
-third (a, b, c) = c
+third : ( a, b, c ) -> c
+third ( a, b, c ) =
+    c

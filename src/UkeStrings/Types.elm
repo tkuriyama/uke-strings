@@ -8,40 +8,43 @@ type alias Flags =
     , windowHeight : Float
     }
 
-type alias Model
-    = { windowWidth : Float
-      , windowHeight : Float
-      , pageModel : PageModel
-      }
+
+type alias Model =
+    { windowWidth : Float
+    , windowHeight : Float
+    , pageModel : PageModel
+    }
+
 
 type PageModel
     = Display DisplayModel
     | Edit EditModel String
 
 
-type alias DisplayModel
-    =  {}
+type alias DisplayModel =
+    {}
 
 
-type alias EditModel
-    = StringSet
+type alias EditModel =
+    StringSet
+
 
 type Msg
     = UpdateEditBrand Brand
     | UpdateEditColor StringColor
-    | UpdateEditHighG Bool
     | UpdateEditMaterial Material
     | UpdateEditModel String
     | UpdateEditName String
     | UpdateEditSize String Bool
     | UpdateEditString String UkeString
     | UpdateEditTuning Tuning
-      | UpdateEditUrl String
-      | UpdateEditWoundStrings Bool
-      | UpdateEditOutput
-      | CopyToClipboard
-      | WindowResize  (Float, Float )
-      | NoOp
+    | UpdateEditUrl String
+    | UpdateEditWoundStrings Bool
+    | UpdateEditOutput
+    | CopyToClipboard
+    | WindowResize ( Float, Float )
+    | NoOp
+
 
 
 --------------------------------------------------------------------------------
@@ -50,7 +53,6 @@ type Msg
 type alias StringSet =
     { brand : Brand
     , color : StringColor
-    , highG : Bool
     , material : Material
     , modelCode : String
     , name : String
@@ -60,6 +62,7 @@ type alias StringSet =
     , url : String
     , woundStrings : Bool
     }
+
 
 type Brand
     = ANueNue
@@ -76,16 +79,19 @@ type Brand
     | PhD
     | Worth
 
+
 type StringColor
     = Clear
     | Dark
     | OtherColor
+
 
 type Material
     = Fluorocarbon
     | Gut
     | Nylon
     | OtherMaterial
+
 
 type alias Sizes =
     { soprano : Bool
@@ -94,9 +100,11 @@ type alias Sizes =
     , baritone : Bool
     }
 
+
 type Tuning
     = Linear
     | Reentrant
+
 
 
 --------------------------------------------------------------------------------
@@ -116,10 +124,20 @@ type alias UkeString =
     , tension : Tension
     }
 
-type alias Diameter
-    = Float
 
-type Pitch = A | B | C | D | E | F | G
+type alias Diameter =
+    Float
 
-type alias Tension
-    = Float
+
+type Pitch
+    = A
+    | B
+    | C
+    | D
+    | E
+    | F
+    | G
+
+
+type alias Tension =
+    Float
