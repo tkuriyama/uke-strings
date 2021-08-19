@@ -1,4 +1,4 @@
-module UkeStrings.App exposing (main)
+port module UkeStrings.App exposing (main)
 
 import Browser
 import Browser.Events exposing (onResize)
@@ -75,8 +75,13 @@ update msg model =
               }
             , Cmd.none
             )
+        CopyToClipboard ->
+            ( model, copy () )
+        NoOp ->
+           ( model, Cmd.none )
         _ ->
             updatePageModel msg model
+
 
 updatePageModel : Msg -> Model -> ( Model, Cmd Msg )
 updatePageModel msg model =
@@ -114,6 +119,8 @@ updateEditModel msg model =
             { model | brand = b }
         UpdateEditColor c ->
             { model | color = c }
+        UpdateEditHighG  b ->
+            { model | highG = b }
         UpdateEditMaterial m ->
             { model | material = m }
         UpdateEditModel s ->
@@ -158,6 +165,11 @@ updateEditStrings strings pos string =
         _ ->
             { strings | four = string }
 
+--------------------------------------------------------------------------------
+-- Ports
+
+
+port copy : () -> Cmd msg
 
 
 --------------------------------------------------------------------------------

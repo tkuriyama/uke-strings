@@ -29,6 +29,7 @@ type alias EditModel
 type Msg
     = UpdateEditBrand Brand
     | UpdateEditColor StringColor
+    | UpdateEditHighG Bool
     | UpdateEditMaterial Material
     | UpdateEditModel String
     | UpdateEditName String
@@ -38,7 +39,9 @@ type Msg
       | UpdateEditUrl String
       | UpdateEditWoundStrings Bool
       | UpdateEditOutput
+      | CopyToClipboard
       | WindowResize  (Float, Float )
+      | NoOp
 
 
 --------------------------------------------------------------------------------
@@ -47,6 +50,7 @@ type Msg
 type alias StringSet =
     { brand : Brand
     , color : StringColor
+    , highG : Bool
     , material : Material
     , modelCode : String
     , name : String

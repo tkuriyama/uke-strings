@@ -8,6 +8,7 @@ import Element.Border as Border
 import Element.Font as Font
 import Element.Input as Input
 import Html exposing (Html)
+import Html.Attributes as Attr exposing ( id )
 import UkeStrings.Show as Show
 import UkeStrings.Types exposing (..)
 
@@ -15,8 +16,8 @@ import UkeStrings.Types exposing (..)
 --------------------------------------------------------------------------------
 
 
-view : EditModel -> Html Msg
-view model =
+view : EditModel -> String -> Html Msg
+view model output =
     E.layout
         [ Font.family [ Font.typeface "Consolas", Font.sansSerif ]
         , Font.size 18
@@ -43,6 +44,7 @@ view model =
               , E.row
                   ( rowAttrs )
                   [ tuningChoice model.tuning
+                  , checkbox "High G" UpdateEditHighG model.highG
                   , checkbox "Wound" UpdateEditWoundStrings model.woundStrings
                   ]
               , E.row
@@ -58,6 +60,14 @@ view model =
               , stringRow "2" model.strings.two
               , stringRow "3" model.strings.three
               , stringRow "4" model.strings.four
+              , E.row
+                  ( rowAttrs ++ [ E.centerX, E.width E.fill, E.padding 10 ] )
+                  [ generateButton
+                  , copyButton
+                  ]
+              , E.row
+                  ( rowAttrs ++ [ E.padding 20 ] )
+                  [ outputArea output ]
               ]
         )
 
@@ -77,7 +87,7 @@ brandChoice selected =
     choice
         "Brand"
         UpdateEditBrand
-        ( List.map genOption Show.brandPairs )
+        ( List.map genOption Show.brandRecords )
         selected
 
 
@@ -86,7 +96,7 @@ colorChoice selected =
     choice
         "Color"
         UpdateEditColor
-        ( List.map genOption Show.colorPairs )
+        ( List.map genOption Show.colorRecords )
         selected
 
 materialChoice : Material -> E.Element Msg
@@ -94,7 +104,7 @@ materialChoice selected =
     choice
         "Material"
         UpdateEditMaterial
-        ( List.map genOption Show.materialPairs )
+        ( List.map genOption Show.materialRecords )
         selected
 
 
@@ -103,7 +113,7 @@ tuningChoice selected =
     choice
         "Tuning"
         UpdateEditTuning
-        ( List.map genOption Show.tuningPairs )
+        ( List.map genOption Show.tuningRecords )
         selected
 
 
@@ -111,7 +121,39 @@ checkboxSize : String -> Bool -> E.Element Msg
 checkboxSize s b =
     checkbox s (UpdateEditSize s) b
 
+generateButton : E.Element Msg
+generateButton =
+    Input.button
+        [ E.padding 10
+        , Border.width 1
+        , Background.color <| E.rgb255 238 238 238
+        ]
+        { onPress = Just UpdateEditOutput
+        , label = E.text "Generate Output String"
+        }
 
+
+copyButton : E.Element Msg
+copyButton =
+    Input.button
+        [ E.padding 10
+        , Border.width 1
+        , Background.color <| E.rgb255 238 238 238
+        ]
+        { onPress = Just CopyToClipboard
+        , label = E.text "Copy to Clipboard"
+        }
+
+outputArea : String -> E.Element Msg
+outputArea output =
+    Input.multiline
+        [ E.htmlAttribute (Attr.id "copyarea") ]
+        { onChange = (\_ -> NoOp)
+        , text = output
+        , placeholder = Nothing
+        , label = titleLabel "Output"
+        , spellcheck = False
+        }
 --------------------------------------------------------------------------------
 -- String Element
 
@@ -119,7 +161,7 @@ stringRow : String -> UkeString -> E.Element Msg
 stringRow pos string =
     E.row
         ( rowAttrs ++ [ E.width E.fill ] )
-            [ E.el [ Font.heavy ] (E.text <| "String " ++ pos)
+            [ E.el [ Font.heavy ] (E.text <| "Str " ++ pos)
             , pitchChoice pos string
             , diameterText pos string
             , tensionText pos string
@@ -131,7 +173,7 @@ pitchChoice pos string =
     choice
         ""
         ( \p -> UpdateEditString pos { string | pitch = p } )
-        ( List.map genOption Show.pitchPairs )
+        ( List.map genOption Show.pitchRecords )
         string.pitch
 
 
@@ -140,7 +182,7 @@ diameterText pos string =
     floatSlider
         "Diameter (mm)"
         ( \d -> UpdateEditString pos { string | diameter = d } )
-        ( 0.45, 0.95 )
+        ( 0.45, 1.00 )
         string.diameter
 
 
@@ -245,6 +287,6 @@ titleLabel s =
         (E.text s)
 
 
-genOption : (a, String) -> Input.Option a Msg
-genOption (x, str) =
+genOption : ( a, String, String ) -> Input.Option a Msg
+genOption (x, str, _) =
     Input.option x ( E.text str )

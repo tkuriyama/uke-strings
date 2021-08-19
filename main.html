@@ -9,12 +9,24 @@
   <body>
     <div id="elm"></div>
     <script>
-      var app = Elm.Main.init({ node: document.getElementById("elm"),
-			        flags: {
-				    windowWidth: window.innerWidth,
-				    windowHeight: window.innerHeight
-				}
-			      });
+
+      var app =
+            Elm.Main.init({ node: document.getElementById("elm"),
+			    flags: {
+				windowWidth: window.innerWidth,
+				windowHeight: window.innerHeight
+			    }
+			  });
+
+      app.ports.copy.subscribe(() => {
+          console.log('copy');
+          var elem = document.querySelector('#copyarea');
+          elem.select()
+          document.execCommand("copy");
+      });
+
     </script>
   </body>
 </html>
+
+
