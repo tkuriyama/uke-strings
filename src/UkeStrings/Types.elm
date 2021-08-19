@@ -42,6 +42,7 @@ type Msg
     | UpdateEditWoundStrings Bool
     | UpdateEditOutput
     | CopyToClipboard
+    | SwitchTab
     | WindowResize ( Float, Float )
     | NoOp
 

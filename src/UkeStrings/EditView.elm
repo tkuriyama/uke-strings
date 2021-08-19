@@ -16,59 +16,53 @@ import UkeStrings.Types exposing (..)
 --------------------------------------------------------------------------------
 
 
-view : EditModel -> String -> Html Msg
+view : EditModel -> String -> E.Element Msg
 view model output =
-    E.layout
-        [ Font.family [ Font.typeface "Consolas", Font.sansSerif ]
-        , Font.size 18
-        , E.padding 5
+    E.column
+        [ E.centerX
+        , E.alignTop
+        , E.spacing 10
         ]
-        (E.column
-            [ E.centerX
-            , E.alignTop
-            , E.spacing 10
+        [ brandChoice model.brand
+        , E.row
+            rowAttrs
+            [ colorChoice model.color
+            , materialChoice model.material
             ]
-            [ brandChoice model.brand
-            , E.row
-                rowAttrs
-                [ colorChoice model.color
-                , materialChoice model.material
-                ]
-            , E.row
-                rowAttrs
-                [ checkboxSize "Soprano" model.sizes.soprano
-                , checkboxSize "Concert" model.sizes.concert
-                , checkboxSize "Tenor" model.sizes.tenor
-                , checkboxSize "Baritone" model.sizes.baritone
-                ]
-            , E.row
-                rowAttrs
-                [ tuningChoice model.tuning
-                , checkbox "Wound" UpdateEditWoundStrings model.woundStrings
-                ]
-            , E.row
-                (rowAttrs ++ [ E.width E.fill ])
-                [ textInput "Model" UpdateEditModel model.modelCode
-                , textInput "Name" UpdateEditName model.name
-                ]
-            , E.row
-                (rowAttrs ++ [ E.width E.fill ])
-                [ textInput "Url" UpdateEditUrl model.url
-                ]
-            , stringRow "1" model.strings.one
-            , stringRow "2" model.strings.two
-            , stringRow "3" model.strings.three
-            , stringRow "4" model.strings.four
-            , E.row
-                (rowAttrs ++ [ E.centerX, E.width E.fill, E.padding 10 ])
-                [ generateButton
-                , copyButton
-                ]
-            , E.row
-                (rowAttrs ++ [ E.padding 20 ])
-                [ outputArea output ]
+        , E.row
+            rowAttrs
+            [ checkboxSize "Soprano" model.sizes.soprano
+            , checkboxSize "Concert" model.sizes.concert
+            , checkboxSize "Tenor" model.sizes.tenor
+            , checkboxSize "Baritone" model.sizes.baritone
             ]
-        )
+        , E.row
+            rowAttrs
+            [ tuningChoice model.tuning
+            , checkbox "Wound" UpdateEditWoundStrings model.woundStrings
+            ]
+        , E.row
+              (rowAttrs ++ [ E.width E.fill ])
+              [ textInput "Model" UpdateEditModel model.modelCode
+              , textInput "Name" UpdateEditName model.name
+              ]
+        , E.row
+              (rowAttrs ++ [ E.width E.fill ])
+              [ textInput "Url" UpdateEditUrl model.url
+              ]
+        , stringRow "1" model.strings.one
+        , stringRow "2" model.strings.two
+        , stringRow "3" model.strings.three
+        , stringRow "4" model.strings.four
+        , E.row
+              (rowAttrs ++ [ E.centerX, E.width E.fill, E.padding 10 ])
+              [ generateButton
+              , copyButton
+              ]
+        , E.row
+              (rowAttrs ++ [ E.padding 20 ])
+              [ outputArea output ]
+        ]
 
 
 rowAttrs : List (E.Attribute Msg)

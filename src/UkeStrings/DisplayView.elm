@@ -1,5 +1,11 @@
 module UkeStrings.DisplayView exposing (view)
 
+
+import Element as E
+import Element.Background as Background
+import Element.Border as Border
+import Element.Font as Font
+import Element.Input as Input
 import Html exposing (Html)
 import UkeStrings.Types exposing (..)
 
@@ -8,6 +14,6 @@ import UkeStrings.Types exposing (..)
 --------------------------------------------------------------------------------
 
 
-view : DisplayModel -> Html Msg
+view : DisplayModel -> E.Element Msg
 view model =
-    Html.text ""
+    E.el [] (E.text "")

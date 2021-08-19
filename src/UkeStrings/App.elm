@@ -2,6 +2,11 @@ port module UkeStrings.App exposing (main)
 
 import Browser
 import Browser.Events exposing (onResize)
+import Element as E
+import Element.Background as Background
+import Element.Border as Border
+import Element.Font as Font
+import Element.Input as Input
 import Html exposing (Html)
 import List.Nonempty as NE
 import UkeStrings.Data as Data
@@ -35,14 +40,20 @@ init flags =
         model =
             { windowWidth = flags.windowWidth
             , windowHeight = flags.windowHeight
-            , pageModel = defaultPageModel
+            , pageModel = defaultEditModel
             }
     in
     ( model, Cmd.none )
 
 
-defaultPageModel : PageModel
-defaultPageModel =
+defaultDisplayModel : PageModel
+defaultDisplayModel =
+    Display {}
+
+
+
+defaultEditModel : PageModel
+defaultEditModel =
     Edit (NE.head Data.data) ""
 
 
@@ -53,13 +64,67 @@ defaultPageModel =
 
 view : Model -> Html Msg
 view model =
-    case model.pageModel of
-        Display m ->
-            DisplayView.view m
+    let
+        active =
+            getActivePageModel model.pageModel
+    in E.layout
+        [ Font.family [ Font.typeface "Consolas", Font.sansSerif ]
+        , Font.size 18
+        , E.padding 5
+        ]
+        ( E.column
+              [ E.centerX
+              , E.spacing 10
+              ]
+              [ E.row
+                    [ E.centerX ]
+                    [ tab active "Viewer"
+                    , tab active "Generator"
+                    ]
+              , case model.pageModel of
+                    Display m ->
+                        DisplayView.view m
+                    Edit m s ->
+                        EditView.view m s
+              ]
+        )
 
-        Edit m s ->
-            EditView.view m s
 
+getActivePageModel : PageModel -> String
+getActivePageModel model =
+    case model of
+        Display _ ->
+            "Viewer"
+        Edit _ _ ->
+            "Generator"
+
+
+tab : String -> String -> E.Element Msg
+tab active name =
+    let
+        borders =
+            { bottom = 0, top = 1, left = 1, right = 1 }
+
+        corners =
+            { topLeft = 6, topRight = 6, bottomLeft = 0, bottomRight = 0 }
+
+        background =
+            if active == name then
+                E.rgb 0.8 0.8 0.8
+
+            else
+                E.rgb 1 1 1
+    in
+    Input.button
+        [ E.paddingXY 7 5
+        , Border.widthEach borders
+        , Border.roundEach corners
+        , Border.color <| E.rgb 0.3 0.3 0.3
+        , Background.color background
+        ]
+        { onPress = Just SwitchTab
+        , label = E.text name
+        }
 
 
 --------------------------------------------------------------------------------
@@ -80,6 +145,12 @@ update msg model =
         CopyToClipboard ->
             ( model, copy () )
 
+        SwitchTab ->
+            case model.pageModel of
+                Display _ ->
+                    ( { model | pageModel = defaultEditModel }, Cmd.none )
+                Edit _ _ ->
+                    ( { model | pageModel = defaultDisplayModel }, Cmd.none )
         NoOp ->
             ( model, Cmd.none )
 
