@@ -57,7 +57,7 @@ view model =
             DisplayView.view m
 
         Edit m s ->
-            EditView.view m
+            EditView.view m s
 
 
 
