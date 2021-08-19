@@ -16,7 +16,7 @@ type alias Model
 
 type PageModel
     = Display DisplayModel
-    | Edit EditModel
+    | Edit EditModel String
 
 
 type alias DisplayModel
@@ -28,7 +28,17 @@ type alias EditModel
 
 type Msg
     = UpdateEditBrand Brand
-    | WindowResize  (Float, Float )
+    | UpdateEditColor StringColor
+    | UpdateEditMaterial Material
+    | UpdateEditModel String
+    | UpdateEditName String
+    | UpdateEditSize String Bool
+    | UpdateEditString String UkeString
+    | UpdateEditTuning Tuning
+      | UpdateEditUrl String
+      | UpdateEditWoundStrings Bool
+      | UpdateEditOutput
+      | WindowResize  (Float, Float )
 
 
 --------------------------------------------------------------------------------
@@ -36,14 +46,14 @@ type Msg
 
 type alias StringSet =
     { brand : Brand
-    , color : Color
+    , color : StringColor
     , material : Material
-    , model : Maybe String
+    , modelCode : String
     , name : String
-    , sizes : List Size
-    , strings : List UkeString
+    , sizes : Sizes
+    , strings : UkeStrings
     , tuning : Tuning
-    , url : Maybe String
+    , url : String
     , woundStrings : Bool
     }
 
@@ -60,47 +70,50 @@ type Brand
     | PhD
     | Worth
 
-type Size
-    = Bariton
-    | Concert
-    | Tenor
-    | Soprano
+type StringColor
+    = Clear
+    | Dark
+    | OtherColor
+
+type Material
+    = Fluorocarbon
+    | Gut
+    | Nylon
+    | OtherMaterial
+
+type alias Sizes =
+    { soprano : Bool
+    , concert : Bool
+    , tenor : Bool
+    , baritone : Bool
+    }
 
 type Tuning
-    = Lienar
+    = Linear
     | Reentrant
 
 
 --------------------------------------------------------------------------------
 
 
+type alias UkeStrings =
+    { one : UkeString
+    , two : UkeString
+    , three : UkeString
+    , four : UkeString
+    }
+
+
 type alias UkeString =
     { diameter : Diameter
-    , position : Int
     , pitch : Pitch
     , tension : Tension
     }
 
-
-type Color
-    = Clear
-    | Dark
-    | Red
-    | Silver
-    | OtherColor
-
 type alias Diameter
     = Float
 
-type Material
-    = Bioplastic
-    | Fluorocarbon
-    | Gut
-    | Nylon
-    | OtherCoreMaterial
-    | SyntheticGut
-
-type Pitch = A | B | C | E | F | G
+type Pitch = A | B | C | D | E | F | G
 
 type alias Tension
     = Float
