@@ -6,7 +6,7 @@ import Test exposing (..)
 
 
 --------------------------------------------------------------------------------
--- Utils
+-- Uniqueness
 
 
 type TestCustomType = A | B | C | D

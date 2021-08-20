@@ -23,8 +23,9 @@ view : String
      -> (a -> String)
      -> msg
      -> (a -> msg)
+     -> msg
     -> E.Element msg
-view title dropdown toString openMsg clickMsg =
+view title dropdown toString openMsg clickMsg clearMsg =
     let
         selected =
             case dropdown of
@@ -45,20 +46,20 @@ view title dropdown toString openMsg clickMsg =
 
             SelectItem options ->
                 let
+                    clearOption =
+                        E.el
+                            ( Events.onClick clearMsg :: optionAttrs )
+                            ( E.text "Clear Selection" )
+
                     viewOption option =
                         E.el
-                            [ E.width E.fill
-                            , E.padding 5
-                            , E.mouseOver [Background.color mouseOverColor]
-                            , Background.color backgroundColor
-                            , Events.onClick (clickMsg option)
-                            ]
+                            ( Events.onClick (clickMsg option) :: optionAttrs )
                             ( E.text <| toString option )
 
                     viewOptionList inputOptions =
                         E.column
                             [ E.width E.fill ]
-                            ( List.map viewOption options )
+                            ( clearOption :: (List.map viewOption options ))
 
                 in
                     E.el
@@ -70,6 +71,13 @@ view title dropdown toString openMsg clickMsg =
                         ( E.text selected )
 
 
+optionAttrs : List (E.Attribute msg)
+optionAttrs =
+    [ E.width E.fill
+    , E.padding 5
+    , E.mouseOver [Background.color mouseOverColor]
+    , Background.color backgroundColor
+    ]
 
 
 --------------------------------------------------------------------------------

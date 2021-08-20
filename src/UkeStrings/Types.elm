@@ -51,9 +51,19 @@ type Msg
     | UpdateOpenBrand Int
     | UpdateOpenColor Int
     | UpdateOpenMaterial Int
+    | UpdateOpenSize  Int
+    | UpdateOpenStringSet Int
     | UpdateSelectedBrand Int Brand
     | UpdateSelectedColor Int StringColor
     | UpdateSelectedMaterial Int Material
+    | UpdateSelectedSize Int String
+    | UpdateSelectedStringSet Int StringSet
+    | UpdateClearAll Int
+    | UpdateClearBrand Int
+    | UpdateClearColor Int
+    | UpdateClearMaterial Int
+    | UpdateClearSize Int
+    | UpdateClearStringSet Int
     | CopyToClipboard
     | SwitchTab
     | WindowResize ( Float, Float )
@@ -68,7 +78,7 @@ type alias FilteredData =
     { brandFilter : Dropdown Brand
     , colorFilter : Dropdown StringColor
     , materialFilter : Dropdown Material
-    , sizes : Sizes
+    , sizeFilter : Dropdown String
     , stringSetFilter : Dropdown StringSet
     , allStrings : List StringSet
     , filteredStrings : List StringSet

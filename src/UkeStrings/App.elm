@@ -61,7 +61,7 @@ defaultFilteredData =
     { brandFilter = ShowItem Nothing
     , colorFilter = ShowItem Nothing
     , materialFilter = ShowItem Nothing
-    , sizes = { soprano = False, concert = False, tenor = False, baritone = False }
+    , sizeFilter = ShowItem Nothing
     , stringSetFilter = ShowItem Nothing
     , allStrings = Data.data |> NE.toList
     , filteredStrings = Data.data |> NE.toList

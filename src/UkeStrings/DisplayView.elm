@@ -21,51 +21,52 @@ view model =
     E.column
         [ E.width E.fill
         , E.spacing 5
+        , E.paddingXY 0 20
         ]
         [ E.row
               ( rowAttrs )
               [ E.el
                     [ Font.heavy
-                    , E.paddingXY 20 0
+                    , E.paddingXY 10 0
                     ]
                     ( E.text "String 1" )
               , E.el
-                    [ E.width <| E.minimum 200 E.fill
-                    ]
-                    ( Dropdown.view
+                  ( dropdownAttrs )
+                  ( Dropdown.view
                           "Brand"
                           model.one.brandFilter
                           Show.brandToString
                           ( UpdateOpenBrand 1 )
                           ( \b -> UpdateSelectedBrand 1 b )
+                          ( UpdateClearBrand 1 )
                     )
               , E.el
-                    [ E.width <| E.minimum 150 E.fill
-                    ]
+                    ( dropdownAttrs )
                     ( Dropdown.view
                           "Color"
                           model.one.colorFilter
                           Show.colorToString
                           ( UpdateOpenColor 1 )
                           ( \c -> UpdateSelectedColor 1 c )
+                          ( UpdateClearColor 1 )
                     )
               , E.el
-                    [ E.width <| E.minimum 200 E.fill
-                    ]
+                    ( dropdownAttrs )
                     ( Dropdown.view
                           "Material"
                           model.one.materialFilter
                           Show.materialToString
                           ( UpdateOpenMaterial 1 )
                           ( \m -> UpdateSelectedMaterial 1 m )
+                          ( UpdateClearMaterial 1 )
                     )
-              ]
-        , E.row
-            ( rowAttrs )
-            [ List.length model.one.filteredStrings
+              , E.el
+                  [ E.paddingXY 5 0 ]
+                  ( List.length model.one.filteredStrings
                   |> String.fromInt
-                  |> E.text 
-            ]
+                  |> \n -> E.text (n ++ " Results")
+                  )
+              ]
         ]
 
 
@@ -75,3 +76,8 @@ rowAttrs =
     , E.spacing 10
     ]
 
+
+dropdownAttrs : List (E.Attribute Msg)
+dropdownAttrs =
+    [ E.width <| E.minimum 175 E.fill
+    ] 
