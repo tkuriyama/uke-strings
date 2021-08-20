@@ -25,13 +25,39 @@ view model =
         [ E.row
               ( rowAttrs )
               [ E.el
-                    [ E.width <| E.fillPortion 1
+                    [ Font.heavy
+                    , E.paddingXY 20 0
+                    ]
+                    ( E.text "String 1" )
+              , E.el
+                    [ E.width <| E.minimum 200 E.fill
                     ]
                     ( Dropdown.view
+                          "Brand"
                           model.one.brandFilter
                           Show.brandToString
                           ( UpdateOpenBrand 1 )
                           ( \b -> UpdateSelectedBrand 1 b )
+                    )
+              , E.el
+                    [ E.width <| E.minimum 150 E.fill
+                    ]
+                    ( Dropdown.view
+                          "Color"
+                          model.one.colorFilter
+                          Show.colorToString
+                          ( UpdateOpenColor 1 )
+                          ( \c -> UpdateSelectedColor 1 c )
+                    )
+              , E.el
+                    [ E.width <| E.minimum 200 E.fill
+                    ]
+                    ( Dropdown.view
+                          "Material"
+                          model.one.materialFilter
+                          Show.materialToString
+                          ( UpdateOpenMaterial 1 )
+                          ( \m -> UpdateSelectedMaterial 1 m )
                     )
               ]
         , E.row
@@ -46,4 +72,6 @@ view model =
 rowAttrs : List (E.Attribute Msg)
 rowAttrs =
     [ E.width E.fill
+    , E.spacing 10
     ]
+

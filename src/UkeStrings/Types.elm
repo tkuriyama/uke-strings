@@ -49,7 +49,11 @@ type Msg
     | UpdateEditWoundStrings Bool
     | UpdateEditOutput
     | UpdateOpenBrand Int
+    | UpdateOpenColor Int
+    | UpdateOpenMaterial Int
     | UpdateSelectedBrand Int Brand
+    | UpdateSelectedColor Int StringColor
+    | UpdateSelectedMaterial Int Material
     | CopyToClipboard
     | SwitchTab
     | WindowResize ( Float, Float )

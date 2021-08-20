@@ -18,19 +18,20 @@ type Dropdown a
 --------------------------------------------------------------------------------
 
 
-view : Dropdown a
+view : String
+       -> Dropdown a
      -> (a -> String)
      -> msg
      -> (a -> msg)
     -> E.Element msg
-view dropdown toString openMsg clickMsg =
+view title dropdown toString openMsg clickMsg =
     let
         selected =
             case dropdown of
                 ShowItem (Just x) ->
                     toString x
                 _ ->
-                    "Click to select"
+                    "Select " ++ title
     in
         case dropdown of
             ShowItem _ ->
