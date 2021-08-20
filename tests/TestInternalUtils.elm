@@ -22,3 +22,20 @@ testUnique  =
             \_ -> unique [A, B, C]
                   |> Expect.equal [A, B, C]
         ]
+
+
+xs1 = [ { soprano = True, concert = False, tenor = True, baritone = False}
+      ]
+xs2 = [ { soprano = True, concert = False, tenor = True, baritone = False }
+      , { soprano = True, concert = True, tenor = True, baritone = False }
+        ]
+
+testUniqueSizes =
+    describe "Test unique sizes"
+        [ test "Singleton" <|
+              \_ -> uniqueSizes xs1
+                    |> Expect.equal [ "Soprano", "Tenor" ]
+        , test "Duplicates" <|
+              \_ -> uniqueSizes xs2
+                    |> Expect.equal [ "Soprano", "Tenor", "Concert" ]
+        ]
