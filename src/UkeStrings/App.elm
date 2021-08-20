@@ -11,10 +11,13 @@ import Html exposing (Html)
 import List.Nonempty as NE
 import UkeStrings.Data as Data
 import UkeStrings.DisplayView as DisplayView
+import UkeStrings.Dropdown exposing (Dropdown (..))
 import UkeStrings.EditView as EditView
 import UkeStrings.Show as Show
 import UkeStrings.Types exposing (..)
-
+import UkeStrings.UpdateDisplay as UpdateDisplay
+import UkeStrings.UpdateEdit as UpdateEdit
+import UkeStrings.Utils as Utils
 
 
 --------------------------------------------------------------------------------
@@ -40,7 +43,7 @@ init flags =
         model =
             { windowWidth = flags.windowWidth
             , windowHeight = flags.windowHeight
-            , pageModel = defaultEditModel
+            , pageModel = defaultDisplayModel
             }
     in
     ( model, Cmd.none )
@@ -48,8 +51,21 @@ init flags =
 
 defaultDisplayModel : PageModel
 defaultDisplayModel =
-    Display {}
+    Display { one = defaultFilteredData
+            , two = defaultFilteredData
+            }
 
+
+defaultFilteredData : FilteredData
+defaultFilteredData =
+    { brandFilter = ShowItem Nothing
+    , colorFilter = ShowItem Nothing
+    , materialFilter = ShowItem Nothing
+    , sizes = { soprano = False, concert = False, tenor = False, baritone = False }
+    , stringSetFilter = ShowItem Nothing
+    , allStrings = Data.data |> NE.toList
+    , filteredStrings = Data.data |> NE.toList
+    }
 
 
 defaultEditModel : PageModel
@@ -164,7 +180,7 @@ updatePageModel msg model =
         Display m ->
             let
                 pageModel_ =
-                    updateDisplayModel msg m
+                    UpdateDisplay.update msg m
             in
             ( { model | pageModel = Display pageModel_ }, Cmd.none )
 
@@ -178,86 +194,11 @@ updatePageModel msg model =
                 _ ->
                     let
                         pageModel_ =
-                            updateEditModel msg m
+                            UpdateEdit.update msg m
                     in
                     ( { model | pageModel = Edit pageModel_ s }
                     , Cmd.none
                     )
-
-
-updateDisplayModel : Msg -> DisplayModel -> DisplayModel
-updateDisplayModel msg model =
-    model
-
-
-updateEditModel : Msg -> EditModel -> EditModel
-updateEditModel msg model =
-    case msg of
-        UpdateEditBrand b ->
-            { model | brand = b }
-
-        UpdateEditColor c ->
-            { model | color = c }
-
-        UpdateEditMaterial m ->
-            { model | material = m }
-
-        UpdateEditModel s ->
-            { model | modelCode = s }
-
-        UpdateEditName s ->
-            { model | name = s }
-
-        UpdateEditSize sz b ->
-            { model | sizes = updateEditSizes model.sizes sz b }
-
-        UpdateEditString pos string ->
-            { model | strings = updateEditStrings model.strings pos string }
-
-        UpdateEditTuning t ->
-            { model | tuning = t }
-
-        UpdateEditUrl s ->
-            { model | url = s }
-
-        UpdateEditWoundStrings b ->
-            { model | woundStrings = b }
-
-        _ ->
-            model
-
-
-updateEditSizes : Sizes -> String -> Bool -> Sizes
-updateEditSizes szs sz b =
-    case sz of
-        "Soprano" ->
-            { szs | soprano = b }
-
-        "Concert" ->
-            { szs | concert = b }
-
-        "Tenor" ->
-            { szs | tenor = b }
-
-        _ ->
-            { szs | baritone = b }
-
-
-updateEditStrings : UkeStrings -> String -> UkeString -> UkeStrings
-updateEditStrings strings pos string =
-    case pos of
-        "1" ->
-            { strings | one = string }
-
-        "2" ->
-            { strings | two = string }
-
-        "3" ->
-            { strings | three = string }
-
-        _ ->
-            { strings | four = string }
-
 
 
 --------------------------------------------------------------------------------

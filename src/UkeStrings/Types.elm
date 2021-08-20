@@ -1,6 +1,11 @@
 module UkeStrings.Types exposing (..)
 
+
+import UkeStrings.Dropdown exposing (Dropdown)
+
+
 --------------------------------------------------------------------------------
+-- Program Model, Msg
 
 
 type alias Flags =
@@ -22,7 +27,9 @@ type PageModel
 
 
 type alias DisplayModel =
-    {}
+    { one : FilteredData
+    , two : FilteredData
+    }
 
 
 type alias EditModel =
@@ -41,14 +48,31 @@ type Msg
     | UpdateEditUrl String
     | UpdateEditWoundStrings Bool
     | UpdateEditOutput
+    | UpdateOpenBrand Int
+    | UpdateSelectedBrand Int Brand
     | CopyToClipboard
     | SwitchTab
     | WindowResize ( Float, Float )
     | NoOp
 
 
+--------------------------------------------------------------------------------
+-- Filtered View
+
+
+type alias FilteredData =
+    { brandFilter : Dropdown Brand
+    , colorFilter : Dropdown StringColor
+    , materialFilter : Dropdown Material
+    , sizes : Sizes
+    , stringSetFilter : Dropdown StringSet
+    , allStrings : List StringSet
+    , filteredStrings : List StringSet
+    }
+
 
 --------------------------------------------------------------------------------
+-- Strings
 
 
 type alias StringSet =

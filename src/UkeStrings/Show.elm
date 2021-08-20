@@ -223,6 +223,9 @@ strLookup extract xs default x =
         |> Maybe.map extract
         |> Maybe.withDefault default
 
+first : (a, b, c) -> a
+first (a, b, c) = a
+
 
 second : ( a, b, c ) -> b
 second ( a, b, c ) =
