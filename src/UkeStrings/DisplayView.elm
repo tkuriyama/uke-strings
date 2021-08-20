@@ -23,61 +23,111 @@ view model =
         , E.spacing 5
         , E.paddingXY 0 20
         ]
-        [ E.row
-              ( rowAttrs )
-              [ E.el
-                    [ Font.heavy
-                    , E.paddingXY 10 0
-                    ]
-                    ( E.text "String 1" )
-              , E.el
-                  ( dropdownAttrs )
-                  ( Dropdown.view
-                          "Brand"
-                          model.one.brandFilter
-                          Show.brandToString
-                          ( UpdateOpenBrand 1 )
-                          ( \b -> UpdateSelectedBrand 1 b )
-                          ( UpdateClearBrand 1 )
-                    )
-              , E.el
-                    ( dropdownAttrs )
-                    ( Dropdown.view
-                          "Color"
-                          model.one.colorFilter
-                          Show.colorToString
-                          ( UpdateOpenColor 1 )
-                          ( \c -> UpdateSelectedColor 1 c )
-                          ( UpdateClearColor 1 )
-                    )
-              , E.el
-                    ( dropdownAttrs )
-                    ( Dropdown.view
-                          "Material"
-                          model.one.materialFilter
-                          Show.materialToString
-                          ( UpdateOpenMaterial 1 )
-                          ( \m -> UpdateSelectedMaterial 1 m )
-                          ( UpdateClearMaterial 1 )
-                    )
-              , E.el
-                  [ E.paddingXY 5 0 ]
-                  ( List.length model.one.filteredStrings
-                  |> String.fromInt
-                  |> \n -> E.text (n ++ " Results")
-                  )
-              ]
+        ( filterRow model .one 1 ++ filterRow model .two 2 )
+
+
+--------------------------------------------------------------------------------
+-- Filters
+
+
+filterRow : DisplayModel
+          -> (DisplayModel -> FilteredData)
+          -> Int
+          -> List (E.Element Msg)
+filterRow model selector i =
+    [ E.row
+          ( rowAttrs )
+          [ E.el
+                [ Font.heavy
+                , E.paddingXY 10 0
+                ]
+                ( E.text <| "String " ++ String.fromInt i )
+          , E.el
+                ( dropdownAttrs 150 )
+                ( Dropdown.view
+                      "Brand"
+                      (selector model |> .brandFilter)
+                      Show.brandToString
+                      ( UpdateOpenBrand i )
+                      ( \b -> UpdateSelectedBrand i b )
+                      ( UpdateClearBrand i )
+                )
+          , E.el
+                ( dropdownAttrs 130 )
+                ( Dropdown.view
+                      "Color"
+                      (selector model |> .colorFilter)
+                      Show.colorToString
+                      ( UpdateOpenColor i )
+                      ( \c -> UpdateSelectedColor i c )
+                      ( UpdateClearColor i )
+                )
+          , E.el
+                ( dropdownAttrs 160 )
+                ( Dropdown.view
+                      "Material"
+                      (selector model |> .materialFilter)
+                      Show.materialToString
+                      ( UpdateOpenMaterial i )
+                      ( \m -> UpdateSelectedMaterial i m )
+                      ( UpdateClearMaterial i )
+                )
+          , E.el
+                ( dropdownAttrs 100 )
+                ( Dropdown.view
+                      "Size"
+                      (selector model |> .sizeFilter)
+                      identity
+                      ( UpdateOpenSize i )
+                      ( \s -> UpdateSelectedSize i s )
+                      ( UpdateClearSize i )
+                )
+          , E.el
+                ( dropdownAttrs 300 )
+                ( Dropdown.view
+                      "Strings"
+                      (selector model |> .stringSetFilter)
+                      Show.stringSetToString
+                      ( UpdateOpenStringSet i )
+                      ( \s -> UpdateSelectedStringSet i s )
+                      ( UpdateClearStringSet i )
+                )
+          , clearButton i
+          , E.el
+                [ E.paddingXY 5 0 ]
+                ( List.length (selector model |> .filteredStrings)
+                |> String.fromInt
+                |> \n -> E.text (n ++ " Results")
+                )
+          ]
+    ]
+
+
+clearButton : Int -> E.Element Msg
+clearButton i =
+    Input.button
+        [ E.padding 5
+        , Border.rounded 5
+        , Border.width 1
+        , Background.color <| E.rgb255 238 238 238
         ]
+        { onPress = Just <| UpdateClearAll i
+        , label = E.text "Clear"
+        }
 
 
 rowAttrs : List (E.Attribute Msg)
 rowAttrs =
     [ E.width E.fill
-    , E.spacing 10
+    , E.spacingXY 5 5
     ]
 
 
-dropdownAttrs : List (E.Attribute Msg)
-dropdownAttrs =
-    [ E.width <| E.minimum 175 E.fill
-    ] 
+dropdownAttrs : Int -> List (E.Attribute Msg)
+dropdownAttrs minWidth =
+    [ E.width <| E.minimum minWidth E.fill
+    ]
+
+
+
+--------------------------------------------------------------------------------

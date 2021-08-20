@@ -49,7 +49,7 @@ view title dropdown toString openMsg clickMsg clearMsg =
                     clearOption =
                         E.el
                             ( Events.onClick clearMsg :: optionAttrs )
-                            ( E.text "Clear Selection" )
+                            ( E.text "-- Clear --" )
 
                     viewOption option =
                         E.el

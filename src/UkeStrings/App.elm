@@ -133,13 +133,14 @@ tab active name =
     in
     Input.button
         [ E.paddingXY 7 5
+        , E.width <| E.minimum 140 E.fill
         , Border.widthEach borders
         , Border.roundEach corners
         , Border.color <| E.rgb 0.3 0.3 0.3
         , Background.color background
         ]
         { onPress = Just SwitchTab
-        , label = E.text name
+        , label = E.el [ E.centerX ] (E.text name)
         }
 
 

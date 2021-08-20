@@ -7,7 +7,7 @@ import UkeStrings.Types exposing (..)
 
 
 --------------------------------------------------------------------------------
--- Model
+-- Model / StringSet
 
 
 modelToString : StringSet -> String
@@ -77,6 +77,23 @@ boolToString b =
     else
         "False"
 
+--------------------------------------------------------------------------------
+-- StringSet Short
+
+stringSetToString : StringSet -> String
+stringSetToString s =
+    let
+        f tuning =
+            case tuning of
+                Linear ->
+                    "High G"
+                Reentrant  ->
+                    "Low G"
+    in 
+    "{{model}} {{name}} ({{tuning}})"
+        |> Fmt.namedValue "model" s.modelCode
+        |> Fmt.namedValue "name" s.name
+        |> Fmt.namedValue "tuning" (f s.tuning)
 
 
 --------------------------------------------------------------------------------

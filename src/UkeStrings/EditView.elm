@@ -121,8 +121,9 @@ checkboxSize s b =
 generateButton : E.Element Msg
 generateButton =
     Input.button
-        [ E.padding 10
+        [ E.padding 5
         , Border.width 1
+        , Border.rounded 5
         , Background.color <| E.rgb255 238 238 238
         ]
         { onPress = Just UpdateEditOutput
@@ -133,8 +134,9 @@ generateButton =
 copyButton : E.Element Msg
 copyButton =
     Input.button
-        [ E.padding 10
+        [ E.padding 5
         , Border.width 1
+        , Border.rounded 5
         , Background.color <| E.rgb255 238 238 238
         ]
         { onPress = Just CopyToClipboard

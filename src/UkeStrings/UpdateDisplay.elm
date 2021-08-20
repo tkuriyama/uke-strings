@@ -58,9 +58,12 @@ update msg model =
                 route i model clearColor
             UpdateClearMaterial i ->
                 route i model clearMaterial
+            UpdateClearSize i ->
+                route i model clearSize
+            UpdateClearStringSet i ->
+                route i model clearStringSet
             _ ->
                 model
-
 
 
 --------------------------------------------------------------------------------
@@ -153,7 +156,6 @@ selectStringSet s data  =
 -- Refresh FIlters
 
 
-
 refreshFilters : FilteredData -> FilteredData
 refreshFilters data =
     let
@@ -161,8 +163,9 @@ refreshFilters data =
             data.allStrings
                 |> applyFilter data.brandFilter (.brand)
                 |> applyFilter data.colorFilter (.color)
-                |> applyFilter data.materialFilter  (.material)
-                -- MORE FILTERS
+                |> applyFilter data.materialFilter  .material
+                |> sizeFilter data.sizeFilter
+                |> applyFilter data.stringSetFilter identity
     in
         { data | filteredStrings = filtered }
 
@@ -201,13 +204,6 @@ sizeMatches size s =
             s.sizes.baritone == True
 
 
-stringSetFilter : Dropdown StringSet -> List StringSet -> List StringSet
-stringSetFilter dropdown strings =
-    case dropdown of
-        ShowItem (Just s) ->
-            List.filter (\s_ -> s_ == s) strings
-        _ ->
-            strings
 --------------------------------------------------------------------------------
 -- Clear
 
