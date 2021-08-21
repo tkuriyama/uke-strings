@@ -1,11 +1,14 @@
 module UkeStrings.DisplayView exposing (view)
 
+
 import Element as E
 import Element.Background as Background
 import Element.Border as Border
 import Element.Font as Font
 import Element.Input as Input
 import Html exposing (Html)
+import TypedSvg.Core exposing (Svg)
+import UkeStrings.Chart as Chart
 import UkeStrings.Dropdown as Dropdown
 import UkeStrings.Show as Show
 import UkeStrings.Types exposing (..)
@@ -22,7 +25,18 @@ view model =
         , E.spacing 5
         , E.paddingXY 0 20
         ]
-        (filterRow model .one 1 ++ filterRow model .two 2)
+        [ filterRow model .one 1
+        , filterRow model .two 2
+        , E.row
+            [ E.width E.fill
+            , E.spacing 10
+            , E.alignTop
+            , E.centerX
+            ]
+            [ chart model.chartCfg model.one.filteredStrings |> E.html
+            , chart model.chartCfg model.two.filteredStrings |> E.html
+            ]
+        ]
 
 
 
@@ -34,84 +48,83 @@ filterRow :
     DisplayModel
     -> (DisplayModel -> FilteredData)
     -> Int
-    -> List (E.Element Msg)
+    -> E.Element Msg
 filterRow model selector i =
-    [ E.row
+    E.row
         rowAttrs
         [ E.el
-            [ Font.heavy
-            , E.paddingXY 10 0
-            ]
-            (E.text <| "String " ++ String.fromInt i)
+              [ Font.heavy
+              , E.paddingXY 10 0
+              ]
+              (E.text <| "String " ++ String.fromInt i)
         , E.el
-            (dropdownAttrs 150)
-            (Dropdown.view
-                "Brand"
-                (selector model |> .brandFilter)
-                Show.brandToString
-                (UpdateOpen "Brand" i)
-                (\b -> UpdateSelectedBrand i b)
-                (UpdateClear "Brand" i)
-            )
+              (dropdownAttrs 150)
+              (Dropdown.view
+                   "Brand"
+                   (selector model |> .brandFilter)
+                   Show.brandToString
+                   (UpdateOpen "Brand" i)
+                   (\b -> UpdateSelectedBrand i b)
+                   (UpdateClear "Brand" i)
+              )
         , E.el
-            (dropdownAttrs 130)
-            (Dropdown.view
-                "Color"
-                (selector model |> .colorFilter)
-                Show.colorToString
-                (UpdateOpen "Color" i)
-                (\c -> UpdateSelectedColor i c)
-                (UpdateClear "Color" i)
-            )
+              (dropdownAttrs 130)
+              (Dropdown.view
+                   "Color"
+                   (selector model |> .colorFilter)
+                   Show.colorToString
+                   (UpdateOpen "Color" i)
+                   (\c -> UpdateSelectedColor i c)
+                   (UpdateClear "Color" i)
+              )
         , E.el
-            (dropdownAttrs 160)
-            (Dropdown.view
-                "Material"
-                (selector model |> .materialFilter)
-                Show.materialToString
-                (UpdateOpen "Material" i)
-                (\m -> UpdateSelectedMaterial i m)
-                (UpdateClear "Material" i)
-            )
+              (dropdownAttrs 160)
+              (Dropdown.view
+                   "Material"
+                   (selector model |> .materialFilter)
+                   Show.materialToString
+                   (UpdateOpen "Material" i)
+                   (\m -> UpdateSelectedMaterial i m)
+                   (UpdateClear "Material" i)
+              )
         , E.el
-            (dropdownAttrs 100)
-            (Dropdown.view
-                "Size"
-                (selector model |> .sizeFilter)
-                identity
-                (UpdateOpen "Size" i)
-                (\s -> UpdateSelectedSize i s)
-                (UpdateClear "Size" i)
-            )
+              (dropdownAttrs 100)
+              (Dropdown.view
+                   "Size"
+                   (selector model |> .sizeFilter)
+                   identity
+                   (UpdateOpen "Size" i)
+                   (\s -> UpdateSelectedSize i s)
+                   (UpdateClear "Size" i)
+              )
         , E.el
-            (dropdownAttrs 140)
-            (Dropdown.view
-                "Tuning"
-                (selector model |> .tuningFilter)
-                Show.tuningToString
-                (UpdateOpen "Tuning" i)
-                (\s -> UpdateSelectedTuning i s)
-                (UpdateClear "Tuning" i)
-            )
+              (dropdownAttrs 140)
+              (Dropdown.view
+                   "Tuning"
+                   (selector model |> .tuningFilter)
+                   Show.tuningToString
+                   (UpdateOpen "Tuning" i)
+                   (\s -> UpdateSelectedTuning i s)
+                   (UpdateClear "Tuning" i)
+              )
         , E.el
-            (dropdownAttrs 250)
-            (Dropdown.view
-                "Strings"
-                (selector model |> .stringSetFilter)
-                Show.stringSetToString
-                (UpdateOpen "StringSet" i)
-                (\s -> UpdateSelectedStringSet i s)
-                (UpdateClear "StringSet" i)
-            )
+              (dropdownAttrs 250)
+              (Dropdown.view
+                   "Strings"
+                   (selector model |> .stringSetFilter)
+                   Show.stringSetToString
+                   (UpdateOpen "StringSet" i)
+                   (\s -> UpdateSelectedStringSet i s)
+                   (UpdateClear "StringSet" i)
+              )
         , clearButton i
         , E.el
-            [ E.paddingXY 5 0 ]
-            (List.length (selector model |> .filteredStrings)
+              [ E.paddingXY 5 0 ]
+              (List.length (selector model |> .filteredStrings)
                 |> String.fromInt
                 |> (\n -> E.text (n ++ " Results"))
             )
         ]
-    ]
 
 
 clearButton : Int -> E.Element Msg
@@ -140,5 +153,10 @@ dropdownAttrs minWidth =
     ]
 
 
-
 --------------------------------------------------------------------------------
+-- Chart
+
+
+chart : ChartCfg -> List StringSet -> Svg Msg
+chart cfg strings =
+    Chart.render cfg []

@@ -1,8 +1,8 @@
 module UkeStrings.Types exposing (..)
 
+
+import DataGrid.ChartConfig as Cfg
 import UkeStrings.Dropdown exposing (Dropdown)
-
-
 
 --------------------------------------------------------------------------------
 -- Program Model, Msg
@@ -26,9 +26,14 @@ type PageModel
     | Edit EditModel String
 
 
+type alias ChartCfg =
+    Cfg.StdChartCfg String
+
+
 type alias DisplayModel =
     { one : FilteredData
     , two : FilteredData
+    , chartCfg : ChartCfg
     }
 
 

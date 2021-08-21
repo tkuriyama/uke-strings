@@ -2,6 +2,7 @@ port module UkeStrings.App exposing (main)
 
 import Browser
 import Browser.Events exposing (onResize)
+import DataGrid.ChartConfig as Cfg
 import Element as E
 import Element.Background as Background
 import Element.Border as Border
@@ -55,6 +56,7 @@ defaultDisplayModel =
     Display
         { one = defaultFilteredData
         , two = defaultFilteredData
+        , chartCfg = defaultChartCfg
         }
 
 
@@ -75,6 +77,63 @@ defaultEditModel : PageModel
 defaultEditModel =
     Edit (NE.head Data.data) ""
 
+
+defaultChartCfg : ChartCfg
+defaultChartCfg =
+    let
+        defaultStdChartCfg =
+            Cfg.defaultStdChartCfg
+    in 
+    { defaultStdChartCfg
+        | pad = paddingCfg
+        , chartSpec = lineChartSpec
+        , dataAxisTicks = 10
+        , showLabels = False
+        , labelFormatter = identity
+        , tooltips = tooltipsCfg
+    }
+
+
+paddingCfg : Cfg.Padding
+paddingCfg =
+    let
+        defaultPadding =
+            Cfg.defaultPadding
+    in 
+    { defaultPadding
+        | right = 80
+    }
+
+
+tooltipsCfg : Cfg.Tooltips
+tooltipsCfg =
+    let
+        defaultTooltips =
+            Cfg.defaultTooltips
+    in
+    { defaultTooltips
+        | showTooltips = False
+        , showLargeTooltips = False
+        , showHoverTooltips = True
+        , hoverTooltipSize = 16
+    }
+
+
+lineChartSpec : Cfg.ChartSpec
+lineChartSpec =
+    let
+        defaultLineChartSpec =
+            Cfg.defaultLineChartSpec
+    in 
+    case defaultLineChartSpec of
+        Cfg.LineChartSpec d ->
+            Cfg.LineChartSpec
+                { d
+                    | lineNameSize = 14
+                }
+
+        _ ->
+            defaultLineChartSpec
 
 
 --------------------------------------------------------------------------------
