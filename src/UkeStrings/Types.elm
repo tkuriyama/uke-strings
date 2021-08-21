@@ -106,6 +106,7 @@ type Brand
     | Fremont
     | GHS
     | Kamaka
+    | Kanilea
     | KoAloha
     | Koolau
     | LivingWater

@@ -90,6 +90,7 @@ stringSetToString s =
         |> Fmt.namedValue "name" s.name
 
 
+
 --------------------------------------------------------------------------------
 -- Brands
 
@@ -102,6 +103,7 @@ brandRecords =
     , ( Fremont, "Fremont", "Fremont" )
     , ( GHS, "GHS", "GHS" )
     , ( Kamaka, "Kamaka", "Kamaka" )
+    , ( Kanilea, "Kanile'a", "Kanilea" )
     , ( KoAloha, "Ko'Aloha", "KoAloha" )
     , ( Koolau, "Ko'olau", "Koolau" )
     , ( LivingWater, "Living Water", "LivingWater" )

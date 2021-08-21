@@ -88,7 +88,7 @@ filterRow model selector i =
             (Dropdown.view
                 "Tuning"
                 (selector model |> .tuningFilter)
-                (Show.tuningToString)
+                Show.tuningToString
                 (UpdateOpen "Tuning" i)
                 (\s -> UpdateSelectedTuning i s)
                 (UpdateClear "Tuning" i)

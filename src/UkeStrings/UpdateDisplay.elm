@@ -34,6 +34,7 @@ update msg model =
     case msg of
         UpdateOpen s i ->
             route i model (open s)
+
         UpdateSelectedBrand i b ->
             route i model <| selectBrand b
 
@@ -66,6 +67,7 @@ update msg model =
 --------------------------------------------------------------------------------
 -- Open
 
+
 open : String -> FilteredData -> FilteredData
 open field data =
     let
@@ -73,23 +75,30 @@ open field data =
             List.map selector data.filteredStrings
                 |> Utils.unique
     in
-        case field of
-            "Brand" ->
-                { data | brandFilter = SelectItem <| f .brand }
-            "Color" ->
-                { data | colorFilter = SelectItem <| f .color }
-            "Material" ->
-                { data | materialFilter = SelectItem <| f .material }
-            "Size" ->
-                let
-                    sizes =
-                        List.map .sizes data.filteredStrings
-                            |> Utils.uniqueSizes
-                in { data | sizeFilter = SelectItem sizes }
-            "Tuning" ->
-                { data | tuningFilter = SelectItem <| f .tuning }
-            _ ->
-                { data | stringSetFilter = SelectItem <| f identity }
+    case field of
+        "Brand" ->
+            { data | brandFilter = SelectItem <| f .brand }
+
+        "Color" ->
+            { data | colorFilter = SelectItem <| f .color }
+
+        "Material" ->
+            { data | materialFilter = SelectItem <| f .material }
+
+        "Size" ->
+            let
+                sizes =
+                    List.map .sizes data.filteredStrings
+                        |> Utils.uniqueSizes
+            in
+            { data | sizeFilter = SelectItem sizes }
+
+        "Tuning" ->
+            { data | tuningFilter = SelectItem <| f .tuning }
+
+        _ ->
+            { data | stringSetFilter = SelectItem <| f identity }
+
 
 
 --------------------------------------------------------------------------------
@@ -217,16 +226,20 @@ clear field data =
             case field of
                 "Brand" ->
                     { data | brandFilter = ShowItem Nothing }
+
                 "Color" ->
                     { data | colorFilter = ShowItem Nothing }
+
                 "Material" ->
                     { data | materialFilter = ShowItem Nothing }
+
                 "Size" ->
                     { data | sizeFilter = ShowItem Nothing }
+
                 "Tuning" ->
                     { data | tuningFilter = ShowItem Nothing }
+
                 _ ->
                     { data | stringSetFilter = ShowItem Nothing }
     in
-        data_ |> refreshFilters
-
+    data_ |> refreshFilters
