@@ -77,23 +77,17 @@ boolToString b =
     else
         "False"
 
+
+
 --------------------------------------------------------------------------------
 -- StringSet Short
 
+
 stringSetToString : StringSet -> String
 stringSetToString s =
-    let
-        f tuning =
-            case tuning of
-                Linear ->
-                    "High G"
-                Reentrant  ->
-                    "Low G"
-    in 
-    "{{model}} {{name}} ({{tuning}})"
+    "{{model}} {{name}}"
         |> Fmt.namedValue "model" s.modelCode
         |> Fmt.namedValue "name" s.name
-        |> Fmt.namedValue "tuning" (f s.tuning)
 
 
 --------------------------------------------------------------------------------
@@ -240,8 +234,10 @@ strLookup extract xs default x =
         |> Maybe.map extract
         |> Maybe.withDefault default
 
-first : (a, b, c) -> a
-first (a, b, c) = a
+
+first : ( a, b, c ) -> a
+first ( a, b, c ) =
+    a
 
 
 second : ( a, b, c ) -> b

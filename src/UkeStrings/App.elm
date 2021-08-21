@@ -11,13 +11,14 @@ import Html exposing (Html)
 import List.Nonempty as NE
 import UkeStrings.Data as Data
 import UkeStrings.DisplayView as DisplayView
-import UkeStrings.Dropdown exposing (Dropdown (..))
+import UkeStrings.Dropdown exposing (Dropdown(..))
 import UkeStrings.EditView as EditView
 import UkeStrings.Show as Show
 import UkeStrings.Types exposing (..)
 import UkeStrings.UpdateDisplay as UpdateDisplay
 import UkeStrings.UpdateEdit as UpdateEdit
 import UkeStrings.Utils as Utils
+
 
 
 --------------------------------------------------------------------------------
@@ -51,9 +52,10 @@ init flags =
 
 defaultDisplayModel : PageModel
 defaultDisplayModel =
-    Display { one = defaultFilteredData
-            , two = defaultFilteredData
-            }
+    Display
+        { one = defaultFilteredData
+        , two = defaultFilteredData
+        }
 
 
 defaultFilteredData : FilteredData
@@ -63,6 +65,7 @@ defaultFilteredData =
     , materialFilter = ShowItem Nothing
     , sizeFilter = ShowItem Nothing
     , stringSetFilter = ShowItem Nothing
+    , tuningFilter = ShowItem Nothing
     , allStrings = Data.data |> NE.toList
     , filteredStrings = Data.data |> NE.toList
     }
@@ -83,26 +86,28 @@ view model =
     let
         active =
             getActivePageModel model.pageModel
-    in E.layout
+    in
+    E.layout
         [ Font.family [ Font.typeface "Consolas", Font.sansSerif ]
         , Font.size 18
         , E.padding 5
         ]
-        ( E.column
-              [ E.centerX
-              , E.spacing 10
-              ]
-              [ E.row
-                    [ E.centerX ]
-                    [ tab active "Viewer"
-                    , tab active "Generator"
-                    ]
-              , case model.pageModel of
-                    Display m ->
-                        DisplayView.view m
-                    Edit m s ->
-                        EditView.view m s
-              ]
+        (E.column
+            [ E.centerX
+            , E.spacing 10
+            ]
+            [ E.row
+                [ E.centerX ]
+                [ tab active "Viewer"
+                , tab active "Generator"
+                ]
+            , case model.pageModel of
+                Display m ->
+                    DisplayView.view m
+
+                Edit m s ->
+                    EditView.view m s
+            ]
         )
 
 
@@ -111,6 +116,7 @@ getActivePageModel model =
     case model of
         Display _ ->
             "Viewer"
+
         Edit _ _ ->
             "Generator"
 
@@ -144,6 +150,7 @@ tab active name =
         }
 
 
+
 --------------------------------------------------------------------------------
 -- Update
 
@@ -166,8 +173,10 @@ update msg model =
             case model.pageModel of
                 Display _ ->
                     ( { model | pageModel = defaultEditModel }, Cmd.none )
+
                 Edit _ _ ->
                     ( { model | pageModel = defaultDisplayModel }, Cmd.none )
+
         NoOp ->
             ( model, Cmd.none )
 
@@ -200,6 +209,7 @@ updatePageModel msg model =
                     ( { model | pageModel = Edit pageModel_ s }
                     , Cmd.none
                     )
+
 
 
 --------------------------------------------------------------------------------

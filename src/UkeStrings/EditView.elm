@@ -42,26 +42,26 @@ view model output =
             , checkbox "Wound" UpdateEditWoundStrings model.woundStrings
             ]
         , E.row
-              (rowAttrs ++ [ E.width E.fill ])
-              [ textInput "Model" UpdateEditModel model.modelCode
-              , textInput "Name" UpdateEditName model.name
-              ]
+            (rowAttrs ++ [ E.width E.fill ])
+            [ textInput "Model" UpdateEditModel model.modelCode
+            , textInput "Name" UpdateEditName model.name
+            ]
         , E.row
-              (rowAttrs ++ [ E.width E.fill ])
-              [ textInput "Url" UpdateEditUrl model.url
-              ]
+            (rowAttrs ++ [ E.width E.fill ])
+            [ textInput "Url" UpdateEditUrl model.url
+            ]
         , stringRow "1" model.strings.one
         , stringRow "2" model.strings.two
         , stringRow "3" model.strings.three
         , stringRow "4" model.strings.four
         , E.row
-              (rowAttrs ++ [ E.centerX, E.width E.fill, E.padding 10 ])
-              [ generateButton
-              , copyButton
-              ]
+            (rowAttrs ++ [ E.centerX, E.width E.fill, E.padding 10 ])
+            [ generateButton
+            , copyButton
+            ]
         , E.row
-              (rowAttrs ++ [ E.padding 20 ])
-              [ outputArea output ]
+            (rowAttrs ++ [ E.padding 20 ])
+            [ outputArea output ]
         ]
 
 

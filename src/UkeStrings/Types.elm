@@ -1,7 +1,7 @@
 module UkeStrings.Types exposing (..)
 
-
 import UkeStrings.Dropdown exposing (Dropdown)
+
 
 
 --------------------------------------------------------------------------------
@@ -48,26 +48,20 @@ type Msg
     | UpdateEditUrl String
     | UpdateEditWoundStrings Bool
     | UpdateEditOutput
-    | UpdateOpenBrand Int
-    | UpdateOpenColor Int
-    | UpdateOpenMaterial Int
-    | UpdateOpenSize  Int
-    | UpdateOpenStringSet Int
+    | UpdateOpen String Int
     | UpdateSelectedBrand Int Brand
     | UpdateSelectedColor Int StringColor
     | UpdateSelectedMaterial Int Material
     | UpdateSelectedSize Int String
+    | UpdateSelectedTuning Int Tuning
     | UpdateSelectedStringSet Int StringSet
     | UpdateClearAll Int
-    | UpdateClearBrand Int
-    | UpdateClearColor Int
-    | UpdateClearMaterial Int
-    | UpdateClearSize Int
-    | UpdateClearStringSet Int
+    | UpdateClear String Int
     | CopyToClipboard
     | SwitchTab
     | WindowResize ( Float, Float )
     | NoOp
+
 
 
 --------------------------------------------------------------------------------
@@ -79,10 +73,12 @@ type alias FilteredData =
     , colorFilter : Dropdown StringColor
     , materialFilter : Dropdown Material
     , sizeFilter : Dropdown String
+    , tuningFilter : Dropdown Tuning
     , stringSetFilter : Dropdown StringSet
     , allStrings : List StringSet
     , filteredStrings : List StringSet
     }
+
 
 
 --------------------------------------------------------------------------------

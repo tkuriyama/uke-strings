@@ -1,11 +1,10 @@
 module UkeStrings.UpdateEdit exposing (update)
 
-
 import UkeStrings.Types exposing (..)
 
 
---------------------------------------------------------------------------------
 
+--------------------------------------------------------------------------------
 
 
 update : Msg -> EditModel -> EditModel
@@ -75,4 +74,3 @@ updateEditStrings strings pos string =
 
         _ ->
             { strings | four = string }
-
