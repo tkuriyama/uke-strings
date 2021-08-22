@@ -359,9 +359,9 @@ data =
           , name = "Low-G"
           , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
           , strings =
-                { one = { diameter = 0.0, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.0, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.0, pitch = C, tension = 0.0 }
+                { one = { diameter = 0.062, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.0739, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.081, pitch = C, tension = 0.0 }
                 , four = { diameter = 0.0909, pitch = G, tension = 0.0 }
                 }
           , tuning = Linear

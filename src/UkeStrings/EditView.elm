@@ -207,4 +207,3 @@ tensionText pos string =
         (\t -> UpdateEditString pos { string | tension = t })
         ( 2.8, 7.0 )
         string.tension
-

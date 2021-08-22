@@ -1,8 +1,9 @@
 module UkeStrings.Types exposing (..)
 
-
 import DataGrid.ChartConfig as Cfg
 import UkeStrings.Dropdown exposing (Dropdown)
+
+
 
 --------------------------------------------------------------------------------
 -- Program Model, Msg
@@ -41,13 +42,16 @@ type alias DisplayModel =
     , chartControls : ChartControls
     }
 
+
 type alias ChartControls =
-    { stats : { oneDiameter : Bool
-              , twoDiameter : Bool
-              , oneTension : Bool
-              , twoTension : Bool
-              }
-    } 
+    { stats :
+        { oneDiameter : Bool
+        , twoDiameter : Bool
+        , oneTension : Bool
+        , twoTension : Bool
+        }
+    }
+
 
 type alias EditModel =
     StringSet

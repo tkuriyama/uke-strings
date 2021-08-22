@@ -11,7 +11,7 @@ Strong Low-G,BS-LG,Dark,Fluorocarbon,Linear,,,,x,,0.0224,0.0291,0.0319,0.0358,0.
 Fat,BF,Dark,Fluorocarbon,Reentrant,,,,x,,0.0244,0.0291,0.0319,0.026,0.0620,0.0739,0.0810,0.0660,http://worthc.to/english/w_strings.html
 Fat Low-G,BF-LG,Dark,Fluorocarbon,Linear,,,,x,,0.0244,0.0291,0.0319,0.0358,0.0620,0.0739,0.0810,0.0909,http://worthc.to/english/w_strings.html
 Baritone,B-B,Dark,Fluorocarbon,Linear,,,,,x,0.0244,0.0291,0.0319,0.0358,0.0620,0.0739,0.0810,0.0909,http://worthc.to/english/w_strings.html
-Low-G,B-LG,Dark,Fluorocarbon,Linear,,,,x,,,,,0.0358,0.0000,0.0000,0.0000,0.0909,http://worthc.to/english/w_strings.html
+Low-G,B-LG,Dark,Fluorocarbon,Linear,,,,x,,0.0244,0.0291,0.0319,0.0358,0.0620,0.0739,0.0810,0.0909,http://worthc.to/english/w_strings.html
 Light,CL,Clear,Fluorocarbon,Reentrant,,x,x,,,0.0185,0.026,0.0291,0.0205,0.0470,0.0660,0.0739,0.0521,http://worthc.to/english/w_strings.html
 Light Low-G,CL-LG,Clear,Fluorocarbon,Linear,,x,x,,,0.0185,0.026,0.0291,0.0358,0.0470,0.0660,0.0739,0.0909,http://worthc.to/english/w_strings.html
 Light Low-G ,CL-LGHD,Clear,Fluorocarbon,Linear,,x,x,,,0.0185,0.026,0.0291,0.0358,0.0470,0.0660,0.0739,0.0909,http://worthc.to/english/w_strings.html

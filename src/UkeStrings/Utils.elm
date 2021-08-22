@@ -66,15 +66,18 @@ printWidth : Int -> String -> String
 printWidth n s =
     if String.length s == n then
         s
+
     else if String.length s < n then
-             s ++ String.repeat (n - String.length s) nbsp
-         else
-             String.left (n - 3) s ++ "..."
+        s ++ String.repeat (n - String.length s) nbsp
+
+    else
+        String.left (n - 3) s ++ "..."
 
 
 nbsp : String
 nbsp =
     String.fromChar (Char.fromCode 160)
+
 
 
 --------------------------------------------------------------------------------
@@ -83,14 +86,16 @@ nbsp =
 
 transpose : List (List a) -> List (List a)
 transpose xs =
-  let
-      heads =
-          List.map (List.take 1) xs
-              |> List.concat
-      tails =
-          List.map (List.drop 1) xs
-  in
-      if List.isEmpty heads then
-          []
-      else
-          heads :: (transpose tails)
+    let
+        heads =
+            List.map (List.take 1) xs
+                |> List.concat
+
+        tails =
+            List.map (List.drop 1) xs
+    in
+    if List.isEmpty heads then
+        []
+
+    else
+        heads :: transpose tails

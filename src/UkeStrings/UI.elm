@@ -1,6 +1,5 @@
 module UkeStrings.UI exposing (..)
 
-
 import Element as E
 import Element.Background as Background
 import Element.Border as Border

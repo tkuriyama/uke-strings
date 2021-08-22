@@ -5,9 +5,9 @@ The source cannot currently cannot be installed, due to a
 dependency conflict with `elm-visualization`.
 
 Source
-https://github.com/jxxcarlson/elm-stat/blob/5.0.0/src/Stat.elm
--}
+<https://github.com/jxxcarlson/elm-stat/blob/5.0.0/src/Stat.elm>
 
+-}
 
 --------------------------------------------------------------------------------
 

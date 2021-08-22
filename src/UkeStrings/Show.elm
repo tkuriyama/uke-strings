@@ -6,6 +6,7 @@ import UkeStrings.Types exposing (..)
 import UkeStrings.Utils as Utils
 
 
+
 --------------------------------------------------------------------------------
 -- Model / StringSet
 
@@ -171,16 +172,43 @@ materialToTypeString =
     strLookup third materialRecords "Other"
 
 
+
 --------------------------------------------------------------------------------
 -- Sizes Short
 
+
 sizesToString : Sizes -> String
-sizesToString szs = 
+sizesToString szs =
     "{{s}}{{c}}{{t}}{{b}}"
-        |> Fmt.namedValue "s" (if szs.soprano then "S" else Utils.nbsp)
-        |> Fmt.namedValue "c" (if szs.concert then "C" else Utils.nbsp)
-        |> Fmt.namedValue "t" (if szs.tenor then "T" else Utils.nbsp)
-        |> Fmt.namedValue "b" (if szs.baritone then "B" else Utils.nbsp)
+        |> Fmt.namedValue "s"
+            (if szs.soprano then
+                "S"
+
+             else
+                Utils.nbsp
+            )
+        |> Fmt.namedValue "c"
+            (if szs.concert then
+                "C"
+
+             else
+                Utils.nbsp
+            )
+        |> Fmt.namedValue "t"
+            (if szs.tenor then
+                "T"
+
+             else
+                Utils.nbsp
+            )
+        |> Fmt.namedValue "b"
+            (if szs.baritone then
+                "B"
+
+             else
+                Utils.nbsp
+            )
+
 
 
 --------------------------------------------------------------------------------

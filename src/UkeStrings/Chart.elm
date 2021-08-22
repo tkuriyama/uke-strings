@@ -1,6 +1,5 @@
 module UkeStrings.Chart exposing (render)
 
-
 import Color exposing (Color)
 import DataGrid.ChartConfig as Cfg
 import DataGrid.Internal.StdChart as StdChart

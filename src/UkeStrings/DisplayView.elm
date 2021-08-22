@@ -1,6 +1,5 @@
 module UkeStrings.DisplayView exposing (view)
 
-
 import Element as E
 import Element.Background as Background
 import Element.Border as Border
@@ -9,12 +8,13 @@ import Element.Input as Input
 import Html exposing (Html)
 import TypedSvg.Core exposing (Svg)
 import UkeStrings.Chart as Chart
-import UkeStrings.UI as UI
 import UkeStrings.Dropdown as Dropdown
-import UkeStrings.Statistics as Statistics
 import UkeStrings.Show as Show
+import UkeStrings.Statistics as Statistics
 import UkeStrings.Types exposing (..)
+import UkeStrings.UI as UI
 import UkeStrings.Utils as Utils
+
 
 
 --------------------------------------------------------------------------------
@@ -31,58 +31,60 @@ view model =
         [ filterRow model .one 1
         , filterRow model .two 2
         , E.row
-            ( chartRowAttrs )
+            chartRowAttrs
             [ chart
-                  model.chartCfg
-                  model.one.filteredStrings
-                  "Set 1 Diameter"
-                  (.diameter, "(mm)")
-                  ( (UpdateChartControlStats "OneDiameter")
-                  , model.chartControls.stats.oneDiameter
-                  )
+                model.chartCfg
+                model.one.filteredStrings
+                "Set 1 Diameter"
+                ( .diameter, "(mm)" )
+                ( UpdateChartControlStats "OneDiameter"
+                , model.chartControls.stats.oneDiameter
+                )
             , chart
                 model.chartCfg
                 model.two.filteredStrings
                 "Set 2 Diameter"
-                (.diameter, "(mm)")
-                ( (UpdateChartControlStats "TwoDiameter")
+                ( .diameter, "(mm)" )
+                ( UpdateChartControlStats "TwoDiameter"
                 , model.chartControls.stats.twoDiameter
                 )
             ]
         , E.row
-            ( chartRowAttrs )
+            chartRowAttrs
             [ chart
-                  model.chartCfg
-                  model.one.filteredStrings
-                  "Set 1 Tension"
-                  (.tension, "(kg)")
-                  ( (UpdateChartControlStats "OneTension")
-                  , model.chartControls.stats.oneTension
-                  )
+                model.chartCfg
+                model.one.filteredStrings
+                "Set 1 Tension"
+                ( .tension, "(kg)" )
+                ( UpdateChartControlStats "OneTension"
+                , model.chartControls.stats.oneTension
+                )
             , chart
                 model.chartCfg
                 model.two.filteredStrings
                 "Set 2 Tension"
-                (.tension, "(kg)")
-                ( (UpdateChartControlStats "TwoTension")
+                ( .tension, "(kg)" )
+                ( UpdateChartControlStats "TwoTension"
                 , model.chartControls.stats.twoTension
                 )
             ]
         , E.row
-            ( chartRowAttrs )
-             [ printStringSets model.one.filteredStrings
-             , printStringSets model.two.filteredStrings
-             ]
+            chartRowAttrs
+            [ printStringSets model.one.filteredStrings
+            , printStringSets model.two.filteredStrings
+            ]
         ]
 
+
 chartRowAttrs : List (E.Attribute Msg)
-chartRowAttrs = 
+chartRowAttrs =
     [ E.width E.fill
     , E.spacing 10
     , E.alignTop
     , E.centerX
     , E.paddingXY 0 10
     ]
+
 
 
 --------------------------------------------------------------------------------
@@ -98,74 +100,74 @@ filterRow model selector i =
     E.row
         rowAttrs
         [ E.el
-              [ Font.heavy
-              , E.paddingXY 10 0
-              ]
-              (E.text <| "Set " ++ String.fromInt i)
+            [ Font.heavy
+            , E.paddingXY 10 0
+            ]
+            (E.text <| "Set " ++ String.fromInt i)
         , E.el
-              (dropdownAttrs 150)
-              (Dropdown.view
-                   "Brand"
-                   (selector model |> .brandFilter)
-                   Show.brandToString
-                   (UpdateOpen "Brand" i)
-                   (\b -> UpdateSelectedBrand i b)
-                   (UpdateClear "Brand" i)
-              )
+            (dropdownAttrs 150)
+            (Dropdown.view
+                "Brand"
+                (selector model |> .brandFilter)
+                Show.brandToString
+                (UpdateOpen "Brand" i)
+                (\b -> UpdateSelectedBrand i b)
+                (UpdateClear "Brand" i)
+            )
         , E.el
-              (dropdownAttrs 130)
-              (Dropdown.view
-                   "Color"
-                   (selector model |> .colorFilter)
-                   Show.colorToString
-                   (UpdateOpen "Color" i)
-                   (\c -> UpdateSelectedColor i c)
-                   (UpdateClear "Color" i)
-              )
+            (dropdownAttrs 130)
+            (Dropdown.view
+                "Color"
+                (selector model |> .colorFilter)
+                Show.colorToString
+                (UpdateOpen "Color" i)
+                (\c -> UpdateSelectedColor i c)
+                (UpdateClear "Color" i)
+            )
         , E.el
-              (dropdownAttrs 160)
-              (Dropdown.view
-                   "Material"
-                   (selector model |> .materialFilter)
-                   Show.materialToString
-                   (UpdateOpen "Material" i)
-                   (\m -> UpdateSelectedMaterial i m)
-                   (UpdateClear "Material" i)
-              )
+            (dropdownAttrs 160)
+            (Dropdown.view
+                "Material"
+                (selector model |> .materialFilter)
+                Show.materialToString
+                (UpdateOpen "Material" i)
+                (\m -> UpdateSelectedMaterial i m)
+                (UpdateClear "Material" i)
+            )
         , E.el
-              (dropdownAttrs 100)
-              (Dropdown.view
-                   "Size"
-                   (selector model |> .sizeFilter)
-                   identity
-                   (UpdateOpen "Size" i)
-                   (\s -> UpdateSelectedSize i s)
-                   (UpdateClear "Size" i)
-              )
+            (dropdownAttrs 100)
+            (Dropdown.view
+                "Size"
+                (selector model |> .sizeFilter)
+                identity
+                (UpdateOpen "Size" i)
+                (\s -> UpdateSelectedSize i s)
+                (UpdateClear "Size" i)
+            )
         , E.el
-              (dropdownAttrs 140)
-              (Dropdown.view
-                   "Tuning"
-                   (selector model |> .tuningFilter)
-                   Show.tuningToString
-                   (UpdateOpen "Tuning" i)
-                   (\s -> UpdateSelectedTuning i s)
-                   (UpdateClear "Tuning" i)
-              )
+            (dropdownAttrs 140)
+            (Dropdown.view
+                "Tuning"
+                (selector model |> .tuningFilter)
+                Show.tuningToString
+                (UpdateOpen "Tuning" i)
+                (\s -> UpdateSelectedTuning i s)
+                (UpdateClear "Tuning" i)
+            )
         , E.el
-              (dropdownAttrs 250)
-              (Dropdown.view
-                   "Strings"
-                   (selector model |> .stringSetFilter)
-                   Show.stringSetToString
-                   (UpdateOpen "StringSet" i)
-                   (\s -> UpdateSelectedStringSet i s)
-                   (UpdateClear "StringSet" i)
-              )
+            (dropdownAttrs 250)
+            (Dropdown.view
+                "Strings"
+                (selector model |> .stringSetFilter)
+                Show.stringSetToString
+                (UpdateOpen "StringSet" i)
+                (\s -> UpdateSelectedStringSet i s)
+                (UpdateClear "StringSet" i)
+            )
         , clearButton i
         , E.el
-              [ E.paddingXY 5 0 ]
-              (List.length (selector model |> .filteredStrings)
+            [ E.paddingXY 5 0 ]
+            (List.length (selector model |> .filteredStrings)
                 |> String.fromInt
                 |> (\n -> E.text (n ++ " Results"))
             )
@@ -198,106 +200,118 @@ dropdownAttrs minWidth =
     ]
 
 
+
 --------------------------------------------------------------------------------
 -- Chart
 
 
-type alias Unit = String
+type alias Unit =
+    String
 
 
-chart : ChartCfg
-      -> List StringSet
-      -> String
-      -> ((UkeString -> Float), Unit)
-      -> ((Bool -> Msg), Bool)
-      -> E.Element Msg
-chart cfg stringSets title selectPair (statControlMsg, showStats) =
+chart :
+    ChartCfg
+    -> List StringSet
+    -> String
+    -> ( UkeString -> Float, Unit )
+    -> ( Bool -> Msg, Bool )
+    -> E.Element Msg
+chart cfg stringSets title selectPair ( statControlMsg, showStats ) =
     let
         body =
             if showStats then
                 stringSetsToStats stringSets selectPair
                     |> Chart.render cfg
                     |> E.html
+
             else if List.length stringSets <= 10 then
                 List.map (stringSetToSeries selectPair) stringSets
                     |> Chart.render cfg
                     |> E.html
+
             else
                 E.el
                     [ E.width E.fill
-                    , E.centerX ]
-                    ( E.text "Filter to <= 10 string sets, or toggle \"SUmmary Statistics\"." )
+                    , E.centerX
+                    ]
+                    (E.text "Filter to <= 10 string sets, or toggle \"SUmmary Statistics\".")
     in
-        E.column
-            [ E.width E.fill
-            , E.centerX
-            , E.alignTop
-            , E.spacing 5
+    E.column
+        [ E.width E.fill
+        , E.centerX
+        , E.alignTop
+        , E.spacing 5
+        ]
+        [ E.row
+            [ E.spacing 5
             ]
-            [ E.row
-                  [ E.spacing 5
-                  ]
-                  [ E.el
-                        [ Font.heavy
-                        ]
-                        ( E.text <| title  ++ " | " )
-                  , checkbox
-                      "Summary Statistics"
-                      statControlMsg
-                      showStats
-                  ]
-            , body
+            [ E.el
+                [ Font.heavy
+                ]
+                (E.text <| title ++ " | ")
+            , checkbox
+                "Summary Statistics"
+                statControlMsg
+                showStats
             ]
+        , body
+        ]
 
 
-stringSetToSeries : ((UkeString -> Float), Unit)
-                  -> StringSet
-                  -> ChartSeries
-stringSetToSeries (selectFeature, unit) stringSet =
+stringSetToSeries :
+    ( UkeString -> Float, Unit )
+    -> StringSet
+    -> ChartSeries
+stringSetToSeries ( selectFeature, unit ) stringSet =
     let
         strings =
             stringSet.strings
 
-        f (pos, selectString) =
+        f ( pos, selectString ) =
             ( "String " ++ pos ++ " " ++ unit
             , selectFeature (selectString strings)
             )
     in
     ( stringSet.modelCode ++ " " ++ stringSet.name
-    , List.map f [ ("1", .one), ("2", .two), ("3", .three), ("4", .four) ]
+    , List.map f [ ( "1", .one ), ( "2", .two ), ( "3", .three ), ( "4", .four ) ]
     )
+
 
 
 --------------------------------------------------------------------------------
 -- Statistics
 
-stringSetsToStats : List StringSet
-                  -> ((UkeString -> Float), Unit)
-                  -> List ChartSeries
-stringSetsToStats stringSets (selectFeature, unit) =
+
+stringSetsToStats :
+    List StringSet
+    -> ( UkeString -> Float, Unit )
+    -> List ChartSeries
+stringSetsToStats stringSets ( selectFeature, unit ) =
     List.map (flatten selectFeature) stringSets
-            |> Utils.transpose
-            |> genStats unit
+        |> Utils.transpose
+        |> genStats unit
 
 
 genStats : Unit -> List (List Float) -> List ChartSeries
 genStats unit m =
     let
-        f (title, condense) =
+        f ( title, condense ) =
             summarize m unit title condense
     in
-        List.map f [ ("Max", List.maximum >> Maybe.withDefault 0)
-                   , ("Mean", Statistics.mean >> Maybe.withDefault 0)
-                   , ("Median", Statistics.median >> Maybe.withDefault 0)
-                   , ("Min", List.minimum >> Maybe.withDefault 0)
-                   ]
+    List.map f
+        [ ( "Max", List.maximum >> Maybe.withDefault 0 )
+        , ( "Mean", Statistics.mean >> Maybe.withDefault 0 )
+        , ( "Median", Statistics.median >> Maybe.withDefault 0 )
+        , ( "Min", List.minimum >> Maybe.withDefault 0 )
+        ]
 
 
-summarize : List (List Float)
-          -> Unit
-          -> String
-          -> (List Float -> Float)
-          -> ChartSeries
+summarize :
+    List (List Float)
+    -> Unit
+    -> String
+    -> (List Float -> Float)
+    -> ChartSeries
 summarize xss unit title condense =
     let
         f i xs =
@@ -316,15 +330,17 @@ flatten selectFeature stringSet =
         strings =
             stringSet.strings
     in
-        [ selectFeature strings.one
-        , selectFeature strings.two
-        , selectFeature strings.three
-        , selectFeature strings.four
-        ]
+    [ selectFeature strings.one
+    , selectFeature strings.two
+    , selectFeature strings.three
+    , selectFeature strings.four
+    ]
+
 
 
 --------------------------------------------------------------------------------
 -- Print Strings
+
 
 printStringSets : List StringSet -> E.Element Msg
 printStringSets sets =
@@ -334,14 +350,14 @@ printStringSets sets =
         , E.spacing 5
         ]
         [ E.el
-              [ Font.heavy
-              , E.paddingXY 0 10
-              ]
-              ( E.text "First 25 Strings in Current Filter" )
+            [ Font.heavy
+            , E.paddingXY 0 10
+            ]
+            (E.text "First 25 Strings in Current Filter")
         , E.column
             [ E.width E.fill
             ]
-            ( List.map printStringSet <| List.take 25 sets )
+            (List.map printStringSet <| List.take 25 sets)
         ]
 
 
@@ -353,7 +369,7 @@ printStringSet set =
         , E.text " "
         , E.text <| Utils.printWidth 13 <| Show.materialToString set.material
         , E.text " "
-        , E.text <| Utils.printWidth 14 <| set.modelCode 
+        , E.text <| Utils.printWidth 14 <| set.modelCode
         , E.text " "
         , E.text <| Utils.printWidth 20 <| set.name
         , E.text " "
@@ -365,9 +381,11 @@ printStringSet set =
             E.link
                 [ Font.underline ]
                 { url = set.url, label = E.text "Link" }
+
           else
-              E.text ""
+            E.text ""
         ]
+
 
 
 --------------------------------------------------------------------------------

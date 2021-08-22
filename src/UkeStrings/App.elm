@@ -36,6 +36,7 @@ main =
         }
 
 
+
 --------------------------------------------------------------------------------
 -- Init
 
@@ -78,7 +79,7 @@ defaultFilteredData =
     , allStrings = Data.data |> NE.toList
     , filteredStrings = Data.data |> NE.toList
     }
-    |> UpdateDisplay.refreshFilters
+        |> UpdateDisplay.refreshFilters
 
 
 defaultChartCfg : ChartCfg
@@ -86,7 +87,7 @@ defaultChartCfg =
     let
         defaultStdChartCfg =
             Cfg.defaultStdChartCfg
-    in 
+    in
     { defaultStdChartCfg
         | w = 800
         , h = 300
@@ -104,7 +105,7 @@ paddingCfg =
     let
         defaultPadding =
             Cfg.defaultPadding
-    in 
+    in
     { defaultPadding
         | right = 180
     }
@@ -129,7 +130,7 @@ lineChartSpec =
     let
         defaultLineChartSpec =
             Cfg.defaultLineChartSpec
-    in 
+    in
     case defaultLineChartSpec of
         Cfg.LineChartSpec d ->
             Cfg.LineChartSpec
@@ -143,12 +144,14 @@ lineChartSpec =
 
 defaultChartControls : ChartControls
 defaultChartControls =
-    { stats =  { oneDiameter = False
-               , twoDiameter = True
-               , oneTension = False
-               , twoTension = True
-               }
+    { stats =
+        { oneDiameter = False
+        , twoDiameter = True
+        , oneTension = False
+        , twoTension = True
+        }
     }
+
 
 
 --------------------------------------------------------------------------------
@@ -226,6 +229,7 @@ tab active name =
         }
 
 
+
 --------------------------------------------------------------------------------
 -- Update
 
@@ -284,6 +288,7 @@ updatePageModel msg model =
                     ( { model | pageModel = Edit pageModel_ s }
                     , Cmd.none
                     )
+
 
 
 --------------------------------------------------------------------------------
