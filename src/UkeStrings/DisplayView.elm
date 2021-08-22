@@ -9,7 +9,9 @@ import Element.Input as Input
 import Html exposing (Html)
 import TypedSvg.Core exposing (Svg)
 import UkeStrings.Chart as Chart
+import UkeStrings.UI as UI
 import UkeStrings.Dropdown as Dropdown
+import UkeStrings.Statistics as Statistics
 import UkeStrings.Show as Show
 import UkeStrings.Types exposing (..)
 import UkeStrings.Utils as Utils
@@ -35,11 +37,17 @@ view model =
                   model.one.filteredStrings
                   "Set 1 Diameter"
                   (.diameter, "(mm)")
+                  ( (UpdateChartControlStats "OneDiameter")
+                  , model.chartControls.stats.oneDiameter
+                  )
             , chart
                 model.chartCfg
                 model.two.filteredStrings
                 "Set 2 Diameter"
                 (.diameter, "(mm)")
+                ( (UpdateChartControlStats "TwoDiameter")
+                , model.chartControls.stats.twoDiameter
+                )
             ]
         , E.row
             ( chartRowAttrs )
@@ -48,11 +56,17 @@ view model =
                   model.one.filteredStrings
                   "Set 1 Tension"
                   (.tension, "(kg)")
+                  ( (UpdateChartControlStats "OneTension")
+                  , model.chartControls.stats.oneTension
+                  )
             , chart
                 model.chartCfg
                 model.two.filteredStrings
                 "Set 2 Tension"
                 (.tension, "(kg)")
+                ( (UpdateChartControlStats "TwoTension")
+                , model.chartControls.stats.twoTension
+                )
             ]
         , E.row
             ( chartRowAttrs )
@@ -195,11 +209,16 @@ chart : ChartCfg
       -> List StringSet
       -> String
       -> ((UkeString -> Float), Unit)
+      -> ((Bool -> Msg), Bool)
       -> E.Element Msg
-chart cfg stringSets title selectPair =
+chart cfg stringSets title selectPair (statControlMsg, showStats) =
     let
         body =
-            if List.length stringSets <= 10 then
+            if showStats then
+                stringSetsToStats stringSets selectPair
+                    |> Chart.render cfg
+                    |> E.html
+            else if List.length stringSets <= 10 then
                 List.map (stringSetToSeries selectPair) stringSets
                     |> Chart.render cfg
                     |> E.html
@@ -207,20 +226,28 @@ chart cfg stringSets title selectPair =
                 E.el
                     [ E.width E.fill
                     , E.centerX ]
-                    ( E.text "Filter to <= 10 string sets to display chart." )
+                    ( E.text "Filter to <= 10 string sets, or toggle \"SUmmary Statistics\"." )
     in
         E.column
             [ E.width E.fill
             , E.centerX
             , E.alignTop
+            , E.spacing 5
             ]
-            [ E.el
-                  [ Font.heavy ]
-                  ( E.text title )
+            [ E.row
+                  [ E.spacing 5
+                  ]
+                  [ E.el
+                        [ Font.heavy
+                        ]
+                        ( E.text <| title  ++ " | " )
+                  , checkbox
+                      "Summary Statistics"
+                      statControlMsg
+                      showStats
+                  ]
             , body
             ]
-
-
 
 
 stringSetToSeries : ((UkeString -> Float), Unit)
@@ -242,10 +269,58 @@ stringSetToSeries (selectFeature, unit) stringSet =
 
 
 --------------------------------------------------------------------------------
--- Calculations
+-- Statistics
+
+stringSetsToStats : List StringSet
+                  -> ((UkeString -> Float), Unit)
+                  -> List ChartSeries
+stringSetsToStats stringSets (selectFeature, unit) =
+    List.map (flatten selectFeature) stringSets
+            |> Utils.transpose
+            |> genStats unit
 
 
+genStats : Unit -> List (List Float) -> List ChartSeries
+genStats unit m =
+    let
+        f (title, condense) =
+            summarize m unit title condense
+    in
+        List.map f [ ("Max", List.maximum >> Maybe.withDefault 0)
+                   , ("Mean", Statistics.mean >> Maybe.withDefault 0)
+                   , ("Median", Statistics.median >> Maybe.withDefault 0)
+                   , ("Min", List.minimum >> Maybe.withDefault 0)
+                   ]
 
+
+summarize : List (List Float)
+          -> Unit
+          -> String
+          -> (List Float -> Float)
+          -> ChartSeries
+summarize xss unit title condense =
+    let
+        f i xs =
+            ( "String " ++ String.fromInt i ++ " " ++ unit
+            , condense xs
+            )
+    in
+    ( title
+    , List.indexedMap f xss
+    )
+
+
+flatten : (UkeString -> Float) -> StringSet -> List Float
+flatten selectFeature stringSet =
+    let
+        strings =
+            stringSet.strings
+    in
+        [ selectFeature strings.one
+        , selectFeature strings.two
+        , selectFeature strings.three
+        , selectFeature strings.four
+        ]
 
 
 --------------------------------------------------------------------------------
@@ -293,3 +368,19 @@ printStringSet set =
           else
               E.text ""
         ]
+
+
+--------------------------------------------------------------------------------
+-- Checkbox
+
+
+checkbox : String -> (Bool -> Msg) -> Bool -> E.Element Msg
+checkbox title msg selected =
+    Input.checkbox
+        [ E.spacing 10
+        ]
+        { onChange = msg
+        , icon = Input.defaultCheckbox
+        , checked = selected
+        , label = UI.titleLabelLight title
+        }
