@@ -6,6 +6,7 @@ import Element.Border as Border
 import Element.Font as Font
 import Element.Input as Input
 import Html exposing (Html)
+import String.Format as Fmt
 import TypedSvg.Core exposing (Svg)
 import UkeStrings.Chart as Chart
 import UkeStrings.Dropdown as Dropdown
@@ -344,6 +345,15 @@ flatten selectFeature stringSet =
 
 printStringSets : List StringSet -> E.Element Msg
 printStringSets sets =
+    let
+        n =
+            List.length sets
+
+        title =
+            "First strings in current filter (showing {{show}} of {{all}})"
+            |> Fmt.namedValue "show" (String.fromInt (min n 25))
+            |> Fmt.namedValue "all" (String.fromInt n)
+    in 
     E.column
         [ E.width E.fill
         , E.alignTop
@@ -353,7 +363,7 @@ printStringSets sets =
             [ Font.heavy
             , E.paddingXY 0 10
             ]
-            (E.text "First 25 Strings in Current Filter")
+            (E.text title)
         , E.column
             [ E.width E.fill
             ]
