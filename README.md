@@ -1,7 +1,7 @@
 
 # uke-strings
 
-A tool for visualizing and comparing ukulele string gauges.
+A tool for visualizing and comparing ukulele string gauges and tensions.
 
 **Live tool here : [Link]()**
 
