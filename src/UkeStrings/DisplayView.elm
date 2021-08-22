@@ -1,4 +1,4 @@
-module UkeStrings.DisplayView exposing (view)
+gmodule UkeStrings.DisplayView exposing (view)
 
 
 import Element as E
@@ -301,7 +301,7 @@ summarize : List (List Float)
 summarize xss unit title condense =
     let
         f i xs =
-            ( "String " ++ String.fromInt i ++ " " ++ unit
+            ( "String " ++ String.fromInt (i + 1) ++ " " ++ unit
             , condense xs
             )
     in

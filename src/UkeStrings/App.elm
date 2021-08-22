@@ -74,10 +74,11 @@ defaultFilteredData =
     , materialFilter = ShowItem Nothing
     , sizeFilter = ShowItem Nothing
     , stringSetFilter = ShowItem Nothing
-    , tuningFilter = ShowItem Nothing
+    , tuningFilter = ShowItem (Just Reentrant)
     , allStrings = Data.data |> NE.toList
     , filteredStrings = Data.data |> NE.toList
     }
+    |> UpdateDisplay.refreshFilters
 
 
 defaultChartCfg : ChartCfg
@@ -143,9 +144,9 @@ lineChartSpec =
 defaultChartControls : ChartControls
 defaultChartControls =
     { stats =  { oneDiameter = False
-               , twoDiameter = False
+               , twoDiameter = True
                , oneTension = False
-               , twoTension = False
+               , twoTension = True
                }
     }
 

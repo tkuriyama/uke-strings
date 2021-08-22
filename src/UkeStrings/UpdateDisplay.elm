@@ -1,4 +1,4 @@
-module UkeStrings.UpdateDisplay exposing (update)
+module UkeStrings.UpdateDisplay exposing (refreshFilters, update)
 
 import UkeStrings.Dropdown exposing (Dropdown(..))
 import UkeStrings.Types exposing (..)
