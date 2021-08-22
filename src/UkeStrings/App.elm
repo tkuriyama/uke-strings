@@ -172,7 +172,7 @@ view model =
         ]
         (E.column
             [ E.centerX
-            , E.spacing 10
+            , E.spacing 5
             , E.width E.fill
             ]
             [ E.row
@@ -180,6 +180,25 @@ view model =
                 [ tab active "Viewer"
                 , tab active "Generator"
                 ]
+            , E.row
+                [ E.spacing 15
+                , E.alignRight
+                ]
+                [ E.link
+                      [ Font.alignRight
+                      , Font.underline
+                      ]
+                      { url = "https://github.com/tkuriyama/uke-strings"
+                      , label = E.text "Source"
+                      }
+                , E.link
+                      [ Font.alignRight
+                      , Font.underline
+                      ]
+                      { url = "https://github.com/tkuriyama/uke-strings/blob/master/FAQ.md"
+                      , label = E.text "Help"
+                      }
+                ] 
             , case model.pageModel of
                 Display m ->
                     DisplayView.view m

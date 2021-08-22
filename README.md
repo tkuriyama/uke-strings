@@ -3,7 +3,7 @@
 
 A tool for visualizing and comparing ukulele string gauges and tensions.
 
-**Live tool here : [Link]()**
+**Live tool here : [Link](https://tarokuriyama.com/ukestrings)**
 
 
 ## Build
@@ -16,3 +16,4 @@ See [this page](https://tkuriyama.github.io/general/2021/04/22/Building-Elm.html
 
 ## Contribute Data / Corrections
 
+Contributions and corrections for the strings data are very welcome. See the [FAQ](https://github.com/tkuriyama/uke-strings/blob/master/FAQ.md) for details.
