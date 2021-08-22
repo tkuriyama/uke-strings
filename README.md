@@ -3,7 +3,7 @@
 
 A tool for visualizing and comparing ukulele string gauges and tensions.
 
-**Live tool here : [Link](https://tarokuriyama.com/ukestrings)**
+See the [**live tool here**](https://tarokuriyama.com/ukestrings)
 
 
 ## Build
