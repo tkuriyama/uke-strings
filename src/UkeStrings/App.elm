@@ -86,7 +86,9 @@ defaultChartCfg =
             Cfg.defaultStdChartCfg
     in 
     { defaultStdChartCfg
-        | pad = paddingCfg
+        | w = 800
+        , h = 300
+        , pad = paddingCfg
         , chartSpec = lineChartSpec
         , dataAxisTicks = 10
         , showLabels = False
@@ -102,7 +104,7 @@ paddingCfg =
             Cfg.defaultPadding
     in 
     { defaultPadding
-        | right = 80
+        | right = 120
     }
 
 
@@ -148,13 +150,15 @@ view model =
             getActivePageModel model.pageModel
     in
     E.layout
-        [ Font.family [ Font.typeface "Consolas", Font.sansSerif ]
+        [ E.width (E.px <| round model.windowWidth)
+        , Font.family [ Font.typeface "Consolas", Font.sansSerif ]
         , Font.size 18
         , E.padding 5
         ]
         (E.column
             [ E.centerX
             , E.spacing 10
+            , E.width E.fill
             ]
             [ E.row
                 [ E.centerX ]

@@ -14,7 +14,6 @@ import UkeStrings.Show as Show
 import UkeStrings.Types exposing (..)
 
 
-
 --------------------------------------------------------------------------------
 
 
@@ -22,7 +21,7 @@ view : DisplayModel -> E.Element Msg
 view model =
     E.column
         [ E.width E.fill
-        , E.spacing 5
+        , E.spacing 10
         , E.paddingXY 0 20
         ]
         [ filterRow model .one 1
@@ -32,12 +31,18 @@ view model =
             , E.spacing 10
             , E.alignTop
             , E.centerX
+            , E.paddingXY 0 20
             ]
-            [ chart model.chartCfg model.one.filteredStrings |> E.html
-            , chart model.chartCfg model.two.filteredStrings |> E.html
+            [ chart
+                  model.chartCfg
+                  model.one.filteredStrings
+                  (.diameter, "(mm)")
+            , chart
+                model.chartCfg
+                model.two.filteredStrings
+                (.diameter, "(mm)")
             ]
         ]
-
 
 
 --------------------------------------------------------------------------------
@@ -56,7 +61,7 @@ filterRow model selector i =
               [ Font.heavy
               , E.paddingXY 10 0
               ]
-              (E.text <| "String " ++ String.fromInt i)
+              (E.text <| "Set " ++ String.fromInt i)
         , E.el
               (dropdownAttrs 150)
               (Dropdown.view
@@ -157,6 +162,43 @@ dropdownAttrs minWidth =
 -- Chart
 
 
-chart : ChartCfg -> List StringSet -> Svg Msg
-chart cfg strings =
-    Chart.render cfg []
+type alias Unit = String
+
+
+chart : ChartCfg
+      -> List StringSet
+      -> ((UkeString -> Float), Unit)
+      -> E.Element Msg
+chart cfg stringSets selectPair =
+    if List.length stringSets <= 10 then
+        List.map (stringSetToSeries selectPair) stringSets
+            |> Chart.render cfg
+            |> E.html
+    else
+        E.el
+            [ E.width E.fill
+            , E.centerX ]
+            ( E.text "Filter to <= 10 string sets to display chart." )
+
+
+
+stringSetToSeries : ((UkeString -> Float), Unit)
+                  -> StringSet
+                  -> ChartSeries
+stringSetToSeries (selectFeature, unit) stringSet =
+    let
+        strings =
+            stringSet.strings
+
+        f (pos, selectString) =
+            ( "String " ++ pos ++ " " ++ unit
+            , selectFeature (selectString strings)
+            )
+    in
+    ( stringSet.modelCode ++ " " ++ stringSet.name
+    , List.map f [ ("1", .one), ("2", .two), ("3", .three), ("4", .four) ]
+    )
+
+
+--------------------------------------------------------------------------------
+-- Calculations

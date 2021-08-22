@@ -30,6 +30,10 @@ type alias ChartCfg =
     Cfg.StdChartCfg String
 
 
+type alias ChartSeries =
+    Cfg.StdSeries String
+
+
 type alias DisplayModel =
     { one : FilteredData
     , two : FilteredData
