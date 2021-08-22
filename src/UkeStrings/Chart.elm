@@ -86,11 +86,11 @@ genChartEnv cfg data =
             cfg.h
             (cfg.pad.top + cfg.pad.bottom)
             xs
-    , labelScale = StdChart.genXScale cfg.w (cfg.pad.right + cfg.pad.left) ys
+    , labelScale = StdChart.genXScale cfg.w cfg.pad.left ys
     , colorScale = StdChart.genColorScale names
     , labelShow = cfg.showLabels
     , labelFmt = cfg.labelFormatter
-    , dataTickCt = min cfg.dataAxisTicks 10
+    , dataTickCt = min cfg.dataAxisTicks 8
     , tooltips = cfg.tooltips
     , style =
         genStyle cfg.fontSpec cfg.chartSpec cfg.tooltips <|

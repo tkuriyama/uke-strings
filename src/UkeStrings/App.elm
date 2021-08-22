@@ -104,7 +104,7 @@ paddingCfg =
             Cfg.defaultPadding
     in 
     { defaultPadding
-        | right = 120
+        | right = 180
     }
 
 

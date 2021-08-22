@@ -27,22 +27,41 @@ view model =
         [ filterRow model .one 1
         , filterRow model .two 2
         , E.row
-            [ E.width E.fill
-            , E.spacing 10
-            , E.alignTop
-            , E.centerX
-            , E.paddingXY 0 20
-            ]
+            ( chartRowAttrs )
             [ chart
                   model.chartCfg
                   model.one.filteredStrings
+                  "Set 1 Diameter"
                   (.diameter, "(mm)")
             , chart
                 model.chartCfg
                 model.two.filteredStrings
+                "Set 2 Diameter"
                 (.diameter, "(mm)")
             ]
+        , E.row
+            ( chartRowAttrs )
+            [ chart
+                  model.chartCfg
+                  model.one.filteredStrings
+                  "Set 1 Tension"
+                  (.tension, "(kg)")
+            , chart
+                model.chartCfg
+                model.two.filteredStrings
+                "Set 2 Tension"
+                (.tension, "(kg)")
+            ]
         ]
+
+chartRowAttrs : List (E.Attribute Msg)
+chartRowAttrs = 
+    [ E.width E.fill
+    , E.spacing 10
+    , E.alignTop
+    , E.centerX
+    , E.paddingXY 0 20
+    ]
 
 
 --------------------------------------------------------------------------------
@@ -167,18 +186,32 @@ type alias Unit = String
 
 chart : ChartCfg
       -> List StringSet
+      -> String
       -> ((UkeString -> Float), Unit)
       -> E.Element Msg
-chart cfg stringSets selectPair =
-    if List.length stringSets <= 10 then
-        List.map (stringSetToSeries selectPair) stringSets
-            |> Chart.render cfg
-            |> E.html
-    else
-        E.el
+chart cfg stringSets title selectPair =
+    let
+        body =
+            if List.length stringSets <= 10 then
+                List.map (stringSetToSeries selectPair) stringSets
+                    |> Chart.render cfg
+                    |> E.html
+            else
+                E.el
+                    [ E.width E.fill
+                    , E.centerX ]
+                    ( E.text "Filter to <= 10 string sets to display chart." )
+    in
+        E.column
             [ E.width E.fill
-            , E.centerX ]
-            ( E.text "Filter to <= 10 string sets to display chart." )
+            , E.centerX
+            ]
+            [ E.el
+                  [ Font.heavy ]
+                  ( E.text title )
+            , body
+            ]
+
 
 
 
