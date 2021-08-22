@@ -1,11 +1,9 @@
 
 # uke-strings
 
-A tool for visualizing and comparing ukulele string gauges and tensions across different brands, materials, etc. 
+A tool for visualizing and comparing ukulele string gauges and tensions across different brands, materials, etc. Current scope is limited to standard, four-string sets. Alternative tunings (e.g. Baritone) are supported, but only with the granularity of linear vs re-entrant.
 
-See the [**live tool here**](https://tarokuriyama.com/ukestrings)
-
-Current scope is limited to standard, four-string sets. Alternative tunings (e.g. Baritone) are supported, but only with the granularity of linear vs re-entrant.
+See the [**live tool here**](https://tarokuriyama.com/ukestrings).
 
 ## Build
 
