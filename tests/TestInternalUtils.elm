@@ -39,3 +39,42 @@ testUniqueSizes =
               \_ -> uniqueSizes xs2
                     |> Expect.equal [ "Soprano", "Tenor", "Concert" ]
         ]
+
+
+--------------------------------------------------------------------------------
+-- Strings
+
+testPrintWidth : Test
+testPrintWidth  =
+    describe "Test string printing with fixed width"
+        [ test "Exact" <|
+            \_ -> printWidth 6 "String"
+                  |> Expect.equal "String"
+        , test "Short" <|
+            \_ -> printWidth 7 "String"
+                  |> Expect.equal ("String" ++ nbsp)
+        , test "Long" <|
+            \_ -> printWidth 5 "String"
+        |> Expect.equal "St..."
+        ]
+
+
+--------------------------------------------------------------------------------
+-- Matrix
+
+
+
+testTranspose : Test
+testTranspose  =
+    describe "Test matrix transpose"
+        [ test "empty" <|
+            \_ -> transpose []
+                  |> Expect.equal []
+        , test "Normal" <|
+            \_ -> transpose [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+                  |> Expect.equal [ [1, 4, 7]
+                                  , [2, 5, 8]
+                                  , [3, 6, 9]
+                                  ]
+        ]
+

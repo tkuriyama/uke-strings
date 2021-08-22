@@ -61,6 +61,7 @@ sizesToList sizes =
 --------------------------------------------------------------------------------
 -- strings
 
+
 printWidth : Int -> String -> String
 printWidth n s =
     if String.length s == n then
@@ -74,3 +75,22 @@ printWidth n s =
 nbsp : String
 nbsp =
     String.fromChar (Char.fromCode 160)
+
+
+--------------------------------------------------------------------------------
+-- Matrices
+
+
+transpose : List (List a) -> List (List a)
+transpose xs =
+  let
+      heads =
+          List.map (List.take 1) xs
+              |> List.concat
+      tails =
+          List.map (List.drop 1) xs
+  in
+      if List.isEmpty heads then
+          []
+      else
+          heads :: (transpose tails)

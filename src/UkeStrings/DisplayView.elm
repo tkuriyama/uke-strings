@@ -24,6 +24,7 @@ view model =
         [ E.width E.fill
         , E.spacing 10
         , E.paddingXY 0 20
+        , E.alignTop
         ]
         [ filterRow model .one 1
         , filterRow model .two 2
@@ -211,6 +212,7 @@ chart cfg stringSets title selectPair =
         E.column
             [ E.width E.fill
             , E.centerX
+            , E.alignTop
             ]
             [ E.el
                   [ Font.heavy ]
