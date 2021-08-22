@@ -1,4 +1,4 @@
-gmodule UkeStrings.DisplayView exposing (view)
+module UkeStrings.DisplayView exposing (view)
 
 
 import Element as E
