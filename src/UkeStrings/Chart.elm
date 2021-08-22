@@ -81,7 +81,8 @@ genChartEnv cfg data =
     , h = cfg.h
     , pad = cfg.pad
     , dataScale =
-        StdChart.genYScale False
+        StdChart.genYScale
+            False
             cfg.h
             (cfg.pad.top + cfg.pad.bottom)
             xs

@@ -151,10 +151,10 @@ data =
           , name = "Light"
           , sizes = { soprano = True, concert = True, tenor = False, baritone = False }
           , strings =
-                { one = { diameter = 0.047, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.066, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.0739, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.0521, pitch = G, tension = 0.0 }
+                { one = { diameter = 0.47, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.66, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.739, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.521, pitch = G, tension = 0.0 }
                 }
           , tuning = Reentrant
           , url = "http://worthc.to/english/w_strings.html"
@@ -167,10 +167,10 @@ data =
           , name = "Light Low-G"
           , sizes = { soprano = True, concert = True, tenor = False, baritone = False }
           , strings =
-                { one = { diameter = 0.047, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.066, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.0739, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.0909, pitch = G, tension = 0.0 }
+                { one = { diameter = 0.47, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.66, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.739, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.909, pitch = G, tension = 0.0 }
                 }
           , tuning = Linear
           , url = "http://worthc.to/english/w_strings.html"
@@ -183,10 +183,10 @@ data =
           , name = "Medium"
           , sizes = { soprano = True, concert = True, tenor = False, baritone = False }
           , strings =
-                { one = { diameter = 0.0521, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.066, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.0739, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.0569, pitch = G, tension = 0.0 }
+                { one = { diameter = 0.521, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.66, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.739, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.569, pitch = G, tension = 0.0 }
                 }
           , tuning = Reentrant
           , url = "http://worthc.to/english/w_strings.html"
@@ -199,10 +199,10 @@ data =
           , name = "Medium Low-G"
           , sizes = { soprano = True, concert = True, tenor = False, baritone = False }
           , strings =
-                { one = { diameter = 0.0521, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.066, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.0739, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.0909, pitch = G, tension = 0.0 }
+                { one = { diameter = 0.521, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.66, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.739, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.909, pitch = G, tension = 0.0 }
                 }
           , tuning = Linear
           , url = "http://worthc.to/english/w_strings.html"
@@ -215,10 +215,10 @@ data =
           , name = "Extra"
           , sizes = { soprano = True, concert = True, tenor = False, baritone = False }
           , strings =
-                { one = { diameter = 0.0521, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.066, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.0739, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.062, pitch = G, tension = 0.0 }
+                { one = { diameter = 0.521, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.66, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.739, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.62, pitch = G, tension = 0.0 }
                 }
           , tuning = Reentrant
           , url = "http://worthc.to/english/w_strings.html"
@@ -231,10 +231,10 @@ data =
           , name = "Custom"
           , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
           , strings =
-                { one = { diameter = 0.0521, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.066, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.0739, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.0521, pitch = G, tension = 0.0 }
+                { one = { diameter = 0.521, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.66, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.739, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.521, pitch = G, tension = 0.0 }
                 }
           , tuning = Reentrant
           , url = "http://worthc.to/english/w_strings.html"
@@ -247,10 +247,10 @@ data =
           , name = "Tenor"
           , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
           , strings =
-                { one = { diameter = 0.0569, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.066, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.0739, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.062, pitch = G, tension = 0.0 }
+                { one = { diameter = 0.569, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.66, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.739, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.62, pitch = G, tension = 0.0 }
                 }
           , tuning = Reentrant
           , url = "http://worthc.to/english/w_strings.html"
@@ -263,10 +263,10 @@ data =
           , name = "Tenor Low-G"
           , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
           , strings =
-                { one = { diameter = 0.0569, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.066, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.0739, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.0909, pitch = G, tension = 0.0 }
+                { one = { diameter = 0.569, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.66, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.739, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.909, pitch = G, tension = 0.0 }
                 }
           , tuning = Linear
           , url = "http://worthc.to/english/w_strings.html"
@@ -279,10 +279,10 @@ data =
           , name = "Strong"
           , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
           , strings =
-                { one = { diameter = 0.0569, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.0739, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.081, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.066, pitch = G, tension = 0.0 }
+                { one = { diameter = 0.569, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.739, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.81, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.66, pitch = G, tension = 0.0 }
                 }
           , tuning = Reentrant
           , url = "http://worthc.to/english/w_strings.html"
@@ -295,10 +295,10 @@ data =
           , name = "Strong Low-G"
           , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
           , strings =
-                { one = { diameter = 0.0569, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.0739, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.081, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.0909, pitch = G, tension = 0.0 }
+                { one = { diameter = 0.569, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.739, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.81, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.909, pitch = G, tension = 0.0 }
                 }
           , tuning = Linear
           , url = "http://worthc.to/english/w_strings.html"
@@ -311,10 +311,10 @@ data =
           , name = "Fat"
           , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
           , strings =
-                { one = { diameter = 0.062, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.0739, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.081, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.066, pitch = G, tension = 0.0 }
+                { one = { diameter = 0.62, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.739, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.81, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.66, pitch = G, tension = 0.0 }
                 }
           , tuning = Reentrant
           , url = "http://worthc.to/english/w_strings.html"
@@ -327,10 +327,10 @@ data =
           , name = "Fat Low-G"
           , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
           , strings =
-                { one = { diameter = 0.062, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.0739, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.081, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.0909, pitch = G, tension = 0.0 }
+                { one = { diameter = 0.62, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.739, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.81, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.909, pitch = G, tension = 0.0 }
                 }
           , tuning = Linear
           , url = "http://worthc.to/english/w_strings.html"
@@ -343,10 +343,10 @@ data =
           , name = "Baritone"
           , sizes = { soprano = False, concert = False, tenor = False, baritone = True }
           , strings =
-                { one = { diameter = 0.062, pitch = E, tension = 0.0 }
-                , two = { diameter = 0.0739, pitch = B, tension = 0.0 }
-                , three = { diameter = 0.081, pitch = G, tension = 0.0 }
-                , four = { diameter = 0.0909, pitch = D, tension = 0.0 }
+                { one = { diameter = 0.62, pitch = E, tension = 0.0 }
+                , two = { diameter = 0.739, pitch = B, tension = 0.0 }
+                , three = { diameter = 0.81, pitch = G, tension = 0.0 }
+                , four = { diameter = 0.909, pitch = D, tension = 0.0 }
                 }
           , tuning = Linear
           , url = "http://worthc.to/english/w_strings.html"
@@ -359,10 +359,10 @@ data =
           , name = "Low-G"
           , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
           , strings =
-                { one = { diameter = 0.062, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.0739, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.081, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.0909, pitch = G, tension = 0.0 }
+                { one = { diameter = 0.62, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.739, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.81, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.909, pitch = G, tension = 0.0 }
                 }
           , tuning = Linear
           , url = "http://worthc.to/english/w_strings.html"
@@ -375,10 +375,10 @@ data =
           , name = "Light"
           , sizes = { soprano = True, concert = True, tenor = False, baritone = False }
           , strings =
-                { one = { diameter = 0.047, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.066, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.0739, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.0521, pitch = G, tension = 0.0 }
+                { one = { diameter = 0.47, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.66, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.739, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.521, pitch = G, tension = 0.0 }
                 }
           , tuning = Reentrant
           , url = "http://worthc.to/english/w_strings.html"
@@ -391,10 +391,10 @@ data =
           , name = "Light Low-G"
           , sizes = { soprano = True, concert = True, tenor = False, baritone = False }
           , strings =
-                { one = { diameter = 0.047, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.066, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.0739, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.0909, pitch = G, tension = 0.0 }
+                { one = { diameter = 0.47, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.66, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.739, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.909, pitch = G, tension = 0.0 }
                 }
           , tuning = Linear
           , url = "http://worthc.to/english/w_strings.html"
@@ -407,10 +407,10 @@ data =
           , name = "Light Low-G"
           , sizes = { soprano = True, concert = True, tenor = False, baritone = False }
           , strings =
-                { one = { diameter = 0.047, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.066, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.0739, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.0909, pitch = G, tension = 0.0 }
+                { one = { diameter = 0.47, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.66, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.739, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.909, pitch = G, tension = 0.0 }
                 }
           , tuning = Linear
           , url = "http://worthc.to/english/w_strings.html"
@@ -423,10 +423,10 @@ data =
           , name = "Light Low-G"
           , sizes = { soprano = True, concert = True, tenor = False, baritone = False }
           , strings =
-                { one = { diameter = 0.047, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.066, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.0739, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.11, pitch = G, tension = 0.0 }
+                { one = { diameter = 0.47, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.66, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.739, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.1, pitch = G, tension = 0.0 }
                 }
           , tuning = Linear
           , url = "http://worthc.to/english/w_strings.html"
@@ -439,10 +439,10 @@ data =
           , name = "Medium"
           , sizes = { soprano = True, concert = True, tenor = False, baritone = False }
           , strings =
-                { one = { diameter = 0.0521, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.066, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.0739, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.0569, pitch = G, tension = 0.0 }
+                { one = { diameter = 0.521, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.66, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.739, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.569, pitch = G, tension = 0.0 }
                 }
           , tuning = Reentrant
           , url = "http://worthc.to/english/w_strings.html"
@@ -455,10 +455,10 @@ data =
           , name = "Medium Low-G"
           , sizes = { soprano = True, concert = True, tenor = False, baritone = False }
           , strings =
-                { one = { diameter = 0.0521, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.066, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.0739, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.0909, pitch = G, tension = 0.0 }
+                { one = { diameter = 0.521, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.66, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.739, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.909, pitch = G, tension = 0.0 }
                 }
           , tuning = Linear
           , url = "http://worthc.to/english/w_strings.html"
@@ -471,10 +471,10 @@ data =
           , name = "Medium Low-G"
           , sizes = { soprano = True, concert = True, tenor = False, baritone = False }
           , strings =
-                { one = { diameter = 0.0521, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.066, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.0739, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.0909, pitch = G, tension = 0.0 }
+                { one = { diameter = 0.521, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.66, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.739, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.909, pitch = G, tension = 0.0 }
                 }
           , tuning = Linear
           , url = "http://worthc.to/english/w_strings.html"
@@ -487,10 +487,10 @@ data =
           , name = "Medium Low-G"
           , sizes = { soprano = True, concert = True, tenor = False, baritone = False }
           , strings =
-                { one = { diameter = 0.0521, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.066, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.0739, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.11, pitch = G, tension = 0.0 }
+                { one = { diameter = 0.521, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.66, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.739, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.1, pitch = G, tension = 0.0 }
                 }
           , tuning = Linear
           , url = "http://worthc.to/english/w_strings.html"
@@ -503,10 +503,10 @@ data =
           , name = "Extra"
           , sizes = { soprano = True, concert = True, tenor = False, baritone = False }
           , strings =
-                { one = { diameter = 0.0521, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.066, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.0739, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.062, pitch = G, tension = 0.0 }
+                { one = { diameter = 0.521, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.66, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.739, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.62, pitch = G, tension = 0.0 }
                 }
           , tuning = Reentrant
           , url = "http://worthc.to/english/w_strings.html"
@@ -519,10 +519,10 @@ data =
           , name = "Hard"
           , sizes = { soprano = True, concert = True, tenor = False, baritone = False }
           , strings =
-                { one = { diameter = 0.0521, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.066, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.0739, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.0569, pitch = G, tension = 0.0 }
+                { one = { diameter = 0.521, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.66, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.739, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.569, pitch = G, tension = 0.0 }
                 }
           , tuning = Reentrant
           , url = "http://worthc.to/english/w_strings.html"
@@ -535,10 +535,10 @@ data =
           , name = "Hard Low-G"
           , sizes = { soprano = True, concert = True, tenor = False, baritone = False }
           , strings =
-                { one = { diameter = 0.0521, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.066, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.0739, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.0909, pitch = G, tension = 0.0 }
+                { one = { diameter = 0.521, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.66, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.739, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.909, pitch = G, tension = 0.0 }
                 }
           , tuning = Linear
           , url = "http://worthc.to/english/w_strings.html"
@@ -551,10 +551,10 @@ data =
           , name = "Hard Low-G"
           , sizes = { soprano = True, concert = True, tenor = False, baritone = False }
           , strings =
-                { one = { diameter = 0.0521, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.066, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.0739, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.0909, pitch = G, tension = 0.0 }
+                { one = { diameter = 0.521, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.66, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.739, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.909, pitch = G, tension = 0.0 }
                 }
           , tuning = Linear
           , url = "http://worthc.to/english/w_strings.html"
@@ -567,10 +567,10 @@ data =
           , name = "Hard Low-G"
           , sizes = { soprano = True, concert = True, tenor = False, baritone = False }
           , strings =
-                { one = { diameter = 0.0521, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.066, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.0739, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.11, pitch = G, tension = 0.0 }
+                { one = { diameter = 0.521, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.66, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.739, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.1, pitch = G, tension = 0.0 }
                 }
           , tuning = Linear
           , url = "http://worthc.to/english/w_strings.html"
@@ -583,10 +583,10 @@ data =
           , name = "Tenor"
           , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
           , strings =
-                { one = { diameter = 0.0569, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.066, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.0739, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.062, pitch = G, tension = 0.0 }
+                { one = { diameter = 0.569, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.66, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.739, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.62, pitch = G, tension = 0.0 }
                 }
           , tuning = Reentrant
           , url = "http://worthc.to/english/w_strings.html"
@@ -599,10 +599,10 @@ data =
           , name = "Tenor Low-G"
           , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
           , strings =
-                { one = { diameter = 0.0569, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.066, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.0739, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.0909, pitch = G, tension = 0.0 }
+                { one = { diameter = 0.569, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.66, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.739, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.909, pitch = G, tension = 0.0 }
                 }
           , tuning = Linear
           , url = "http://worthc.to/english/w_strings.html"
@@ -615,10 +615,10 @@ data =
           , name = "Tenor Low-G"
           , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
           , strings =
-                { one = { diameter = 0.0569, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.066, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.0739, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.0909, pitch = G, tension = 0.0 }
+                { one = { diameter = 0.569, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.66, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.739, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.909, pitch = G, tension = 0.0 }
                 }
           , tuning = Linear
           , url = "http://worthc.to/english/w_strings.html"
@@ -631,10 +631,10 @@ data =
           , name = "Tenor Low-G"
           , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
           , strings =
-                { one = { diameter = 0.0569, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.066, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.0739, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.11, pitch = G, tension = 0.0 }
+                { one = { diameter = 0.569, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.66, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.739, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.1, pitch = G, tension = 0.0 }
                 }
           , tuning = Linear
           , url = "http://worthc.to/english/w_strings.html"
@@ -647,10 +647,10 @@ data =
           , name = "Heavy"
           , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
           , strings =
-                { one = { diameter = 0.0569, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.0739, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.081, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.066, pitch = G, tension = 0.0 }
+                { one = { diameter = 0.569, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.739, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.81, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.66, pitch = G, tension = 0.0 }
                 }
           , tuning = Reentrant
           , url = "http://worthc.to/english/w_strings.html"
@@ -663,10 +663,10 @@ data =
           , name = "Heavy Low-G"
           , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
           , strings =
-                { one = { diameter = 0.0569, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.0739, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.081, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.0909, pitch = G, tension = 0.0 }
+                { one = { diameter = 0.569, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.739, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.81, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.909, pitch = G, tension = 0.0 }
                 }
           , tuning = Linear
           , url = "http://worthc.to/english/w_strings.html"
@@ -679,10 +679,10 @@ data =
           , name = "Heavy Low-G"
           , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
           , strings =
-                { one = { diameter = 0.0569, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.0739, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.081, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.0909, pitch = G, tension = 0.0 }
+                { one = { diameter = 0.569, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.739, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.81, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.909, pitch = G, tension = 0.0 }
                 }
           , tuning = Linear
           , url = "http://worthc.to/english/w_strings.html"
@@ -695,10 +695,10 @@ data =
           , name = "Heavy Low-G"
           , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
           , strings =
-                { one = { diameter = 0.0569, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.0739, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.081, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.11, pitch = G, tension = 0.0 }
+                { one = { diameter = 0.569, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.739, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.81, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.1, pitch = G, tension = 0.0 }
                 }
           , tuning = Linear
           , url = "http://worthc.to/english/w_strings.html"
@@ -711,10 +711,10 @@ data =
           , name = "Fat"
           , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
           , strings =
-                { one = { diameter = 0.062, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.0739, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.081, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.066, pitch = G, tension = 0.0 }
+                { one = { diameter = 0.62, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.739, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.81, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.66, pitch = G, tension = 0.0 }
                 }
           , tuning = Reentrant
           , url = "http://worthc.to/english/w_strings.html"
@@ -727,10 +727,10 @@ data =
           , name = "Fat Low-G"
           , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
           , strings =
-                { one = { diameter = 0.062, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.0739, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.081, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.0909, pitch = G, tension = 0.0 }
+                { one = { diameter = 0.62, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.739, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.81, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.909, pitch = G, tension = 0.0 }
                 }
           , tuning = Linear
           , url = "http://worthc.to/english/w_strings.html"
@@ -743,10 +743,10 @@ data =
           , name = "Fat Low-G"
           , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
           , strings =
-                { one = { diameter = 0.062, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.0739, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.081, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.0909, pitch = G, tension = 0.0 }
+                { one = { diameter = 0.62, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.739, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.81, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.909, pitch = G, tension = 0.0 }
                 }
           , tuning = Linear
           , url = "http://worthc.to/english/w_strings.html"
@@ -759,10 +759,10 @@ data =
           , name = "Fat Low-G"
           , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
           , strings =
-                { one = { diameter = 0.062, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.0739, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.081, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.11, pitch = G, tension = 0.0 }
+                { one = { diameter = 0.62, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.739, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.81, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.1, pitch = G, tension = 0.0 }
                 }
           , tuning = Linear
           , url = "http://worthc.to/english/w_strings.html"
@@ -775,10 +775,10 @@ data =
           , name = "Herb Ohta Jr. Model"
           , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
           , strings =
-                { one = { diameter = 0.0569, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.0739, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.081, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.0874, pitch = G, tension = 0.0 }
+                { one = { diameter = 0.569, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.739, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.81, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.874, pitch = G, tension = 0.0 }
                 }
           , tuning = Linear
           , url = "http://worthc.to/english/w_strings.html"
@@ -791,10 +791,10 @@ data =
           , name = "Baritone"
           , sizes = { soprano = False, concert = False, tenor = False, baritone = True }
           , strings =
-                { one = { diameter = 0.062, pitch = E, tension = 0.0 }
-                , two = { diameter = 0.0739, pitch = B, tension = 0.0 }
-                , three = { diameter = 0.081, pitch = G, tension = 0.0 }
-                , four = { diameter = 0.0909, pitch = D, tension = 0.0 }
+                { one = { diameter = 0.62, pitch = E, tension = 0.0 }
+                , two = { diameter = 0.739, pitch = B, tension = 0.0 }
+                , three = { diameter = 0.81, pitch = G, tension = 0.0 }
+                , four = { diameter = 0.909, pitch = D, tension = 0.0 }
                 }
           , tuning = Linear
           , url = "http://worthc.to/english/w_strings.html"

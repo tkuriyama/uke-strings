@@ -31,7 +31,7 @@ def parse_line(line: List[str]) -> str:
     url = line[18]
     tuning = line[4]
     wound = 'True' if line[5] else 'False'
-
+    diameters = ['0.' + d[3:] for d in line[14:18]]
 
     string = '{ '
     string += f'brand = {brand}\n'
@@ -40,7 +40,7 @@ def parse_line(line: List[str]) -> str:
     string += f'  , modelCode = "{modelCode}"\n'
     string += f'  , name = "{name}"\n'
     string += f'  , sizes = \u007b soprano = {sizes["soprano"]}, concert = {sizes["concert"]}, tenor = {sizes["tenor"]}, baritone = {sizes["baritone"]} \u007d\n'
-    string += f'  , strings = {gen_strings(line[14:18], sizes["baritone"])}\n'
+    string += f'  , strings = {gen_strings(diameters, sizes["baritone"])}\n'
     string += f'  , tuning = {tuning}\n'
     string += f'  , url = "{url}"\n'
     string += f'  , woundStrings = {wound}\n'
