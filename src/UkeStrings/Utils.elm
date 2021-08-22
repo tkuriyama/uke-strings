@@ -55,3 +55,22 @@ sizesToList sizes =
         ""
     ]
         |> List.filter ((/=) "")
+
+
+
+--------------------------------------------------------------------------------
+-- strings
+
+printWidth : Int -> String -> String
+printWidth n s =
+    if String.length s == n then
+        s
+    else if String.length s < n then
+             s ++ String.repeat (n - String.length s) nbsp
+         else
+             String.left (n - 3) s ++ "..."
+
+
+nbsp : String
+nbsp =
+    String.fromChar (Char.fromCode 160)

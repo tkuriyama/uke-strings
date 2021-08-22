@@ -12,6 +12,7 @@ import UkeStrings.Chart as Chart
 import UkeStrings.Dropdown as Dropdown
 import UkeStrings.Show as Show
 import UkeStrings.Types exposing (..)
+import UkeStrings.Utils as Utils
 
 
 --------------------------------------------------------------------------------
@@ -52,6 +53,11 @@ view model =
                 "Set 2 Tension"
                 (.tension, "(kg)")
             ]
+        , E.row
+            ( chartRowAttrs )
+             [ printStringSets model.one.filteredStrings
+             , printStringSets model.two.filteredStrings
+             ]
         ]
 
 chartRowAttrs : List (E.Attribute Msg)
@@ -60,7 +66,7 @@ chartRowAttrs =
     , E.spacing 10
     , E.alignTop
     , E.centerX
-    , E.paddingXY 0 20
+    , E.paddingXY 0 10
     ]
 
 
@@ -235,3 +241,53 @@ stringSetToSeries (selectFeature, unit) stringSet =
 
 --------------------------------------------------------------------------------
 -- Calculations
+
+
+
+
+
+--------------------------------------------------------------------------------
+-- Print Strings
+
+printStringSets : List StringSet -> E.Element Msg
+printStringSets sets =
+    E.column
+        [ E.width E.fill
+        , E.alignTop
+        , E.spacing 5
+        ]
+        [ E.el
+              [ Font.heavy
+              , E.paddingXY 0 10
+              ]
+              ( E.text "First 25 Strings in Current Filter" )
+        , E.column
+            [ E.width E.fill
+            ]
+            ( List.map printStringSet <| List.take 25 sets )
+        ]
+
+
+printStringSet : StringSet -> E.Element Msg
+printStringSet set =
+    E.paragraph
+        []
+        [ E.text <| Utils.printWidth 12 <| Show.brandToString set.brand
+        , E.text " "
+        , E.text <| Utils.printWidth 13 <| Show.materialToString set.material
+        , E.text " "
+        , E.text <| Utils.printWidth 14 <| set.modelCode 
+        , E.text " "
+        , E.text <| Utils.printWidth 20 <| set.name
+        , E.text " "
+        , E.text <| Utils.printWidth 5 <| Show.sizesToString set.sizes
+        , E.text " "
+        , E.text <| Utils.printWidth 10 <| Show.tuningToString set.tuning
+        , E.text " "
+        , if set.url /= "" then
+            E.link
+                [ Font.underline ]
+                { url = set.url, label = E.text "Link" }
+          else
+              E.text ""
+        ]
