@@ -52,12 +52,18 @@ init flags =
     ( model, Cmd.none )
 
 
+defaultEditModel : PageModel
+defaultEditModel =
+    Edit (NE.head Data.data) ""
+
+
 defaultDisplayModel : PageModel
 defaultDisplayModel =
     Display
         { one = defaultFilteredData
         , two = defaultFilteredData
         , chartCfg = defaultChartCfg
+        , chartControls = defaultChartControls
         }
 
 
@@ -72,11 +78,6 @@ defaultFilteredData =
     , allStrings = Data.data |> NE.toList
     , filteredStrings = Data.data |> NE.toList
     }
-
-
-defaultEditModel : PageModel
-defaultEditModel =
-    Edit (NE.head Data.data) ""
 
 
 defaultChartCfg : ChartCfg
@@ -137,6 +138,16 @@ lineChartSpec =
 
         _ ->
             defaultLineChartSpec
+
+
+defaultChartControls : ChartControls
+defaultChartControls =
+    { stats =  { oneDiameter = False
+               , twoDiameter = False
+               , oneTension = False
+               , twoTension = False
+               }
+    }
 
 
 --------------------------------------------------------------------------------

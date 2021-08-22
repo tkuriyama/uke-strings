@@ -38,8 +38,16 @@ type alias DisplayModel =
     { one : FilteredData
     , two : FilteredData
     , chartCfg : ChartCfg
+    , chartControls : ChartControls
     }
 
+type alias ChartControls =
+    { stats : { oneDiameter : Bool
+              , twoDiameter : Bool
+              , oneTension : Bool
+              , twoTension : Bool
+              }
+    } 
 
 type alias EditModel =
     StringSet
@@ -66,6 +74,7 @@ type Msg
     | UpdateSelectedStringSet Int StringSet
     | UpdateClearAll Int
     | UpdateClear String Int
+    | UpdateChartControlStats String Bool
     | CopyToClipboard
     | SwitchTab
     | WindowResize ( Float, Float )

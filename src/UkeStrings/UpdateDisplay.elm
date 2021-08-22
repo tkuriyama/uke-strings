@@ -59,6 +59,10 @@ update msg model =
         UpdateClear s i ->
             route i model (clear s)
 
+        UpdateChartControlStats s b ->
+            { model | chartControls =
+                  updateChartControlStats model.chartControls s b }
+
         _ ->
             model
 
@@ -243,3 +247,28 @@ clear field data =
                     { data | stringSetFilter = ShowItem Nothing }
     in
     data_ |> refreshFilters
+
+
+--------------------------------------------------------------------------------
+-- Chart Controls
+
+
+updateChartControlStats : ChartControls -> String -> Bool -> ChartControls
+updateChartControlStats controls s b =
+    let
+        stats =
+            controls.stats
+
+        stats_ =
+            case s of
+                "OneDiameter" ->
+                    { stats | oneDiameter = b }
+                "TwoDiameter" ->
+                    { stats | twoDiameter = b }
+                "OneTension" ->
+                    { stats | oneTension= b } 
+                _  ->
+                    { stats | twoTension = b }
+
+    in
+        { controls | stats = stats_ }
