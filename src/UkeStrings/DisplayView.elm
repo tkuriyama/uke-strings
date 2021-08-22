@@ -235,7 +235,7 @@ chart cfg stringSets title selectPair ( statControlMsg, showStats ) =
                     [ E.width E.fill
                     , E.centerX
                     ]
-                    (E.text "Filter to <= 10 string sets, or toggle \"SUmmary Statistics\".")
+                    (E.text "Filter to <= 10 string sets, or toggle \"Summary Statistics\".")
     in
     E.column
         [ E.width E.fill

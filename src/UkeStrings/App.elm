@@ -185,20 +185,20 @@ view model =
                 , E.alignRight
                 ]
                 [ E.link
-                      [ Font.alignRight
-                      , Font.underline
-                      ]
-                      { url = "https://github.com/tkuriyama/uke-strings"
-                      , label = E.text "Source"
-                      }
+                    [ Font.alignRight
+                    , Font.underline
+                    ]
+                    { url = "https://github.com/tkuriyama/uke-strings"
+                    , label = E.text "Source"
+                    }
                 , E.link
-                      [ Font.alignRight
-                      , Font.underline
-                      ]
-                      { url = "https://github.com/tkuriyama/uke-strings/blob/master/FAQ.md"
-                      , label = E.text "Help"
-                      }
-                ] 
+                    [ Font.alignRight
+                    , Font.underline
+                    ]
+                    { url = "https://github.com/tkuriyama/uke-strings/blob/master/FAQ.md"
+                    , label = E.text "Help"
+                    }
+                ]
             , case model.pageModel of
                 Display m ->
                     DisplayView.view m
