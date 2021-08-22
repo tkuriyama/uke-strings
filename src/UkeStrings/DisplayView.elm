@@ -351,9 +351,9 @@ printStringSets sets =
 
         title =
             "First strings in current filter (showing {{show}} of {{all}})"
-            |> Fmt.namedValue "show" (String.fromInt (min n 25))
-            |> Fmt.namedValue "all" (String.fromInt n)
-    in 
+                |> Fmt.namedValue "show" (String.fromInt (min n 25))
+                |> Fmt.namedValue "all" (String.fromInt n)
+    in
     E.column
         [ E.width E.fill
         , E.alignTop
