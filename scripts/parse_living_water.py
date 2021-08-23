@@ -1,4 +1,4 @@
-# Hacky parsing of the Worth CSV data to generate Elm data
+# Hacky parsing of the Living Water CSV data to generate Elm data
 
 
 from typing import List # type: ignore
@@ -19,7 +19,7 @@ def parse_line(line: List[str]) -> str:
     if len(line) != 19:
         print(f'Line length unexpected: {line}')
 
-    brand = 'Worth'
+    brand = 'LivingWater'
     color = line[2]
     material = line[3]
     modelCode = line[1]
@@ -31,7 +31,7 @@ def parse_line(line: List[str]) -> str:
     url = line[18]
     tuning = line[4]
     wound = 'True' if line[5] else 'False'
-    diameters = ['0.' + d[3:] for d in line[14:18]]
+    diameters =  line[14:18]
 
     string = '{ '
     string += f'brand = {brand}\n'
@@ -66,7 +66,7 @@ def gen_strings(diameters: List[str], baritone: str) -> str:
 
 ################################################################################
 
-def main(data='worth.csv'):
+def main(data='living_water.csv'):
     """Main."""
     with open(data, 'r') as f:
         data = f.readlines()

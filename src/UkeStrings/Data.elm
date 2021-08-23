@@ -800,4 +800,100 @@ data =
           , url = "http://worthc.to/english/w_strings.html"
           , woundStrings = False
           }
+        , { brand = LivingWater
+          , color = Clear
+          , material = Fluorocarbon
+          , modelCode = ""
+          , name = "Soprano & Concert"
+          , sizes = { soprano = True, concert = True, tenor = False, baritone = False }
+          , strings =
+                { one = { diameter = 0.52, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.66, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.74, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.57, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "https://www.kenmiddleton.co.uk/living-water-strings/"
+          , woundStrings = False
+          }
+        , { brand = LivingWater
+          , color = Clear
+          , material = Fluorocarbon
+          , modelCode = ""
+          , name = "Concert Low G"
+          , sizes = { soprano = False, concert = True, tenor = False, baritone = False }
+          , strings =
+                { one = { diameter = 0.52, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.66, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.74, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.91, pitch = G, tension = 0.0 }
+                }
+          , tuning = Linear
+          , url = "https://www.kenmiddleton.co.uk/living-water-strings/"
+          , woundStrings = False
+          }
+        , { brand = LivingWater
+          , color = Clear
+          , material = Fluorocarbon
+          , modelCode = ""
+          , name = "Tenor"
+          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
+          , strings =
+                { one = { diameter = 0.57, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.66, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.74, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.62, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "https://www.kenmiddleton.co.uk/living-water-strings/"
+          , woundStrings = False
+          }
+        , { brand = LivingWater
+          , color = Clear
+          , material = Fluorocarbon
+          , modelCode = ""
+          , name = "Tenor Low G"
+          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
+          , strings =
+                { one = { diameter = 0.57, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.66, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.74, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.91, pitch = G, tension = 0.0 }
+                }
+          , tuning = Linear
+          , url = "https://www.kenmiddleton.co.uk/living-water-strings/"
+          , woundStrings = False
+          }
+        , { brand = LivingWater
+          , color = Clear
+          , material = Fluorocarbon
+          , modelCode = ""
+          , name = "Baritone"
+          , sizes = { soprano = False, concert = False, tenor = False, baritone = True }
+          , strings =
+                { one = { diameter = 0.62, pitch = E, tension = 0.0 }
+                , two = { diameter = 0.74, pitch = B, tension = 0.0 }
+                , three = { diameter = 0.91, pitch = G, tension = 0.0 }
+                , four = { diameter = 0.66, pitch = D, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "https://www.kenmiddleton.co.uk/living-water-strings/"
+          , woundStrings = False
+          }
+        , { brand = LivingWater
+          , color = Clear
+          , material = Fluorocarbon
+          , modelCode = ""
+          , name = "Baritone Low D"
+          , sizes = { soprano = False, concert = False, tenor = False, baritone = True }
+          , strings =
+                { one = { diameter = 0.62, pitch = E, tension = 0.0 }
+                , two = { diameter = 0.74, pitch = B, tension = 0.0 }
+                , three = { diameter = 0.91, pitch = G, tension = 0.0 }
+                , four = { diameter = 1.02, pitch = D, tension = 0.0 }
+                }
+          , tuning = Linear
+          , url = "https://www.kenmiddleton.co.uk/living-water-strings/"
+          , woundStrings = False
+          }
         ]
