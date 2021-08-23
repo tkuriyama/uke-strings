@@ -54,15 +54,22 @@ view title dropdown toString openMsg clickMsg clearMsg =
                         (Events.onClick clearMsg :: optionAttrs)
                         (E.text "-- Clear --")
 
-                viewOption option =
+                options_ =
+                    List.map (\x -> ( x, toString x )) options
+                        |> List.sortBy Tuple.second
+
+                viewOption ( option, str ) =
                     E.el
                         (Events.onClick (clickMsg option) :: optionAttrs)
-                        (E.text <| toString option)
+                        (E.text str)
 
                 viewOptionList inputOptions =
                     E.column
-                        [ E.width E.fill ]
-                        (clearOption :: List.map viewOption options)
+                        [ E.width E.fill
+                        , E.scrollbarY
+                        , E.height <| E.minimum 400 E.fill
+                        ]
+                        (clearOption :: List.map viewOption options_)
             in
             E.el
                 [ E.width E.fill
