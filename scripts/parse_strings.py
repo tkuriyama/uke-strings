@@ -27,8 +27,8 @@ def parse_line(line: List[str], brand_name: str) -> str:
         print(f'Line length unexpected: {line}')
 
     brand = brand_name
-    color = line[2]
-    material = line[3]
+    color = line[2] if line[2] != 'Other' else 'OtherColor'
+    material = line[3] if line[3] != 'Other' else 'OtherMaterial'
     modelCode = line[1]
     name = line[0]
     sizes = {'soprano': 'True' if line[6] else 'False',
