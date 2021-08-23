@@ -1,27 +1,25 @@
-# Parse CSV String Data
+# Hacky parsing of the Living Water CSV data to generate Elm data
 
 
-import sys # type: ignore
 from typing import List # type: ignore
-
 
 
 ################################################################################
 
 
-def parse(matrix: List[List[str]], brand_name: str):
+def parse(matrix: List[List[str]]):
     """Parse matrix."""
-    lines = [parse_line(line, brand_name) for line in matrix]
+    lines = [parse_line(line) for line in matrix]
     s = '\n, '.join(lines)
     print(s)
 
-def parse_line(line: List[str], brand_name: str) -> str:
+def parse_line(line: List[str]) -> str:
     """Parse line."""
 
     if len(line) != 19:
         print(f'Line length unexpected: {line}')
 
-    brand = brand_name
+    brand = 'GHS'
     color = line[2]
     material = line[3]
     modelCode = line[1]
@@ -33,7 +31,7 @@ def parse_line(line: List[str], brand_name: str) -> str:
     url = line[18]
     tuning = line[4]
     wound = 'True' if line[5] else 'False'
-    diameters = line[14:18]
+    diameters =  line[14:18]
 
     string = '{ '
     string += f'brand = {brand}\n'
@@ -68,21 +66,16 @@ def gen_strings(diameters: List[str], baritone: str) -> str:
 
 ################################################################################
 
-def main(fname, brand):
+def main(data='GHS_strings.csv'):
     """Main."""
-    print(f'Parsing {args[1]}, brand {args[2]}')
-    with open(fname, 'r') as f:
+    with open(data, 'r') as f:
         data = f.readlines()
         lines = [line.strip() for line in data]
         matrix = [[field.strip() for field in line.split(',')]
                   for line in lines]
 
-    parse(matrix, brand)
+        parse(matrix)
 
 
 if __name__ == '__main__':
-    args = sys.argv
-    if len(args) != 3:
-        print('Must provide filename and brand name')
-    else:
-        main(args[1], args[2])
+    main()

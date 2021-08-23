@@ -1,41 +1,41 @@
-Light,BL,Dark,Fluorocarbon,Reentrant,,x,x,,,0.0185,0.026,0.0291,0.0205,0.0470,0.0660,0.0739,0.0521,http://worthc.to/english/w_strings.html
-Light Low-G,BL-LG,Dark,Fluorocarbon,Linear,,x,x,,,0.0185,0.026,0.0291,0.0358,0.0470,0.0660,0.0739,0.0909,http://worthc.to/english/w_strings.html
-Medium,BM,Dark,Fluorocarbon,Reentrant,,x,x,,,0.0205,0.026,0.0291,0.0224,0.0521,0.0660,0.0739,0.0569,http://worthc.to/english/w_strings.html
-Medium Low-G,BM-LG,Dark,Fluorocarbon,Linear,,x,x,,,0.0205,0.026,0.0291,0.0358,0.0521,0.0660,0.0739,0.0909,http://worthc.to/english/w_strings.html
-Extra,BE,Dark,Fluorocarbon,Reentrant,,x,x,,,0.0205,0.026,0.0291,0.0244,0.0521,0.0660,0.0739,0.0620,http://worthc.to/english/w_strings.html
-Custom,BC,Dark,Fluorocarbon,Reentrant,,,,x,,0.0205,0.026,0.0291,0.0205,0.0521,0.0660,0.0739,0.0521,http://worthc.to/english/w_strings.html
-Tenor,BT,Dark,Fluorocarbon,Reentrant,,,,x,,0.0224,0.026,0.0291,0.0244,0.0569,0.0660,0.0739,0.0620,http://worthc.to/english/w_strings.html
-Tenor Low-G,BT-LG,Dark,Fluorocarbon,Linear,,,,x,,0.0224,0.026,0.0291,0.0358,0.0569,0.0660,0.0739,0.0909,http://worthc.to/english/w_strings.html
-Strong,BS,Dark,Fluorocarbon,Reentrant,,,,x,,0.0224,0.0291,0.0319,0.026,0.0569,0.0739,0.0810,0.0660,http://worthc.to/english/w_strings.html
-Strong Low-G,BS-LG,Dark,Fluorocarbon,Linear,,,,x,,0.0224,0.0291,0.0319,0.0358,0.0569,0.0739,0.0810,0.0909,http://worthc.to/english/w_strings.html
-Fat,BF,Dark,Fluorocarbon,Reentrant,,,,x,,0.0244,0.0291,0.0319,0.026,0.0620,0.0739,0.0810,0.0660,http://worthc.to/english/w_strings.html
-Fat Low-G,BF-LG,Dark,Fluorocarbon,Linear,,,,x,,0.0244,0.0291,0.0319,0.0358,0.0620,0.0739,0.0810,0.0909,http://worthc.to/english/w_strings.html
-Baritone,B-B,Dark,Fluorocarbon,Linear,,,,,x,0.0244,0.0291,0.0319,0.0358,0.0620,0.0739,0.0810,0.0909,http://worthc.to/english/w_strings.html
-Low-G,B-LG,Dark,Fluorocarbon,Linear,,,,x,,0.0244,0.0291,0.0319,0.0358,0.0620,0.0739,0.0810,0.0909,http://worthc.to/english/w_strings.html
-Light,CL,Clear,Fluorocarbon,Reentrant,,x,x,,,0.0185,0.026,0.0291,0.0205,0.0470,0.0660,0.0739,0.0521,http://worthc.to/english/w_strings.html
-Light Low-G,CL-LG,Clear,Fluorocarbon,Linear,,x,x,,,0.0185,0.026,0.0291,0.0358,0.0470,0.0660,0.0739,0.0909,http://worthc.to/english/w_strings.html
-Light Low-G ,CL-LGHD,Clear,Fluorocarbon,Linear,,x,x,,,0.0185,0.026,0.0291,0.0358,0.0470,0.0660,0.0739,0.0909,http://worthc.to/english/w_strings.html
-Light Low-G,CL-LGEX,Clear,Fluorocarbon,Linear,,x,x,,,0.0185,0.026,0.0291,0.0433,0.0470,0.0660,0.0739,0.1100,http://worthc.to/english/w_strings.html
-Medium,CM,Clear,Fluorocarbon,Reentrant,,x,x,,,0.0205,0.026,0.0291,0.0224,0.0521,0.0660,0.0739,0.0569,http://worthc.to/english/w_strings.html
-Medium Low-G,CM-LG,Clear,Fluorocarbon,Linear,,x,x,,,0.0205,0.026,0.0291,0.0358,0.0521,0.0660,0.0739,0.0909,http://worthc.to/english/w_strings.html
-Medium Low-G,CM-LGHD,Clear,Fluorocarbon,Linear,,x,x,,,0.0205,0.026,0.0291,0.0358,0.0521,0.0660,0.0739,0.0909,http://worthc.to/english/w_strings.html
-Medium Low-G,CM-LGEX,Clear,Fluorocarbon,Linear,,x,x,,,0.0205,0.026,0.0291,0.0433,0.0521,0.0660,0.0739,0.1100,http://worthc.to/english/w_strings.html
-Extra,CE,Clear,Fluorocarbon,Reentrant,,x,x,,,0.0205,0.026,0.0291,0.0244,0.0521,0.0660,0.0739,0.0620,http://worthc.to/english/w_strings.html
-Hard,CD,Clear,Fluorocarbon,Reentrant,,x,x,,,0.0205,0.026,0.0291,0.0224,0.0521,0.0660,0.0739,0.0569,http://worthc.to/english/w_strings.html
-Hard Low-G,CD-LG,Clear,Fluorocarbon,Linear,,x,x,,,0.0205,0.026,0.0291,0.0358,0.0521,0.0660,0.0739,0.0909,http://worthc.to/english/w_strings.html
-Hard Low-G ,CD-LGHD,Clear,Fluorocarbon,Linear,,x,x,,,0.0205,0.026,0.0291,0.0358,0.0521,0.0660,0.0739,0.0909,http://worthc.to/english/w_strings.html
-Hard Low-G,CD-LGEX,Clear,Fluorocarbon,Linear,,x,x,,,0.0205,0.026,0.0291,0.0433,0.0521,0.0660,0.0739,0.1100,http://worthc.to/english/w_strings.html
-Tenor,CT,Clear,Fluorocarbon,Reentrant,,,,x,,0.0224,0.026,0.0291,0.0244,0.0569,0.0660,0.0739,0.0620,http://worthc.to/english/w_strings.html
-Tenor Low-G,CT-LG,Clear,Fluorocarbon,Linear,,,,x,,0.0224,0.026,0.0291,0.0358,0.0569,0.0660,0.0739,0.0909,http://worthc.to/english/w_strings.html
-Tenor Low-G ,CT-LGHD,Clear,Fluorocarbon,Linear,,,,x,,0.0224,0.026,0.0291,0.0358,0.0569,0.0660,0.0739,0.0909,http://worthc.to/english/w_strings.html
-Tenor Low-G,CT-LGEX,Clear,Fluorocarbon,Linear,,,,x,,0.0224,0.026,0.0291,0.0433,0.0569,0.0660,0.0739,0.1100,http://worthc.to/english/w_strings.html
-Heavy,CH,Clear,Fluorocarbon,Reentrant,,,,x,,0.0224,0.0291,0.0319,0.026,0.0569,0.0739,0.0810,0.0660,http://worthc.to/english/w_strings.html
-Heavy Low-G,CH-LG,Clear,Fluorocarbon,Linear,,,,x,,0.0224,0.0291,0.0319,0.0358,0.0569,0.0739,0.0810,0.0909,http://worthc.to/english/w_strings.html
-Heavy Low-G ,CH-LGHD,Clear,Fluorocarbon,Linear,,,,x,,0.0224,0.0291,0.0319,0.0358,0.0569,0.0739,0.0810,0.0909,http://worthc.to/english/w_strings.html
-Heavy Low-G,CH-LGEX,Clear,Fluorocarbon,Linear,,,,x,,0.0224,0.0291,0.0319,0.0433,0.0569,0.0739,0.0810,0.1100,http://worthc.to/english/w_strings.html
-Fat,CF,Clear,Fluorocarbon,Reentrant,,,,x,,0.0244,0.0291,0.0319,0.026,0.0620,0.0739,0.0810,0.0660,http://worthc.to/english/w_strings.html
-Fat Low-G,CF-LG,Clear,Fluorocarbon,Linear,,,,x,,0.0244,0.0291,0.0319,0.0358,0.0620,0.0739,0.0810,0.0909,http://worthc.to/english/w_strings.html
-Fat Low-G ,CF-LGHD,Clear,Fluorocarbon,Linear,,,,x,,0.0244,0.0291,0.0319,0.0358,0.0620,0.0739,0.0810,0.0909,http://worthc.to/english/w_strings.html
-Fat Low-G,CF-LGEX,Clear,Fluorocarbon,Linear,,,,x,,0.0244,0.0291,0.0319,0.0433,0.0620,0.0739,0.0810,0.1100,http://worthc.to/english/w_strings.html
-Herb Ohta Jr. Model,COJ,Clear,Fluorocarbon,Linear,,,,x,,0.0224,0.0291,0.0319,0.0344,0.0569,0.0739,0.0810,0.0874,http://worthc.to/english/w_strings.html
-Baritone,C-B,Clear,Fluorocarbon,Linear,,,,,x,0.0244,0.0291,0.0319,0.0358,0.0620,0.0739,0.0810,0.0909,http://worthc.to/english/w_strings.html
+Light,BL,Dark,Fluorocarbon,Reentrant,,x,x,,,0.0185,0.026,0.0291,0.0205,0.4699,0.6604,0.7391,0.5207,http://worthc.to/english/w_strings.html
+Light Low-G,BL-LG,Dark,Fluorocarbon,Linear,,x,x,,,0.0185,0.026,0.0291,0.0358,0.4699,0.6604,0.7391,0.9093,http://worthc.to/english/w_strings.html
+Medium,BM,Dark,Fluorocarbon,Reentrant,,x,x,,,0.0205,0.026,0.0291,0.0224,0.5207,0.6604,0.7391,0.5690,http://worthc.to/english/w_strings.html
+Medium Low-G,BM-LG,Dark,Fluorocarbon,Linear,,x,x,,,0.0205,0.026,0.0291,0.0358,0.5207,0.6604,0.7391,0.9093,http://worthc.to/english/w_strings.html
+Extra,BE,Dark,Fluorocarbon,Reentrant,,x,x,,,0.0205,0.026,0.0291,0.0244,0.5207,0.6604,0.7391,0.6198,http://worthc.to/english/w_strings.html
+Custom,BC,Dark,Fluorocarbon,Reentrant,,,,x,,0.0205,0.026,0.0291,0.0205,0.5207,0.6604,0.7391,0.5207,http://worthc.to/english/w_strings.html
+Tenor,BT,Dark,Fluorocarbon,Reentrant,,,,x,,0.0224,0.026,0.0291,0.0244,0.5690,0.6604,0.7391,0.6198,http://worthc.to/english/w_strings.html
+Tenor Low-G,BT-LG,Dark,Fluorocarbon,Linear,,,,x,,0.0224,0.026,0.0291,0.0358,0.5690,0.6604,0.7391,0.9093,http://worthc.to/english/w_strings.html
+Strong,BS,Dark,Fluorocarbon,Reentrant,,,,x,,0.0224,0.0291,0.0319,0.026,0.5690,0.7391,0.8103,0.6604,http://worthc.to/english/w_strings.html
+Strong Low-G,BS-LG,Dark,Fluorocarbon,Linear,,,,x,,0.0224,0.0291,0.0319,0.0358,0.5690,0.7391,0.8103,0.9093,http://worthc.to/english/w_strings.html
+Fat,BF,Dark,Fluorocarbon,Reentrant,,,,x,,0.0244,0.0291,0.0319,0.026,0.6198,0.7391,0.8103,0.6604,http://worthc.to/english/w_strings.html
+Fat Low-G,BF-LG,Dark,Fluorocarbon,Linear,,,,x,,0.0244,0.0291,0.0319,0.0358,0.6198,0.7391,0.8103,0.9093,http://worthc.to/english/w_strings.html
+Baritone,B-B,Dark,Fluorocarbon,Linear,,,,,x,0.0244,0.0291,0.0319,0.0358,0.6198,0.7391,0.8103,0.9093,http://worthc.to/english/w_strings.html
+Low-G,B-LG,Dark,Fluorocarbon,Linear,,,,x,,0.0244,0.0291,0.0319,0.0358,0.6198,0.7391,0.8103,0.9093,http://worthc.to/english/w_strings.html
+Light,CL,Clear,Fluorocarbon,Reentrant,,x,x,,,0.0185,0.026,0.0291,0.0205,0.4699,0.6604,0.7391,0.5207,http://worthc.to/english/w_strings.html
+Light Low-G,CL-LG,Clear,Fluorocarbon,Linear,,x,x,,,0.0185,0.026,0.0291,0.0358,0.4699,0.6604,0.7391,0.9093,http://worthc.to/english/w_strings.html
+Light Low-G ,CL-LGHD,Clear,Fluorocarbon,Linear,,x,x,,,0.0185,0.026,0.0291,0.0358,0.4699,0.6604,0.7391,0.9093,http://worthc.to/english/w_strings.html
+Light Low-G,CL-LGEX,Clear,Fluorocarbon,Linear,,x,x,,,0.0185,0.026,0.0291,0.0433,0.4699,0.6604,0.7391,1.0998,http://worthc.to/english/w_strings.html
+Medium,CM,Clear,Fluorocarbon,Reentrant,,x,x,,,0.0205,0.026,0.0291,0.0224,0.5207,0.6604,0.7391,0.5690,http://worthc.to/english/w_strings.html
+Medium Low-G,CM-LG,Clear,Fluorocarbon,Linear,,x,x,,,0.0205,0.026,0.0291,0.0358,0.5207,0.6604,0.7391,0.9093,http://worthc.to/english/w_strings.html
+Medium Low-G,CM-LGHD,Clear,Fluorocarbon,Linear,,x,x,,,0.0205,0.026,0.0291,0.0358,0.5207,0.6604,0.7391,0.9093,http://worthc.to/english/w_strings.html
+Medium Low-G,CM-LGEX,Clear,Fluorocarbon,Linear,,x,x,,,0.0205,0.026,0.0291,0.0433,0.5207,0.6604,0.7391,1.0998,http://worthc.to/english/w_strings.html
+Extra,CE,Clear,Fluorocarbon,Reentrant,,x,x,,,0.0205,0.026,0.0291,0.0244,0.5207,0.6604,0.7391,0.6198,http://worthc.to/english/w_strings.html
+Hard,CD,Clear,Fluorocarbon,Reentrant,,x,x,,,0.0205,0.026,0.0291,0.0224,0.5207,0.6604,0.7391,0.5690,http://worthc.to/english/w_strings.html
+Hard Low-G,CD-LG,Clear,Fluorocarbon,Linear,,x,x,,,0.0205,0.026,0.0291,0.0358,0.5207,0.6604,0.7391,0.9093,http://worthc.to/english/w_strings.html
+Hard Low-G ,CD-LGHD,Clear,Fluorocarbon,Linear,,x,x,,,0.0205,0.026,0.0291,0.0358,0.5207,0.6604,0.7391,0.9093,http://worthc.to/english/w_strings.html
+Hard Low-G,CD-LGEX,Clear,Fluorocarbon,Linear,,x,x,,,0.0205,0.026,0.0291,0.0433,0.5207,0.6604,0.7391,1.0998,http://worthc.to/english/w_strings.html
+Tenor,CT,Clear,Fluorocarbon,Reentrant,,,,x,,0.0224,0.026,0.0291,0.0244,0.5690,0.6604,0.7391,0.6198,http://worthc.to/english/w_strings.html
+Tenor Low-G,CT-LG,Clear,Fluorocarbon,Linear,,,,x,,0.0224,0.026,0.0291,0.0358,0.5690,0.6604,0.7391,0.9093,http://worthc.to/english/w_strings.html
+Tenor Low-G ,CT-LGHD,Clear,Fluorocarbon,Linear,,,,x,,0.0224,0.026,0.0291,0.0358,0.5690,0.6604,0.7391,0.9093,http://worthc.to/english/w_strings.html
+Tenor Low-G,CT-LGEX,Clear,Fluorocarbon,Linear,,,,x,,0.0224,0.026,0.0291,0.0433,0.5690,0.6604,0.7391,1.0998,http://worthc.to/english/w_strings.html
+Heavy,CH,Clear,Fluorocarbon,Reentrant,,,,x,,0.0224,0.0291,0.0319,0.026,0.5690,0.7391,0.8103,0.6604,http://worthc.to/english/w_strings.html
+Heavy Low-G,CH-LG,Clear,Fluorocarbon,Linear,,,,x,,0.0224,0.0291,0.0319,0.0358,0.5690,0.7391,0.8103,0.9093,http://worthc.to/english/w_strings.html
+Heavy Low-G ,CH-LGHD,Clear,Fluorocarbon,Linear,,,,x,,0.0224,0.0291,0.0319,0.0358,0.5690,0.7391,0.8103,0.9093,http://worthc.to/english/w_strings.html
+Heavy Low-G,CH-LGEX,Clear,Fluorocarbon,Linear,,,,x,,0.0224,0.0291,0.0319,0.0433,0.5690,0.7391,0.8103,1.0998,http://worthc.to/english/w_strings.html
+Fat,CF,Clear,Fluorocarbon,Reentrant,,,,x,,0.0244,0.0291,0.0319,0.026,0.6198,0.7391,0.8103,0.6604,http://worthc.to/english/w_strings.html
+Fat Low-G,CF-LG,Clear,Fluorocarbon,Linear,,,,x,,0.0244,0.0291,0.0319,0.0358,0.6198,0.7391,0.8103,0.9093,http://worthc.to/english/w_strings.html
+Fat Low-G ,CF-LGHD,Clear,Fluorocarbon,Linear,,,,x,,0.0244,0.0291,0.0319,0.0358,0.6198,0.7391,0.8103,0.9093,http://worthc.to/english/w_strings.html
+Fat Low-G,CF-LGEX,Clear,Fluorocarbon,Linear,,,,x,,0.0244,0.0291,0.0319,0.0433,0.6198,0.7391,0.8103,1.0998,http://worthc.to/english/w_strings.html
+Herb Ohta Jr. Model,COJ,Clear,Fluorocarbon,Linear,,,,x,,0.0224,0.0291,0.0319,0.0344,0.5690,0.7391,0.8103,0.8738,http://worthc.to/english/w_strings.html
+Baritone,C-B,Clear,Fluorocarbon,Linear,,,,,x,0.0244,0.0291,0.0319,0.0358,0.6198,0.7391,0.8103,0.9093,http://worthc.to/english/w_strings.html

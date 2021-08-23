@@ -5,6 +5,11 @@ import sys # type: ignore
 from typing import List # type: ignore
 
 
+################################################################################
+
+
+DEBUG = 0
+
 
 ################################################################################
 
@@ -70,7 +75,9 @@ def gen_strings(diameters: List[str], baritone: str) -> str:
 
 def main(fname, brand):
     """Main."""
-    print(f'Parsing {args[1]}, brand {args[2]}')
+    if DEBUG:
+        print(f'Parsing {args[1]}, brand {args[2]}')
+        
     with open(fname, 'r') as f:
         data = f.readlines()
         lines = [line.strip() for line in data]
