@@ -166,7 +166,7 @@ view model =
     in
     E.layout
         [ E.width (E.px <| round model.windowWidth)
-        , Font.family [ Font.typeface "Consolas", Font.sansSerif ]
+        , Font.family [ Font.typeface "Consolas", Font.sansSerif, Font.monospace ]
         , Font.size 18
         , E.padding 5
         ]

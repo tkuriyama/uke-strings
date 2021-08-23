@@ -144,662 +144,6 @@ data =
           , url = "https://aquilacorde.com/en/shop/modern-instrument-string-sets/ukulele-banjouke-en/sugar/"
           , woundStrings = True
           }
-        , { brand = Worth
-          , color = Dark
-          , material = Fluorocarbon
-          , modelCode = "BL"
-          , name = "Light"
-          , sizes = { soprano = True, concert = True, tenor = False, baritone = False }
-          , strings =
-                { one = { diameter = 0.47, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.66, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.739, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.521, pitch = G, tension = 0.0 }
-                }
-          , tuning = Reentrant
-          , url = "http://worthc.to/english/w_strings.html"
-          , woundStrings = False
-          }
-        , { brand = Worth
-          , color = Dark
-          , material = Fluorocarbon
-          , modelCode = "BL-LG"
-          , name = "Light Low-G"
-          , sizes = { soprano = True, concert = True, tenor = False, baritone = False }
-          , strings =
-                { one = { diameter = 0.47, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.66, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.739, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.909, pitch = G, tension = 0.0 }
-                }
-          , tuning = Linear
-          , url = "http://worthc.to/english/w_strings.html"
-          , woundStrings = False
-          }
-        , { brand = Worth
-          , color = Dark
-          , material = Fluorocarbon
-          , modelCode = "BM"
-          , name = "Medium"
-          , sizes = { soprano = True, concert = True, tenor = False, baritone = False }
-          , strings =
-                { one = { diameter = 0.521, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.66, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.739, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.569, pitch = G, tension = 0.0 }
-                }
-          , tuning = Reentrant
-          , url = "http://worthc.to/english/w_strings.html"
-          , woundStrings = False
-          }
-        , { brand = Worth
-          , color = Dark
-          , material = Fluorocarbon
-          , modelCode = "BM-LG"
-          , name = "Medium Low-G"
-          , sizes = { soprano = True, concert = True, tenor = False, baritone = False }
-          , strings =
-                { one = { diameter = 0.521, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.66, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.739, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.909, pitch = G, tension = 0.0 }
-                }
-          , tuning = Linear
-          , url = "http://worthc.to/english/w_strings.html"
-          , woundStrings = False
-          }
-        , { brand = Worth
-          , color = Dark
-          , material = Fluorocarbon
-          , modelCode = "BE"
-          , name = "Extra"
-          , sizes = { soprano = True, concert = True, tenor = False, baritone = False }
-          , strings =
-                { one = { diameter = 0.521, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.66, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.739, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.62, pitch = G, tension = 0.0 }
-                }
-          , tuning = Reentrant
-          , url = "http://worthc.to/english/w_strings.html"
-          , woundStrings = False
-          }
-        , { brand = Worth
-          , color = Dark
-          , material = Fluorocarbon
-          , modelCode = "BC"
-          , name = "Custom"
-          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
-          , strings =
-                { one = { diameter = 0.521, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.66, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.739, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.521, pitch = G, tension = 0.0 }
-                }
-          , tuning = Reentrant
-          , url = "http://worthc.to/english/w_strings.html"
-          , woundStrings = False
-          }
-        , { brand = Worth
-          , color = Dark
-          , material = Fluorocarbon
-          , modelCode = "BT"
-          , name = "Tenor"
-          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
-          , strings =
-                { one = { diameter = 0.569, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.66, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.739, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.62, pitch = G, tension = 0.0 }
-                }
-          , tuning = Reentrant
-          , url = "http://worthc.to/english/w_strings.html"
-          , woundStrings = False
-          }
-        , { brand = Worth
-          , color = Dark
-          , material = Fluorocarbon
-          , modelCode = "BT-LG"
-          , name = "Tenor Low-G"
-          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
-          , strings =
-                { one = { diameter = 0.569, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.66, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.739, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.909, pitch = G, tension = 0.0 }
-                }
-          , tuning = Linear
-          , url = "http://worthc.to/english/w_strings.html"
-          , woundStrings = False
-          }
-        , { brand = Worth
-          , color = Dark
-          , material = Fluorocarbon
-          , modelCode = "BS"
-          , name = "Strong"
-          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
-          , strings =
-                { one = { diameter = 0.569, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.739, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.81, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.66, pitch = G, tension = 0.0 }
-                }
-          , tuning = Reentrant
-          , url = "http://worthc.to/english/w_strings.html"
-          , woundStrings = False
-          }
-        , { brand = Worth
-          , color = Dark
-          , material = Fluorocarbon
-          , modelCode = "BS-LG"
-          , name = "Strong Low-G"
-          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
-          , strings =
-                { one = { diameter = 0.569, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.739, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.81, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.909, pitch = G, tension = 0.0 }
-                }
-          , tuning = Linear
-          , url = "http://worthc.to/english/w_strings.html"
-          , woundStrings = False
-          }
-        , { brand = Worth
-          , color = Dark
-          , material = Fluorocarbon
-          , modelCode = "BF"
-          , name = "Fat"
-          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
-          , strings =
-                { one = { diameter = 0.62, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.739, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.81, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.66, pitch = G, tension = 0.0 }
-                }
-          , tuning = Reentrant
-          , url = "http://worthc.to/english/w_strings.html"
-          , woundStrings = False
-          }
-        , { brand = Worth
-          , color = Dark
-          , material = Fluorocarbon
-          , modelCode = "BF-LG"
-          , name = "Fat Low-G"
-          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
-          , strings =
-                { one = { diameter = 0.62, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.739, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.81, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.909, pitch = G, tension = 0.0 }
-                }
-          , tuning = Linear
-          , url = "http://worthc.to/english/w_strings.html"
-          , woundStrings = False
-          }
-        , { brand = Worth
-          , color = Dark
-          , material = Fluorocarbon
-          , modelCode = "B-B"
-          , name = "Baritone"
-          , sizes = { soprano = False, concert = False, tenor = False, baritone = True }
-          , strings =
-                { one = { diameter = 0.62, pitch = E, tension = 0.0 }
-                , two = { diameter = 0.739, pitch = B, tension = 0.0 }
-                , three = { diameter = 0.81, pitch = G, tension = 0.0 }
-                , four = { diameter = 0.909, pitch = D, tension = 0.0 }
-                }
-          , tuning = Linear
-          , url = "http://worthc.to/english/w_strings.html"
-          , woundStrings = False
-          }
-        , { brand = Worth
-          , color = Dark
-          , material = Fluorocarbon
-          , modelCode = "B-LG"
-          , name = "Low-G"
-          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
-          , strings =
-                { one = { diameter = 0.62, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.739, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.81, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.909, pitch = G, tension = 0.0 }
-                }
-          , tuning = Linear
-          , url = "http://worthc.to/english/w_strings.html"
-          , woundStrings = False
-          }
-        , { brand = Worth
-          , color = Clear
-          , material = Fluorocarbon
-          , modelCode = "CL"
-          , name = "Light"
-          , sizes = { soprano = True, concert = True, tenor = False, baritone = False }
-          , strings =
-                { one = { diameter = 0.47, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.66, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.739, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.521, pitch = G, tension = 0.0 }
-                }
-          , tuning = Reentrant
-          , url = "http://worthc.to/english/w_strings.html"
-          , woundStrings = False
-          }
-        , { brand = Worth
-          , color = Clear
-          , material = Fluorocarbon
-          , modelCode = "CL-LG"
-          , name = "Light Low-G"
-          , sizes = { soprano = True, concert = True, tenor = False, baritone = False }
-          , strings =
-                { one = { diameter = 0.47, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.66, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.739, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.909, pitch = G, tension = 0.0 }
-                }
-          , tuning = Linear
-          , url = "http://worthc.to/english/w_strings.html"
-          , woundStrings = False
-          }
-        , { brand = Worth
-          , color = Clear
-          , material = Fluorocarbon
-          , modelCode = "CL-LGHD"
-          , name = "Light Low-G"
-          , sizes = { soprano = True, concert = True, tenor = False, baritone = False }
-          , strings =
-                { one = { diameter = 0.47, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.66, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.739, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.909, pitch = G, tension = 0.0 }
-                }
-          , tuning = Linear
-          , url = "http://worthc.to/english/w_strings.html"
-          , woundStrings = False
-          }
-        , { brand = Worth
-          , color = Clear
-          , material = Fluorocarbon
-          , modelCode = "CL-LGEX"
-          , name = "Light Low-G"
-          , sizes = { soprano = True, concert = True, tenor = False, baritone = False }
-          , strings =
-                { one = { diameter = 0.47, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.66, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.739, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.1, pitch = G, tension = 0.0 }
-                }
-          , tuning = Linear
-          , url = "http://worthc.to/english/w_strings.html"
-          , woundStrings = False
-          }
-        , { brand = Worth
-          , color = Clear
-          , material = Fluorocarbon
-          , modelCode = "CM"
-          , name = "Medium"
-          , sizes = { soprano = True, concert = True, tenor = False, baritone = False }
-          , strings =
-                { one = { diameter = 0.521, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.66, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.739, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.569, pitch = G, tension = 0.0 }
-                }
-          , tuning = Reentrant
-          , url = "http://worthc.to/english/w_strings.html"
-          , woundStrings = False
-          }
-        , { brand = Worth
-          , color = Clear
-          , material = Fluorocarbon
-          , modelCode = "CM-LG"
-          , name = "Medium Low-G"
-          , sizes = { soprano = True, concert = True, tenor = False, baritone = False }
-          , strings =
-                { one = { diameter = 0.521, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.66, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.739, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.909, pitch = G, tension = 0.0 }
-                }
-          , tuning = Linear
-          , url = "http://worthc.to/english/w_strings.html"
-          , woundStrings = False
-          }
-        , { brand = Worth
-          , color = Clear
-          , material = Fluorocarbon
-          , modelCode = "CM-LGHD"
-          , name = "Medium Low-G"
-          , sizes = { soprano = True, concert = True, tenor = False, baritone = False }
-          , strings =
-                { one = { diameter = 0.521, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.66, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.739, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.909, pitch = G, tension = 0.0 }
-                }
-          , tuning = Linear
-          , url = "http://worthc.to/english/w_strings.html"
-          , woundStrings = False
-          }
-        , { brand = Worth
-          , color = Clear
-          , material = Fluorocarbon
-          , modelCode = "CM-LGEX"
-          , name = "Medium Low-G"
-          , sizes = { soprano = True, concert = True, tenor = False, baritone = False }
-          , strings =
-                { one = { diameter = 0.521, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.66, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.739, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.1, pitch = G, tension = 0.0 }
-                }
-          , tuning = Linear
-          , url = "http://worthc.to/english/w_strings.html"
-          , woundStrings = False
-          }
-        , { brand = Worth
-          , color = Clear
-          , material = Fluorocarbon
-          , modelCode = "CE"
-          , name = "Extra"
-          , sizes = { soprano = True, concert = True, tenor = False, baritone = False }
-          , strings =
-                { one = { diameter = 0.521, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.66, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.739, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.62, pitch = G, tension = 0.0 }
-                }
-          , tuning = Reentrant
-          , url = "http://worthc.to/english/w_strings.html"
-          , woundStrings = False
-          }
-        , { brand = Worth
-          , color = Clear
-          , material = Fluorocarbon
-          , modelCode = "CD"
-          , name = "Hard"
-          , sizes = { soprano = True, concert = True, tenor = False, baritone = False }
-          , strings =
-                { one = { diameter = 0.521, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.66, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.739, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.569, pitch = G, tension = 0.0 }
-                }
-          , tuning = Reentrant
-          , url = "http://worthc.to/english/w_strings.html"
-          , woundStrings = False
-          }
-        , { brand = Worth
-          , color = Clear
-          , material = Fluorocarbon
-          , modelCode = "CD-LG"
-          , name = "Hard Low-G"
-          , sizes = { soprano = True, concert = True, tenor = False, baritone = False }
-          , strings =
-                { one = { diameter = 0.521, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.66, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.739, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.909, pitch = G, tension = 0.0 }
-                }
-          , tuning = Linear
-          , url = "http://worthc.to/english/w_strings.html"
-          , woundStrings = False
-          }
-        , { brand = Worth
-          , color = Clear
-          , material = Fluorocarbon
-          , modelCode = "CD-LGHD"
-          , name = "Hard Low-G"
-          , sizes = { soprano = True, concert = True, tenor = False, baritone = False }
-          , strings =
-                { one = { diameter = 0.521, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.66, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.739, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.909, pitch = G, tension = 0.0 }
-                }
-          , tuning = Linear
-          , url = "http://worthc.to/english/w_strings.html"
-          , woundStrings = False
-          }
-        , { brand = Worth
-          , color = Clear
-          , material = Fluorocarbon
-          , modelCode = "CD-LGEX"
-          , name = "Hard Low-G"
-          , sizes = { soprano = True, concert = True, tenor = False, baritone = False }
-          , strings =
-                { one = { diameter = 0.521, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.66, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.739, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.1, pitch = G, tension = 0.0 }
-                }
-          , tuning = Linear
-          , url = "http://worthc.to/english/w_strings.html"
-          , woundStrings = False
-          }
-        , { brand = Worth
-          , color = Clear
-          , material = Fluorocarbon
-          , modelCode = "CT"
-          , name = "Tenor"
-          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
-          , strings =
-                { one = { diameter = 0.569, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.66, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.739, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.62, pitch = G, tension = 0.0 }
-                }
-          , tuning = Reentrant
-          , url = "http://worthc.to/english/w_strings.html"
-          , woundStrings = False
-          }
-        , { brand = Worth
-          , color = Clear
-          , material = Fluorocarbon
-          , modelCode = "CT-LG"
-          , name = "Tenor Low-G"
-          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
-          , strings =
-                { one = { diameter = 0.569, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.66, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.739, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.909, pitch = G, tension = 0.0 }
-                }
-          , tuning = Linear
-          , url = "http://worthc.to/english/w_strings.html"
-          , woundStrings = False
-          }
-        , { brand = Worth
-          , color = Clear
-          , material = Fluorocarbon
-          , modelCode = "CT-LGHD"
-          , name = "Tenor Low-G"
-          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
-          , strings =
-                { one = { diameter = 0.569, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.66, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.739, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.909, pitch = G, tension = 0.0 }
-                }
-          , tuning = Linear
-          , url = "http://worthc.to/english/w_strings.html"
-          , woundStrings = False
-          }
-        , { brand = Worth
-          , color = Clear
-          , material = Fluorocarbon
-          , modelCode = "CT-LGEX"
-          , name = "Tenor Low-G"
-          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
-          , strings =
-                { one = { diameter = 0.569, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.66, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.739, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.1, pitch = G, tension = 0.0 }
-                }
-          , tuning = Linear
-          , url = "http://worthc.to/english/w_strings.html"
-          , woundStrings = False
-          }
-        , { brand = Worth
-          , color = Clear
-          , material = Fluorocarbon
-          , modelCode = "CH"
-          , name = "Heavy"
-          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
-          , strings =
-                { one = { diameter = 0.569, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.739, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.81, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.66, pitch = G, tension = 0.0 }
-                }
-          , tuning = Reentrant
-          , url = "http://worthc.to/english/w_strings.html"
-          , woundStrings = False
-          }
-        , { brand = Worth
-          , color = Clear
-          , material = Fluorocarbon
-          , modelCode = "CH-LG"
-          , name = "Heavy Low-G"
-          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
-          , strings =
-                { one = { diameter = 0.569, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.739, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.81, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.909, pitch = G, tension = 0.0 }
-                }
-          , tuning = Linear
-          , url = "http://worthc.to/english/w_strings.html"
-          , woundStrings = False
-          }
-        , { brand = Worth
-          , color = Clear
-          , material = Fluorocarbon
-          , modelCode = "CH-LGHD"
-          , name = "Heavy Low-G"
-          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
-          , strings =
-                { one = { diameter = 0.569, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.739, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.81, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.909, pitch = G, tension = 0.0 }
-                }
-          , tuning = Linear
-          , url = "http://worthc.to/english/w_strings.html"
-          , woundStrings = False
-          }
-        , { brand = Worth
-          , color = Clear
-          , material = Fluorocarbon
-          , modelCode = "CH-LGEX"
-          , name = "Heavy Low-G"
-          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
-          , strings =
-                { one = { diameter = 0.569, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.739, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.81, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.1, pitch = G, tension = 0.0 }
-                }
-          , tuning = Linear
-          , url = "http://worthc.to/english/w_strings.html"
-          , woundStrings = False
-          }
-        , { brand = Worth
-          , color = Clear
-          , material = Fluorocarbon
-          , modelCode = "CF"
-          , name = "Fat"
-          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
-          , strings =
-                { one = { diameter = 0.62, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.739, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.81, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.66, pitch = G, tension = 0.0 }
-                }
-          , tuning = Reentrant
-          , url = "http://worthc.to/english/w_strings.html"
-          , woundStrings = False
-          }
-        , { brand = Worth
-          , color = Clear
-          , material = Fluorocarbon
-          , modelCode = "CF-LG"
-          , name = "Fat Low-G"
-          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
-          , strings =
-                { one = { diameter = 0.62, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.739, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.81, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.909, pitch = G, tension = 0.0 }
-                }
-          , tuning = Linear
-          , url = "http://worthc.to/english/w_strings.html"
-          , woundStrings = False
-          }
-        , { brand = Worth
-          , color = Clear
-          , material = Fluorocarbon
-          , modelCode = "CF-LGHD"
-          , name = "Fat Low-G"
-          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
-          , strings =
-                { one = { diameter = 0.62, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.739, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.81, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.909, pitch = G, tension = 0.0 }
-                }
-          , tuning = Linear
-          , url = "http://worthc.to/english/w_strings.html"
-          , woundStrings = False
-          }
-        , { brand = Worth
-          , color = Clear
-          , material = Fluorocarbon
-          , modelCode = "CF-LGEX"
-          , name = "Fat Low-G"
-          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
-          , strings =
-                { one = { diameter = 0.62, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.739, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.81, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.1, pitch = G, tension = 0.0 }
-                }
-          , tuning = Linear
-          , url = "http://worthc.to/english/w_strings.html"
-          , woundStrings = False
-          }
-        , { brand = Worth
-          , color = Clear
-          , material = Fluorocarbon
-          , modelCode = "COJ"
-          , name = "Herb Ohta Jr. Model"
-          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
-          , strings =
-                { one = { diameter = 0.569, pitch = A, tension = 0.0 }
-                , two = { diameter = 0.739, pitch = E, tension = 0.0 }
-                , three = { diameter = 0.81, pitch = C, tension = 0.0 }
-                , four = { diameter = 0.874, pitch = G, tension = 0.0 }
-                }
-          , tuning = Linear
-          , url = "http://worthc.to/english/w_strings.html"
-          , woundStrings = False
-          }
-        , { brand = Worth
-          , color = Clear
-          , material = Fluorocarbon
-          , modelCode = "C-B"
-          , name = "Baritone"
-          , sizes = { soprano = False, concert = False, tenor = False, baritone = True }
-          , strings =
-                { one = { diameter = 0.62, pitch = E, tension = 0.0 }
-                , two = { diameter = 0.739, pitch = B, tension = 0.0 }
-                , three = { diameter = 0.81, pitch = G, tension = 0.0 }
-                , four = { diameter = 0.909, pitch = D, tension = 0.0 }
-                }
-          , tuning = Linear
-          , url = "http://worthc.to/english/w_strings.html"
-          , woundStrings = False
-          }
         , { brand = LivingWater
           , color = Clear
           , material = Fluorocarbon
@@ -894,6 +238,790 @@ data =
                 }
           , tuning = Linear
           , url = "https://www.kenmiddleton.co.uk/living-water-strings/"
+          , woundStrings = False
+          }
+        , { brand = GHS
+          , color = Clear
+          , material = Fluorocarbon
+          , modelCode = "H-20"
+          , name = "Soprano / Concert"
+          , sizes = { soprano = True, concert = True, tenor = False, baritone = False }
+          , strings =
+                { one = { diameter = 0.6604, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.8382, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.889, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.7798, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "https://www.ghsstrings.com/products/11430-fluorocarbon?category_id=1969715-fluorocarbon"
+          , woundStrings = False
+          }
+        , { brand = GHS
+          , color = Clear
+          , material = Fluorocarbon
+          , modelCode = "H-T20"
+          , name = "Tenor (Wound 3rd)"
+          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
+          , strings =
+                { one = { diameter = 0.6604, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.8382, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.889, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.7798, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "https://www.ghsstrings.com/products/11430-fluorocarbon?category_id=1969715-fluorocarbon"
+          , woundStrings = True
+          }
+        , { brand = GHS
+          , color = Clear
+          , material = Fluorocarbon
+          , modelCode = "H-T20F"
+          , name = "Tenor Fingerstyle (Wound 3rd)"
+          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
+          , strings =
+                { one = { diameter = 0.6858, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.889, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.889, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.7798, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "https://www.ghsstrings.com/products/11430-fluorocarbon?category_id=1969715-fluorocarbon"
+          , woundStrings = True
+          }
+        , { brand = GHS
+          , color = Dark
+          , material = Nylon
+          , modelCode = "H-10"
+          , name = "Soprano / Concert"
+          , sizes = { soprano = True, concert = True, tenor = False, baritone = False }
+          , strings =
+                { one = { diameter = 0.635, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.8128, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.9144, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.7112, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "https://www.ghsstrings.com/products/11434-nylon?category_id=1969716-nylon"
+          , woundStrings = False
+          }
+        , { brand = GHS
+          , color = Dark
+          , material = Nylon
+          , modelCode = "H-T10"
+          , name = "Tenor (Wound 3rd)"
+          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
+          , strings =
+                { one = { diameter = 0.7112, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.9144, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.889, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.8128, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "https://www.ghsstrings.com/products/11434-nylon?category_id=1969716-nylon"
+          , woundStrings = True
+          }
+        , { brand = GHS
+          , color = Dark
+          , material = Nylon
+          , modelCode = "100"
+          , name = "Baritone"
+          , sizes = { soprano = False, concert = False, tenor = False, baritone = True }
+          , strings =
+                { one = { diameter = 0.7112, pitch = E, tension = 0.0 }
+                , two = { diameter = 0.9144, pitch = B, tension = 0.0 }
+                , three = { diameter = 0.7366, pitch = G, tension = 0.0 }
+                , four = { diameter = 0.8636, pitch = D, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "https://www.ghsstrings.com/products/11434-nylon?category_id=1969716-nylon"
+          , woundStrings = True
+          }
+        , { brand = GHS
+          , color = Dark
+          , material = Nylon
+          , modelCode = "H-100"
+          , name = "Baritone"
+          , sizes = { soprano = False, concert = False, tenor = False, baritone = True }
+          , strings =
+                { one = { diameter = 0.7112, pitch = E, tension = 0.0 }
+                , two = { diameter = 0.9144, pitch = B, tension = 0.0 }
+                , three = { diameter = 0.6858, pitch = G, tension = 0.0 }
+                , four = { diameter = 0.8636, pitch = D, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "https://www.ghsstrings.com/products/11434-nylon?category_id=1969716-nylon"
+          , woundStrings = True
+          }
+        , { brand = GHS
+          , color = Dark
+          , material = Nylon
+          , modelCode = "TU LOW G"
+          , name = "Low G (Wound 3rd & 4th)"
+          , sizes = { soprano = True, concert = True, tenor = True, baritone = False }
+          , strings =
+                { one = { diameter = 0.7112, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.8128, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.889, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.7366, pitch = G, tension = 0.0 }
+                }
+          , tuning = Linear
+          , url = "https://www.ghsstrings.com/products/11436-black-nylon-tenor?category_id=1969716-nylon"
+          , woundStrings = True
+          }
+        , { brand = Worth
+          , color = Dark
+          , material = Fluorocarbon
+          , modelCode = "BL"
+          , name = "Light"
+          , sizes = { soprano = True, concert = True, tenor = False, baritone = False }
+          , strings =
+                { one = { diameter = 0.4699, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.6604, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.7391, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.5207, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "http://worthc.to/english/w_strings.html"
+          , woundStrings = False
+          }
+        , { brand = Worth
+          , color = Dark
+          , material = Fluorocarbon
+          , modelCode = "BL-LG"
+          , name = "Light Low-G"
+          , sizes = { soprano = True, concert = True, tenor = False, baritone = False }
+          , strings =
+                { one = { diameter = 0.4699, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.6604, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.7391, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.9093, pitch = G, tension = 0.0 }
+                }
+          , tuning = Linear
+          , url = "http://worthc.to/english/w_strings.html"
+          , woundStrings = False
+          }
+        , { brand = Worth
+          , color = Dark
+          , material = Fluorocarbon
+          , modelCode = "BM"
+          , name = "Medium"
+          , sizes = { soprano = True, concert = True, tenor = False, baritone = False }
+          , strings =
+                { one = { diameter = 0.5207, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.6604, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.7391, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.569, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "http://worthc.to/english/w_strings.html"
+          , woundStrings = False
+          }
+        , { brand = Worth
+          , color = Dark
+          , material = Fluorocarbon
+          , modelCode = "BM-LG"
+          , name = "Medium Low-G"
+          , sizes = { soprano = True, concert = True, tenor = False, baritone = False }
+          , strings =
+                { one = { diameter = 0.5207, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.6604, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.7391, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.9093, pitch = G, tension = 0.0 }
+                }
+          , tuning = Linear
+          , url = "http://worthc.to/english/w_strings.html"
+          , woundStrings = False
+          }
+        , { brand = Worth
+          , color = Dark
+          , material = Fluorocarbon
+          , modelCode = "BE"
+          , name = "Extra"
+          , sizes = { soprano = True, concert = True, tenor = False, baritone = False }
+          , strings =
+                { one = { diameter = 0.5207, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.6604, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.7391, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.6198, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "http://worthc.to/english/w_strings.html"
+          , woundStrings = False
+          }
+        , { brand = Worth
+          , color = Dark
+          , material = Fluorocarbon
+          , modelCode = "BC"
+          , name = "Custom"
+          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
+          , strings =
+                { one = { diameter = 0.5207, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.6604, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.7391, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.5207, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "http://worthc.to/english/w_strings.html"
+          , woundStrings = False
+          }
+        , { brand = Worth
+          , color = Dark
+          , material = Fluorocarbon
+          , modelCode = "BT"
+          , name = "Tenor"
+          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
+          , strings =
+                { one = { diameter = 0.569, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.6604, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.7391, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.6198, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "http://worthc.to/english/w_strings.html"
+          , woundStrings = False
+          }
+        , { brand = Worth
+          , color = Dark
+          , material = Fluorocarbon
+          , modelCode = "BT-LG"
+          , name = "Tenor Low-G"
+          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
+          , strings =
+                { one = { diameter = 0.569, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.6604, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.7391, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.9093, pitch = G, tension = 0.0 }
+                }
+          , tuning = Linear
+          , url = "http://worthc.to/english/w_strings.html"
+          , woundStrings = False
+          }
+        , { brand = Worth
+          , color = Dark
+          , material = Fluorocarbon
+          , modelCode = "BS"
+          , name = "Strong"
+          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
+          , strings =
+                { one = { diameter = 0.569, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.7391, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.8103, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.6604, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "http://worthc.to/english/w_strings.html"
+          , woundStrings = False
+          }
+        , { brand = Worth
+          , color = Dark
+          , material = Fluorocarbon
+          , modelCode = "BS-LG"
+          , name = "Strong Low-G"
+          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
+          , strings =
+                { one = { diameter = 0.569, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.7391, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.8103, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.9093, pitch = G, tension = 0.0 }
+                }
+          , tuning = Linear
+          , url = "http://worthc.to/english/w_strings.html"
+          , woundStrings = False
+          }
+        , { brand = Worth
+          , color = Dark
+          , material = Fluorocarbon
+          , modelCode = "BF"
+          , name = "Fat"
+          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
+          , strings =
+                { one = { diameter = 0.6198, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.7391, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.8103, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.6604, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "http://worthc.to/english/w_strings.html"
+          , woundStrings = False
+          }
+        , { brand = Worth
+          , color = Dark
+          , material = Fluorocarbon
+          , modelCode = "BF-LG"
+          , name = "Fat Low-G"
+          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
+          , strings =
+                { one = { diameter = 0.6198, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.7391, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.8103, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.9093, pitch = G, tension = 0.0 }
+                }
+          , tuning = Linear
+          , url = "http://worthc.to/english/w_strings.html"
+          , woundStrings = False
+          }
+        , { brand = Worth
+          , color = Dark
+          , material = Fluorocarbon
+          , modelCode = "B-B"
+          , name = "Baritone"
+          , sizes = { soprano = False, concert = False, tenor = False, baritone = True }
+          , strings =
+                { one = { diameter = 0.6198, pitch = E, tension = 0.0 }
+                , two = { diameter = 0.7391, pitch = B, tension = 0.0 }
+                , three = { diameter = 0.8103, pitch = G, tension = 0.0 }
+                , four = { diameter = 0.9093, pitch = D, tension = 0.0 }
+                }
+          , tuning = Linear
+          , url = "http://worthc.to/english/w_strings.html"
+          , woundStrings = False
+          }
+        , { brand = Worth
+          , color = Dark
+          , material = Fluorocarbon
+          , modelCode = "B-LG"
+          , name = "Low-G"
+          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
+          , strings =
+                { one = { diameter = 0.6198, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.7391, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.8103, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.9093, pitch = G, tension = 0.0 }
+                }
+          , tuning = Linear
+          , url = "http://worthc.to/english/w_strings.html"
+          , woundStrings = False
+          }
+        , { brand = Worth
+          , color = Clear
+          , material = Fluorocarbon
+          , modelCode = "CL"
+          , name = "Light"
+          , sizes = { soprano = True, concert = True, tenor = False, baritone = False }
+          , strings =
+                { one = { diameter = 0.4699, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.6604, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.7391, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.5207, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "http://worthc.to/english/w_strings.html"
+          , woundStrings = False
+          }
+        , { brand = Worth
+          , color = Clear
+          , material = Fluorocarbon
+          , modelCode = "CL-LG"
+          , name = "Light Low-G"
+          , sizes = { soprano = True, concert = True, tenor = False, baritone = False }
+          , strings =
+                { one = { diameter = 0.4699, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.6604, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.7391, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.9093, pitch = G, tension = 0.0 }
+                }
+          , tuning = Linear
+          , url = "http://worthc.to/english/w_strings.html"
+          , woundStrings = False
+          }
+        , { brand = Worth
+          , color = Clear
+          , material = Fluorocarbon
+          , modelCode = "CL-LGHD"
+          , name = "Light Low-G"
+          , sizes = { soprano = True, concert = True, tenor = False, baritone = False }
+          , strings =
+                { one = { diameter = 0.4699, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.6604, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.7391, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.9093, pitch = G, tension = 0.0 }
+                }
+          , tuning = Linear
+          , url = "http://worthc.to/english/w_strings.html"
+          , woundStrings = False
+          }
+        , { brand = Worth
+          , color = Clear
+          , material = Fluorocarbon
+          , modelCode = "CL-LGEX"
+          , name = "Light Low-G"
+          , sizes = { soprano = True, concert = True, tenor = False, baritone = False }
+          , strings =
+                { one = { diameter = 0.4699, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.6604, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.7391, pitch = C, tension = 0.0 }
+                , four = { diameter = 1.0998, pitch = G, tension = 0.0 }
+                }
+          , tuning = Linear
+          , url = "http://worthc.to/english/w_strings.html"
+          , woundStrings = False
+          }
+        , { brand = Worth
+          , color = Clear
+          , material = Fluorocarbon
+          , modelCode = "CM"
+          , name = "Medium"
+          , sizes = { soprano = True, concert = True, tenor = False, baritone = False }
+          , strings =
+                { one = { diameter = 0.5207, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.6604, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.7391, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.569, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "http://worthc.to/english/w_strings.html"
+          , woundStrings = False
+          }
+        , { brand = Worth
+          , color = Clear
+          , material = Fluorocarbon
+          , modelCode = "CM-LG"
+          , name = "Medium Low-G"
+          , sizes = { soprano = True, concert = True, tenor = False, baritone = False }
+          , strings =
+                { one = { diameter = 0.5207, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.6604, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.7391, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.9093, pitch = G, tension = 0.0 }
+                }
+          , tuning = Linear
+          , url = "http://worthc.to/english/w_strings.html"
+          , woundStrings = False
+          }
+        , { brand = Worth
+          , color = Clear
+          , material = Fluorocarbon
+          , modelCode = "CM-LGHD"
+          , name = "Medium Low-G"
+          , sizes = { soprano = True, concert = True, tenor = False, baritone = False }
+          , strings =
+                { one = { diameter = 0.5207, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.6604, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.7391, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.9093, pitch = G, tension = 0.0 }
+                }
+          , tuning = Linear
+          , url = "http://worthc.to/english/w_strings.html"
+          , woundStrings = False
+          }
+        , { brand = Worth
+          , color = Clear
+          , material = Fluorocarbon
+          , modelCode = "CM-LGEX"
+          , name = "Medium Low-G"
+          , sizes = { soprano = True, concert = True, tenor = False, baritone = False }
+          , strings =
+                { one = { diameter = 0.5207, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.6604, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.7391, pitch = C, tension = 0.0 }
+                , four = { diameter = 1.0998, pitch = G, tension = 0.0 }
+                }
+          , tuning = Linear
+          , url = "http://worthc.to/english/w_strings.html"
+          , woundStrings = False
+          }
+        , { brand = Worth
+          , color = Clear
+          , material = Fluorocarbon
+          , modelCode = "CE"
+          , name = "Extra"
+          , sizes = { soprano = True, concert = True, tenor = False, baritone = False }
+          , strings =
+                { one = { diameter = 0.5207, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.6604, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.7391, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.6198, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "http://worthc.to/english/w_strings.html"
+          , woundStrings = False
+          }
+        , { brand = Worth
+          , color = Clear
+          , material = Fluorocarbon
+          , modelCode = "CD"
+          , name = "Hard"
+          , sizes = { soprano = True, concert = True, tenor = False, baritone = False }
+          , strings =
+                { one = { diameter = 0.5207, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.6604, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.7391, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.569, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "http://worthc.to/english/w_strings.html"
+          , woundStrings = False
+          }
+        , { brand = Worth
+          , color = Clear
+          , material = Fluorocarbon
+          , modelCode = "CD-LG"
+          , name = "Hard Low-G"
+          , sizes = { soprano = True, concert = True, tenor = False, baritone = False }
+          , strings =
+                { one = { diameter = 0.5207, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.6604, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.7391, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.9093, pitch = G, tension = 0.0 }
+                }
+          , tuning = Linear
+          , url = "http://worthc.to/english/w_strings.html"
+          , woundStrings = False
+          }
+        , { brand = Worth
+          , color = Clear
+          , material = Fluorocarbon
+          , modelCode = "CD-LGHD"
+          , name = "Hard Low-G"
+          , sizes = { soprano = True, concert = True, tenor = False, baritone = False }
+          , strings =
+                { one = { diameter = 0.5207, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.6604, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.7391, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.9093, pitch = G, tension = 0.0 }
+                }
+          , tuning = Linear
+          , url = "http://worthc.to/english/w_strings.html"
+          , woundStrings = False
+          }
+        , { brand = Worth
+          , color = Clear
+          , material = Fluorocarbon
+          , modelCode = "CD-LGEX"
+          , name = "Hard Low-G"
+          , sizes = { soprano = True, concert = True, tenor = False, baritone = False }
+          , strings =
+                { one = { diameter = 0.5207, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.6604, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.7391, pitch = C, tension = 0.0 }
+                , four = { diameter = 1.0998, pitch = G, tension = 0.0 }
+                }
+          , tuning = Linear
+          , url = "http://worthc.to/english/w_strings.html"
+          , woundStrings = False
+          }
+        , { brand = Worth
+          , color = Clear
+          , material = Fluorocarbon
+          , modelCode = "CT"
+          , name = "Tenor"
+          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
+          , strings =
+                { one = { diameter = 0.569, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.6604, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.7391, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.6198, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "http://worthc.to/english/w_strings.html"
+          , woundStrings = False
+          }
+        , { brand = Worth
+          , color = Clear
+          , material = Fluorocarbon
+          , modelCode = "CT-LG"
+          , name = "Tenor Low-G"
+          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
+          , strings =
+                { one = { diameter = 0.569, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.6604, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.7391, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.9093, pitch = G, tension = 0.0 }
+                }
+          , tuning = Linear
+          , url = "http://worthc.to/english/w_strings.html"
+          , woundStrings = False
+          }
+        , { brand = Worth
+          , color = Clear
+          , material = Fluorocarbon
+          , modelCode = "CT-LGHD"
+          , name = "Tenor Low-G"
+          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
+          , strings =
+                { one = { diameter = 0.569, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.6604, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.7391, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.9093, pitch = G, tension = 0.0 }
+                }
+          , tuning = Linear
+          , url = "http://worthc.to/english/w_strings.html"
+          , woundStrings = False
+          }
+        , { brand = Worth
+          , color = Clear
+          , material = Fluorocarbon
+          , modelCode = "CT-LGEX"
+          , name = "Tenor Low-G"
+          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
+          , strings =
+                { one = { diameter = 0.569, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.6604, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.7391, pitch = C, tension = 0.0 }
+                , four = { diameter = 1.0998, pitch = G, tension = 0.0 }
+                }
+          , tuning = Linear
+          , url = "http://worthc.to/english/w_strings.html"
+          , woundStrings = False
+          }
+        , { brand = Worth
+          , color = Clear
+          , material = Fluorocarbon
+          , modelCode = "CH"
+          , name = "Heavy"
+          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
+          , strings =
+                { one = { diameter = 0.569, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.7391, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.8103, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.6604, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "http://worthc.to/english/w_strings.html"
+          , woundStrings = False
+          }
+        , { brand = Worth
+          , color = Clear
+          , material = Fluorocarbon
+          , modelCode = "CH-LG"
+          , name = "Heavy Low-G"
+          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
+          , strings =
+                { one = { diameter = 0.569, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.7391, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.8103, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.9093, pitch = G, tension = 0.0 }
+                }
+          , tuning = Linear
+          , url = "http://worthc.to/english/w_strings.html"
+          , woundStrings = False
+          }
+        , { brand = Worth
+          , color = Clear
+          , material = Fluorocarbon
+          , modelCode = "CH-LGHD"
+          , name = "Heavy Low-G"
+          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
+          , strings =
+                { one = { diameter = 0.569, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.7391, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.8103, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.9093, pitch = G, tension = 0.0 }
+                }
+          , tuning = Linear
+          , url = "http://worthc.to/english/w_strings.html"
+          , woundStrings = False
+          }
+        , { brand = Worth
+          , color = Clear
+          , material = Fluorocarbon
+          , modelCode = "CH-LGEX"
+          , name = "Heavy Low-G"
+          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
+          , strings =
+                { one = { diameter = 0.569, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.7391, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.8103, pitch = C, tension = 0.0 }
+                , four = { diameter = 1.0998, pitch = G, tension = 0.0 }
+                }
+          , tuning = Linear
+          , url = "http://worthc.to/english/w_strings.html"
+          , woundStrings = False
+          }
+        , { brand = Worth
+          , color = Clear
+          , material = Fluorocarbon
+          , modelCode = "CF"
+          , name = "Fat"
+          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
+          , strings =
+                { one = { diameter = 0.6198, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.7391, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.8103, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.6604, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "http://worthc.to/english/w_strings.html"
+          , woundStrings = False
+          }
+        , { brand = Worth
+          , color = Clear
+          , material = Fluorocarbon
+          , modelCode = "CF-LG"
+          , name = "Fat Low-G"
+          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
+          , strings =
+                { one = { diameter = 0.6198, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.7391, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.8103, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.9093, pitch = G, tension = 0.0 }
+                }
+          , tuning = Linear
+          , url = "http://worthc.to/english/w_strings.html"
+          , woundStrings = False
+          }
+        , { brand = Worth
+          , color = Clear
+          , material = Fluorocarbon
+          , modelCode = "CF-LGHD"
+          , name = "Fat Low-G"
+          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
+          , strings =
+                { one = { diameter = 0.6198, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.7391, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.8103, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.9093, pitch = G, tension = 0.0 }
+                }
+          , tuning = Linear
+          , url = "http://worthc.to/english/w_strings.html"
+          , woundStrings = False
+          }
+        , { brand = Worth
+          , color = Clear
+          , material = Fluorocarbon
+          , modelCode = "CF-LGEX"
+          , name = "Fat Low-G"
+          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
+          , strings =
+                { one = { diameter = 0.6198, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.7391, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.8103, pitch = C, tension = 0.0 }
+                , four = { diameter = 1.0998, pitch = G, tension = 0.0 }
+                }
+          , tuning = Linear
+          , url = "http://worthc.to/english/w_strings.html"
+          , woundStrings = False
+          }
+        , { brand = Worth
+          , color = Clear
+          , material = Fluorocarbon
+          , modelCode = "COJ"
+          , name = "Herb Ohta Jr. Model"
+          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
+          , strings =
+                { one = { diameter = 0.569, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.7391, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.8103, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.8738, pitch = G, tension = 0.0 }
+                }
+          , tuning = Linear
+          , url = "http://worthc.to/english/w_strings.html"
+          , woundStrings = False
+          }
+        , { brand = Worth
+          , color = Clear
+          , material = Fluorocarbon
+          , modelCode = "C-B"
+          , name = "Baritone"
+          , sizes = { soprano = False, concert = False, tenor = False, baritone = True }
+          , strings =
+                { one = { diameter = 0.6198, pitch = E, tension = 0.0 }
+                , two = { diameter = 0.7391, pitch = B, tension = 0.0 }
+                , three = { diameter = 0.8103, pitch = G, tension = 0.0 }
+                , four = { diameter = 0.9093, pitch = D, tension = 0.0 }
+                }
+          , tuning = Linear
+          , url = "http://worthc.to/english/w_strings.html"
           , woundStrings = False
           }
         ]
