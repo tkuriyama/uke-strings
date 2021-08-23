@@ -98,7 +98,7 @@ stringSetToString s =
 
 brandRecords : List ( Brand, String, String )
 brandRecords =
-    [ ( ANueNue, "aNueNue", "ANueNue" )
+    [ ( ANueNue, "ANueNue", "ANueNue" )
     , ( Aquila, "Aquila", "Aquila" )
     , ( Daddario, "D'Addario", "Daddario" )
     , ( Fremont, "Fremont", "Fremont" )
