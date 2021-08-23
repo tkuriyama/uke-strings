@@ -1024,4 +1024,84 @@ data =
           , url = "http://worthc.to/english/w_strings.html"
           , woundStrings = False
           }
+        , { brand = ANueNue
+          , color = Clear
+          , material = Fluorocarbon
+          , modelCode = "CWSC"
+          , name = "Clearwater"
+          , sizes = { soprano = True, concert = True, tenor = False, baritone = False }
+          , strings =
+                { one = { diameter = 0.52, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.64, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.74, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.57, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "https://www.anuenuemusic.com/en/accessories/STRINGS-CWSC"
+          , woundStrings = False
+          }
+        , { brand = ANueNue
+          , color = Clear
+          , material = Fluorocarbon
+          , modelCode = "CWT"
+          , name = "Clearwater"
+          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
+          , strings =
+                { one = { diameter = 0.57, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.66, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.76, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.61, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "https://www.anuenuemusic.com/en/accessories/STRINGS-CWT"
+          , woundStrings = False
+          }
+        , { brand = ANueNue
+          , color = Dark
+          , material = Fluorocarbon
+          , modelCode = "BWSC"
+          , name = "Blackwater"
+          , sizes = { soprano = True, concert = True, tenor = False, baritone = False }
+          , strings =
+                { one = { diameter = 0.49, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.69, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.78, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.55, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "https://www.anuenuemusic.com/en/accessories/STRINGS-PACT"
+          , woundStrings = False
+          }
+        , { brand = ANueNue
+          , color = Dark
+          , material = Fluorocarbon
+          , modelCode = "BWT"
+          , name = "Blackwater"
+          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
+          , strings =
+                { one = { diameter = 0.58, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.69, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.78, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.64, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "https://www.anuenuemusic.com/en/accessories/STRINGS-BWT"
+          , woundStrings = False
+          }
+        , { brand = ANueNue
+          , color = OtherColor
+          , material = Fluorocarbon
+          , modelCode = "PACT"
+          , name = "Purple Aurora"
+          , sizes = { soprano = False, concert = True, tenor = True, baritone = False }
+          , strings =
+                { one = { diameter = 0.71, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.81, pitch = E, tension = 0.0 }
+                , three = { diameter = 1.02, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.76, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "https://www.anuenuemusic.com/en/accessories/STRINGS-PACT"
+          , woundStrings = False
+          }
         ]
