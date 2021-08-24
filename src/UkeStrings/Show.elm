@@ -133,6 +133,7 @@ brandToTypeString =
 colorRecords : List ( StringColor, String, String )
 colorRecords =
     [ ( Clear, "Clear", "Clear" )
+    , ( Light, "Light", "Light")
     , ( Dark, "Dark", "Dark" )
     , ( OtherColor, "Other", "OtherColor" )
     ]

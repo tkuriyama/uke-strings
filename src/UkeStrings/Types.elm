@@ -140,6 +140,7 @@ type Brand
 
 type StringColor
     = Clear
+    | Light
     | Dark
     | OtherColor
 
