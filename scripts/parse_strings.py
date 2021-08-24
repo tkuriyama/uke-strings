@@ -42,10 +42,10 @@ def parse_line(line: List[str], brand_name: str) -> str:
     wound = 'True' if line[5] else 'False'
     diameters = line[14:18]
 
-    tensions = []
+    tensions = ['0.0'] * 4
     tuning_override = None
     if len(line) == 24:
-        tensions = line[19:22]
+        tensions = [t if t else '0.0' for t in line[19:23]]
         tuning_override = (['E', 'B', 'G', 'D']  if line[23] == 'DGBE' else
                            None)
 
@@ -75,11 +75,11 @@ def gen_strings(diameters: List[str],
     names = ['one', 'two', 'three', 'four']
     pitches = (tuning_override if tuning_override else
                ['A', 'E', 'C', 'G'])
-    zipped = zip(names, pitches, diameters)
+    zipped = zip(names, pitches, diameters, tensions)
 
     strings : List[str] = []
-    for name, pitch, dia in zipped:
-        s = f' {name} = \u007b diameter = {dia}, pitch = {pitch}, tension = 0.0 \u007d'
+    for name, pitch, dia, ten in zipped:
+        s = f' {name} = \u007b diameter = {dia}, pitch = {pitch}, tension = {ten} \u007d'
         strings.append(s)
 
     strings_ = '\n,'.join(strings)
