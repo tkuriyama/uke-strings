@@ -2,7 +2,7 @@
 
 
 import sys # type: ignore
-from typing import List # type: ignore
+from typing import List, Optional # type: ignore
 
 
 ################################################################################
@@ -20,11 +20,13 @@ def parse(matrix: List[List[str]], brand_name: str):
     s = '\n, '.join(lines)
     print(s)
 
+
 def parse_line(line: List[str], brand_name: str) -> str:
     """Parse line."""
 
-    if len(line) != 19:
+    if len(line) not in [19, 24]:
         print(f'Line length unexpected: {line}')
+
 
     brand = brand_name
     color = line[2] if line[2] != 'Other' else 'OtherColor'
@@ -40,6 +42,15 @@ def parse_line(line: List[str], brand_name: str) -> str:
     wound = 'True' if line[5] else 'False'
     diameters = line[14:18]
 
+    tensions = []
+    tuning_override = None
+    if len(line) == 24:
+        tensions = line[19:22]
+        tuning_override = (['E', 'B', 'G', 'D']  if line[23] == 'DGBE' else
+                           None)
+
+    strings = gen_strings(diameters, tensions, tuning_override)
+
     string = '{ '
     string += f'brand = {brand}\n'
     string += f'  , color = {color}\n'
@@ -47,7 +58,7 @@ def parse_line(line: List[str], brand_name: str) -> str:
     string += f'  , modelCode = "{modelCode}"\n'
     string += f'  , name = "{name}"\n'
     string += f'  , sizes = \u007b soprano = {sizes["soprano"]}, concert = {sizes["concert"]}, tenor = {sizes["tenor"]}, baritone = {sizes["baritone"]} \u007d\n'
-    string += f'  , strings = {gen_strings(diameters, sizes["baritone"])}\n'
+    string += f'  , strings = {strings}\n'
     string += f'  , tuning = {tuning}\n'
     string += f'  , url = "{url}"\n'
     string += f'  , woundStrings = {wound}\n'
@@ -56,10 +67,13 @@ def parse_line(line: List[str], brand_name: str) -> str:
     return string
 
 
-def gen_strings(diameters: List[str], baritone: str) -> str:
+def gen_strings(diameters: List[str],
+                tensions: List[str],
+                tuning_override: Optional[List[str]]
+                ) -> str:
     """Generate strings."""
     names = ['one', 'two', 'three', 'four']
-    pitches = (['E', 'B', 'G', 'D'] if baritone == 'True' else
+    pitches = (tuning_override if tuning_override else
                ['A', 'E', 'C', 'G'])
     zipped = zip(names, pitches, diameters)
 
@@ -77,7 +91,7 @@ def main(fname, brand):
     """Main."""
     if DEBUG:
         print(f'Parsing {args[1]}, brand {args[2]}')
-        
+
     with open(fname, 'r') as f:
         data = f.readlines()
         lines = [line.strip() for line in data]
