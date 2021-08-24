@@ -367,7 +367,10 @@ printStringSets sets =
         , E.column
             [ E.width E.fill
             ]
-            (List.map printStringSet <| List.take 25 sets)
+            (List.sortBy (\s -> s.name) sets
+                |> List.take 25
+                |> List.map printStringSet
+            )
         ]
 
 

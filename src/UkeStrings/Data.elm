@@ -1792,4 +1792,628 @@ data =
           , url = "https://aquilacorde.com/en/shop/modern-instrument-string-sets/ukulele-banjouke-en/bionylon/"
           , woundStrings = True
           }
+        , { brand = Fremont
+          , color = Dark
+          , material = Fluorocarbon
+          , modelCode = "STR-FH"
+          , name = "Black Line - Hard"
+          , sizes = { soprano = True, concert = True, tenor = False, baritone = False }
+          , strings =
+                { one = { diameter = 0.5588, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.6858, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.7874, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.5842, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = ""
+          , woundStrings = False
+          }
+        , { brand = Fremont
+          , color = Dark
+          , material = Fluorocarbon
+          , modelCode = "STR-FM"
+          , name = "Black Line - Medium"
+          , sizes = { soprano = True, concert = True, tenor = False, baritone = False }
+          , strings =
+                { one = { diameter = 0.4826, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.6858, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.7874, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.5588, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = ""
+          , woundStrings = False
+          }
+        , { brand = Fremont
+          , color = Dark
+          , material = Fluorocarbon
+          , modelCode = "STR-FMG"
+          , name = "Black Line - Low G"
+          , sizes = { soprano = True, concert = True, tenor = False, baritone = False }
+          , strings =
+                { one = { diameter = 0.5588, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.6858, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.7874, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.9144, pitch = G, tension = 0.0 }
+                }
+          , tuning = Linear
+          , url = ""
+          , woundStrings = False
+          }
+        , { brand = Fremont
+          , color = Clear
+          , material = Fluorocarbon
+          , modelCode = "STR-F"
+          , name = "Clear"
+          , sizes = { soprano = True, concert = True, tenor = False, baritone = False }
+          , strings =
+                { one = { diameter = 0.5207, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.6604, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.7391, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.569, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = ""
+          , woundStrings = False
+          }
+        , { brand = Fremont
+          , color = Dark
+          , material = Fluorocarbon
+          , modelCode = "STR-FT"
+          , name = "Black Line - Tenor"
+          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
+          , strings =
+                { one = { diameter = 0.5842, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.6858, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.7874, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.635, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = ""
+          , woundStrings = False
+          }
+        , { brand = Fremont
+          , color = Dark
+          , material = Fluorocarbon
+          , modelCode = "STR-FTG"
+          , name = "Black Line - Tenor Low G"
+          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
+          , strings =
+                { one = { diameter = 0.5842, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.6858, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.7874, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.9144, pitch = G, tension = 0.0 }
+                }
+          , tuning = Linear
+          , url = ""
+          , woundStrings = False
+          }
+        , { brand = Oasis
+          , color = Clear
+          , material = Fluorocarbon
+          , modelCode = "8001"
+          , name = "GPX - Bright Low G"
+          , sizes = { soprano = True, concert = True, tenor = True, baritone = False }
+          , strings =
+                { one = { diameter = 0.5461, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.6858, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.762, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.7366, pitch = G, tension = 0.0 }
+                }
+          , tuning = Linear
+          , url = "https://www.oasishumidifiers.com/product/ukulele-strings/"
+          , woundStrings = True
+          }
+        , { brand = Oasis
+          , color = Clear
+          , material = Fluorocarbon
+          , modelCode = "8000"
+          , name = "GPX - Bright"
+          , sizes = { soprano = True, concert = True, tenor = True, baritone = False }
+          , strings =
+                { one = { diameter = 0.5461, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.6858, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.762, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.5842, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "https://www.oasishumidifiers.com/product/ukulele-strings/"
+          , woundStrings = False
+          }
+        , { brand = Oasis
+          , color = Clear
+          , material = Fluorocarbon
+          , modelCode = "8101"
+          , name = "GPX - Warm Low G"
+          , sizes = { soprano = True, concert = True, tenor = True, baritone = False }
+          , strings =
+                { one = { diameter = 0.5842, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.6604, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.762, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.762, pitch = G, tension = 0.0 }
+                }
+          , tuning = Linear
+          , url = "https://www.oasishumidifiers.com/product/ukulele-strings/"
+          , woundStrings = True
+          }
+        , { brand = Oasis
+          , color = Clear
+          , material = Fluorocarbon
+          , modelCode = "8100"
+          , name = "GPX - Warm"
+          , sizes = { soprano = True, concert = True, tenor = True, baritone = False }
+          , strings =
+                { one = { diameter = 0.5842, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.6858, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.762, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.635, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "https://www.oasishumidifiers.com/product/ukulele-strings/"
+          , woundStrings = False
+          }
+        , { brand = Oasis
+          , color = Clear
+          , material = Fluorocarbon
+          , modelCode = "8001SB"
+          , name = "GPX - Bright Low G (Smooth)"
+          , sizes = { soprano = True, concert = True, tenor = True, baritone = False }
+          , strings =
+                { one = { diameter = 0.5588, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.7112, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.762, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.7874, pitch = G, tension = 0.0 }
+                }
+          , tuning = Linear
+          , url = "https://www.oasishumidifiers.com/product/ukulele-strings/"
+          , woundStrings = True
+          }
+        , { brand = Oasis
+          , color = Clear
+          , material = Fluorocarbon
+          , modelCode = "8101SW"
+          , name = "GPX - Warm Low G (Smooth)"
+          , sizes = { soprano = True, concert = True, tenor = True, baritone = False }
+          , strings =
+                { one = { diameter = 0.5842, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.6858, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.762, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.8382, pitch = G, tension = 0.0 }
+                }
+          , tuning = Linear
+          , url = "https://www.oasishumidifiers.com/product/ukulele-strings/"
+          , woundStrings = True
+          }
+        , { brand = Martin
+          , color = Clear
+          , material = Fluorocarbon
+          , modelCode = "M600"
+          , name = "Soprano / Concert"
+          , sizes = { soprano = True, concert = True, tenor = False, baritone = False }
+          , strings =
+                { one = { diameter = 0.4826, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.635, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.8636, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.5588, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "https://www.martinguitar.com/strings/ukulele/ukulele-strings.html?cgid=ukulele-strings"
+          , woundStrings = False
+          }
+        , { brand = Martin
+          , color = Clear
+          , material = Fluorocarbon
+          , modelCode = "M620"
+          , name = "Tenor"
+          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
+          , strings =
+                { one = { diameter = 0.5588, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.7112, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.8636, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.635, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "https://www.martinguitar.com/strings/ukulele/ukulele-strings.html?cgid=ukulele-strings"
+          , woundStrings = False
+          }
+        , { brand = Martin
+          , color = Clear
+          , material = Fluorocarbon
+          , modelCode = "M630"
+          , name = "Baritone"
+          , sizes = { soprano = False, concert = False, tenor = False, baritone = True }
+          , strings =
+                { one = { diameter = 0.5588, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.6604, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.8636, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.889, pitch = G, tension = 0.0 }
+                }
+          , tuning = Linear
+          , url = "https://www.martinguitar.com/strings/ukulele/ukulele-strings.html?cgid=ukulele-strings"
+          , woundStrings = True
+          }
+        , { brand = Martin
+          , color = Dark
+          , material = OtherMaterial
+          , modelCode = "M605"
+          , name = "Polygut - Soprano"
+          , sizes = { soprano = True, concert = False, tenor = False, baritone = False }
+          , strings =
+                { one = { diameter = 0.5588, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.7112, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.7874, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.5842, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "https://www.martinguitar.com/strings/ukulele/ukulele-strings.html?cgid=ukulele-strings"
+          , woundStrings = False
+          }
+        , { brand = Martin
+          , color = Dark
+          , material = OtherMaterial
+          , modelCode = "M610"
+          , name = "Polygut - Concert"
+          , sizes = { soprano = False, concert = True, tenor = False, baritone = False }
+          , strings =
+                { one = { diameter = 0.5842, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.7366, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.8128, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.6096, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "https://www.martinguitar.com/strings/ukulele/ukulele-strings.html?cgid=ukulele-strings"
+          , woundStrings = False
+          }
+        , { brand = Martin
+          , color = Dark
+          , material = OtherMaterial
+          , modelCode = "M625"
+          , name = "Polygut - Tenor"
+          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
+          , strings =
+                { one = { diameter = 0.6096, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.762, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.8382, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.6096, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "https://www.martinguitar.com/strings/ukulele/ukulele-strings.html?cgid=ukulele-strings"
+          , woundStrings = False
+          }
+        , { brand = Daddario
+          , color = OtherColor
+          , material = OtherMaterial
+          , modelCode = "EJ88S"
+          , name = "Nyltech"
+          , sizes = { soprano = True, concert = False, tenor = False, baritone = False }
+          , strings =
+                { one = { diameter = 0.6096, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.762, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.9144, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.6604, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "https://www.daddario.com/products/guitar/ukulele/nyltech-ukulele/ej88s-nyltech-ukulele-soprano/"
+          , woundStrings = False
+          }
+        , { brand = Daddario
+          , color = OtherColor
+          , material = OtherMaterial
+          , modelCode = "EJ88C"
+          , name = "Nyltech"
+          , sizes = { soprano = False, concert = True, tenor = False, baritone = False }
+          , strings =
+                { one = { diameter = 0.6096, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.7874, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.9398, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.6604, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "https://www.daddario.com/products/guitar/ukulele/nyltech-ukulele/ej88c-nyltech-ukulele-concert/"
+          , woundStrings = False
+          }
+        , { brand = Daddario
+          , color = OtherColor
+          , material = OtherMaterial
+          , modelCode = "EJ88T"
+          , name = "Nyltech"
+          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
+          , strings =
+                { one = { diameter = 0.6604, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.8128, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.9652, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.7112, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "https://www.daddario.com/products/guitar/ukulele/nyltech-ukulele/ej88t-nyltech-ukulele-tenor/"
+          , woundStrings = False
+          }
+        , { brand = Daddario
+          , color = OtherColor
+          , material = OtherMaterial
+          , modelCode = "EJ88B"
+          , name = "Nyltech"
+          , sizes = { soprano = False, concert = False, tenor = False, baritone = True }
+          , strings =
+                { one = { diameter = 0.6604, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.9144, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.6096, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.762, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "https://www.daddario.com/products/guitar/ukulele/nyltech-ukulele/ej88b-nyltech-ukulele-baritone/"
+          , woundStrings = False
+          }
+        , { brand = Daddario
+          , color = Light
+          , material = Nylon
+          , modelCode = "EJ65S"
+          , name = "Pro-Arte Nylon"
+          , sizes = { soprano = True, concert = False, tenor = False, baritone = False }
+          , strings =
+                { one = { diameter = 0.6096, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.8128, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.8636, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.7112, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "https://www.daddario.com/products/guitar/ukulele/nyltech-ukulele/ej88b-nyltech-ukulele-baritone/"
+          , woundStrings = False
+          }
+        , { brand = Daddario
+          , color = Light
+          , material = Nylon
+          , modelCode = "EJ65C"
+          , name = "Pro-Arte Nylon"
+          , sizes = { soprano = False, concert = True, tenor = False, baritone = False }
+          , strings =
+                { one = { diameter = 0.7112, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.8179, pitch = E, tension = 0.0 }
+                , three = { diameter = 1.0236, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.7112, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "https://www.daddario.com/products/guitar/ukulele/pro-arte-nylon-ukulele/ej65c-pro-arte-custom-extruded-ukulele-concert/"
+          , woundStrings = False
+          }
+        , { brand = Daddario
+          , color = Light
+          , material = Nylon
+          , modelCode = "EJ65T"
+          , name = "Pro-Arte Nylon"
+          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
+          , strings =
+                { one = { diameter = 0.7239, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.8306, pitch = E, tension = 0.0 }
+                , three = { diameter = 1.0414, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.7366, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "https://www.daddario.com/products/guitar/ukulele/pro-arte-nylon-ukulele/ej65t-pro-arte-custom-extruded-ukulele-tenor/"
+          , woundStrings = False
+          }
+        , { brand = Daddario
+          , color = Light
+          , material = Nylon
+          , modelCode = "EJ65TLG"
+          , name = "Pro-Arte Nylon"
+          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
+          , strings =
+                { one = { diameter = 0.7239, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.8306, pitch = E, tension = 0.0 }
+                , three = { diameter = 1.0414, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.7366, pitch = G, tension = 0.0 }
+                }
+          , tuning = Linear
+          , url = "https://www.daddario.com/products/guitar/ukulele/pro-arte-nylon-ukulele/ej65tlg-pro-arte-custom-extruded-ukulele-tenor-low-g/"
+          , woundStrings = True
+          }
+        , { brand = Daddario
+          , color = Light
+          , material = Nylon
+          , modelCode = "EJ65B"
+          , name = "Pro-Arte Nylon"
+          , sizes = { soprano = False, concert = False, tenor = False, baritone = True }
+          , strings =
+                { one = { diameter = 0.7112, pitch = E, tension = 0.0 }
+                , two = { diameter = 0.8636, pitch = B, tension = 0.0 }
+                , three = { diameter = 0.762, pitch = G, tension = 0.0 }
+                , four = { diameter = 0.889, pitch = D, tension = 0.0 }
+                }
+          , tuning = Linear
+          , url = "https://www.daddario.com/products/guitar/ukulele/pro-arte-nylon-ukulele/ej65b-pro-arte-custom-extruded-ukulele-baritone/"
+          , woundStrings = True
+          }
+        , { brand = Daddario
+          , color = Clear
+          , material = Fluorocarbon
+          , modelCode = "EJ99SC"
+          , name = "Pro-Arte Carbon"
+          , sizes = { soprano = True, concert = True, tenor = False, baritone = False }
+          , strings =
+                { one = { diameter = 0.508, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.6604, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.8128, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.5588, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "https://www.daddario.com/products/guitar/ukulele/pro-arte-carbon-ukulele/ej99sc-pro-arte-carbon-ukulele-soprano-concert/"
+          , woundStrings = False
+          }
+        , { brand = Daddario
+          , color = Clear
+          , material = Fluorocarbon
+          , modelCode = "EJ99T"
+          , name = "Pro-Arte Carbon"
+          , sizes = { soprano = False, concert = True, tenor = False, baritone = False }
+          , strings =
+                { one = { diameter = 0.508, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.6604, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.8128, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.5588, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "https://www.daddario.com/products/guitar/ukulele/pro-arte-carbon-ukulele/ej99t-pro-arte-carbon-ukulele-tenor/"
+          , woundStrings = False
+          }
+        , { brand = Daddario
+          , color = Clear
+          , material = Fluorocarbon
+          , modelCode = "EJ99TLG"
+          , name = "Pro-Arte Carbon"
+          , sizes = { soprano = False, concert = True, tenor = False, baritone = False }
+          , strings =
+                { one = { diameter = 0.508, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.6604, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.8128, pitch = C, tension = 0.0 }
+                , four = { diameter = 1.0414, pitch = G, tension = 0.0 }
+                }
+          , tuning = Linear
+          , url = "https://www.daddario.com/products/guitar/ukulele/pro-arte-carbon-ukulele/ej99tlg-pro-arte-carbon-ukulele-tenor-low-g/"
+          , woundStrings = False
+          }
+        , { brand = Daddario
+          , color = Clear
+          , material = Fluorocarbon
+          , modelCode = "EJ99B"
+          , name = "Pro-Arte Carbon"
+          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
+          , strings =
+                { one = { diameter = 0.6096, pitch = E, tension = 0.0 }
+                , two = { diameter = 0.8128, pitch = B, tension = 0.0 }
+                , three = { diameter = 1.0414, pitch = G, tension = 0.0 }
+                , four = { diameter = 0.889, pitch = D, tension = 0.0 }
+                }
+          , tuning = Linear
+          , url = "https://www.daddario.com/products/guitar/ukulele/pro-arte-carbon-ukulele/ej99b-pro-arte-carbon-ukulele-baritone/"
+          , woundStrings = True
+          }
+        , { brand = Daddario
+          , color = OtherColor
+          , material = OtherMaterial
+          , modelCode = "EJ87S"
+          , name = "Pro-Arte Titanium"
+          , sizes = { soprano = True, concert = False, tenor = False, baritone = False }
+          , strings =
+                { one = { diameter = 0.7112, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.8458, pitch = E, tension = 0.0 }
+                , three = { diameter = 1.0236, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.7366, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "https://www.daddario.com/products/guitar/ukulele/pro-arte-titanium-ukulele/ej87s-titanium-ukulele-soprano/"
+          , woundStrings = False
+          }
+        , { brand = Daddario
+          , color = OtherColor
+          , material = OtherMaterial
+          , modelCode = "EJ87C"
+          , name = "Pro-Arte Titanium"
+          , sizes = { soprano = False, concert = True, tenor = False, baritone = False }
+          , strings =
+                { one = { diameter = 0.7112, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.8458, pitch = E, tension = 0.0 }
+                , three = { diameter = 1.0236, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.7366, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "https://www.daddario.com/products/guitar/ukulele/pro-arte-titanium-ukulele/ej87c-titanium-ukulele-concert/"
+          , woundStrings = False
+          }
+        , { brand = Daddario
+          , color = OtherColor
+          , material = OtherMaterial
+          , modelCode = "EJ87T"
+          , name = "Pro-Arte Titanium"
+          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
+          , strings =
+                { one = { diameter = 0.7366, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.8458, pitch = E, tension = 0.0 }
+                , three = { diameter = 1.0389, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.7366, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "https://www.daddario.com/products/guitar/ukulele/pro-arte-titanium-ukulele/ej87t-titanium-ukulele-tenor/"
+          , woundStrings = False
+          }
+        , { brand = Daddario
+          , color = OtherColor
+          , material = OtherMaterial
+          , modelCode = "EJ87B"
+          , name = "Pro-Arte Titanium"
+          , sizes = { soprano = False, concert = False, tenor = False, baritone = True }
+          , strings =
+                { one = { diameter = 0.7112, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.8458, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.762, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.889, pitch = G, tension = 0.0 }
+                }
+          , tuning = Linear
+          , url = "https://www.daddario.com/products/guitar/ukulele/pro-arte-titanium-ukulele/ej87b-titanium-ukulele-baritone/"
+          , woundStrings = True
+          }
+        , { brand = Daddario
+          , color = Dark
+          , material = Nylon
+          , modelCode = "EJ53S"
+          , name = "Pro-Arte Rectified Nylon"
+          , sizes = { soprano = True, concert = False, tenor = False, baritone = False }
+          , strings =
+                { one = { diameter = 0.6604, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.8128, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.9144, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.7112, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "https://www.daddario.com/products/guitar/ukulele/pro-arte-rectified-nylon-ukulele/ej53s-pro-arte-rectified-ukulele-soprano/"
+          , woundStrings = False
+          }
+        , { brand = Daddario
+          , color = Dark
+          , material = Nylon
+          , modelCode = "EJ53C"
+          , name = "Pro-Arte Rectified Nylon"
+          , sizes = { soprano = False, concert = True, tenor = False, baritone = False }
+          , strings =
+                { one = { diameter = 0.7112, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.8382, pitch = E, tension = 0.0 }
+                , three = { diameter = 1.016, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.7366, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "https://www.daddario.com/products/guitar/ukulele/pro-arte-rectified-nylon-ukulele/ej53c-pro-arte-rectified-ukulele-concert/"
+          , woundStrings = False
+          }
+        , { brand = Daddario
+          , color = Dark
+          , material = Nylon
+          , modelCode = "EJ53T"
+          , name = "Pro-Arte Rectified Nylon"
+          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
+          , strings =
+                { one = { diameter = 0.7112, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.9144, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.9144, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.8128, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "https://www.daddario.com/products/guitar/ukulele/pro-arte-rectified-nylon-ukulele/ej53t-pro-arte-rectified-ukulele-tenor/"
+          , woundStrings = False
+          }
+        , { brand = Daddario
+          , color = Dark
+          , material = Nylon
+          , modelCode = "EJ53B"
+          , name = "Pro-Arte Rectified Nylon"
+          , sizes = { soprano = False, concert = False, tenor = False, baritone = True }
+          , strings =
+                { one = { diameter = 0.7112, pitch = E, tension = 0.0 }
+                , two = { diameter = 0.8636, pitch = B, tension = 0.0 }
+                , three = { diameter = 0.762, pitch = G, tension = 0.0 }
+                , four = { diameter = 0.889, pitch = D, tension = 0.0 }
+                }
+          , tuning = Linear
+          , url = "https://www.daddario.com/products/guitar/ukulele/pro-arte-rectified-nylon-ukulele/ej53b-pro-arte-rectified-ukulele-baritone/"
+          , woundStrings = True
+          }
         ]
