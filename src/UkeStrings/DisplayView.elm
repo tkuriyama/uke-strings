@@ -379,9 +379,9 @@ printStringSet set =
         , E.text " "
         , E.text <| Utils.printWidth 13 <| Show.materialToString set.material
         , E.text " "
-        , E.text <| Utils.printWidth 14 <| set.modelCode
+        , E.text <| Utils.printWidth 8 <| set.modelCode
         , E.text " "
-        , E.text <| Utils.printWidth 20 <| set.name
+        , E.text <| Utils.printWidth 24 <| set.name
         , E.text " "
         , E.text <| Utils.printWidth 5 <| Show.sizesToString set.sizes
         , E.text " "

@@ -147,7 +147,6 @@ type StringColor
 
 type Material
     = Fluorocarbon
-    | Gut
     | Nylon
     | OtherMaterial
 

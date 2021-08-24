@@ -133,7 +133,7 @@ brandToTypeString =
 colorRecords : List ( StringColor, String, String )
 colorRecords =
     [ ( Clear, "Clear", "Clear" )
-    , ( Light, "Light", "Light")
+    , ( Light, "Light", "Light" )
     , ( Dark, "Dark", "Dark" )
     , ( OtherColor, "Other", "OtherColor" )
     ]
@@ -157,7 +157,6 @@ colorToTypeString =
 materialRecords : List ( Material, String, String )
 materialRecords =
     [ ( Fluorocarbon, "Fluorocarbon", "Fluorocarbon" )
-    , ( Gut, "Gut (Nat or Synth)", "Gut" )
     , ( Nylon, "Nylon", "Nylon" )
     , ( OtherMaterial, "Other", "OtherMaterial" )
     ]

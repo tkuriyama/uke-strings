@@ -14,8 +14,8 @@ data =
         { brand = Aquila
         , color = Clear
         , material = OtherMaterial
-        , modelCode = "152U Concert"
-        , name = "Sugar"
+        , modelCode = "152U"
+        , name = "Sugar - Concert"
         , sizes =
             { soprano = False
             , concert = True
@@ -51,8 +51,8 @@ data =
         [ { brand = Aquila
           , color = Clear
           , material = OtherMaterial
-          , modelCode = "152U Concert"
-          , name = "Sugar"
+          , modelCode = "152U"
+          , name = "Sugar - Concert"
           , sizes = { soprano = False, concert = True, tenor = False, baritone = False }
           , strings =
                 { one = { diameter = 0.62, pitch = A, tension = 4.47 }
@@ -67,8 +67,8 @@ data =
         , { brand = Aquila
           , color = Clear
           , material = OtherMaterial
-          , modelCode = "150U Soprano"
-          , name = "Sugar"
+          , modelCode = "150U"
+          , name = "Sugar - Soprano"
           , sizes = { soprano = True, concert = False, tenor = False, baritone = False }
           , strings =
                 { one = { diameter = 0.6, pitch = A, tension = 3.56 }
@@ -83,8 +83,8 @@ data =
         , { brand = Aquila
           , color = Clear
           , material = OtherMaterial
-          , modelCode = "150U Soprano"
-          , name = "Sugar"
+          , modelCode = "150U"
+          , name = "Sugar - Soprano"
           , sizes = { soprano = True, concert = False, tenor = False, baritone = False }
           , strings =
                 { one = { diameter = 0.6, pitch = A, tension = 3.56 }
@@ -99,8 +99,8 @@ data =
         , { brand = Aquila
           , color = Clear
           , material = OtherMaterial
-          , modelCode = "154U Tenor"
-          , name = "Sugar"
+          , modelCode = "154U"
+          , name = "Sugar - Tenor"
           , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
           , strings =
                 { one = { diameter = 0.65, pitch = A, tension = 6.3 }
@@ -115,8 +115,8 @@ data =
         , { brand = Aquila
           , color = Clear
           , material = OtherMaterial
-          , modelCode = "154U Tenor"
-          , name = "Sugar"
+          , modelCode = "154U"
+          , name = "Sugar - Tenor"
           , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
           , strings =
                 { one = { diameter = 0.65, pitch = A, tension = 6.3 }
@@ -131,8 +131,8 @@ data =
         , { brand = Aquila
           , color = Clear
           , material = OtherMaterial
-          , modelCode = "156U Baritone"
-          , name = "Sugar"
+          , modelCode = "156U"
+          , name = "Sugar - Baritone"
           , sizes = { soprano = False, concert = False, tenor = False, baritone = True }
           , strings =
                 { one = { diameter = 0.62, pitch = E, tension = 5.28 }
@@ -1103,5 +1103,693 @@ data =
           , tuning = Reentrant
           , url = "https://www.anuenuemusic.com/en/accessories/STRINGS-PACT"
           , woundStrings = False
+          }
+        , { brand = Aquila
+          , color = OtherColor
+          , material = OtherMaterial
+          , modelCode = "83U"
+          , name = "Red - Soprano"
+          , sizes = { soprano = True, concert = False, tenor = False, baritone = False }
+          , strings =
+                { one = { diameter = 0.56, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.7, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.81, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.58, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "https://aquilacorde.com/en/shop/modern-instrument-string-sets/ukulele-banjouke-en/red-series/"
+          , woundStrings = True
+          }
+        , { brand = Aquila
+          , color = OtherColor
+          , material = OtherMaterial
+          , modelCode = "84U"
+          , name = "Red - Soprano"
+          , sizes = { soprano = True, concert = False, tenor = False, baritone = False }
+          , strings =
+                { one = { diameter = 0.56, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.7, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.81, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.71, pitch = G, tension = 0.0 }
+                }
+          , tuning = Linear
+          , url = "https://aquilacorde.com/en/shop/modern-instrument-string-sets/ukulele-banjouke-en/red-series/"
+          , woundStrings = True
+          }
+        , { brand = Aquila
+          , color = OtherColor
+          , material = OtherMaterial
+          , modelCode = "85U"
+          , name = "Red - Concert"
+          , sizes = { soprano = False, concert = True, tenor = False, baritone = False }
+          , strings =
+                { one = { diameter = 0.58, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.73, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.83, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.75, pitch = G, tension = 0.0 }
+                }
+          , tuning = Linear
+          , url = "https://aquilacorde.com/en/shop/modern-instrument-string-sets/ukulele-banjouke-en/red-series/"
+          , woundStrings = True
+          }
+        , { brand = Aquila
+          , color = OtherColor
+          , material = OtherMaterial
+          , modelCode = "87U"
+          , name = "Red - Tenor"
+          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
+          , strings =
+                { one = { diameter = 0.6, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.75, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.85, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.62, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "https://aquilacorde.com/en/shop/modern-instrument-string-sets/ukulele-banjouke-en/red-series/"
+          , woundStrings = False
+          }
+        , { brand = Aquila
+          , color = OtherColor
+          , material = OtherMaterial
+          , modelCode = "88U"
+          , name = "Red - Tenor"
+          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
+          , strings =
+                { one = { diameter = 0.6, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.75, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.85, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.75, pitch = G, tension = 0.0 }
+                }
+          , tuning = Linear
+          , url = "https://aquilacorde.com/en/shop/modern-instrument-string-sets/ukulele-banjouke-en/red-series/"
+          , woundStrings = False
+          }
+        , { brand = Aquila
+          , color = OtherColor
+          , material = OtherMaterial
+          , modelCode = "89U"
+          , name = "Red - Baritone"
+          , sizes = { soprano = False, concert = False, tenor = False, baritone = True }
+          , strings =
+                { one = { diameter = 0.62, pitch = E, tension = 0.0 }
+                , two = { diameter = 0.8, pitch = B, tension = 0.0 }
+                , three = { diameter = 0.8, pitch = G, tension = 0.0 }
+                , four = { diameter = 0.7, pitch = D, tension = 0.0 }
+                }
+          , tuning = Linear
+          , url = "https://aquilacorde.com/en/shop/modern-instrument-string-sets/ukulele-banjouke-en/red-series/"
+          , woundStrings = True
+          }
+        , { brand = Aquila
+          , color = Light
+          , material = Nylon
+          , modelCode = "100U"
+          , name = "Super Nylgut - Soprano"
+          , sizes = { soprano = True, concert = False, tenor = False, baritone = False }
+          , strings =
+                { one = { diameter = 0.6, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.77, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.92, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.65, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "https://aquilacorde.com/en/shop/modern-instrument-string-sets/ukulele-banjouke-en/super-nylgut/"
+          , woundStrings = False
+          }
+        , { brand = Aquila
+          , color = Light
+          , material = Nylon
+          , modelCode = "101U"
+          , name = "Super Nylgut - Soprano"
+          , sizes = { soprano = True, concert = False, tenor = False, baritone = False }
+          , strings =
+                { one = { diameter = 0.6, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.77, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.92, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.67, pitch = G, tension = 0.0 }
+                }
+          , tuning = Linear
+          , url = "https://aquilacorde.com/en/shop/modern-instrument-string-sets/ukulele-banjouke-en/super-nylgut/"
+          , woundStrings = True
+          }
+        , { brand = Aquila
+          , color = Light
+          , material = Nylon
+          , modelCode = "103U"
+          , name = "Super Nylgut - Concert"
+          , sizes = { soprano = False, concert = True, tenor = False, baritone = False }
+          , strings =
+                { one = { diameter = 0.62, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.8, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.95, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.57, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "https://aquilacorde.com/en/shop/modern-instrument-string-sets/ukulele-banjouke-en/super-nylgut/"
+          , woundStrings = False
+          }
+        , { brand = Aquila
+          , color = Light
+          , material = Nylon
+          , modelCode = "104U"
+          , name = "Super Nylgut - Concert"
+          , sizes = { soprano = False, concert = True, tenor = False, baritone = False }
+          , strings =
+                { one = { diameter = 0.62, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.8, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.95, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.7, pitch = G, tension = 0.0 }
+                }
+          , tuning = Linear
+          , url = "https://aquilacorde.com/en/shop/modern-instrument-string-sets/ukulele-banjouke-en/super-nylgut/"
+          , woundStrings = True
+          }
+        , { brand = Aquila
+          , color = Light
+          , material = Nylon
+          , modelCode = "106U"
+          , name = "Super Nylgut - Tenor"
+          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
+          , strings =
+                { one = { diameter = 0.65, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.82, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.97, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.7, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "https://aquilacorde.com/en/shop/modern-instrument-string-sets/ukulele-banjouke-en/super-nylgut/"
+          , woundStrings = False
+          }
+        , { brand = Aquila
+          , color = Light
+          , material = Nylon
+          , modelCode = "107U"
+          , name = "Super Nylgut - Tenor"
+          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
+          , strings =
+                { one = { diameter = 0.65, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.82, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.97, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.7, pitch = G, tension = 0.0 }
+                }
+          , tuning = Linear
+          , url = "https://aquilacorde.com/en/shop/modern-instrument-string-sets/ukulele-banjouke-en/super-nylgut/"
+          , woundStrings = True
+          }
+        , { brand = Aquila
+          , color = Light
+          , material = Nylon
+          , modelCode = "128U"
+          , name = "Super Nylgut - Baritone"
+          , sizes = { soprano = False, concert = False, tenor = False, baritone = True }
+          , strings =
+                { one = { diameter = 0.67, pitch = E, tension = 0.0 }
+                , two = { diameter = 0.84, pitch = B, tension = 0.0 }
+                , three = { diameter = 0.6, pitch = G, tension = 0.0 }
+                , four = { diameter = 0.7, pitch = D, tension = 0.0 }
+                }
+          , tuning = Linear
+          , url = "https://aquilacorde.com/en/shop/modern-instrument-string-sets/ukulele-banjouke-en/super-nylgut/"
+          , woundStrings = True
+          }
+        , { brand = Aquila
+          , color = Light
+          , material = Nylon
+          , modelCode = "129U"
+          , name = "Super Nylgut - Baritone"
+          , sizes = { soprano = False, concert = False, tenor = False, baritone = True }
+          , strings =
+                { one = { diameter = 0.62, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.8, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.95, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.67, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "https://aquilacorde.com/en/shop/modern-instrument-string-sets/ukulele-banjouke-en/super-nylgut/"
+          , woundStrings = False
+          }
+        , { brand = Aquila
+          , color = Light
+          , material = Nylon
+          , modelCode = "4U"
+          , name = "New Nylgut - Soprano"
+          , sizes = { soprano = True, concert = False, tenor = False, baritone = False }
+          , strings =
+                { one = { diameter = 0.62, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.8, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.95, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.67, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "https://aquilacorde.com/en/shop/modern-instrument-string-sets/ukulele-banjouke-en/new-nylgut-ukulele/"
+          , woundStrings = False
+          }
+        , { brand = Aquila
+          , color = Light
+          , material = Nylon
+          , modelCode = "5U"
+          , name = "New Nylgut - Soprano"
+          , sizes = { soprano = True, concert = False, tenor = False, baritone = False }
+          , strings =
+                { one = { diameter = 0.62, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.8, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.95, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.67, pitch = G, tension = 0.0 }
+                }
+          , tuning = Linear
+          , url = "https://aquilacorde.com/en/shop/modern-instrument-string-sets/ukulele-banjouke-en/new-nylgut-ukulele/"
+          , woundStrings = True
+          }
+        , { brand = Aquila
+          , color = Light
+          , material = Nylon
+          , modelCode = "7U"
+          , name = "New Nylgut - Concert"
+          , sizes = { soprano = False, concert = True, tenor = False, baritone = False }
+          , strings =
+                { one = { diameter = 0.65, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.82, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.97, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.7, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "https://aquilacorde.com/en/shop/modern-instrument-string-sets/ukulele-banjouke-en/new-nylgut-ukulele/"
+          , woundStrings = False
+          }
+        , { brand = Aquila
+          , color = Light
+          , material = Nylon
+          , modelCode = "8U"
+          , name = "New Nylgut - Concert"
+          , sizes = { soprano = False, concert = True, tenor = False, baritone = False }
+          , strings =
+                { one = { diameter = 0.65, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.82, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.97, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.7, pitch = G, tension = 0.0 }
+                }
+          , tuning = Linear
+          , url = "https://aquilacorde.com/en/shop/modern-instrument-string-sets/ukulele-banjouke-en/new-nylgut-ukulele/"
+          , woundStrings = True
+          }
+        , { brand = Aquila
+          , color = Light
+          , material = Nylon
+          , modelCode = "10U"
+          , name = "New Nylgut - Tenor"
+          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
+          , strings =
+                { one = { diameter = 0.67, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.84, pitch = E, tension = 0.0 }
+                , three = { diameter = 1.0, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.73, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "https://aquilacorde.com/en/shop/modern-instrument-string-sets/ukulele-banjouke-en/new-nylgut-ukulele/"
+          , woundStrings = False
+          }
+        , { brand = Aquila
+          , color = Light
+          , material = Nylon
+          , modelCode = "15U"
+          , name = "New Nylgut - Tenor"
+          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
+          , strings =
+                { one = { diameter = 0.67, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.84, pitch = E, tension = 0.0 }
+                , three = { diameter = 1.0, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.7, pitch = G, tension = 0.0 }
+                }
+          , tuning = Linear
+          , url = "https://aquilacorde.com/en/shop/modern-instrument-string-sets/ukulele-banjouke-en/new-nylgut-ukulele/"
+          , woundStrings = True
+          }
+        , { brand = Aquila
+          , color = Light
+          , material = Nylon
+          , modelCode = "21U"
+          , name = "New Nylgut - Baritone"
+          , sizes = { soprano = False, concert = False, tenor = False, baritone = True }
+          , strings =
+                { one = { diameter = 0.67, pitch = E, tension = 0.0 }
+                , two = { diameter = 0.84, pitch = B, tension = 0.0 }
+                , three = { diameter = 0.6, pitch = G, tension = 0.0 }
+                , four = { diameter = 0.7, pitch = D, tension = 0.0 }
+                }
+          , tuning = Linear
+          , url = "https://aquilacorde.com/en/shop/modern-instrument-string-sets/ukulele-banjouke-en/new-nylgut-ukulele/"
+          , woundStrings = True
+          }
+        , { brand = Aquila
+          , color = Light
+          , material = Nylon
+          , modelCode = "23U"
+          , name = "New Nylgut - Baritone"
+          , sizes = { soprano = False, concert = False, tenor = False, baritone = True }
+          , strings =
+                { one = { diameter = 0.62, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.8, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.95, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.67, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "https://aquilacorde.com/en/shop/modern-instrument-string-sets/ukulele-banjouke-en/new-nylgut-ukulele/"
+          , woundStrings = False
+          }
+        , { brand = Aquila
+          , color = Dark
+          , material = Nylon
+          , modelCode = "110U"
+          , name = "Lava - Soprano"
+          , sizes = { soprano = True, concert = False, tenor = False, baritone = False }
+          , strings =
+                { one = { diameter = 0.6, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.77, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.92, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.65, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "https://aquilacorde.com/en/shop/modern-instrument-string-sets/ukulele-banjouke-en/super-nylgut/"
+          , woundStrings = False
+          }
+        , { brand = Aquila
+          , color = Dark
+          , material = Nylon
+          , modelCode = "111U"
+          , name = "Lava - Soprano"
+          , sizes = { soprano = True, concert = False, tenor = False, baritone = False }
+          , strings =
+                { one = { diameter = 0.6, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.77, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.92, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.67, pitch = G, tension = 0.0 }
+                }
+          , tuning = Linear
+          , url = "https://aquilacorde.com/en/shop/modern-instrument-string-sets/ukulele-banjouke-en/super-nylgut/"
+          , woundStrings = True
+          }
+        , { brand = Aquila
+          , color = Dark
+          , material = Nylon
+          , modelCode = "112U"
+          , name = "Lava - Concert"
+          , sizes = { soprano = False, concert = True, tenor = False, baritone = False }
+          , strings =
+                { one = { diameter = 0.62, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.8, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.95, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.57, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "https://aquilacorde.com/en/shop/modern-instrument-string-sets/ukulele-banjouke-en/super-nylgut/"
+          , woundStrings = False
+          }
+        , { brand = Aquila
+          , color = Dark
+          , material = Nylon
+          , modelCode = "113U"
+          , name = "Lava - Concert"
+          , sizes = { soprano = False, concert = True, tenor = False, baritone = False }
+          , strings =
+                { one = { diameter = 0.62, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.8, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.95, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.7, pitch = G, tension = 0.0 }
+                }
+          , tuning = Linear
+          , url = "https://aquilacorde.com/en/shop/modern-instrument-string-sets/ukulele-banjouke-en/super-nylgut/"
+          , woundStrings = True
+          }
+        , { brand = Aquila
+          , color = Dark
+          , material = Nylon
+          , modelCode = "114U"
+          , name = "Lava - Tenor"
+          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
+          , strings =
+                { one = { diameter = 0.65, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.82, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.97, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.7, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "https://aquilacorde.com/en/shop/modern-instrument-string-sets/ukulele-banjouke-en/super-nylgut/"
+          , woundStrings = False
+          }
+        , { brand = Aquila
+          , color = Dark
+          , material = Nylon
+          , modelCode = "115U"
+          , name = "Lava - Tenor"
+          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
+          , strings =
+                { one = { diameter = 0.65, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.82, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.97, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.7, pitch = G, tension = 0.0 }
+                }
+          , tuning = Linear
+          , url = "https://aquilacorde.com/en/shop/modern-instrument-string-sets/ukulele-banjouke-en/super-nylgut/"
+          , woundStrings = True
+          }
+        , { brand = Aquila
+          , color = Dark
+          , material = Nylon
+          , modelCode = "116U"
+          , name = "Lava - Baritone"
+          , sizes = { soprano = False, concert = False, tenor = False, baritone = True }
+          , strings =
+                { one = { diameter = 0.67, pitch = E, tension = 0.0 }
+                , two = { diameter = 0.84, pitch = B, tension = 0.0 }
+                , three = { diameter = 0.6, pitch = G, tension = 0.0 }
+                , four = { diameter = 0.7, pitch = D, tension = 0.0 }
+                }
+          , tuning = Linear
+          , url = "https://aquilacorde.com/en/shop/modern-instrument-string-sets/ukulele-banjouke-en/super-nylgut/"
+          , woundStrings = True
+          }
+        , { brand = Aquila
+          , color = Dark
+          , material = Nylon
+          , modelCode = "117U"
+          , name = "Lava - Baritone"
+          , sizes = { soprano = False, concert = False, tenor = False, baritone = True }
+          , strings =
+                { one = { diameter = 0.62, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.8, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.95, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.67, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "https://aquilacorde.com/en/shop/modern-instrument-string-sets/ukulele-banjouke-en/super-nylgut/"
+          , woundStrings = False
+          }
+        , { brand = Aquila
+          , color = Clear
+          , material = Nylon
+          , modelCode = "157U"
+          , name = "AG x AQ - Soprano"
+          , sizes = { soprano = True, concert = False, tenor = False, baritone = False }
+          , strings =
+                { one = { diameter = 0.65, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.76, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.98, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.69, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "https://aquilacorde.com/en/shop/modern-instrument-string-sets/ukulele-banjouke-en/ag-x-aq/"
+          , woundStrings = False
+          }
+        , { brand = Aquila
+          , color = Clear
+          , material = Nylon
+          , modelCode = "163U"
+          , name = "AG x AQ - Soprano"
+          , sizes = { soprano = True, concert = False, tenor = False, baritone = False }
+          , strings =
+                { one = { diameter = 0.65, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.76, pitch = E, tension = 0.0 }
+                , three = { diameter = 0.98, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.95, pitch = G, tension = 0.0 }
+                }
+          , tuning = Linear
+          , url = "https://aquilacorde.com/en/shop/modern-instrument-string-sets/ukulele-banjouke-en/ag-x-aq/"
+          , woundStrings = False
+          }
+        , { brand = Aquila
+          , color = Clear
+          , material = Nylon
+          , modelCode = "158U"
+          , name = "AG x AQ - Concert"
+          , sizes = { soprano = False, concert = True, tenor = False, baritone = False }
+          , strings =
+                { one = { diameter = 0.68, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.79, pitch = E, tension = 0.0 }
+                , three = { diameter = 1.02, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.74, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "https://aquilacorde.com/en/shop/modern-instrument-string-sets/ukulele-banjouke-en/ag-x-aq/"
+          , woundStrings = False
+          }
+        , { brand = Aquila
+          , color = Clear
+          , material = Nylon
+          , modelCode = ""
+          , name = "AG x AQ - Concert"
+          , sizes = { soprano = False, concert = True, tenor = False, baritone = False }
+          , strings =
+                { one = { diameter = 0.68, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.79, pitch = E, tension = 0.0 }
+                , three = { diameter = 1.02, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.97, pitch = G, tension = 0.0 }
+                }
+          , tuning = Linear
+          , url = "https://aquilacorde.com/en/shop/modern-instrument-string-sets/ukulele-banjouke-en/ag-x-aq/"
+          , woundStrings = False
+          }
+        , { brand = Aquila
+          , color = Clear
+          , material = Nylon
+          , modelCode = "145U"
+          , name = "AG x AQ - Tenor"
+          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
+          , strings =
+                { one = { diameter = 0.71, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.81, pitch = E, tension = 0.0 }
+                , three = { diameter = 1.04, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.74, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "https://aquilacorde.com/en/shop/modern-instrument-string-sets/ukulele-banjouke-en/ag-x-aq/"
+          , woundStrings = False
+          }
+        , { brand = Aquila
+          , color = Clear
+          , material = Nylon
+          , modelCode = ""
+          , name = "AG x AQ - Tenor"
+          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
+          , strings =
+                { one = { diameter = 0.71, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.81, pitch = E, tension = 0.0 }
+                , three = { diameter = 1.04, pitch = C, tension = 0.0 }
+                , four = { diameter = 1.0, pitch = G, tension = 0.0 }
+                }
+          , tuning = Linear
+          , url = "https://aquilacorde.com/en/shop/modern-instrument-string-sets/ukulele-banjouke-en/ag-x-aq/"
+          , woundStrings = False
+          }
+        , { brand = Aquila
+          , color = Clear
+          , material = Nylon
+          , modelCode = "159U"
+          , name = "AG x AQ - Baritone"
+          , sizes = { soprano = False, concert = False, tenor = False, baritone = True }
+          , strings =
+                { one = { diameter = 0.71, pitch = E, tension = 0.0 }
+                , two = { diameter = 0.81, pitch = B, tension = 0.0 }
+                , three = { diameter = 0.8, pitch = G, tension = 0.0 }
+                , four = { diameter = 0.7, pitch = D, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "https://aquilacorde.com/en/shop/modern-instrument-string-sets/ukulele-banjouke-en/ag-x-aq/"
+          , woundStrings = False
+          }
+        , { brand = Aquila
+          , color = Light
+          , material = Nylon
+          , modelCode = "57U"
+          , name = "Bionylon - Soprano"
+          , sizes = { soprano = True, concert = False, tenor = False, baritone = False }
+          , strings =
+                { one = { diameter = 0.66, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.84, pitch = E, tension = 0.0 }
+                , three = { diameter = 1.01, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.72, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "https://aquilacorde.com/en/shop/modern-instrument-string-sets/ukulele-banjouke-en/bionylon/"
+          , woundStrings = False
+          }
+        , { brand = Aquila
+          , color = Light
+          , material = Nylon
+          , modelCode = "58U"
+          , name = "Bionylon - Soprano"
+          , sizes = { soprano = True, concert = False, tenor = False, baritone = False }
+          , strings =
+                { one = { diameter = 0.66, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.84, pitch = E, tension = 0.0 }
+                , three = { diameter = 1.01, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.67, pitch = G, tension = 0.0 }
+                }
+          , tuning = Linear
+          , url = "https://aquilacorde.com/en/shop/modern-instrument-string-sets/ukulele-banjouke-en/bionylon/"
+          , woundStrings = True
+          }
+        , { brand = Aquila
+          , color = Light
+          , material = Nylon
+          , modelCode = "59U"
+          , name = "Bionylon - Concert"
+          , sizes = { soprano = False, concert = True, tenor = False, baritone = False }
+          , strings =
+                { one = { diameter = 0.68, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.88, pitch = E, tension = 0.0 }
+                , three = { diameter = 1.04, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.74, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "https://aquilacorde.com/en/shop/modern-instrument-string-sets/ukulele-banjouke-en/bionylon/"
+          , woundStrings = False
+          }
+        , { brand = Aquila
+          , color = Light
+          , material = Nylon
+          , modelCode = "60U"
+          , name = "Bionylon - Concert"
+          , sizes = { soprano = False, concert = True, tenor = False, baritone = False }
+          , strings =
+                { one = { diameter = 0.68, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.88, pitch = E, tension = 0.0 }
+                , three = { diameter = 1.04, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.7, pitch = G, tension = 0.0 }
+                }
+          , tuning = Linear
+          , url = "https://aquilacorde.com/en/shop/modern-instrument-string-sets/ukulele-banjouke-en/bionylon/"
+          , woundStrings = True
+          }
+        , { brand = Aquila
+          , color = Light
+          , material = Nylon
+          , modelCode = "63U"
+          , name = "Bionylon - Tenor"
+          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
+          , strings =
+                { one = { diameter = 0.72, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.9, pitch = E, tension = 0.0 }
+                , three = { diameter = 1.06, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.77, pitch = G, tension = 0.0 }
+                }
+          , tuning = Reentrant
+          , url = "https://aquilacorde.com/en/shop/modern-instrument-string-sets/ukulele-banjouke-en/bionylon/"
+          , woundStrings = False
+          }
+        , { brand = Aquila
+          , color = Light
+          , material = Nylon
+          , modelCode = "65U"
+          , name = "Bionylon - Tenor"
+          , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
+          , strings =
+                { one = { diameter = 0.72, pitch = A, tension = 0.0 }
+                , two = { diameter = 0.9, pitch = E, tension = 0.0 }
+                , three = { diameter = 1.06, pitch = C, tension = 0.0 }
+                , four = { diameter = 0.7, pitch = G, tension = 0.0 }
+                }
+          , tuning = Linear
+          , url = "https://aquilacorde.com/en/shop/modern-instrument-string-sets/ukulele-banjouke-en/bionylon/"
+          , woundStrings = True
           }
         ]
