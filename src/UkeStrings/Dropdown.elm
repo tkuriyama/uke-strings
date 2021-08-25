@@ -29,13 +29,13 @@ view :
     -> E.Element msg
 view title dropdown toString openMsg clickMsg clearMsg =
     let
-        (selected, empty) =
+        ( selected, empty ) =
             case dropdown of
                 ShowItem (Just x) ->
-                    (toString x, False)
+                    ( toString x, False )
 
                 _ ->
-                    ("Select " ++ title, True)
+                    ( "Select " ++ title, True )
     in
     case dropdown of
         ShowItem _ ->
@@ -46,9 +46,10 @@ view title dropdown toString openMsg clickMsg clearMsg =
                 , E.padding 5
                 , Events.onClick openMsg
                 , if empty then
-                      Background.color backgroundColor
+                    Background.color backgroundColor
+
                   else
-                      Background.color selectedColor
+                    Background.color selectedColor
                 ]
                 (E.text selected)
 
