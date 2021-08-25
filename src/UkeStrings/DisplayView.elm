@@ -288,8 +288,17 @@ stringSetsToStats :
     -> ( UkeString -> Float, Unit )
     -> List ChartSeries
 stringSetsToStats stringSets ( selectFeature, unit ) =
+    -- let
+    --     notZero lst =
+    --         case lst of
+    --             [] ->
+    --                 False
+    --             (x :: xs) ->
+    --                 x /= 0.0
+    -- in 
     List.map (flatten selectFeature) stringSets
         |> Utils.transpose
+        |> List.map (List.filter ((/=) 0))
         |> genStats unit
 
 
