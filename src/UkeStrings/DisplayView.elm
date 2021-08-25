@@ -311,7 +311,9 @@ stringSetsToStats stringSets ( selectFeature, unit ) =
     List.map (flatten selectFeature) stringSets
         |> Utils.transpose
         |> List.map (List.filter ((/=) 0))
+        |> List.filter (\xs -> List.length xs > 0)
         |> genStats unit
+
 
 
 genStats : Unit -> List (List Float) -> List ChartSeries
@@ -326,6 +328,7 @@ genStats unit m =
         , ( "Median", Statistics.median >> Maybe.withDefault 0 )
         , ( "Min", List.minimum >> Maybe.withDefault 0 )
         ]
+
 
 
 summarize :
