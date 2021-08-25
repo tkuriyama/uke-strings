@@ -83,7 +83,7 @@ view model =
 chartRowAttrs : List (E.Attribute Msg)
 chartRowAttrs =
     [ E.width E.fill
-    , E.spacing 25
+    , E.spacing 30
     , E.alignTop
     , E.centerX
     , E.paddingXY 10 10
