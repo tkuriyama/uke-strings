@@ -232,6 +232,16 @@ tuningToTypeString =
     strLookup third tuningRecords "Reentrant"
 
 
+tuningToStringShort : Tuning -> String
+tuningToStringShort tuning =
+    case tuning of
+        Reentrant ->
+            "Reent."
+
+        _ ->
+            "Lin."
+
+
 
 --------------------------------------------------------------------------------
 -- Pitch

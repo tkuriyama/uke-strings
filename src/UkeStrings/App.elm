@@ -90,7 +90,7 @@ defaultChartCfg =
     in
     { defaultStdChartCfg
         | w = 800
-        , h = 300
+        , h = 400
         , pad = paddingCfg
         , chartSpec = lineChartSpec
         , dataAxisTicks = 8

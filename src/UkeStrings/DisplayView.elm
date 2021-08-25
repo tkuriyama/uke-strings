@@ -24,14 +24,21 @@ import UkeStrings.Utils as Utils
 view : DisplayModel -> E.Element Msg
 view model =
     E.column
-        [ E.width E.fill
-        , E.spacing 10
-        , E.paddingXY 0 10
-        , E.alignTop
+        [ E.spacing 10
+        , E.paddingXY 10 10
         , E.centerX
+        , E.alignTop
         ]
         [ filterRow model .one 1
         , filterRow model .two 2
+        , E.row
+            (chartRowAttrs
+                ++ [ Background.color <| E.rgb255 240 240 240
+                   ]
+            )
+            [ printStringSets "1" model.one.filteredStrings
+            , printStringSets "2" model.two.filteredStrings
+            ]
         , E.row
             chartRowAttrs
             [ chart
@@ -70,18 +77,13 @@ view model =
                 , model.chartControls.stats.twoTension
                 )
             ]
-        , E.row
-            chartRowAttrs
-            [ printStringSets model.one.filteredStrings
-            , printStringSets model.two.filteredStrings
-            ]
         ]
 
 
 chartRowAttrs : List (E.Attribute Msg)
 chartRowAttrs =
     [ E.width E.fill
-    , E.spacing 10
+    , E.spacing 25
     , E.alignTop
     , E.centerX
     , E.paddingXY 10 10
@@ -157,7 +159,7 @@ filterRow model selector i =
                 (UpdateClear "Tuning" i)
             )
         , E.el
-            (dropdownAttrs 250)
+            (dropdownAttrs 350)
             (Dropdown.view
                 "Strings"
                 (selector model |> .stringSetFilter)
@@ -182,7 +184,7 @@ clearButton i =
         [ E.padding 5
         , Border.rounded 5
         , Border.width 1
-        , Background.color <| E.rgb255 238 238 238
+        , Background.color <| E.rgb255 250 186 186
         ]
         { onPress = Just <| UpdateClearAll i
         , label = E.text "Clear"
@@ -366,14 +368,15 @@ flatten selectFeature stringSet =
 -- Print Strings
 
 
-printStringSets : List StringSet -> E.Element Msg
-printStringSets sets =
+printStringSets : String -> List StringSet -> E.Element Msg
+printStringSets i sets =
     let
         n =
             List.length sets
 
         title =
-            "Strings in current filter: {{all}}"
+            "Set {{i}}: strings in current filter: {{all}}"
+                |> Fmt.namedValue "i" i
                 |> Fmt.namedValue "all" (String.fromInt n)
     in
     E.column
@@ -392,7 +395,7 @@ printStringSets sets =
         , E.column
             [ E.width E.fill
             , E.scrollbarY
-            , E.height <| E.minimum 400 E.fill
+            , E.height <| E.px 200
             ]
             (List.sortBy
                 (\s -> ( Show.brandToString s.brand, s.name ))
@@ -406,19 +409,19 @@ headers : E.Element Msg
 headers =
     E.paragraph
         []
-        [ E.text <| Utils.printWidth 14 "Brand"
+        [ E.text <| Utils.printWidth 13 "Brand"
         , E.text " "
-        , E.text <| Utils.printWidth 14 "Material"
+        , E.text <| Utils.printWidth 13 "Material"
         , E.text " "
-        , E.text <| Utils.printWidth 10 "Model"
+        , E.text <| Utils.printWidth 8 "Model"
         , E.text " "
-        , E.text <| Utils.printWidth 28 "Name"
+        , E.text <| Utils.printWidth 24 "Name"
         , E.text " "
         , E.text <| Utils.printWidth 5 "Sizes"
         , E.text " "
-        , E.text <| Utils.printWidth 10 "Tuning"
+        , E.text <| Utils.printWidth 7 "Tuning"
         , E.text " "
-        , E.text <| Utils.printWidth 6 "Pitch"
+        , E.text <| Utils.printWidth 5 "Pitch"
         , E.text " "
         , E.text <| "Url"
         ]
@@ -428,19 +431,19 @@ printStringSet : StringSet -> E.Element Msg
 printStringSet set =
     E.paragraph
         []
-        [ E.text <| Utils.printWidth 14 <| Show.brandToString set.brand
+        [ E.text <| Utils.printWidth 13 <| Show.brandToString set.brand
         , E.text " "
-        , E.text <| Utils.printWidth 14 <| Show.materialToString set.material
+        , E.text <| Utils.printWidth 13 <| Show.materialToString set.material
         , E.text " "
-        , E.text <| Utils.printWidth 10 <| set.modelCode
+        , E.text <| Utils.printWidth 8 <| set.modelCode
         , E.text " "
-        , E.text <| Utils.printWidth 28 <| set.name
+        , E.text <| Utils.printWidth 24 <| set.name
         , E.text " "
         , E.text <| Utils.printWidth 5 <| Show.sizesToString set.sizes
         , E.text " "
-        , E.text <| Utils.printWidth 10 <| Show.tuningToString set.tuning
+        , E.text <| Utils.printWidth 7 <| Show.tuningToStringShort set.tuning
         , E.text " "
-        , E.text <| Utils.printWidth 6 <| Show.pitchesToString set.strings
+        , E.text <| Utils.printWidth 5 <| Show.pitchesToString set.strings
         , E.text " "
         , if set.url /= "" then
             E.link
