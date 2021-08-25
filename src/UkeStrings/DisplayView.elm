@@ -32,10 +32,7 @@ view model =
         [ filterRow model .one 1
         , filterRow model .two 2
         , E.row
-            (chartRowAttrs
-                ++ [ Background.color <| E.rgb255 240 240 240
-                   ]
-            )
+            (chartRowAttrs)
             [ printStringSets "1" model.one.filteredStrings
             , printStringSets "2" model.two.filteredStrings
             ]
@@ -400,7 +397,7 @@ printStringSets i sets =
             (List.sortBy
                 (\s -> ( Show.brandToString s.brand, s.name ))
                 sets
-                |> List.map printStringSet
+                |> List.indexedMap printStringSet
             )
         ]
 
@@ -427,10 +424,14 @@ headers =
         ]
 
 
-printStringSet : StringSet -> E.Element Msg
-printStringSet set =
+printStringSet : Int -> StringSet -> E.Element Msg
+printStringSet i set =
     E.paragraph
-        []
+        [ if modBy 2 i == 0 then
+              Background.color <| E.rgb255 235 235 235
+        else
+            Background.color <| E.rgb255 255 255 255
+        ]
         [ E.text <| Utils.printWidth 13 <| Show.brandToString set.brand
         , E.text " "
         , E.text <| Utils.printWidth 13 <| Show.materialToString set.material
