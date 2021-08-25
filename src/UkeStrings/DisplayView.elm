@@ -227,6 +227,7 @@ chart cfg stringSets title selectPair ( statControlMsg, showStats ) =
 
             else if List.length stringSets <= 10 then
                 List.map (stringSetToSeries selectPair) stringSets
+                    |> List.filter zeroStrings
                     |> Chart.render cfg
                     |> E.html
 
@@ -277,6 +278,15 @@ stringSetToSeries ( selectFeature, unit ) stringSet =
     , List.map f [ ( "1", .one ), ( "2", .two ), ( "3", .three ), ( "4", .four ) ]
     )
 
+
+zeroStrings : ChartSeries -> Bool
+zeroStrings (_, strings) =
+    case strings of
+        [] ->
+            True
+        pairs ->
+            List.map Tuple.second pairs
+                |> \xs -> xs /= [0.0, 0.0, 0.0, 0.0]
 
 
 --------------------------------------------------------------------------------
