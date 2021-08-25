@@ -259,6 +259,14 @@ pitchToTypeString =
     pitchToString
 
 
+pitchesToString : UkeStrings -> String
+pitchesToString strings =
+    "{{4}}{{3}}{{2}}{{1}}"
+        |> Fmt.namedValue "1" (pitchToString strings.one.pitch)
+        |> Fmt.namedValue "2" (pitchToString strings.two.pitch)
+        |> Fmt.namedValue "3" (pitchToString strings.three.pitch)
+        |> Fmt.namedValue "4" (pitchToString strings.four.pitch)
+
 
 --------------------------------------------------------------------------------
 -- Helpers

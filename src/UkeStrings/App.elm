@@ -108,6 +108,7 @@ paddingCfg =
     in
     { defaultPadding
         | right = 180
+        , bottom = 0
     }
 
 
@@ -176,28 +177,11 @@ view model =
             , E.width E.fill
             ]
             [ E.row
-                [ E.centerX ]
+                [ E.centerX
+                , E.onRight links
+                ]
                 [ tab active "Viewer"
                 , tab active "Generator"
-                ]
-            , E.row
-                [ E.spacing 15
-                , E.alignRight
-                ]
-                [ E.link
-                    [ Font.alignRight
-                    , Font.underline
-                    ]
-                    { url = "https://github.com/tkuriyama/uke-strings"
-                    , label = E.text "Source"
-                    }
-                , E.link
-                    [ Font.alignRight
-                    , Font.underline
-                    ]
-                    { url = "https://github.com/tkuriyama/uke-strings/blob/master/FAQ.md"
-                    , label = E.text "Help"
-                    }
                 ]
             , case model.pageModel of
                 Display m ->
@@ -209,6 +193,30 @@ view model =
         )
 
 
+links : E.Element Msg
+links =
+    E.row
+        [ E.paddingXY 20 5
+        , E.spacing 15
+        , E.alignRight
+        ]
+        [ E.link
+              [ Font.alignRight
+              , Font.underline
+              ]
+              { url = "https://github.com/tkuriyama/uke-strings"
+              , label = E.text "Source"
+              }
+        , E.link
+              [ Font.alignRight
+              , Font.underline
+              ]
+              { url = "https://github.com/tkuriyama/uke-strings/blob/master/FAQ.md"
+              , label = E.text "Help"
+              }
+        ]
+
+        
 getActivePageModel : PageModel -> String
 getActivePageModel model =
     case model of

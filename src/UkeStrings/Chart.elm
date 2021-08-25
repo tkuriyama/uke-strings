@@ -86,7 +86,7 @@ genChartEnv cfg data =
             cfg.h
             (cfg.pad.top + cfg.pad.bottom)
             xs
-    , labelScale = StdChart.genXScale cfg.w cfg.pad.left ys
+    , labelScale = StdChart.genXScale cfg.w (cfg.pad.left + 5) ys
     , colorScale = StdChart.genColorScale names
     , labelShow = cfg.showLabels
     , labelFmt = cfg.labelFormatter

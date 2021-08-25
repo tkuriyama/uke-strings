@@ -26,8 +26,9 @@ view model =
     E.column
         [ E.width E.fill
         , E.spacing 10
-        , E.paddingXY 0 20
+        , E.paddingXY 0 10
         , E.alignTop
+        , E.centerX
         ]
         [ filterRow model .one 1
         , filterRow model .two 2
@@ -83,7 +84,7 @@ chartRowAttrs =
     , E.spacing 10
     , E.alignTop
     , E.centerX
-    , E.paddingXY 0 10
+    , E.paddingXY 10 10
     ]
 
 
@@ -374,27 +375,55 @@ printStringSets sets =
             List.length sets
 
         title =
-            "First strings in current filter (showing {{show}} of {{all}})"
-                |> Fmt.namedValue "show" (String.fromInt (min n 25))
+            "Strings in current filter: {{all}}"
                 |> Fmt.namedValue "all" (String.fromInt n)
+
     in
     E.column
         [ E.width E.fill
         , E.alignTop
-        , E.spacing 5
+        , E.spacing 10
+        , Font.size 16
         ]
         [ E.el
             [ Font.heavy
-            , E.paddingXY 0 10
             ]
             (E.text title)
+        , E.el
+            []
+             ( headers )
         , E.column
             [ E.width E.fill
+            , E.scrollbarY
+            , E.height <| E.minimum 400 E.fill
             ]
-            (List.sortBy (\s -> s.name) sets
-                |> List.take 25
+            (List.sortBy
+                 (\s -> (Show.brandToString s.brand, s.name))
+                 sets
                 |> List.map printStringSet
             )
+        ]
+
+
+headers : E.Element Msg
+headers =
+    E.paragraph
+        []
+        [ E.text <| Utils.printWidth 14 "Brand"
+        , E.text " "
+        , E.text <| Utils.printWidth 14 "Material"
+        , E.text " "
+        , E.text <| Utils.printWidth 10 "Model"
+        , E.text " "
+        , E.text <| Utils.printWidth 28 "Name"
+        , E.text " "
+        , E.text <| Utils.printWidth 5 "Sizes"
+        , E.text " "
+        , E.text <| Utils.printWidth 10 "Tuning"
+        , E.text " "
+        , E.text <| Utils.printWidth 6 "Pitch"
+        , E.text " "
+        , E.text <| "Url"
         ]
 
 
@@ -402,17 +431,19 @@ printStringSet : StringSet -> E.Element Msg
 printStringSet set =
     E.paragraph
         []
-        [ E.text <| Utils.printWidth 12 <| Show.brandToString set.brand
+        [ E.text <| Utils.printWidth 14 <| Show.brandToString set.brand
         , E.text " "
-        , E.text <| Utils.printWidth 13 <| Show.materialToString set.material
+        , E.text <| Utils.printWidth 14 <| Show.materialToString set.material
         , E.text " "
-        , E.text <| Utils.printWidth 8 <| set.modelCode
+        , E.text <| Utils.printWidth 10 <| set.modelCode
         , E.text " "
-        , E.text <| Utils.printWidth 24 <| set.name
+        , E.text <| Utils.printWidth 28 <| set.name
         , E.text " "
         , E.text <| Utils.printWidth 5 <| Show.sizesToString set.sizes
         , E.text " "
         , E.text <| Utils.printWidth 10 <| Show.tuningToString set.tuning
+        , E.text " "
+        , E.text <| Utils.printWidth 6 <| Show.pitchesToString set.strings
         , E.text " "
         , if set.url /= "" then
             E.link
