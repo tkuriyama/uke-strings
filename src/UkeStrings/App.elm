@@ -201,22 +201,22 @@ links =
         , E.alignRight
         ]
         [ E.link
-              [ Font.alignRight
-              , Font.underline
-              ]
-              { url = "https://github.com/tkuriyama/uke-strings"
-              , label = E.text "Source"
-              }
+            [ Font.alignRight
+            , Font.underline
+            ]
+            { url = "https://github.com/tkuriyama/uke-strings"
+            , label = E.text "Source"
+            }
         , E.link
-              [ Font.alignRight
-              , Font.underline
-              ]
-              { url = "https://github.com/tkuriyama/uke-strings/blob/master/FAQ.md"
-              , label = E.text "Help"
-              }
+            [ Font.alignRight
+            , Font.underline
+            ]
+            { url = "https://github.com/tkuriyama/uke-strings/blob/master/FAQ.md"
+            , label = E.text "Help"
+            }
         ]
 
-        
+
 getActivePageModel : PageModel -> String
 getActivePageModel model =
     case model of

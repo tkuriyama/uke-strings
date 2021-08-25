@@ -316,7 +316,6 @@ stringSetsToStats stringSets ( selectFeature, unit ) =
         |> genStats unit
 
 
-
 genStats : Unit -> List (List Float) -> List ChartSeries
 genStats unit m =
     let
@@ -329,7 +328,6 @@ genStats unit m =
         , ( "Median", Statistics.median >> Maybe.withDefault 0 )
         , ( "Min", List.minimum >> Maybe.withDefault 0 )
         ]
-
 
 
 summarize :
@@ -377,7 +375,6 @@ printStringSets sets =
         title =
             "Strings in current filter: {{all}}"
                 |> Fmt.namedValue "all" (String.fromInt n)
-
     in
     E.column
         [ E.width E.fill
@@ -391,15 +388,15 @@ printStringSets sets =
             (E.text title)
         , E.el
             []
-             ( headers )
+            headers
         , E.column
             [ E.width E.fill
             , E.scrollbarY
             , E.height <| E.minimum 400 E.fill
             ]
             (List.sortBy
-                 (\s -> (Show.brandToString s.brand, s.name))
-                 sets
+                (\s -> ( Show.brandToString s.brand, s.name ))
+                sets
                 |> List.map printStringSet
             )
         ]
