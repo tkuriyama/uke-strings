@@ -260,6 +260,102 @@ aquila =
       , woundStrings = True
       }
     , { brand = Aquila
+      , color = OtherColor
+      , material = OtherMaterial
+      , modelCode = "83U"
+      , name = "Red - Soprano"
+      , sizes = { soprano = True, concert = False, tenor = False, baritone = False }
+      , strings =
+            { one = { diameter = 0.56, pitch = A, tension = 3.48 }
+            , two = { diameter = 0.7, pitch = E, tension = 3.3 }
+            , three = { diameter = 0.81, pitch = C, tension = 3.07 }
+            , four = { diameter = 0.58, pitch = G, tension = 3.05 }
+            }
+      , tuning = Reentrant
+      , url = "https://aquilacorde.com/en/shop/modern-instrument-string-sets/ukulele-banjouke-en/red-series/"
+      , woundStrings = True
+      }
+    , { brand = Aquila
+      , color = OtherColor
+      , material = OtherMaterial
+      , modelCode = "84U"
+      , name = "Red - Soprano"
+      , sizes = { soprano = True, concert = False, tenor = False, baritone = False }
+      , strings =
+            { one = { diameter = 0.56, pitch = A, tension = 3.48 }
+            , two = { diameter = 0.7, pitch = E, tension = 3.3 }
+            , three = { diameter = 0.81, pitch = C, tension = 3 }
+            , four = { diameter = 0.71, pitch = G, tension = 3.3 }
+            }
+      , tuning = Linear
+      , url = "https://aquilacorde.com/en/shop/modern-instrument-string-sets/ukulele-banjouke-en/red-series/"
+      , woundStrings = True
+      }
+    , { brand = Aquila
+      , color = OtherColor
+      , material = OtherMaterial
+      , modelCode = "85U"
+      , name = "Red - Concert"
+      , sizes = { soprano = False, concert = True, tenor = False, baritone = False }
+      , strings =
+            { one = { diameter = 0.58, pitch = A, tension = 4.4 }
+            , two = { diameter = 0.73, pitch = E, tension = 4.23 }
+            , three = { diameter = 0.83, pitch = C, tension = 3.71 }
+            , four = { diameter = 0.75, pitch = G, tension = 4.4 }
+            }
+      , tuning = Linear
+      , url = "https://aquilacorde.com/en/shop/modern-instrument-string-sets/ukulele-banjouke-en/red-series/"
+      , woundStrings = True
+      }
+    , { brand = Aquila
+      , color = OtherColor
+      , material = OtherMaterial
+      , modelCode = "87U"
+      , name = "Red - Tenor"
+      , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
+      , strings =
+            { one = { diameter = 0.6, pitch = A, tension = 6.03 }
+            , two = { diameter = 0.75, pitch = E, tension = 5.72 }
+            , three = { diameter = 0.85, pitch = C, tension = 4.98 }
+            , four = { diameter = 0.62, pitch = G, tension = 5.11 }
+            }
+      , tuning = Reentrant
+      , url = "https://aquilacorde.com/en/shop/modern-instrument-string-sets/ukulele-banjouke-en/red-series/"
+      , woundStrings = False
+      }
+    , { brand = Aquila
+      , color = OtherColor
+      , material = OtherMaterial
+      , modelCode = "88U"
+      , name = "Red - Tenor"
+      , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
+      , strings =
+            { one = { diameter = 0.6, pitch = A, tension = 6.03 }
+            , two = { diameter = 0.75, pitch = E, tension = 5.72 }
+            , three = { diameter = 0.85, pitch = C, tension = 4.98 }
+            , four = { diameter = 0.75, pitch = G, tension = 4.4 }
+            }
+      , tuning = Linear
+      , url = "https://aquilacorde.com/en/shop/modern-instrument-string-sets/ukulele-banjouke-en/red-series/"
+      , woundStrings = False
+      }
+    , { brand = Aquila
+      , color = OtherColor
+      , material = OtherMaterial
+      , modelCode = "89U"
+      , name = "Red - Baritone"
+      , sizes = { soprano = False, concert = False, tenor = False, baritone = True }
+      , strings =
+            { one = { diameter = 0.62, pitch = E, tension = 5.08 }
+            , two = { diameter = 0.8, pitch = B, tension = 5.14 }
+            , three = { diameter = 0.8, pitch = G, tension = 5.03 }
+            , four = { diameter = 0.7, pitch = D, tension = 4.45 }
+            }
+      , tuning = Linear
+      , url = "https://aquilacorde.com/en/shop/modern-instrument-string-sets/ukulele-banjouke-en/red-series/"
+      , woundStrings = True
+      }
+    , { brand = Aquila
       , color = Light
       , material = Nylon
       , modelCode = "100U"
@@ -685,7 +781,7 @@ aquila =
             { one = { diameter = 0.68, pitch = A, tension = 3.9 }
             , two = { diameter = 0.79, pitch = E, tension = 2.9 }
             , three = { diameter = 1.02, pitch = C, tension = 3.1 }
-            , four = { diameter = 0.74, pitch = G, tension = 0.71 }
+            , four = { diameter = 0.74, pitch = G, tension = 3.4 }
             }
       , tuning = Reentrant
       , url = "https://aquilacorde.com/en/shop/modern-instrument-string-sets/ukulele-banjouke-en/ag-x-aq/"
@@ -694,7 +790,7 @@ aquila =
     , { brand = Aquila
       , color = Clear
       , material = Nylon
-      , modelCode = ""
+      , modelCode = "164U"
       , name = "AG x AQ - Concert"
       , sizes = { soprano = False, concert = True, tenor = False, baritone = False }
       , strings =
@@ -726,7 +822,7 @@ aquila =
     , { brand = Aquila
       , color = Clear
       , material = Nylon
-      , modelCode = ""
+      , modelCode = "162U"
       , name = "AG x AQ - Tenor"
       , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
       , strings =
