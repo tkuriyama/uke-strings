@@ -1025,7 +1025,7 @@ daddario =
       , material = Fluorocarbon
       , modelCode = "EJ99T"
       , name = "Pro-Arte Carbon"
-      , sizes = { soprano = False, concert = True, tenor = False, baritone = False }
+      , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
       , strings =
             { one = { diameter = 0.508, pitch = A, tension = 5.5791816 }
             , two = { diameter = 0.6604, pitch = E, tension = 5.03940712 }
@@ -1041,7 +1041,7 @@ daddario =
       , material = Fluorocarbon
       , modelCode = "EJ99TLG"
       , name = "Pro-Arte Carbon"
-      , sizes = { soprano = False, concert = True, tenor = False, baritone = False }
+      , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
       , strings =
             { one = { diameter = 0.508, pitch = A, tension = 5.5791816 }
             , two = { diameter = 0.6604, pitch = E, tension = 5.03940712 }
@@ -1057,7 +1057,7 @@ daddario =
       , material = Fluorocarbon
       , modelCode = "EJ99B"
       , name = "Pro-Arte Carbon"
-      , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
+      , sizes = { soprano = False, concert = False, tenor = False, baritone = True }
       , strings =
             { one = { diameter = 0.6096, pitch = E, tension = 5.54289424 }
             , two = { diameter = 0.8128, pitch = B, tension = 5.31609824 }
