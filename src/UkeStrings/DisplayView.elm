@@ -280,13 +280,15 @@ stringSetToSeries ( selectFeature, unit ) stringSet =
 
 
 zeroStrings : ChartSeries -> Bool
-zeroStrings (_, strings) =
+zeroStrings ( _, strings ) =
     case strings of
         [] ->
             True
+
         pairs ->
             List.map Tuple.second pairs
-                |> \xs -> xs /= [0.0, 0.0, 0.0, 0.0]
+                |> (\xs -> xs /= [ 0.0, 0.0, 0.0, 0.0 ])
+
 
 
 --------------------------------------------------------------------------------
@@ -305,7 +307,7 @@ stringSetsToStats stringSets ( selectFeature, unit ) =
     --                 False
     --             (x :: xs) ->
     --                 x /= 0.0
-    -- in 
+    -- in
     List.map (flatten selectFeature) stringSets
         |> Utils.transpose
         |> List.map (List.filter ((/=) 0))
