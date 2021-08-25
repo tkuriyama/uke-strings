@@ -29,21 +29,26 @@ view :
     -> E.Element msg
 view title dropdown toString openMsg clickMsg clearMsg =
     let
-        selected =
+        (selected, empty) =
             case dropdown of
                 ShowItem (Just x) ->
-                    toString x
+                    (toString x, False)
 
                 _ ->
-                    "Select " ++ title
+                    ("Select " ++ title, True)
     in
     case dropdown of
         ShowItem _ ->
             E.el
                 [ E.width E.fill
                 , Border.width 1
+                , Border.rounded 2
                 , E.padding 5
                 , Events.onClick openMsg
+                , if empty then
+                      Background.color backgroundColor
+                  else
+                      Background.color selectedColor
                 ]
                 (E.text selected)
 
@@ -74,6 +79,7 @@ view title dropdown toString openMsg clickMsg clearMsg =
             E.el
                 [ E.width E.fill
                 , Border.width 1
+                , Border.rounded 2
                 , E.padding 5
                 , E.below (viewOptionList options)
                 ]
@@ -102,3 +108,8 @@ mouseOverColor =
 backgroundColor : E.Color
 backgroundColor =
     E.rgb 1 1 1
+
+
+selectedColor : E.Color
+selectedColor =
+    E.rgb255 151 214 70
