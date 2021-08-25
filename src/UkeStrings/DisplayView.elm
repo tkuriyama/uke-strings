@@ -375,7 +375,7 @@ printStringSets i sets =
             List.length sets
 
         title =
-            "Set {{i}}: strings in current filter: {{all}}"
+            "Set {{i}}: {{all}} strings in current filter"
                 |> Fmt.namedValue "i" i
                 |> Fmt.namedValue "all" (String.fromInt n)
     in
