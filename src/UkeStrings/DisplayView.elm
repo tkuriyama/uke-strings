@@ -32,9 +32,9 @@ view model =
         [ filterRow model .one 1
         , filterRow model .two 2
         , E.row
-            ( chartRowAttrs ++
-                  [ E.height <| E.px 260 ]
-            ) 
+            (chartRowAttrs
+                ++ [ E.height <| E.px 260 ]
+            )
             [ printStringSets "1" model.one.filteredStrings
             , printStringSets "2" model.two.filteredStrings
             ]
@@ -380,13 +380,11 @@ printStringSets i sets =
             [ Font.heavy
             ]
             (E.text title)
-        , E.el
-            []
-            headers
+        , headers
         , E.column
-           [ E.width E.fill
-           , E.height <| E.minimum 200 E.fill
-           , E.scrollbarY
+            [ E.width E.fill
+            , E.height <| E.minimum 200 E.fill
+            , E.scrollbarY
             ]
             (List.sortBy
                 (\s -> ( Show.brandToString s.brand, s.name ))
@@ -398,24 +396,28 @@ printStringSets i sets =
 
 headers : E.Element Msg
 headers =
-    E.paragraph
-        []
-        [ E.text <| Utils.printWidth 13 "Brand"
-        , E.text " "
-        , E.text <| Utils.printWidth 13 "Material"
-        , E.text " "
-        , E.text <| Utils.printWidth 8 "Model"
-        , E.text " "
-        , E.text <| Utils.printWidth 24 "Name"
-        , E.text " "
-        , E.text <| Utils.printWidth 5 "Sizes"
-        , E.text " "
-        , E.text <| Utils.printWidth 7 "Tuning"
-        , E.text " "
-        , E.text <| Utils.printWidth 5 "Pitch"
-        , E.text " "
-        , E.text <| "Url"
+    let
+        f ( str, n ) =
+            E.el
+                [ E.width <| E.fillPortion n ]
+                (E.text str)
+    in
+    E.row
+        [ E.width E.fill
+        , E.spacing 5
         ]
+        (List.map
+            f
+            [ ( "Brand", 2 )
+            , ( "Material", 2 )
+            , ( "Model", 1 )
+            , ( "Name", 5 )
+            , ( "Sizes", 1 )
+            , ( "Tuning", 1 )
+            , ( "Pitch", 1 )
+            , ( "Url", 1 )
+            ]
+        )
 
 
 printStringSet : Int -> StringSet -> E.Element Msg
@@ -423,42 +425,45 @@ printStringSet i set =
     E.row
         [ E.width E.fill
         , if modBy 2 i == 0 then
-              Background.color <| E.rgb255 235 235 235
-        else
+            Background.color <| E.rgb255 235 235 235
+
+          else
             Background.color <| E.rgb255 255 255 255
         , E.spacing 5
         ]
         [ E.el
-              [ E.width <| E.fillPortion 2]
-              ( E.text <| Show.brandToString set.brand )
+            [ E.width <| E.fillPortion 2 ]
+            (E.text <| Show.brandToString set.brand)
         , E.el
             [ E.width <| E.fillPortion 2 ]
-            ( E.text <| Show.materialToString set.material )
+            (E.text <| Show.materialToString set.material)
         , E.el
             [ E.width <| E.fillPortion 1 ]
-            ( E.text <| set.modelCode )
+            (E.text <| set.modelCode)
         , E.el
-            [ E.width <| E.fillPortion 4 ]
-            ( E.text <| Utils.printWidth 24 <| set.name )
-        , E.el
-            [ E.width <| E.fillPortion 1 ]
-            ( E.text <| Show.sizesToString set.sizes)
+            [ E.width <| E.fillPortion 5 ]
+            (E.text <| Utils.printWidth 24 <| set.name)
         , E.el
             [ E.width <| E.fillPortion 1 ]
-            ( E.text <| Utils.printWidth 7 <| Show.tuningToStringShort set.tuning )
+            (E.text <| Show.sizesToString set.sizes)
         , E.el
             [ E.width <| E.fillPortion 1 ]
-            ( E.text <| Show.pitchesToString set.strings )
+            (E.text <| Utils.printWidth 7 <| Show.tuningToStringShort set.tuning)
         , E.el
             [ E.width <| E.fillPortion 1 ]
-            ( if set.url /= "" then
-                  E.link
-                  [ Font.underline ]
-                  { url = set.url, label = E.text "Link" }
-              else
-                  E.text ""
+            (E.text <| Show.pitchesToString set.strings)
+        , E.el
+            [ E.width <| E.fillPortion 1 ]
+            (if set.url /= "" then
+                E.link
+                    [ Font.underline ]
+                    { url = set.url, label = E.text "Link" }
+
+             else
+                E.text ""
             )
         ]
+
 
 
 --------------------------------------------------------------------------------
