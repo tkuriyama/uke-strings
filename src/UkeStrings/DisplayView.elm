@@ -32,7 +32,9 @@ view model =
         [ filterRow model .one 1
         , filterRow model .two 2
         , E.row
-            (chartRowAttrs)
+            ( chartRowAttrs ++
+                  [ E.height <| E.px 260 ]
+            ) 
             [ printStringSets "1" model.one.filteredStrings
             , printStringSets "2" model.two.filteredStrings
             ]
@@ -300,14 +302,6 @@ stringSetsToStats :
     -> ( UkeString -> Float, Unit )
     -> List ChartSeries
 stringSetsToStats stringSets ( selectFeature, unit ) =
-    -- let
-    --     notZero lst =
-    --         case lst of
-    --             [] ->
-    --                 False
-    --             (x :: xs) ->
-    --                 x /= 0.0
-    -- in
     List.map (flatten selectFeature) stringSets
         |> Utils.transpose
         |> List.map (List.filter ((/=) 0))
@@ -390,9 +384,9 @@ printStringSets i sets =
             []
             headers
         , E.column
-            [ E.width E.fill
-            , E.scrollbarY
-            , E.height <| E.px 200
+           [ E.width E.fill
+           , E.height <| E.minimum 200 E.fill
+           , E.scrollbarY
             ]
             (List.sortBy
                 (\s -> ( Show.brandToString s.brand, s.name ))
@@ -426,35 +420,45 @@ headers =
 
 printStringSet : Int -> StringSet -> E.Element Msg
 printStringSet i set =
-    E.paragraph
-        [ if modBy 2 i == 0 then
+    E.row
+        [ E.width E.fill
+        , if modBy 2 i == 0 then
               Background.color <| E.rgb255 235 235 235
         else
             Background.color <| E.rgb255 255 255 255
+        , E.spacing 5
         ]
-        [ E.text <| Utils.printWidth 13 <| Show.brandToString set.brand
-        , E.text " "
-        , E.text <| Utils.printWidth 13 <| Show.materialToString set.material
-        , E.text " "
-        , E.text <| Utils.printWidth 8 <| set.modelCode
-        , E.text " "
-        , E.text <| Utils.printWidth 24 <| set.name
-        , E.text " "
-        , E.text <| Utils.printWidth 5 <| Show.sizesToString set.sizes
-        , E.text " "
-        , E.text <| Utils.printWidth 7 <| Show.tuningToStringShort set.tuning
-        , E.text " "
-        , E.text <| Utils.printWidth 5 <| Show.pitchesToString set.strings
-        , E.text " "
-        , if set.url /= "" then
-            E.link
-                [ Font.underline ]
-                { url = set.url, label = E.text "Link" }
-
-          else
-            E.text ""
+        [ E.el
+              [ E.width <| E.fillPortion 2]
+              ( E.text <| Show.brandToString set.brand )
+        , E.el
+            [ E.width <| E.fillPortion 2 ]
+            ( E.text <| Show.materialToString set.material )
+        , E.el
+            [ E.width <| E.fillPortion 1 ]
+            ( E.text <| set.modelCode )
+        , E.el
+            [ E.width <| E.fillPortion 4 ]
+            ( E.text <| Utils.printWidth 24 <| set.name )
+        , E.el
+            [ E.width <| E.fillPortion 1 ]
+            ( E.text <| Show.sizesToString set.sizes)
+        , E.el
+            [ E.width <| E.fillPortion 1 ]
+            ( E.text <| Utils.printWidth 7 <| Show.tuningToStringShort set.tuning )
+        , E.el
+            [ E.width <| E.fillPortion 1 ]
+            ( E.text <| Show.pitchesToString set.strings )
+        , E.el
+            [ E.width <| E.fillPortion 1 ]
+            ( if set.url /= "" then
+                  E.link
+                  [ Font.underline ]
+                  { url = set.url, label = E.text "Link" }
+              else
+                  E.text ""
+            )
         ]
-
 
 
 --------------------------------------------------------------------------------
