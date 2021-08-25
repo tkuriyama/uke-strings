@@ -193,7 +193,7 @@ clearButton i =
 rowAttrs : List (E.Attribute Msg)
 rowAttrs =
     [ E.width E.fill
-    , E.spacingXY 5 5
+    , E.spacingXY 10 5
     ]
 
 

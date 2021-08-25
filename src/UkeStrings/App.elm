@@ -176,13 +176,23 @@ view model =
             , E.spacing 5
             , E.width E.fill
             ]
-            [ E.row
-                [ E.centerX
-                , E.onRight links
+            -- [ E.row
+            --     [ E.centerX
+            --     , E.onRight links
+            --     ]
+            --     [ tab active "Viewer"
+            --     , tab active "Generator"
+            --     ]
+            [ E.el
+                [ E.onRight links
+                , E.centerX
+                , E.paddingXY 0 5
                 ]
-                [ tab active "Viewer"
-                , tab active "Generator"
-                ]
+                (E.el
+                    [ Font.size 22
+                    ]
+                    (E.text "Ukulele String Comparison")
+                )
             , case model.pageModel of
                 Display m ->
                     DisplayView.view m
@@ -196,9 +206,10 @@ view model =
 links : E.Element Msg
 links =
     E.row
-        [ E.paddingXY 20 5
+        [ E.paddingXY 30 5
         , E.spacing 15
         , E.alignRight
+        , E.alignBottom
         ]
         [ E.link
             [ Font.alignRight

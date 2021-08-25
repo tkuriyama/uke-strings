@@ -135,6 +135,7 @@ type Brand
     | Oasis
     | Martin
     | PhD
+    | UkeLogic
     | Worth
 
 

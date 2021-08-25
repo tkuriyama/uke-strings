@@ -111,6 +111,7 @@ brandRecords =
     , ( Martin, "Martin", "Martin" )
     , ( Oasis, "Oasis", "Oasis" )
     , ( PhD, "PhD", "PhD" )
+    , ( UkeLogic, "Uke Logic", "UkeLogic" )
     , ( Worth, "Worth", "Worth" )
     ]
 
