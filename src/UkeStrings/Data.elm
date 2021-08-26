@@ -62,6 +62,7 @@ data =
             ++ koaloha
             ++ koolau
             ++ kamaka
+            ++ ukelogic
         )
 
 
@@ -2648,4 +2649,477 @@ koolau =
 
 kamaka : List StringSet
 kamaka =
-    []
+    [ { brand = Kamaka
+      , color = Dark
+      , material = Nylon
+      , modelCode = "S-1"
+      , name = "Soprano / Concert"
+      , sizes = { soprano = True, concert = True, tenor = False, baritone = False }
+      , strings =
+            { one = { diameter = 0.7112, pitch = A, tension = 0.0 }
+            , two = { diameter = 0.8128, pitch = E, tension = 0.0 }
+            , three = { diameter = 10.2362, pitch = C, tension = 0.0 }
+            , four = { diameter = 0.7112, pitch = G, tension = 0.0 }
+            }
+      , tuning = Reentrant
+      , url = "https://store.kamakahawaii.com/SearchResults.asp?Cat=56"
+      , woundStrings = False
+      }
+    , { brand = Kamaka
+      , color = Dark
+      , material = Nylon
+      , modelCode = "S-1G"
+      , name = "Soprano / Concert Low G"
+      , sizes = { soprano = True, concert = True, tenor = False, baritone = False }
+      , strings =
+            { one = { diameter = 0.7112, pitch = A, tension = 0.0 }
+            , two = { diameter = 0.8128, pitch = E, tension = 0.0 }
+            , three = { diameter = 10.2362, pitch = C, tension = 0.0 }
+            , four = { diameter = 0.889, pitch = G, tension = 0.0 }
+            }
+      , tuning = Linear
+      , url = "https://store.kamakahawaii.com/SearchResults.asp?Cat=56"
+      , woundStrings = True
+      }
+    , { brand = Kamaka
+      , color = Dark
+      , material = Nylon
+      , modelCode = "S-3"
+      , name = "Tenor"
+      , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
+      , strings =
+            { one = { diameter = 0.7239, pitch = A, tension = 0.0 }
+            , two = { diameter = 0.83058, pitch = E, tension = 0.0 }
+            , three = { diameter = 1.0414, pitch = C, tension = 0.0 }
+            , four = { diameter = 0.7239, pitch = G, tension = 0.0 }
+            }
+      , tuning = Reentrant
+      , url = "https://store.kamakahawaii.com/SearchResults.asp?Cat=56"
+      , woundStrings = False
+      }
+    , { brand = Kamaka
+      , color = Dark
+      , material = Nylon
+      , modelCode = "S-3G"
+      , name = "Tenor Low G"
+      , sizes = { soprano = False, concert = False, tenor = True, baritone = False }
+      , strings =
+            { one = { diameter = 0.7239, pitch = A, tension = 0.0 }
+            , two = { diameter = 0.83058, pitch = E, tension = 0.0 }
+            , three = { diameter = 1.0414, pitch = C, tension = 0.0 }
+            , four = { diameter = 0.889, pitch = G, tension = 0.0 }
+            }
+      , tuning = Linear
+      , url = "https://store.kamakahawaii.com/SearchResults.asp?Cat=56"
+      , woundStrings = True
+      }
+    , { brand = Kamaka
+      , color = Dark
+      , material = Nylon
+      , modelCode = "S-4"
+      , name = "Baritone"
+      , sizes = { soprano = False, concert = False, tenor = False, baritone = True }
+      , strings =
+            { one = { diameter = 0.7239, pitch = A, tension = 0.0 }
+            , two = { diameter = 0.10414, pitch = E, tension = 0.0 }
+            , three = { diameter = 0.9652, pitch = C, tension = 0.0 }
+            , four = { diameter = 0.09652, pitch = G, tension = 0.0 }
+            }
+      , tuning = Linear
+      , url = "https://store.kamakahawaii.com/SearchResults.asp?Cat=56"
+      , woundStrings = True
+      }
+    ]
+
+
+
+--------------------------------------------------------------------------------
+
+
+ukelogic : List StringSet
+ukelogic =
+    [ { brand = UkeLogic
+      , color = Clear
+      , material = Fluorocarbon
+      , modelCode = ""
+      , name = "Hard"
+      , sizes = { soprano = True, concert = True, tenor = True, baritone = False }
+      , strings =
+            { one = { diameter = 0.5842, pitch = A, tension = 0.0 }
+            , two = { diameter = 0.7112, pitch = E, tension = 0.0 }
+            , three = { diameter = 0.9144, pitch = C, tension = 0.0 }
+            , four = { diameter = 0.635, pitch = G, tension = 0.0 }
+            }
+      , tuning = Reentrant
+      , url = "https://theukulelesite.com/ukelogic-hard.html"
+      , woundStrings = False
+      }
+    , { brand = UkeLogic
+      , color = OtherColor
+      , material = Fluorocarbon
+      , modelCode = ""
+      , name = "Hard - Pink"
+      , sizes = { soprano = True, concert = True, tenor = True, baritone = False }
+      , strings =
+            { one = { diameter = 0.5842, pitch = A, tension = 0.0 }
+            , two = { diameter = 0.7112, pitch = E, tension = 0.0 }
+            , three = { diameter = 0.9144, pitch = C, tension = 0.0 }
+            , four = { diameter = 0.635, pitch = G, tension = 0.0 }
+            }
+      , tuning = Reentrant
+      , url = "https://theukulelesite.com/ukelogic-hard.html"
+      , woundStrings = False
+      }
+    , { brand = UkeLogic
+      , color = Clear
+      , material = Fluorocarbon
+      , modelCode = ""
+      , name = "Hard - Low G"
+      , sizes = { soprano = True, concert = True, tenor = True, baritone = False }
+      , strings =
+            { one = { diameter = 0.5842, pitch = A, tension = 0.0 }
+            , two = { diameter = 0.7112, pitch = E, tension = 0.0 }
+            , three = { diameter = 0.9144, pitch = C, tension = 0.0 }
+            , four = { diameter = 1.0668, pitch = G, tension = 0.0 }
+            }
+      , tuning = Linear
+      , url = "https://theukulelesite.com/ukelogic-hard.html"
+      , woundStrings = True
+      }
+    , { brand = UkeLogic
+      , color = OtherColor
+      , material = Fluorocarbon
+      , modelCode = ""
+      , name = "Hard - Pink - Low G"
+      , sizes = { soprano = True, concert = True, tenor = True, baritone = False }
+      , strings =
+            { one = { diameter = 0.5842, pitch = A, tension = 0.0 }
+            , two = { diameter = 0.7112, pitch = E, tension = 0.0 }
+            , three = { diameter = 0.9144, pitch = C, tension = 0.0 }
+            , four = { diameter = 1.0668, pitch = G, tension = 0.0 }
+            }
+      , tuning = Linear
+      , url = "https://theukulelesite.com/ukelogic-hard.html"
+      , woundStrings = True
+      }
+    , { brand = UkeLogic
+      , color = Clear
+      , material = Fluorocarbon
+      , modelCode = ""
+      , name = "Hard - Wound Low G"
+      , sizes = { soprano = True, concert = True, tenor = True, baritone = False }
+      , strings =
+            { one = { diameter = 0.5842, pitch = A, tension = 0.0 }
+            , two = { diameter = 0.7112, pitch = E, tension = 0.0 }
+            , three = { diameter = 0.9144, pitch = C, tension = 0.0 }
+            , four = { diameter = 0.762, pitch = G, tension = 0.0 }
+            }
+      , tuning = Linear
+      , url = "https://theukulelesite.com/ukelogic-hard.html"
+      , woundStrings = True
+      }
+    , { brand = UkeLogic
+      , color = OtherColor
+      , material = Fluorocarbon
+      , modelCode = ""
+      , name = "Hard - Pink - Wound Low G"
+      , sizes = { soprano = True, concert = True, tenor = True, baritone = False }
+      , strings =
+            { one = { diameter = 0.5842, pitch = A, tension = 0.0 }
+            , two = { diameter = 0.7112, pitch = E, tension = 0.0 }
+            , three = { diameter = 0.9144, pitch = C, tension = 0.0 }
+            , four = { diameter = 0.762, pitch = G, tension = 0.0 }
+            }
+      , tuning = Linear
+      , url = "https://theukulelesite.com/ukelogic-hard.html"
+      , woundStrings = True
+      }
+    , { brand = UkeLogic
+      , color = Clear
+      , material = Fluorocarbon
+      , modelCode = ""
+      , name = "Soft"
+      , sizes = { soprano = True, concert = True, tenor = True, baritone = False }
+      , strings =
+            { one = { diameter = 0.4826, pitch = A, tension = 0.0 }
+            , two = { diameter = 0.635, pitch = E, tension = 0.0 }
+            , three = { diameter = 0.8128, pitch = C, tension = 0.0 }
+            , four = { diameter = 0.5842, pitch = G, tension = 0.0 }
+            }
+      , tuning = Reentrant
+      , url = "https://theukulelesite.com/ukelogic-soft.html"
+      , woundStrings = False
+      }
+    , { brand = UkeLogic
+      , color = OtherColor
+      , material = Fluorocarbon
+      , modelCode = ""
+      , name = "Soft - Pink"
+      , sizes = { soprano = True, concert = True, tenor = True, baritone = False }
+      , strings =
+            { one = { diameter = 0.4826, pitch = A, tension = 0.0 }
+            , two = { diameter = 0.635, pitch = E, tension = 0.0 }
+            , three = { diameter = 0.8128, pitch = C, tension = 0.0 }
+            , four = { diameter = 0.5842, pitch = G, tension = 0.0 }
+            }
+      , tuning = Reentrant
+      , url = "https://theukulelesite.com/ukelogic-soft.html"
+      , woundStrings = False
+      }
+    , { brand = UkeLogic
+      , color = Clear
+      , material = Fluorocarbon
+      , modelCode = ""
+      , name = "Soft - Low G"
+      , sizes = { soprano = True, concert = True, tenor = True, baritone = False }
+      , strings =
+            { one = { diameter = 0.4826, pitch = A, tension = 0.0 }
+            , two = { diameter = 0.635, pitch = E, tension = 0.0 }
+            , three = { diameter = 0.8128, pitch = C, tension = 0.0 }
+            , four = { diameter = 0.9144, pitch = G, tension = 0.0 }
+            }
+      , tuning = Linear
+      , url = "https://theukulelesite.com/ukelogic-soft.html"
+      , woundStrings = True
+      }
+    , { brand = UkeLogic
+      , color = OtherColor
+      , material = Fluorocarbon
+      , modelCode = ""
+      , name = "Soft - Pink - Low G"
+      , sizes = { soprano = True, concert = True, tenor = True, baritone = False }
+      , strings =
+            { one = { diameter = 0.4826, pitch = A, tension = 0.0 }
+            , two = { diameter = 0.635, pitch = E, tension = 0.0 }
+            , three = { diameter = 0.8128, pitch = C, tension = 0.0 }
+            , four = { diameter = 0.9144, pitch = G, tension = 0.0 }
+            }
+      , tuning = Linear
+      , url = "https://theukulelesite.com/ukelogic-soft.html"
+      , woundStrings = True
+      }
+    , { brand = UkeLogic
+      , color = Clear
+      , material = Fluorocarbon
+      , modelCode = ""
+      , name = "Soft - Wound Low G"
+      , sizes = { soprano = True, concert = True, tenor = True, baritone = False }
+      , strings =
+            { one = { diameter = 0.4826, pitch = A, tension = 0.0 }
+            , two = { diameter = 0.635, pitch = E, tension = 0.0 }
+            , three = { diameter = 0.8128, pitch = C, tension = 0.0 }
+            , four = { diameter = 0.762, pitch = G, tension = 0.0 }
+            }
+      , tuning = Linear
+      , url = "https://theukulelesite.com/ukelogic-soft.html"
+      , woundStrings = True
+      }
+    , { brand = UkeLogic
+      , color = OtherColor
+      , material = Fluorocarbon
+      , modelCode = ""
+      , name = "Soft - Pink - Wound Low G"
+      , sizes = { soprano = True, concert = True, tenor = True, baritone = False }
+      , strings =
+            { one = { diameter = 0.4826, pitch = A, tension = 0.0 }
+            , two = { diameter = 0.635, pitch = E, tension = 0.0 }
+            , three = { diameter = 0.8128, pitch = C, tension = 0.0 }
+            , four = { diameter = 0.762, pitch = G, tension = 0.0 }
+            }
+      , tuning = Linear
+      , url = "https://theukulelesite.com/ukelogic-soft.html"
+      , woundStrings = True
+      }
+    , { brand = UkeLogic
+      , color = Clear
+      , material = Fluorocarbon
+      , modelCode = ""
+      , name = "Hard - High D"
+      , sizes = { soprano = False, concert = False, tenor = False, baritone = True }
+      , strings =
+            { one = { diameter = 0.5842, pitch = E, tension = 0.0 }
+            , two = { diameter = 0.7112, pitch = B, tension = 0.0 }
+            , three = { diameter = 0.9144, pitch = G, tension = 0.0 }
+            , four = { diameter = 0.635, pitch = D, tension = 0.0 }
+            }
+      , tuning = Reentrant
+      , url = "https://theukulelesite.com/ukelogic-hard-baritone.html"
+      , woundStrings = False
+      }
+    , { brand = UkeLogic
+      , color = OtherColor
+      , material = Fluorocarbon
+      , modelCode = ""
+      , name = "Hard - Pink - High D"
+      , sizes = { soprano = False, concert = False, tenor = False, baritone = True }
+      , strings =
+            { one = { diameter = 0.5842, pitch = E, tension = 0.0 }
+            , two = { diameter = 0.7112, pitch = B, tension = 0.0 }
+            , three = { diameter = 0.9144, pitch = G, tension = 0.0 }
+            , four = { diameter = 0.635, pitch = D, tension = 0.0 }
+            }
+      , tuning = Reentrant
+      , url = "https://theukulelesite.com/ukelogic-hard-baritone.html"
+      , woundStrings = False
+      }
+    , { brand = UkeLogic
+      , color = Clear
+      , material = Fluorocarbon
+      , modelCode = ""
+      , name = "Hard - Low D"
+      , sizes = { soprano = False, concert = False, tenor = False, baritone = True }
+      , strings =
+            { one = { diameter = 0.5842, pitch = E, tension = 0.0 }
+            , two = { diameter = 0.7112, pitch = B, tension = 0.0 }
+            , three = { diameter = 0.9144, pitch = G, tension = 0.0 }
+            , four = { diameter = 1.0668, pitch = D, tension = 0.0 }
+            }
+      , tuning = Linear
+      , url = "https://theukulelesite.com/ukelogic-hard-baritone.html"
+      , woundStrings = True
+      }
+    , { brand = UkeLogic
+      , color = OtherColor
+      , material = Fluorocarbon
+      , modelCode = ""
+      , name = "Hard - Pink - Low D"
+      , sizes = { soprano = False, concert = False, tenor = False, baritone = True }
+      , strings =
+            { one = { diameter = 0.5842, pitch = E, tension = 0.0 }
+            , two = { diameter = 0.7112, pitch = B, tension = 0.0 }
+            , three = { diameter = 0.9144, pitch = G, tension = 0.0 }
+            , four = { diameter = 1.0668, pitch = D, tension = 0.0 }
+            }
+      , tuning = Linear
+      , url = "https://theukulelesite.com/ukelogic-hard-baritone.html"
+      , woundStrings = True
+      }
+    , { brand = UkeLogic
+      , color = Clear
+      , material = Fluorocarbon
+      , modelCode = ""
+      , name = "Hard - Wound Low D"
+      , sizes = { soprano = False, concert = False, tenor = False, baritone = True }
+      , strings =
+            { one = { diameter = 0.5842, pitch = E, tension = 0.0 }
+            , two = { diameter = 0.7112, pitch = B, tension = 0.0 }
+            , three = { diameter = 0.9144, pitch = G, tension = 0.0 }
+            , four = { diameter = 0.762, pitch = D, tension = 0.0 }
+            }
+      , tuning = Linear
+      , url = "https://theukulelesite.com/ukelogic-hard-baritone.html"
+      , woundStrings = True
+      }
+    , { brand = UkeLogic
+      , color = OtherColor
+      , material = Fluorocarbon
+      , modelCode = ""
+      , name = "Hard - Pink - Wound Low D"
+      , sizes = { soprano = False, concert = False, tenor = False, baritone = True }
+      , strings =
+            { one = { diameter = 0.5842, pitch = E, tension = 0.0 }
+            , two = { diameter = 0.7112, pitch = B, tension = 0.0 }
+            , three = { diameter = 0.9144, pitch = G, tension = 0.0 }
+            , four = { diameter = 0.762, pitch = D, tension = 0.0 }
+            }
+      , tuning = Linear
+      , url = "https://theukulelesite.com/ukelogic-hard-baritone.html"
+      , woundStrings = True
+      }
+    , { brand = UkeLogic
+      , color = Clear
+      , material = Fluorocarbon
+      , modelCode = ""
+      , name = "Soft - High D"
+      , sizes = { soprano = False, concert = False, tenor = False, baritone = True }
+      , strings =
+            { one = { diameter = 0.4826, pitch = E, tension = 0.0 }
+            , two = { diameter = 0.635, pitch = B, tension = 0.0 }
+            , three = { diameter = 0.8128, pitch = G, tension = 0.0 }
+            , four = { diameter = 0.5842, pitch = D, tension = 0.0 }
+            }
+      , tuning = Reentrant
+      , url = "https://theukulelesite.com/ukelogic-soft-baritone.html"
+      , woundStrings = False
+      }
+    , { brand = UkeLogic
+      , color = OtherColor
+      , material = Fluorocarbon
+      , modelCode = ""
+      , name = "Soft - Pink - High D"
+      , sizes = { soprano = False, concert = False, tenor = False, baritone = True }
+      , strings =
+            { one = { diameter = 0.4826, pitch = E, tension = 0.0 }
+            , two = { diameter = 0.635, pitch = B, tension = 0.0 }
+            , three = { diameter = 0.8128, pitch = G, tension = 0.0 }
+            , four = { diameter = 0.5842, pitch = D, tension = 0.0 }
+            }
+      , tuning = Reentrant
+      , url = "https://theukulelesite.com/ukelogic-soft-baritone.html"
+      , woundStrings = False
+      }
+    , { brand = UkeLogic
+      , color = Clear
+      , material = Fluorocarbon
+      , modelCode = ""
+      , name = "Soft - Low D"
+      , sizes = { soprano = False, concert = False, tenor = False, baritone = True }
+      , strings =
+            { one = { diameter = 0.4826, pitch = E, tension = 0.0 }
+            , two = { diameter = 0.635, pitch = B, tension = 0.0 }
+            , three = { diameter = 0.8128, pitch = G, tension = 0.0 }
+            , four = { diameter = 0.9144, pitch = D, tension = 0.0 }
+            }
+      , tuning = Linear
+      , url = "https://theukulelesite.com/ukelogic-soft-baritone.html"
+      , woundStrings = True
+      }
+    , { brand = UkeLogic
+      , color = OtherColor
+      , material = Fluorocarbon
+      , modelCode = ""
+      , name = "Soft - Pink - Low D"
+      , sizes = { soprano = False, concert = False, tenor = False, baritone = True }
+      , strings =
+            { one = { diameter = 0.4826, pitch = E, tension = 0.0 }
+            , two = { diameter = 0.635, pitch = B, tension = 0.0 }
+            , three = { diameter = 0.8128, pitch = G, tension = 0.0 }
+            , four = { diameter = 0.9144, pitch = D, tension = 0.0 }
+            }
+      , tuning = Linear
+      , url = "https://theukulelesite.com/ukelogic-soft-baritone.html"
+      , woundStrings = True
+      }
+    , { brand = UkeLogic
+      , color = Clear
+      , material = Fluorocarbon
+      , modelCode = ""
+      , name = "Soft - Wound Low D"
+      , sizes = { soprano = False, concert = False, tenor = False, baritone = True }
+      , strings =
+            { one = { diameter = 0.4826, pitch = E, tension = 0.0 }
+            , two = { diameter = 0.635, pitch = B, tension = 0.0 }
+            , three = { diameter = 0.8128, pitch = G, tension = 0.0 }
+            , four = { diameter = 0.762, pitch = D, tension = 0.0 }
+            }
+      , tuning = Linear
+      , url = "https://theukulelesite.com/ukelogic-soft-baritone.html"
+      , woundStrings = True
+      }
+    , { brand = UkeLogic
+      , color = OtherColor
+      , material = Fluorocarbon
+      , modelCode = ""
+      , name = "Soft - Pink - Wound Low D"
+      , sizes = { soprano = False, concert = False, tenor = False, baritone = True }
+      , strings =
+            { one = { diameter = 0.4826, pitch = E, tension = 0.0 }
+            , two = { diameter = 0.635, pitch = B, tension = 0.0 }
+            , three = { diameter = 0.8128, pitch = G, tension = 0.0 }
+            , four = { diameter = 0.762, pitch = D, tension = 0.0 }
+            }
+      , tuning = Linear
+      , url = "https://theukulelesite.com/ukelogic-soft-baritone.html"
+      , woundStrings = True
+      }
+    ]
