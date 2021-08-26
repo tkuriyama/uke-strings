@@ -138,6 +138,16 @@ filterRow model selector i =
                 (UpdateClear "Material" i)
             )
         , E.el
+            (dropdownAttrs 130)
+            (Dropdown.view
+                "Wound"
+                (selector model |> .woundFilter)
+                Show.woundToString
+                (UpdateOpen "Wound" i)
+                (\b -> UpdateSelectedWound i b)
+                (UpdateClear "Wound" i)
+            )
+        , E.el
             (dropdownAttrs 100)
             (Dropdown.view
                 "Size"

@@ -73,6 +73,7 @@ defaultFilteredData =
     { brandFilter = ShowItem Nothing
     , colorFilter = ShowItem Nothing
     , materialFilter = ShowItem Nothing
+    , woundFilter = ShowItem Nothing
     , sizeFilter = ShowItem Nothing
     , stringSetFilter = ShowItem Nothing
     , tuningFilter = ShowItem (Just Reentrant)

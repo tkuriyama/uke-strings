@@ -173,6 +173,18 @@ materialToTypeString =
     strLookup third materialRecords "Other"
 
 
+--------------------------------------------------------------------------------
+-- Wound
+
+
+woundToString : Bool -> String
+woundToString wound =
+    case wound of
+        True ->
+            "Wound"
+        False ->
+            "Unwound"
+
 
 --------------------------------------------------------------------------------
 -- Sizes Short

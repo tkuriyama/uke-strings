@@ -73,6 +73,7 @@ type Msg
     | UpdateSelectedBrand Int Brand
     | UpdateSelectedColor Int StringColor
     | UpdateSelectedMaterial Int Material
+    | UpdateSelectedWound Int Bool
     | UpdateSelectedSize Int String
     | UpdateSelectedTuning Int Tuning
     | UpdateSelectedStringSet Int StringSet
@@ -94,6 +95,7 @@ type alias FilteredData =
     { brandFilter : Dropdown Brand
     , colorFilter : Dropdown StringColor
     , materialFilter : Dropdown Material
+    , woundFilter : Dropdown Bool
     , sizeFilter : Dropdown String
     , tuningFilter : Dropdown Tuning
     , stringSetFilter : Dropdown StringSet
