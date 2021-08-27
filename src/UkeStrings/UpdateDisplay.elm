@@ -44,7 +44,7 @@ update msg model =
         UpdateSelectedMaterial i m ->
             route i model <| selectMaterial m
 
-        UpdateSelectedWound  i b ->
+        UpdateSelectedWound i b ->
             route i model <| selectWound b
 
         UpdateSelectedSize i s ->
@@ -136,9 +136,10 @@ selectMaterial m data =
 
 
 selectWound : Bool -> FilteredData -> FilteredData
-selectWound  b data =
+selectWound b data =
     { data | woundFilter = ShowItem (Just b) }
         |> refreshFilters
+
 
 selectSize : String -> FilteredData -> FilteredData
 selectSize s data =
@@ -252,7 +253,7 @@ clear field data =
                     { data | materialFilter = ShowItem Nothing }
 
                 "Wound" ->
-                    { data | woundFilter = ShowItem Nothing } 
+                    { data | woundFilter = ShowItem Nothing }
 
                 "Size" ->
                     { data | sizeFilter = ShowItem Nothing }
