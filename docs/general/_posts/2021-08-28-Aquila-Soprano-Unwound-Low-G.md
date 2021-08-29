@@ -2,7 +2,7 @@
 layout: post
 title:  "Aquila Red Soprano Unwound Low G"
 date:   2021-08-28 09:00:00 -0500
-tags:   kamaka nylno
+tags:   aquila lowG highG
 ---
 
 ## Ukulele
@@ -16,22 +16,33 @@ tags:   kamaka nylno
 
 | Name (Model)     | Aquila Red Unwound Low G (70U)                        |
 | Color / Material | Red -- composite with metallic powder                 |
-| Url              | [Aquila Red Series](https://aquilacorde.com/en/shop/modern-instrument-string-sets/ukulele-banjouke-en/red-series/)]
+| Url              | [Aquila Red Series](https://aquilacorde.com/en/shop/modern-instrument-string-sets/ukulele-banjouke-en/red-series/) / [Strings by Mail](https://www.stringsbymail.com/aquila-red-soprano-ukulele-string-4th-unwound-low-g-tuning-70u-single-11142.html)|
 
 
 
 ### Visual / Tactical Impression
 
+This is a single low-G string -- which is dark red and looks good on the HF-1 with dark fluorocarbons (Fremont Black Line Medium).
 
-![Kamaka HF-1 Aquila Red Low G 70U](/assets/img/kamaka_hf1_aquila_70U.jpeg){:class="img-responsive"}
+![Kamaka HF-1 Aquila Red Low G 70U](/assets/img/kamaka_hf1_aquila_70U.jpg){:class="img-responsive"}
+
+On the finters, the unwound Aquila string has a distinct feel. For lack of a better analogy, it's a bit akin to thick paper, with a bit of grain. It doesn't squeak from touch, but does make a noticeable sound from the friction, especially when sliding.
+
+As an unwound string, it is on the thicker side, at 0.95mm (compared to, say, the 0.914mm of the Fremont Soloist).
+
+Overall, it's pleasant to my tastes.
+
+
 
 ### Sound Impression / Comparison
 
-The strings sound warm with very good intonation.
+Although a low G strings is unlikely to produce volume that's in line with other strings on the HF-1 (due do its soprano size), the Aquila sounds relatively balanced when used with Fremont Black Line Mediums. 
 
-My preference is for the brighter tone of fluorocarbons. Compared to Fremont Black Line Medium strings, particularly with finger style, the Kamakas sound noticeably muted.
+Compared to the unwound low G string that comes with the Fremont Black Line low G set, it sounds louder and more resonant. 
 
-The same applies to the wound low G string, A thinner gauge strings like the Fremont Soloist produces a lot more resonance in the body (which can be felt on the HF-1, as much as it can be heard -- the low G is noticeably quiter than the other strinsg, given the small body).
+Compared to the Fremont Soloist (wound), it feels a less resonant, but maybe a bit brighter.
+
+Overall, despite the limitations of a low G on a soprano, it produces a pleasant sound.
 
 
 ### Other Notes
