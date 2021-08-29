@@ -37,7 +37,7 @@ As fluorocarbon strings generally do, the Fremonts sound quite a bit more bright
 
 For mainly finger style, in particular, they are more suitable to my ears than the Kamaka nylons. 
 
-The unwound low G string sounds quite a bit muted compared to the rest of the set. So, far as comparison between the high G and low G sets go, the high G sounds much better on the HF-1.
+The unwound low G string sounds quite a bit muted compared to the rest of the set. So, as far as comparison between the high G and low G sets go, the high G sounds much better on the HF-1.
 
 
 ### Other Notes
