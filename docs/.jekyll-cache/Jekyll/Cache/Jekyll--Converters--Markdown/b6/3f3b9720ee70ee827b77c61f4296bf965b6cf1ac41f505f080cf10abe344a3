@@ -1,8 +1,0 @@
-I")<p>Legacy blog: <a href="https://learning.tarokuriyama.com/">learning.tarokuriyama.com</a></p>
-
-<p>After many years of journaling on Blogger, I’ve migrated to GitHub Pages and Jekyll. The ability to write locally (in my case, with emacs) is much preferable, with all the benefits of using Markdown too. The Jekyll importer didn’t work out of the box for my Blogger XML archive, so I’ve left the legacy blog up for now.</p>
-
-<p>The instructions on <a href="https://quuxplusone.github.io/blog/2018/08/05/mathjax-in-jekyll/">this page</a> worked verbatim for setting up MathJax integration.</p>
-
-<p>For displaying clickable tags on pages, <a href="https://blog.lunarlogic.io/2019/managing-tags-in-jekyll-blog-easily/">this page</a> was the most helpful, though a few tweaks were required for my setup.</p>
-:ET

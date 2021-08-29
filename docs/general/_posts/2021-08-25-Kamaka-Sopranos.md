@@ -2,7 +2,7 @@
 layout: post
 title:  "Kamaka Soprano / Concert"
 date:   2021-08-25 09:00:00 -0500
-tags:   kamaka nylon
+tags:   kamaka nylno
 ---
 
 ## Ukulele
