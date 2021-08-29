@@ -22,11 +22,11 @@ tags:   aquila lowG highG
 
 ### Visual / Tactical Impression
 
-This is a single low-G string -- which is dark red and looks good on the HF-1 with dark fluorocarbons (Fremont Black Line Medium).
+This is a single low-G string -- which is dark red and looks good on the HF-1 with dark fluorocarbons ([Fremont Black Line Medium](http://localhost:4000/uke-strings/general/2021/08/27/Fremont-Blackline-LowG-STR-FMG.html)).
 
-![Kamaka HF-1 Aquila Red Low G 70U](/assets/img/kamaka_hf1_aquila_70U.jpg){:class="img-responsive"}
+![Kamaka HF-1 Aquila Red Low G 70U](/uke-strings/assets/img/kamaka_hf1_aquila_70U.jpg){:class="img-responsive"}
 
-On the finters, the unwound Aquila string has a distinct feel. For lack of a better analogy, it's a bit akin to thick paper, with a bit of grain. It doesn't squeak from touch, but does make a noticeable sound from the friction, especially when sliding.
+On the fingers, the unwound Aquila string has a distinct feel. For lack of a better analogy, it's a bit akin to thick paper, with a bit of grain. It doesn't squeak from touch, but does make a noticeable sound from the friction, especially when sliding.
 
 As an unwound string, it is on the thicker side, at 0.95mm (compared to, say, the 0.914mm of the Fremont Soloist).
 
