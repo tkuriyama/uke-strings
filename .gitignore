@@ -2,3 +2,5 @@ elm-stuff/
 elm.js*
 elm.min.*
 .gitignore
+docs/.jekyll*
+docs/_site/*
