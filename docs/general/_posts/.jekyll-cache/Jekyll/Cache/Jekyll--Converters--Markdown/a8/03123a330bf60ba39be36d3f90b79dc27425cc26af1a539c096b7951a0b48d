@@ -1,0 +1,116 @@
+I"F<p>I dug up an exercise from a corner of the interet a while back, in which the prompt is to parse a sample packet capture file, filtering for specific messages and printing out some data fields. With a primary constraint that it be written in Haskell, the idea is to develop a solution that is as space and time efficient as possible. For example, although the sample file is only ~5.6MB, the program should be able to handle arbitrarily large inputs.</p>
+
+<p>Some googling and using <code class="language-plaintext highlighter-rouge">hexdump</code> on the terminal breaks the Pcap global and packet headers down per <a href="https://gist.github.com/tkuriyama/d90986828b74e8009c86ac57ad45e147">this gist</a>, with the packet payload layout specified by the prompt.</p>
+
+<p>I paired with my friend from the <a href="https://www.recurse.com/">Recurse Center</a>, Alex, on a few iterations. As is often the case, our list of further things to explore seems to have grown longer than the list of things we did.</p>
+
+<p><strong>v1</strong></p>
+
+<p>The <a href="https://github.com/tkuriyama/puzzles/blob/master/tsuru/parser.hs">first, naive iteration</a> just focuses on getting the parsing and processing (printing) correct:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">main</span> <span class="o">=</span> <span class="kr">do</span>
+  <span class="n">args</span> <span class="o">&lt;-</span> <span class="n">getArgs</span>
+  <span class="kr">case</span> <span class="n">args</span> <span class="kr">of</span>
+    <span class="p">(</span><span class="n">fp</span><span class="o">:</span><span class="kt">[]</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">decodeOrFail</span> <span class="n">fp</span> <span class="o">&gt;&gt;=</span> <span class="n">printQuoteMsgs</span>
+    <span class="p">(</span><span class="n">fp</span><span class="o">:</span><span class="s">"-r"</span><span class="o">:</span><span class="kt">[]</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="n">fmap</span> <span class="n">reorder</span> <span class="o">.</span> <span class="n">decodeOrFail</span><span class="p">)</span> <span class="n">fp</span> <span class="o">&gt;&gt;=</span> <span class="n">printQuoteMsgs</span>
+    <span class="p">(</span><span class="s">"-r"</span><span class="o">:</span><span class="n">fp</span><span class="o">:</span><span class="kt">[]</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">(</span><span class="n">fmap</span> <span class="n">reorder</span> <span class="o">.</span> <span class="n">decodeOrFail</span><span class="p">)</span> <span class="n">fp</span> <span class="o">&gt;&gt;=</span> <span class="n">printQuoteMsgs</span>
+    <span class="kr">_</span> <span class="o">-&gt;</span> <span class="n">putStrLn</span> <span class="s">"Args expected: filename and optional reorder flag -r"</span>
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">reorder</code> function comes from the additional prompt that messages should be reordered by a timestamp, if so specified by a command-line flag. The prompt also notes the assumption that messages arrive no more than 3 seconds out of order. (The first version doesn’t actually handle the window, so the reordering is just lifting a sort over the entire parsed input).</p>
+
+<p>There seem be to a few libraries for working with binary data, but I ended up with <a href="https://hackage.haskell.org/package/binary-0.8.8.0/docs/Data-Binary.html">Data.Binary</a>. The main parsing logic for an individual message looks like the below. There are multiple filtering conditions for finding messages we care about, which seems to make some nesting inevitable in the <code class="language-plaintext highlighter-rouge">Get</code> monad… We experimented with <code class="language-plaintext highlighter-rouge">MaybeT</code>, but abandoned it as the additional logic slowed the execution time.</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">getQuoteMsg</span> <span class="o">::</span> <span class="kt">Get</span> <span class="p">(</span><span class="kt">Maybe</span> <span class="kt">QuoteMsg</span><span class="p">)</span>
+<span class="n">getQuoteMsg</span> <span class="o">=</span> <span class="kr">do</span>
+  <span class="p">(</span><span class="n">pktTime</span><span class="p">,</span> <span class="n">len</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="n">getPacketHeader</span>
+  <span class="kr">_</span> <span class="o">&lt;-</span> <span class="n">skip</span> <span class="mi">36</span>
+  <span class="n">dstPort</span> <span class="o">&lt;-</span> <span class="n">getInt16be</span>
+  <span class="kr">if</span> <span class="n">dstPort</span> <span class="o">==</span> <span class="mi">15515</span> <span class="o">||</span> <span class="n">dstPort</span> <span class="o">==</span> <span class="mi">15516</span>
+    <span class="kr">then</span> <span class="kr">do</span> <span class="kr">_</span> <span class="o">&lt;-</span> <span class="n">skip</span> <span class="mi">4</span>
+            <span class="n">ids</span> <span class="o">&lt;-</span> <span class="n">getByteString</span> <span class="mi">5</span>
+            <span class="kr">if</span> <span class="n">ids</span> <span class="o">/=</span> <span class="kt">B</span><span class="o">.</span><span class="n">pack</span> <span class="p">[</span><span class="mi">66</span><span class="p">,</span> <span class="mi">54</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">51</span><span class="p">,</span> <span class="mi">52</span><span class="p">]</span>
+              <span class="kr">then</span> <span class="kr">do</span> <span class="kr">_</span> <span class="o">&lt;-</span> <span class="n">skip</span> <span class="p">(</span><span class="n">len</span> <span class="o">-</span> <span class="mi">47</span><span class="p">)</span>
+                      <span class="n">pure</span> <span class="kt">Nothing</span>
+              <span class="kr">else</span> <span class="kr">do</span> <span class="p">(</span><span class="n">accTime</span><span class="p">,</span> <span class="n">isin</span><span class="p">,</span> <span class="n">bids</span><span class="p">,</span> <span class="n">asks</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="n">getPacketData</span>
+                      <span class="n">pure</span> <span class="o">$</span> <span class="kt">Just</span> <span class="o">$</span> <span class="kt">QuoteMsg</span> <span class="n">pktTime</span> <span class="n">accTime</span> <span class="n">isin</span> <span class="n">bids</span> <span class="n">asks</span>
+    <span class="kr">else</span> <span class="kr">do</span> <span class="kr">_</span> <span class="o">&lt;-</span> <span class="n">skip</span> <span class="p">(</span><span class="n">len</span> <span class="o">-</span> <span class="mi">38</span><span class="p">)</span>
+            <span class="n">pure</span> <span class="o">$</span> <span class="kt">Nothing</span>
+</code></pre></div></div>
+
+<p><strong>v2</strong></p>
+
+<p><a href="https://github.com/tkuriyama/puzzles/blob/master/tsuru/parser_v2.hs">The second iteration</a> implements the reordering logic (with 3-second window) and integrates it with priting, so that at most two passes through the input is required. This version still fully parses the input before processing, so it’s constrained by available memory.</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">main</span> <span class="o">::</span> <span class="kt">IO</span> <span class="nb">()</span>
+<span class="n">main</span> <span class="o">=</span> <span class="kr">do</span>
+  <span class="n">args</span> <span class="o">&lt;-</span> <span class="n">getArgs</span>
+  <span class="kr">case</span> <span class="n">args</span> <span class="kr">of</span>
+    <span class="p">(</span><span class="n">fp</span><span class="o">:</span><span class="kt">[]</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">decodeOrFail</span> <span class="n">fp</span> <span class="o">&gt;&gt;=</span> <span class="n">printQuoteMsgs</span>
+    <span class="p">(</span><span class="n">fp</span><span class="o">:</span><span class="s">"-r"</span><span class="o">:</span><span class="kt">[]</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">decodeOrFail</span> <span class="n">fp</span> <span class="o">&gt;&gt;=</span> <span class="n">printReorderQuoteMsgs</span>
+    <span class="p">(</span><span class="s">"-r"</span><span class="o">:</span><span class="n">fp</span><span class="o">:</span><span class="kt">[]</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">decodeOrFail</span> <span class="n">fp</span> <span class="o">&gt;&gt;=</span> <span class="n">printReorderQuoteMsgs</span>
+    <span class="kr">_</span> <span class="o">-&gt;</span> <span class="n">putStrLn</span> <span class="s">"Args expected: filename and optional reorder flag -r"</span>
+</code></pre></div></div>
+
+<p>The reordering logic is implemented by maintaining a sorted buffer. Every time a new message is processed: (1) messages older than 3 seconds are flushed for processing (printing); and (2) the new message is inserted into the buffer, maintaining the sorted invariant.</p>
+
+<p>I considered using a deque (something like <code class="language-plaintext highlighter-rouge">data Deque a = DQ [a] [a]</code>, where the first list is a “consList” holding the back of the queue normally, and the second list is a “snocList” holding the front of the queue in reverse). In theory that seems like a good idea, since old messages are flushed from the back and new messages are inserted from the front, with the practical assumption that most messages arrive reasonably ordered to start with. In practice, I couldn’t find an insertion method to the snocList that would both short-circuit and indicate success (though it seems like it should be possible!). An alternative is probably to use a tree, like a BST as suggested in <a href="http://www.eng.tau.ac.il/~nadav/pdf-files/repeated_sorting_iet_rsn.pdf">this paper</a>.</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">printReorder</span> <span class="o">::</span> <span class="p">[</span><span class="kt">QuoteMsg</span><span class="p">]</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">QuoteMsg</span><span class="p">]</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">QuoteMsg</span><span class="p">]</span> <span class="o">-&gt;</span> <span class="kt">IO</span> <span class="nb">()</span>
+<span class="n">printReorder</span> <span class="n">qs</span> <span class="n">buffer</span> <span class="n">flush</span> <span class="o">=</span> <span class="kr">do</span>
+  <span class="kr">case</span> <span class="n">flush</span> <span class="kr">of</span>
+    <span class="kt">[]</span> <span class="o">-&gt;</span> <span class="kr">case</span> <span class="n">qs</span> <span class="kr">of</span>
+            <span class="kt">[]</span> <span class="o">-&gt;</span> <span class="kr">do</span> <span class="kt">TIO</span><span class="o">.</span><span class="n">putStr</span> <span class="o">.</span> <span class="kt">T</span><span class="o">.</span><span class="n">unlines</span> <span class="o">.</span> <span class="n">map</span> <span class="n">showQuoteMsg</span> <span class="o">$</span> <span class="n">buffer</span>
+                     <span class="n">pure</span> <span class="nb">()</span>
+            <span class="kr">_</span> <span class="o">-&gt;</span> <span class="kr">do</span> <span class="kr">let</span> <span class="p">(</span><span class="n">qs'</span><span class="p">,</span> <span class="n">buffer'</span><span class="p">,</span> <span class="n">flush'</span><span class="p">)</span> <span class="o">=</span> <span class="n">processMsg</span> <span class="n">qs</span> <span class="n">buffer</span>
+                    <span class="n">printReorder</span> <span class="n">qs'</span> <span class="n">buffer'</span> <span class="n">flush'</span>
+    <span class="kr">_</span> <span class="o">-&gt;</span> <span class="kr">do</span> <span class="kt">TIO</span><span class="o">.</span><span class="n">putStr</span> <span class="o">.</span> <span class="kt">T</span><span class="o">.</span><span class="n">unlines</span> <span class="o">.</span> <span class="n">map</span> <span class="n">showQuoteMsg</span> <span class="o">$</span> <span class="n">flush</span>
+            <span class="n">printReorder</span> <span class="n">qs</span> <span class="n">buffer</span> <span class="kt">[]</span>
+</code></pre></div></div>
+
+<p><strong>v3</strong></p>
+
+<p>In the <a href="https://github.com/tkuriyama/puzzles/blob/master/tsuru/parser_v3.hs">third iteration</a>, the code is finally refactored to a single-pass through the input, processing the messages as they are parsed. We looked at streaming libraries (mainly <code class="language-plaintext highlighter-rouge">streamly</code>), but there wasn’t an obvious way to integrate with the <code class="language-plaintext highlighter-rouge">Data.Binary</code> parser without additional type conversions, so we stuck with the <code class="language-plaintext highlighter-rouge">runGetIncremental</code> pattern from <code class="language-plaintext highlighter-rouge">Data.Binary</code>.</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">main</span> <span class="o">::</span> <span class="kt">IO</span> <span class="nb">()</span>
+<span class="n">main</span> <span class="o">=</span> <span class="n">getArgs</span> <span class="o">&gt;&gt;=</span> <span class="nf">\</span><span class="kr">case</span>
+    <span class="p">(</span><span class="n">fp</span><span class="o">:</span><span class="kt">[]</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">go</span> <span class="n">fp</span> <span class="n">processFromHandle</span>
+    <span class="p">(</span><span class="n">fp</span><span class="o">:</span><span class="s">"-r"</span><span class="o">:</span><span class="kt">[]</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">go</span> <span class="n">fp</span> <span class="n">processFromHandleReorder</span>
+    <span class="p">(</span><span class="s">"-r"</span><span class="o">:</span><span class="n">fp</span><span class="o">:</span><span class="kt">[]</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">go</span> <span class="n">fp</span> <span class="n">processFromHandleReorder</span>
+    <span class="kr">_</span> <span class="o">-&gt;</span> <span class="n">putStrLn</span> <span class="s">"Args expected: filename and optional reorder flag -r"</span>
+    <span class="kr">where</span> <span class="n">go</span> <span class="n">fp</span> <span class="o">=</span> <span class="n">withBinaryFile</span> <span class="n">fp</span> <span class="kt">ReadMode</span>
+</code></pre></div></div>
+
+<p>A few runs of <code class="language-plaintext highlighter-rouge">time</code> indicate that v3 is indeed faster than v2, as expected (the reordering logic remains unchanged).</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% <span class="nb">time</span> ./parser_v2 sample.pcap <span class="nt">-r</span> | <span class="nb">tail</span> <span class="nt">-5</span>
+00:00:29.967475 09:00:29.94 KR4201F32820 12472@7 11104@8 9618@9 5311@10 1599@11  665@12 4965@13 3923@14 4297@15 1007@16 
+00:00:29.975794 09:00:29.95 KR4301F32570 42@223 49@224 43@225 128@226 118@227  82@228 151@229 176@230 53@231 5@232 
+00:00:29.974797 09:00:29.95 KR4301F32653 112@460 235@465 198@470 57@475 55@480  278@485 144@490 190@495 3@500 9@505 
+00:00:29.998584 09:00:29.97 KR4301F32505 134@92 199@93 231@94 94@95 308@96  234@97 130@98 282@99 415@100 52@101 
+00:00:29.996029 09:00:29.97 KR4201F32721 519@138 246@139 668@140 75@141 5@142  39@143 62@144 78@145 74@146 75@147 
+./parser_v2 sample.pcap <span class="nt">-r</span>  3.05s user 0.08s system 98% cpu 3.166 total
+
+% <span class="nb">time</span> ./parser_v3 sample.pcap <span class="nt">-r</span> | <span class="nb">tail</span> <span class="nt">-5</span>
+00:00:29.975794 09:00:29.95 KR4301F32570 42@223 49@224 43@225 128@226 118@227  82@228 151@229 176@230 53@231 5@232 
+00:00:29.974797 09:00:29.95 KR4301F32653 112@460 235@465 198@470 57@475 55@480  278@485 144@490 190@495 3@500 9@505 
+00:00:29.998584 09:00:29.97 KR4301F32505 134@92 199@93 231@94 94@95 308@96  234@97 130@98 282@99 415@100 52@101 
+00:00:29.996029 09:00:29.97 KR4201F32721 519@138 246@139 668@140 75@141 5@142  39@143 62@144 78@145 74@146 75@147 
+processing terminated
+./parser_v3 sample.pcap <span class="nt">-r</span>  2.20s user 0.04s system 98% cpu 2.270 total
+</code></pre></div></div>
+
+<p><strong>Further Iterations</strong></p>
+
+<p>Despite the apparent simplicity of the prompt, there are quite a few interesting details to explore. Some items we haven’t had a chance to try implementing yet:</p>
+
+<ul>
+  <li>input testing – writing an infinite stream provider, hacking larger sample files</li>
+  <li>profiling, <a href="https://hackage.haskell.org/package/criterion">criterion</a></li>
+  <li>experimenting with (and empirically testing) different data structures for the message buffer</li>
+  <li>use a streaming library for practice (probably more compable and less performant? to be tested)</li>
+</ul>
+
+<p><a href="https://github.com/tkuriyama/puzzles/tree/master/tsuru">GitHub code link</a></p>
+
+:ET

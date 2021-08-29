@@ -1,0 +1,92 @@
+I"<p>The Elm ecosystem is one of the friendliest I’ve used (from the incredible compiler messages to the friendly folks on Elm Discourse and Slack). It’s mature enough now, though, that there are a variety of dev tools that are widely used but not part of the official documentation.</p>
+
+<p>Since I find myself repeating build instructions on GitHub projects, here’s an attempto DRY it up (at least for now).</p>
+
+<h2 id="standard-build">Standard Build</h2>
+
+<p>All Elm projects can be built with <a href="https://elmprogramming.com/elm-make.html">elm make</a>, such as:</p>
+
+<pre><code class="language-`shell">elm make examples/Main.elm --optimize --output=elm.js
+</code></pre>
+<p>… which builds the example specified in <code class="language-plaintext highlighter-rouge">examples/Main.elm</code> and compiles it to elm.js.</p>
+
+<p>Note that all build tools use the <code class="language-plaintext highlighter-rouge">elm.json</code> configuration file, and any code not in <code class="language-plaintext highlighter-rouge">src</code> needs to explicitly added under <code class="language-plaintext highlighter-rouge">source-directories</code> in the file. So, in this case:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"source-directories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"src"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"examples"</span><span class="w">
+    </span><span class="p">]</span><span class="err">,</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="optimized-build">Optimized Build</h2>
+
+<p>There are a variety of tools that can be included in a build piepeline, including tests, formatting, and further optimization, and minification of the generated JavaScript.</p>
+
+<p>I typically use the following packages, which can be installed with <code class="language-plaintext highlighter-rouge">npm</code> (globally so they work for all Elm projects, or omit the <code class="language-plaintext highlighter-rouge">-g</code> flag to install locally) like so:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install</span> <span class="nt">-g</span> elm-coverage
+npm <span class="nb">install</span> <span class="nt">-g</span> elm-format
+npm <span class="nb">install</span> <span class="nt">-g</span> elm-test
+npm <span class="nb">install</span> <span class="nt">-g</span> elm-optimize-level-2
+npm <span class="nb">install</span> <span class="nt">-g</span> elm-minify
+</code></pre></div></div>
+
+<p>Note that <code class="language-plaintext highlighter-rouge">elm-minify</code> is deprecated, though it works fine for now as a wrapper for <code class="language-plaintext highlighter-rouge">terser</code>. For an alternative minification, see the <a href="https://github.com/mdgriffith/elm-optimize-level-2/blob/HEAD/notes/minification.md">terser command recommended by elm-optimize-level-2</a>. There are other optimization tools out there, for those inclined to do some research.</p>
+
+<p>Using the above tools, the full build looks like the following, which can be run as a shell script:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>elm-format src/ <span class="nt">--yes</span>
+
+<span class="c"># elm-coverage .</span>
+elm-test
+
+elm-optimize-level-2 src/Main.elm <span class="nt">--output</span><span class="o">=</span>elm.js
+
+elm-minify elm.js
+<span class="nb">gzip</span> <span class="nt">--keep</span> <span class="nt">--force</span> elm.min.js
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">elm-coverage</code> is commented out because there some compabitility issues at the time of this writing; when it works, there is no need to run <code class="language-plaintext highlighter-rouge">elm-test</code> separately.</p>
+
+<p>The resulting minified file <code class="language-plaintext highlighter-rouge">elm.min.js.gz</code> is the one that should be used in production.</p>
+
+<h2 id="elm-live">Elm Live</h2>
+
+<p>Note that there’s no need to run the build process while developing, as Elm has good live reload tools. I use <code class="language-plaintext highlighter-rouge">elm-live</code>:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install</span> <span class="nt">-g</span> elm-live
+</code></pre></div></div>
+
+<p>To use it to compile <code class="language-plaintext highlighter-rouge">src/Main.elm</code> and use it with <code class="language-plaintext highlighter-rouge">main.html</code>:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>elm-live src/Main.elm <span class="nt">---optimize</span> <span class="nt">-open</span> <span class="nt">--start-page</span><span class="o">=</span>main.html <span class="nt">--</span> <span class="nt">--output</span><span class="o">=</span>elm.js
+</code></pre></div></div>
+
+<p>… where <code class="language-plaintext highlighter-rouge">main.html</code> can be something minimal like so:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>!DOCTYPE html&gt;
+<span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Elm App<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"elm.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;style&gt;</span>
+    <span class="nt">&lt;/style&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"elm"</span><span class="nt">&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;script&gt;</span>
+    <span class="kd">var</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">Elm</span><span class="p">.</span><span class="nx">Main</span><span class="p">.</span><span class="nx">init</span><span class="p">(</span>
+          <span class="p">{</span> <span class="na">node</span><span class="p">:</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">elm</span><span class="dl">"</span><span class="p">),</span>
+            <span class="na">flags</span><span class="p">:</span> <span class="p">{</span>
+                <span class="na">windowWidth</span><span class="p">:</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span><span class="p">,</span>
+                <span class="na">windowHeight</span><span class="p">:</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span>
+            <span class="p">}</span>
+          <span class="p">}</span>
+    <span class="p">);</span>
+    <span class="nt">&lt;/script&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">flags</code> are not necessary to provide, but it’s open nice to have the window width and height for use in the Elm app. Note that <code class="language-plaintext highlighter-rouge">elm.js</code> should be replaced with the minified / compressed file, if using one, like <code class="language-plaintext highlighter-rouge">elm.min.js.gz</code> in production.</p>
+
+:ET

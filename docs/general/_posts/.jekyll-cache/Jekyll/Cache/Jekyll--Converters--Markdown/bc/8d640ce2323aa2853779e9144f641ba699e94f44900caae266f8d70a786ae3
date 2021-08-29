@@ -1,0 +1,80 @@
+I";+<p>In Haskell’s <a href="https://www.yesodweb.com/book/persistent">persistent</a> library, one defines database tables with Haskell algebraic data types (or something very close to it, in Template Haskell). The <code class="language-plaintext highlighter-rouge">persisten</code> library then takes care of setting up tables in the backend, and the programmer enjoys the advantage of having access to the native data types. (<code class="language-plaintext highlighter-rouge">peristent</code> has other cool features, like automatic data migration on certain schema changes, if you ask it to do so.)</p>
+
+<p>I recently scripted my own version of that approach in Python, after a whole series of unhelpful Foreign Key-related error messages in Sqlite, which don’t precise <em>which</em> constraint is throwing the error, leading to lots of trial and error, table schema rewrites, etc. Some of the pain may have been mitigaged by better tooling – as I was only using the Sqlite shell.</p>
+
+<p>(Incidentally, I didn’t even realize foreign keys were <strong>not working</strong> until recently… the constraint needs to be manually enabled per database connection: <code class="language-plaintext highlighter-rouge">PRAGMA Foreign_Keys = 1</code>!)</p>
+
+<p>With <code class="language-plaintext highlighter-rouge">typing</code>, it’s possible to write schema specs that are reasonably expressive. The root of a table schema is a <code class="language-plaintext highlighter-rouge">TypedDict</code>, with <a href="https://github.com/tkuriyama/datautils/blob/master/datautils/internal/db_sqlite.py">various supporting type aliases</a>:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">TableDef</span><span class="p">(</span><span class="n">TypedDict</span><span class="p">):</span>
+    <span class="n">if_not_exists</span><span class="p">:</span> <span class="nb">bool</span>
+    <span class="n">name</span><span class="p">:</span> <span class="n">Name</span>
+    <span class="n">cols</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">SchemaCol</span><span class="p">]</span>
+    <span class="n">fks</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">SchemaForeignKey</span><span class="p">]</span>
+    <span class="n">pk</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Col</span><span class="p">]</span>
+    <span class="n">uniq</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Col</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>Some example table definitions would then look like:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">country</span><span class="p">:</span> <span class="n">TableDef</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'if_not_exists'</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
+    <span class="s">'name'</span><span class="p">:</span> <span class="s">'Country'</span><span class="p">,</span>
+    <span class="s">'cols'</span><span class="p">:</span> <span class="p">[(</span><span class="s">'id'</span><span class="p">,</span> <span class="n">DType</span><span class="p">.</span><span class="n">INTEGER</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">),</span>
+             <span class="p">(</span><span class="s">'short'</span><span class="p">,</span> <span class="n">DType</span><span class="p">.</span><span class="n">TEXT</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="bp">True</span><span class="p">),</span>
+             <span class="p">(</span><span class="s">'long'</span><span class="p">,</span> <span class="n">DType</span><span class="p">.</span><span class="n">TEXT</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">)],</span>
+    <span class="s">'fks'</span><span class="p">:</span> <span class="p">[],</span>
+    <span class="s">'pk'</span><span class="p">:</span> <span class="p">[],</span>
+    <span class="s">'uniq'</span><span class="p">:</span> <span class="p">[]</span>
+<span class="p">}</span>
+
+
+<span class="n">holidays</span><span class="p">:</span> <span class="n">TableDef</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'if_not_exists'</span><span class="p">:</span> <span class="bp">True</span><span class="p">,</span>
+    <span class="s">'name'</span><span class="p">:</span> <span class="s">'Holidays'</span><span class="p">,</span>
+    <span class="s">'cols'</span><span class="p">:</span> <span class="p">[(</span><span class="s">'id'</span><span class="p">,</span> <span class="n">DType</span><span class="p">.</span><span class="n">INTEGER</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">),</span>
+             <span class="p">(</span><span class="s">'date'</span><span class="p">,</span> <span class="n">DType</span><span class="p">.</span><span class="n">TEXT</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">True</span><span class="p">),</span>
+             <span class="p">(</span><span class="s">'type'</span><span class="p">,</span> <span class="n">DType</span><span class="p">.</span><span class="n">TEXT</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">True</span><span class="p">),</span>
+             <span class="p">(</span><span class="s">'country'</span><span class="p">,</span> <span class="n">DType</span><span class="p">.</span><span class="n">TEXT</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">)],</span>
+    <span class="s">'fks'</span><span class="p">:</span> <span class="p">[{</span><span class="s">'cols'</span><span class="p">:</span> <span class="p">[</span><span class="s">'type'</span><span class="p">],</span>
+             <span class="s">'ref_table'</span><span class="p">:</span> <span class="s">'HolidayType'</span><span class="p">,</span> <span class="s">'ref_cols'</span><span class="p">:</span> <span class="p">[</span><span class="s">'type'</span><span class="p">]},</span>
+            <span class="p">{</span><span class="s">'cols'</span><span class="p">:</span> <span class="p">[</span><span class="s">'country'</span><span class="p">],</span>
+             <span class="s">'ref_table'</span><span class="p">:</span> <span class="s">'Country'</span><span class="p">,</span> <span class="s">'ref_cols'</span><span class="p">:</span> <span class="p">[</span><span class="s">'short'</span><span class="p">]}],</span>
+    <span class="s">'pk'</span><span class="p">:</span> <span class="p">[],</span>
+    <span class="s">'uniq'</span><span class="p">:</span> <span class="p">[</span><span class="s">'date'</span><span class="p">,</span> <span class="s">'type'</span><span class="p">,</span> <span class="s">'country'</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>There are a few key disadvantages to this approach:</p>
+
+<ul>
+  <li>only a subset of the Sqlite spec is supported</li>
+  <li>the map from (TableDef -&gt; SQL create table string) may be buggy</li>
+</ul>
+
+<p>On the other hand, the advantages:</p>
+
+<ul>
+  <li>it’s easy to update and regenerate schemas</li>
+  <li>it’s easy to add additional logic around table creation, like index creation and initial data population</li>
+  <li>the schema is available as native Python data (e.g. if type checking or casting is desired, particularly in a weakly typed system like Sqlite)</li>
+</ul>
+
+<p>Translating the above schema for <code class="language-plaintext highlighter-rouge">holidays</code> into a <code class="language-plaintext highlighter-rouge">CREATE TABLE</code> and <code class="language-plaintext highlighter-rouge">CREATE INDEX</code> statement yields:</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">IF</span> <span class="k">NOT</span> <span class="k">EXISTS</span> <span class="n">Holidays</span><span class="p">(</span><span class="n">id</span> <span class="nb">INTEGER</span> <span class="k">PRIMARY</span> <span class="k">KEY</span><span class="p">,</span>
+<span class="nb">date</span> <span class="nb">TEXT</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+<span class="k">type</span> <span class="nb">TEXT</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+<span class="n">country</span> <span class="nb">TEXT</span><span class="p">,</span>
+<span class="k">FOREIGN</span> <span class="k">KEY</span><span class="p">(</span><span class="k">type</span><span class="p">)</span> <span class="k">REFERENCES</span> <span class="n">HolidayType</span><span class="p">(</span><span class="k">type</span><span class="p">),</span>
+<span class="k">FOREIGN</span> <span class="k">KEY</span><span class="p">(</span><span class="n">country</span><span class="p">)</span> <span class="k">REFERENCES</span> <span class="n">Country</span><span class="p">(</span><span class="n">short</span><span class="p">),</span>
+<span class="k">UNIQUE</span><span class="p">(</span><span class="nb">date</span><span class="p">,</span> <span class="k">type</span><span class="p">,</span> <span class="n">country</span><span class="p">)</span>
+<span class="p">);</span>
+<span class="k">CREATE</span> <span class="k">INDEX</span> <span class="n">IF</span> <span class="k">NOT</span> <span class="k">EXISTS</span> <span class="n">Holidays_Index</span>
+<span class="k">ON</span> <span class="n">Holidays</span><span class="p">(</span><span class="nb">date</span><span class="p">,</span> <span class="k">type</span><span class="p">,</span> <span class="n">country</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>On the whole, the additional abstraction layer seems to be worthwhile when only basic Sqlite functionality is required. A small step on the elusive quest for minimizing friction across data boundaries…</p>
+
+<p>(<a href="https://github.com/tkuriyama/datautils/blob/master/datautils/internal/db_sqlite.py">Code on GitHub</a>)</p>
+:ET

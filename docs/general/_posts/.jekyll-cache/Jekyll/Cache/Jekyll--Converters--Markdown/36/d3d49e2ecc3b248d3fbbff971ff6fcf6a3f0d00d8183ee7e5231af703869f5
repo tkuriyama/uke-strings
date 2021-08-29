@@ -1,0 +1,96 @@
+I"],<p>Monad is not a word in the Elm lexicon, and I guess there’s no reason to talk about it – other than for familiarity. Having learned some monads (and functors and applicatives) from Haskell, it was be helpful for me to identify familiar equivalents to get started.</p>
+
+<p>To maintain purity, randomness in Elm is created by the Random monad, which is a <code class="language-plaintext highlighter-rouge">Generator</code> type that tells the runtime ot do the dirty work of side effects. The Elm app then gets back some (pseudo?)random value from the runtime, which can subsequently be applied deterministically.</p>
+
+<p>For example, a primitive generator:</p>
+
+<div class="language-elm highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">int</span> <span class="p">:</span> <span class="kt">Int</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="o">-&gt;</span> <span class="kt">Generator</span> <span class="kt">Int</span>
+</code></pre></div></div>
+
+<p>… creates a generator for a random int in given range.</p>
+
+<p>There is a single way to “extract” random values from generators:</p>
+
+<div class="language-elm highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">generate</span> <span class="p">:</span> <span class="p">(</span><span class="n">a</span> <span class="o">-&gt;</span> <span class="n">msg</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Generator</span> <span class="n">a</span> <span class="o">-&gt;</span> <span class="kt">Cmd</span> <span class="n">msg</span>
+</code></pre></div></div>
+
+<p>… which takes a constructor, a generator, and returns a <code class="language-plaintext highlighter-rouge">Cmd</code> from the runtime.</p>
+
+<p>The example from the <a href="https://package.elm-lang.org/packages/elm/random/latest/Random">Random module docs</a> is illustrative.</p>
+
+<pre><code class="language-elm`">point : Random.Generator (Int, Int)
+point =
+  Random.pair (Random.int -100 100) (Random.int -100 100)
+
+type Msg = NewPoint (Int, Int)
+
+newPoint : Cmd Msg
+newPoint =
+  Random.generate NewPoint point
+</code></pre>
+
+<h2 id="applying-random">Applying Random</h2>
+
+<p>So let’s say we want to use randomness in something a bit more involved – like dividing a list into n sublists of random length.</p>
+
+<p>One approach is with a fold, taking a list of random elements n times and accumulating them into a list of lists.</p>
+
+<div class="language-elm highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="n">divideList</span> <span class="p">:</span> <span class="kt">Int</span> <span class="o">-&gt;</span> <span class="kt">List</span> <span class="kt">Pair</span> <span class="o">-&gt;</span> <span class="kt">Random</span><span class="o">.</span><span class="kt">Generator</span> <span class="p">(</span><span class="kt">List</span> <span class="p">(</span><span class="kt">List</span> <span class="n">a</span><span class="p">))</span>
+<span class="n">divideList</span> <span class="n">n</span> <span class="n">pairs</span> <span class="o">=</span>
+    <span class="k">let</span>
+        <span class="n">f</span> <span class="n">i</span> <span class="n">generatorAcc</span> <span class="o">=</span>
+            <span class="n">generatorAcc</span> <span class="o">|&gt;</span> <span class="kt">Random</span><span class="o">.</span><span class="n">andThen</span> <span class="p">(</span><span class="n">takeRandom</span> <span class="n">i</span><span class="p">)</span>
+    <span class="k">in</span>
+    <span class="kt">List</span><span class="o">.</span><span class="n">range</span> <span class="mi">1</span> <span class="n">n</span>
+        <span class="o">|&gt;</span> <span class="kt">List</span><span class="o">.</span><span class="n">foldr</span> <span class="n">f</span> <span class="p">(</span><span class="kt">Random</span><span class="o">.</span><span class="n">constant</span> <span class="p">(</span> <span class="p">[]</span><span class="o">,</span> <span class="n">pairs</span> <span class="p">))</span>
+        <span class="o">|&gt;</span> <span class="kt">Random</span><span class="o">.</span><span class="n">map</span> <span class="kt">Tuple</span><span class="o">.</span><span class="n">first</span>
+</code></pre></div></div>
+
+<p>Here, the fold accumlator is a tuple of (collected sublists, list of remaining elements in original list). Since the accumulator will use Random generators, it needs to be initialized with <code class="language-plaintext highlighter-rouge">Random.constant</code>, which is the equivalent of <code class="language-plaintext highlighter-rouge">pure</code> – the minimal context for the Random monad.
+<code class="language-plaintext highlighter-rouge">takeRandom</code> has type signature:</p>
+
+<div class="language-elm highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">takeRandom</span> <span class="p">:</span>
+    <span class="kt">Int</span>
+    <span class="o">-&gt;</span> <span class="p">(</span> <span class="kt">List</span> <span class="p">(</span><span class="kt">List</span> <span class="n">a</span><span class="p">)</span><span class="o">,</span> <span class="kt">List</span> <span class="n">a</span> <span class="p">)</span>
+    <span class="o">-&gt;</span> <span class="kt">Random</span><span class="o">.</span><span class="kt">Generator</span> <span class="p">(</span> <span class="kt">List</span> <span class="p">(</span><span class="kt">List</span> <span class="n">a</span><span class="p">)</span><span class="o">,</span> <span class="kt">List</span> <span class="n">a</span> <span class="p">)</span>
+</code></pre></div></div>
+
+<p>… which means we need equivalent of Haskell’s bind to use it with the monadic accumulator:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">Control</span><span class="o">.</span><span class="kt">Monad</span> <span class="p">(</span><span class="o">=&lt;&lt;</span><span class="p">)</span> <span class="o">::</span> <span class="kt">Monad</span> <span class="n">m</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="n">a</span> <span class="o">-&gt;</span> <span class="n">m</span> <span class="n">b</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">m</span> <span class="n">a</span> <span class="o">-&gt;</span> <span class="n">m</span> <span class="n">b</span>
+</code></pre></div></div>
+
+<p>That’s the purpose of <code class="language-plaintext highlighter-rouge">Random.andThen</code>:</p>
+
+<div class="language-elm highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">andThen</span> <span class="p">:</span> <span class="p">(</span><span class="n">a</span> <span class="o">-&gt;</span> <span class="kt">Generator</span> <span class="n">b</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Generator</span> <span class="n">a</span> <span class="o">-&gt;</span> <span class="kt">Generator</span> <span class="n">b</span>
+</code></pre></div></div>
+
+<p>Note also that <code class="language-plaintext highlighter-rouge">divideList</code> uses <code class="language-plaintext highlighter-rouge">Random.map</code> to extract the first value from the accumulator pair – equivalent to <code class="language-plaintext highlighter-rouge">fmap</code>:</p>
+
+<div class="language-elm highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">map</span> <span class="p">:</span> <span class="p">(</span><span class="n">a</span> <span class="o">-&gt;</span> <span class="n">b</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Generator</span> <span class="n">a</span> <span class="o">-&gt;</span> <span class="kt">Generator</span> <span class="n">b</span>
+</code></pre></div></div>
+
+<p>The implementation of <code class="language-plaintext highlighter-rouge">takeRandom</code> uses a generator from <code class="language-plaintext highlighter-rouge">Random.List.choices</code>. It is otherwise straightforward: take all remaining elements if it’s the last sublist, otherwise accumulate a random number of randomly selected items.</p>
+
+<div class="language-elm highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">takeRandom</span> <span class="p">:</span>
+    <span class="kt">Int</span>
+    <span class="o">-&gt;</span> <span class="p">(</span> <span class="kt">List</span> <span class="p">(</span><span class="kt">List</span> <span class="n">a</span><span class="p">)</span><span class="o">,</span> <span class="kt">List</span> <span class="n">a</span> <span class="p">)</span>
+    <span class="o">-&gt;</span> <span class="kt">Random</span><span class="o">.</span><span class="kt">Generator</span> <span class="p">(</span> <span class="kt">List</span> <span class="p">(</span><span class="kt">List</span> <span class="n">a</span><span class="p">)</span><span class="o">,</span> <span class="kt">List</span> <span class="n">a</span> <span class="p">)</span>
+<span class="n">takeRandom</span> <span class="n">n</span> <span class="p">(</span> <span class="n">acc</span><span class="o">,</span> <span class="n">elems</span> <span class="p">)</span> <span class="o">=</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span> <span class="k">then</span>
+        <span class="kt">Random</span><span class="o">.</span><span class="n">constant</span> <span class="p">(</span> <span class="n">elems</span> <span class="o">::</span> <span class="n">acc</span><span class="o">,</span> <span class="p">[]</span> <span class="p">)</span>
+
+    <span class="k">else</span>
+        <span class="kt">Random</span><span class="o">.</span><span class="n">int</span> <span class="mi">1</span> <span class="p">(</span><span class="n">maxElems</span> <span class="n">elems</span> <span class="n">n</span><span class="p">)</span>
+            <span class="o">|&gt;</span> <span class="kt">Random</span><span class="o">.</span><span class="n">andThen</span>
+                <span class="p">(</span><span class="o">\</span><span class="n">ct</span> <span class="o">-&gt;</span> <span class="kt">RL</span><span class="o">.</span><span class="n">choices</span> <span class="n">ct</span> <span class="n">elems</span><span class="p">)</span>
+            <span class="o">|&gt;</span> <span class="kt">Random</span><span class="o">.</span><span class="n">andThen</span>
+                <span class="p">(</span><span class="o">\</span><span class="p">(</span> <span class="n">xs</span><span class="o">,</span> <span class="n">ys</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Random</span><span class="o">.</span><span class="n">constant</span> <span class="p">(</span> <span class="n">xs</span> <span class="o">::</span> <span class="n">acc</span><span class="o">,</span> <span class="n">ys</span> <span class="p">))</span>
+
+</code></pre></div></div>
+
+<p>(There’s probably a nicer way that doesn’t involve checking the index / sublist count.)</p>
+
+<p>As much as I still get confused by multiple layers of monads in Haskell, I’m glad to have had the familiar context when working with generators.</p>
+:ET

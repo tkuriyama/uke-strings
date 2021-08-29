@@ -1,0 +1,110 @@
+I"�/<p>As I started to rewrite and aggregate a variety of old Python scripts for working with data, it seemed like a good time to learn the latest in Python3’s support for types.</p>
+
+<p>The area still appears to be in active development, so I started a fresh <code class="language-plaintext highlighter-rouge">virtualenv</code> with Python 3.9.1. (<code class="language-plaintext highlighter-rouge">poetry</code> seems to be gaining in popularity these days, but I stuck with what I had, so as to not change too many things at once.)</p>
+
+<h2 id="type-annotations-and-adts">Type Annotations and ADTs</h2>
+
+<p><a href="https://docs.python.org/3/library/typing.html#module-typing"><code class="language-plaintext highlighter-rouge">typing</code></a> adds support for type annotations in the Python standard library since version 3.5. Beyond type annotations, there are now some additional tools for type expressivity, including type aliases, union types, generics, etc.</p>
+
+<p>With Unions and Tuples, it seems possible to define data in a similar way as Algebraic Data Types from functional languages…</p>
+
+<p>For example, in Haskell we often see a simple ADT like this:</p>
+
+<div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">data</span> <span class="kt">Status</span> <span class="o">=</span> <span class="kt">OK</span> <span class="o">|</span> <span class="kt">Error</span> <span class="kt">String</span>
+</code></pre></div></div>
+
+<p>One attempt to translate it might yield something like:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Code</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+    <span class="n">OK</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">ERROR</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="n">Status</span> <span class="o">=</span> <span class="n">Status</span> <span class="o">=</span> <span class="n">Union</span><span class="p">[</span><span class="n">Code</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Code</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]</span>
+</code></pre></div></div>
+
+<p>… where the lack of data constructors make the meaning of Status far more ambiguous.</p>
+
+<p>This is slightly better (with <code class="language-plaintext highlighter-rouge">show</code> defined a bit like a typeclass definition in Haskell), though it still invites a construction like <code class="language-plaintext highlighter-rouge">Status(Code.OK, "some ok message")</code>, which is not intended:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Status</span><span class="p">():</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">code</span><span class="p">:</span> <span class="n">Code</span><span class="p">,</span> <span class="n">error_msg</span> <span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">Exception</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">code</span> <span class="o">=</span> <span class="n">code</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">error_msg</span> <span class="o">=</span> <span class="n">error_msg</span>
+    <span class="k">def</span> <span class="nf">show</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="s">'OK'</span> <span class="k">if</span> <span class="bp">self</span><span class="p">.</span><span class="n">code</span> <span class="ow">is</span> <span class="n">Code</span><span class="p">.</span><span class="n">OK</span> <span class="k">else</span> <span class="s">'Error'</span>
+        <span class="k">return</span> <span class="n">c</span> <span class="o">+</span> <span class="s">''</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="p">.</span><span class="n">error_msg</span> <span class="k">else</span> <span class="s">': {}'</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">error_msg</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">dataclass</code> is new in Python 3.7 and helps resolve the problem of constructors. <a href="http://blog.ezyang.com/2020/10/idiomatic-algebraic-data-types-in-python-with-dataclasses-and-union/">This post</a> shows how to define a very similar data type.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">dataclass</code> decorator applies magic of auto-generating constructors, as well as some other things. In this case, we set <code class="language-plaintext highlighter-rouge">frozen=True</code> to avoid mutation of generated Status objects, and we also want the equaltity comparison that <code class="language-plaintext highlighter-rouge">dataclass</code> gives us by default.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">`</span>
+<span class="o">@</span><span class="n">dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">OK</span><span class="p">:</span>
+    <span class="n">msg</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s">"OK"</span>
+
+<span class="o">@</span><span class="n">dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">Error</span><span class="p">:</span>
+    <span class="n">msg</span><span class="p">:</span> <span class="nb">str</span>
+
+<span class="n">Status</span> <span class="o">=</span> <span class="n">Union</span><span class="p">[</span><span class="n">OK</span><span class="p">,</span> <span class="n">Error</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>That’s much more concise and directly expresses the intent! (There is still the problem of needing a constructor argument for <code class="language-plaintext highlighter-rouge">OK()</code>, but the default value is a reasonable workaround.)</p>
+
+<h2 id="type-checking">Type Checking</h2>
+
+<p>So we can write more expressive code (which also, I think, obviates the need for much of the traditional, docstring argument comments in Python). But how do we type check?</p>
+
+<ul>
+  <li>Google has <a href="https://github.com/google/pytype"><code class="language-plaintext highlighter-rouge">pytype</code></a> but it doesn’t appear to work with Python &gt;3.7 yet</li>
+  <li>Microsoft has <a href="https://github.com/microsoft/pyright"><code class="language-plaintext highlighter-rouge">pyright</code></a></li>
+  <li><code class="language-plaintext highlighter-rouge">mypy</code> seems to one of the most mainstream libraries, used by Dropbox etc</li>
+</ul>
+
+<p>I went with <code class="language-plaintext highlighter-rouge">mypy</code>, with the added benefit that it was easy to integrate with <code class="language-plaintext highlighter-rouge">flycheck</code> in emacs.</p>
+
+<p>Using the <code class="language-plaintext highlighter-rouge">Status</code> type now looks like this:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="n">conn</span><span class="p">:</span> <span class="n">Conn</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Status</span><span class="p">:</span>
+    <span class="s">"""Close DB connection object."""</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">conn</span><span class="p">.</span><span class="n">close</span><span class="p">()</span>
+        <span class="n">status</span> <span class="o">=</span> <span class="n">OK</span><span class="p">()</span>
+    <span class="k">except</span> <span class="nb">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="n">status</span> <span class="o">=</span> <span class="n">Error</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">status</span>
+</code></pre></div></div>
+
+<p>… where the <code class="language-plaintext highlighter-rouge">status</code> variable is the return type of <code class="language-plaintext highlighter-rouge">Status</code>, right?</p>
+
+<p>It turns out that the above does not type check with <code class="language-plaintext highlighter-rouge">mypy</code> yielding <code class="language-plaintext highlighter-rouge">Incompatible types in assignment (expression has type "Error", variable has type "OK") (python-mypy)</code>.</p>
+
+<p>The <a href="https://mypy.readthedocs.io/en/stable/type_inference_and_annotations.html"><code class="language-plaintext highlighter-rouge">type inference</code></a> section of the docs say:</p>
+
+<p><em>“Mypy considers the initial assignment as the definition of a variable. If you do not explicitly specify the type of the variable, mypy infers the type based on the static type of the value expression…”</em></p>
+
+<p>Given that Python variables are generally mutable, that seems pretty reasonable… So we need an explicit type annotation for <code class="language-plaintext highlighter-rouge">status</code>:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="n">conn</span><span class="p">:</span> <span class="n">Conn</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Status</span><span class="p">:</span>
+    <span class="s">"""Close DB connection object."""</span>
+    <span class="n">status</span><span class="p">:</span> <span class="n">Status</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">conn</span><span class="p">.</span><span class="n">close</span><span class="p">()</span>
+        <span class="n">status</span> <span class="o">=</span> <span class="n">OK</span><span class="p">()</span>
+    <span class="k">except</span> <span class="nb">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="n">status</span> <span class="o">=</span> <span class="n">Error</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">status</span>
+</code></pre></div></div>
+
+<p>Now that type checks. The result is expressive and still pretty concise. With constructors, though, we want nice deconstructors (to pattern match on different <code class="language-plaintext highlighter-rouge">Status</code>, say)… which seem to be on the horizon in <a href="https://www.python.org/dev/peps/pep-0634/"><code class="language-plaintext highlighter-rouge">PEP 634</code></a>.</p>
+
+<hr />
+
+<p><strong>Notes</strong></p>
+
+<ul>
+  <li>I discovered the <code class="language-plaintext highlighter-rouge">mypy</code> type inference rule from a helpful answer on <a href="https://stackoverflow.com/questions/66016659/unexpected-optional-behavior-with-python3-typing-and-mypy">SO</a></li>
+</ul>
+:ET

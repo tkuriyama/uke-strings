@@ -1,0 +1,138 @@
+I"V+<p>I’ve been using Python’s <code class="language-plaintext highlighter-rouge">logging</code> library in various projects, and wanted to find a way to inspect the contents regularly (e.g. looking for counts of Warning or Error codes).</p>
+
+<p>Grafana seems to be a popular option for that sort of thing, with Loki providing log aggregation and Promtail serving as the agent that collects logs. (There’s a <a href="https://grafana.com/go/webinar/intro-to-loki-like-prometheus-but-for-logs/">good intro video</a> from one of the developers.)</p>
+
+<p>Installing and running Grafana locally on macOS turned out to be simple (<a href="https://grafana.com/docs/grafana/latest/installation/mac/">docs</a>). Setting up Loki and Promtail took a bit more digging through the docs, which are not very well organized.</p>
+
+<h2 id="setup-grafana">Setup Grafana</h2>
+
+<p>With Homebrew (after <code class="language-plaintext highlighter-rouge">brew update</code> to get the latest version on macOS Big Sur):</p>
+
+<p><code class="language-plaintext highlighter-rouge">brew install grafana</code></p>
+
+<p>To start / stop / restart as a background service:</p>
+
+<p><code class="language-plaintext highlighter-rouge">brew services start grafana</code></p>
+
+<p>The default local URL for Grafana is <code class="language-plaintext highlighter-rouge">localhost:3000</code></p>
+
+<h2 id="setup-loki">Setup Loki</h2>
+
+<p>The canonical tool for aggregating logs into Grafana seems to be Loki (along with some process to send logs to  Loki). Loki has an API that can be used, among other things, by a log handler in Python’s <code class="language-plaintext highlighter-rouge">logging</code> (<a href="https://github.com/GreyZmeem/python-logging-loki">example</a>. But for existing files, Promtail is the tool written by the Loki folks.</p>
+
+<p>The <a href="https://grafana.com/docs/loki/latest/installation/">Loki docs</a> list a bunch of options for installation, but Homebrew seems to work just fine for a simple local install.</p>
+
+<p><code class="language-plaintext highlighter-rouge">brew install loki</code></p>
+
+<p>… and same as Grafana, Loki can be managed as a background process:</p>
+
+<p><code class="language-plaintext highlighter-rouge">brew services start loki</code></p>
+
+<p>… or started directly with the <code class="language-plaintext highlighter-rouge">--config.file</code> flag:</p>
+
+<p><code class="language-plaintext highlighter-rouge">loki --config.file=loki-local-config.yaml</code></p>
+
+<p><a href="https://grafana.com/docs/loki/latest/installation/local/">The docs</a> provide a version of the default local config that didn’t work for me, apparnetly due to the link pointing to <code class="language-plaintext highlighter-rouge">master</code> branch instead of the latest rlease; <a href="https://github.com/grafana/loki/issues/3055">this version worked</a>.</p>
+
+<p>As verifification that Loki is running (assuming default URL config), the <code class="language-plaintext highlighter-rouge">localhost:3100/ready</code><code class="language-plaintext highlighter-rouge">endpoint should return the string </code>ready`.</p>
+
+<p>Once Loki is started, it can be configured as a datasource in the Grafana GUI. It took me a while to realize that the value of <code class="language-plaintext highlighter-rouge">http://localhost:3100</code> in the URL config was just a default hint, and needed to be typed in manually.</p>
+
+<h2 id="setup-promtail">Setup Promtail</h2>
+
+<p>Promtail is the agent that collects logs and sends them to Logi for aggregation.</p>
+
+<p><code class="language-plaintext highlighter-rouge">brew install promtail</code></p>
+
+<p>Similar to Loki, Promtail needs to be started with a config file:</p>
+
+<p><code class="language-plaintext highlighter-rouge">promtail --config.file=promtail-local-config.yaml</code></p>
+
+<p>The <a href="https://grafana.com/docs/loki/latest/clients/promtail/configuration/">Promtail docs</a> are… missing a simple tutorial? But there is a <a href="https://grafana.com/docs/loki/latest/clients/promtail/configuration/#example-static-config">sample config file</a> that can be used as a starting point.</p>
+
+<p>At this point, it should be possible to get some raw log data into a Grafana dashboard, using Loki as a datasource. But it’s not very useful without speciying some log processing and aggregation logic.</p>
+
+<h2 id="log-processing">Log Processing</h2>
+
+<p>Promtail ships with a <a href="https://grafana.com/docs/loki/latest/clients/promtail/pipelines/">processing pipeline</a>.</p>
+
+<p>Given a simple log like the below, we want to at least parse out the different fields from the logstring.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2021-02-19 14:41:53,415 - INFO - Query executed: SELECT sql FROM sqlite_master WHERE type="table" and name="JobRuns"
+2021-02-19 14:41:53,418 - INFO - Insertion to JobRuns executed: INSERT INTO JobRuns(datetime,jobId,name,status) VALUES (?,?,?,?)
+2021-02-19 14:41:53,419 - INFO - Closed DB conn.
+</code></pre></div></div>
+
+<p>A complete Promtail config is below, with some inline comments for the piepeline stages.</p>
+
+<ul>
+  <li>supported regex grammar is <a href="https://github.com/google/re2/wiki/Syntax">RE2</a></li>
+  <li>timestamp formatting is in the <a href="https://gobyexample.com/time-formatting-parsing">somewhat idiosyncratic Go style</a></li>
+</ul>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">server</span><span class="pi">:</span>
+  <span class="na">http_listen_port</span><span class="pi">:</span> <span class="m">9080</span>
+  <span class="na">grpc_listen_port</span><span class="pi">:</span> <span class="m">0</span>
+
+<span class="na">positions</span><span class="pi">:</span>
+  <span class="na">filename</span><span class="pi">:</span> <span class="s">/Users/tarokuriyama/logs/positions.yaml</span>
+
+<span class="na">clients</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">url</span><span class="pi">:</span> <span class="s">http://127.0.0.1:3100/loki/api/v1/push</span>
+
+<span class="na">scrape_configs</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">job_name</span><span class="pi">:</span> <span class="s">all_logs</span>
+    <span class="na">pipeline_stages</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">match</span><span class="pi">:</span>
+          <span class="na">selector</span><span class="pi">:</span> <span class="s1">'</span><span class="s">{job="all_logs"}'</span>
+          <span class="na">stages</span><span class="pi">:</span>
+            <span class="c1"># capture "timestamp", "level", "module", "msg" fields</span>
+            <span class="pi">-</span> <span class="na">regex</span><span class="pi">:</span>
+                <span class="na">expression</span><span class="pi">:</span> <span class="s1">'</span><span class="s">(?P&lt;timestamp&gt;[\d-]+</span><span class="nv"> </span><span class="s">[\d:]+),[\d]+</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">(?P&lt;level&gt;[A-Z]+)</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">(?P&lt;module&gt;[A-Za-z_.]+)</span><span class="nv"> </span><span class="s">-</span><span class="nv"> </span><span class="s">(?P&lt;msg&gt;.*)'</span>
+            <span class="c1"># promote "level" and "module" to labels</span>
+            <span class="pi">-</span> <span class="na">labels</span><span class="pi">:</span>
+                <span class="na">level</span><span class="pi">:</span>
+                <span class="na">module</span><span class="pi">:</span>
+            <span class="c1"># specify the timestamp format and source field</span>
+            <span class="pi">-</span> <span class="na">timestamp</span><span class="pi">:</span>
+                <span class="na">format</span><span class="pi">:</span> <span class="s1">'</span><span class="s">2006-01-02</span><span class="nv"> </span><span class="s">03:04:05'</span>
+                <span class="na">source</span><span class="pi">:</span> <span class="s">timestamp</span>
+            <span class="c1"># specify value of output body per log message</span>
+            <span class="pi">-</span> <span class="na">output</span><span class="pi">:</span>
+                <span class="na">source</span><span class="pi">:</span> <span class="s">msg</span>
+    <span class="na">static_configs</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">targets</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">localhost</span>
+      <span class="na">labels</span><span class="pi">:</span>
+        <span class="na">job</span><span class="pi">:</span> <span class="s">all_logs</span>
+        <span class="na">__path__</span><span class="pi">:</span> <span class="s">/Users/tarokuriyama/logs/*.log</span>
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">filename</code> is also a field that’s captured at some point by Promtail, but I couldn’t figure how to parse it for labeling, or format it for display purposes (in my case, I only want the filename, not the full path). So I ended up making the logs a bit more verbose, and the filename is captured by the <code class="language-plaintext highlighter-rouge">module</code> field name in regex above:</p>
+
+<p><code class="language-plaintext highlighter-rouge">2021-02-21 06:43:48,086 - INFO - datautils.core.db_lib - Closed DB conn.</code></p>
+
+<p>Since we have to work with YAML config files, it’s quite helpful to be able to see output directly in a shell (without needing to go to Loki / Grafana, where the GUI obscures the raw output). To read from <code class="language-plaintext highlighter-rouge">stdin</code> and have no side effects on the <code class="language-plaintext highlighter-rouge">positions.yaml</code> file that Promtail uses to track read positions in log files:</p>
+
+<p><code class="language-plaintext highlighter-rouge">cat ~/logs/datautils.core.db_lib.log | promtail --config.file=promtail-local-config.yaml --dry-run --stdin</code></p>
+
+<h2 id="tying-it-together">Tying it Together</h2>
+
+<p>Start services:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew services start grafana
+brew services start loki
+promtail <span class="nt">--config</span>.file<span class="o">=</span>promtail-local-config.yaml
+</code></pre></div></div>
+
+<p>… and the rest is GUI configuration in Grafana.</p>
+
+<p>In my case, I have <a href="https://grafana.com/docs/loki/latest/logql/">LogQL expressions</a> like this:</p>
+
+<p><code class="language-plaintext highlighter-rouge">sum( count_over_time({job="all_logs", module=~"datautils.*", level=~"(DEBUG|INFO)"}[1d]) )</code></p>
+
+<p>… which produces a simple timeseries like this:</p>
+
+<p><img src="/assets/img/grafana-1.png" alt="Grafana Timeseries" class="img-responsive" /></p>
+
+:ET
