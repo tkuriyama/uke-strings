@@ -2,7 +2,7 @@
 layout: post
 title:  "Fremont Soloist"
 date:   2021-08-29 13:00:00 -0500
-tags:   aquila lowG highG
+tags:   fremont lowG
 ---
 
 ## Ukulele
