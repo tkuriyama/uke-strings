@@ -216,6 +216,13 @@ links =
             [ Font.alignRight
             , Font.underline
             ]
+            { url = "https://tkuriyama.github.io/uke-strings"
+            , label = E.text "Notes"
+            }
+        , E.link
+            [ Font.alignRight
+            , Font.underline
+            ]
             { url = "https://github.com/tkuriyama/uke-strings"
             , label = E.text "Source"
             }
