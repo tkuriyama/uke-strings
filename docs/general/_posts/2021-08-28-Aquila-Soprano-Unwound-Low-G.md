@@ -49,7 +49,7 @@ Overall, despite the limitations of a low G on a soprano, it produces a pleasant
 
 None.
 
-### Sound Sample**
+### Sound Sample
 
 None.
 

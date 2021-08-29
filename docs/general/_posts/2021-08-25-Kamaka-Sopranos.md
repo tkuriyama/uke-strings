@@ -40,7 +40,7 @@ The same applies to the wound low G string, A thinner gauge strings like the Fre
 
 None.
 
-### Sound Sample**
+### Sound Sample
 
 None.
 

@@ -44,7 +44,7 @@ The unwound low G string sounds quite a bit muted compared to the rest of the se
 
 None.
 
-### Sound Sample**
+### Sound Sample
 
 None.
 
