@@ -2,7 +2,7 @@
 layout: post
 title:  "Kamaka Soprano / Concert"
 date:   2021-08-25 09:00:00 -0500
-tags:   kamaka nylno
+tags:   kamaka nylon highG lowG
 ---
 
 ## Ukulele
@@ -20,7 +20,7 @@ tags:   kamaka nylno
 
 
 
-### Visual / Tactical Impression
+### Visual / Tactile Impression
 
 The S-1 are the default strings for the HF-1. As one would expect from Kamaka, they look very good on the Koa body.
 
