@@ -2,7 +2,7 @@
 layout: post
 title:  "Kamaka Soprano / Concert"
 date:   2021-08-25 09:00:00 -0500
-tags:   jekyll
+tags:   kamaka nylon
 ---
 
 ## Ukulele
@@ -15,8 +15,8 @@ tags:   jekyll
 ## Strings: Kamaka Soprano / Concert
 
 | Name (Model)     | Soprano / Concert High-G and Low-G (S-1, S-1G)                        |
-| COlor / Material | Black Nylon (wound G string on low G)                                 |
-| UrL              | [Kamaka site](https://store.kamakahawaii.com/SearchResults.asp?Cat=56) |
+| Color / Material | Black Nylon (wound G string on low G)                                 |
+| Url              | [Kamaka site](https://store.kamakahawaii.com/SearchResults.asp?Cat=56) |
 
 
 
