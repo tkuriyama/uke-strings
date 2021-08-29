@@ -22,8 +22,8 @@ title: Uke Strings
 email: taro@tarokuriyama.com
 description: >- # this means to ignore newlines until "baseurl:"
     Notes on various ukkulele strings..
-legacyurl: 
-baseurl: "" # the subpath of your site, e.g. /blog
+legacyurl:
+baseurl: /uke-strings # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: 
 github_username: tkuriyama
