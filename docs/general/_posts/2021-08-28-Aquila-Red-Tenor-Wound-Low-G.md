@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Aquila Red Tenor Wound Low G"
-date:   2021-08-28 09:00:00 -0500
+date:   2021-08-28 13:00:00 -0500
 tags:   aquila lowG
 ---
 
@@ -28,7 +28,7 @@ This is a single wound low-G string -- which is dark red and here paired with th
 
 It is fairly noticeable against a bright wood like spruce -- but the mix with dark fluorocarbons doesn't look bad.
 
-On the fingers, it feels like a wound string, with some nice texture.
+On the fingers, there is some good texture (as typical of wound strings), though not overly rough.
 
 ### Sound Impression / Comparison
 
