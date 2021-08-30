@@ -22,32 +22,27 @@ tags:   aquila lowG
 
 ### Visual / Tactical Impression
 
-This is a single low-G string -- which is dark red and looks good on the HF-1 with dark fluorocarbons ([](http://localhost:4000/uke-strings/general/2021/08/27/Fremont-Blackline-LowG-STR-FMG.html)).
+This is a single wound low-G string -- which is dark red and here paired with the default Worth Brown fluorocarbon strings that ship with the Sophia.
 
-![Kamaka HF-1 Aquila Red Low G 70U](/uke-strings/assets/img/kamaka_hf1_aquila_70U.jpg){:class="img-responsive"}
+![Flight Sophia Aquila Wound Low G](/uke-strings/assets/img/flight_sophia_aquila_88U.jpg){:class="img-responsive"}
 
-On the fingers, the unwound Aquila string has a distinct feel. For lack of a better analogy, it's a bit akin to thick paper, with a bit of grain. It doesn't squeak from touch, but does make a noticeable sound from the friction, especially when sliding.
+It is fairly noticeable against a bright wood like spruce -- but the mix with dark fluorocarbons doesn't look bad.
 
-As an unwound string, it is on the thicker side, at 0.95mm (compared to, say, the 0.914mm of the Fremont Soloist).
-
-Overall, it's pleasant to my tastes.
-
-
+On the fingers, it feels like a wound string, with some nice texture.
 
 ### Sound Impression / Comparison
 
-Although a low G strings is unlikely to produce volume that's in line with other strings on the HF-1 (due do its soprano size), the Aquila sounds relatively balanced when used with Fremont Black Line Mediums. 
+The Aquila low G string pairs very well with the brightness of the spruce and the other (fluorocarbon) strings. It intones well and sounds balanced in the set, while still providing very good resonance.
 
-Compared to the unwound low G string that comes with the Fremont Black Line low G set, it sounds louder and more resonant. 
+It's maybe not quite as resonant as the [Fremont Soloist](https://tkuriyama.github.io/uke-strings/general/2021/08/29/Fremont-Soloist.html), but I haven't done a direct comparison on the Sophia. Since the Aquila's are advertised as wearing out quickly, there should be opportunity to comparea some new sets in the future.
 
-Compared to the Fremont Soloist (wound), it feels a less resonant, but maybe a bit brighter.
-
-Overall, despite the limitations of a low G on a soprano, it produces a pleasant sound.
+Overall, it is a very pleasant low G string.
 
 
 ### Other Notes
 
-None.
+I haven't noticed issues after playing the Red low G string periodically for over a month, but Aquila cautions that the Red series strings can wear out in weeks. If the cost or effort of regular replacement is too burdensome, it's a factor worth considering.
+
 
 ### Sound Sample
 
