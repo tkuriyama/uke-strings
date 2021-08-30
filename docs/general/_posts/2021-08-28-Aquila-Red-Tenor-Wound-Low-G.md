@@ -1,28 +1,28 @@
 ---
 layout: post
-title:  "Aquila Red Soprano Unwound Low G"
+title:  "Aquila Red Tenor Wound Low G"
 date:   2021-08-28 09:00:00 -0500
-tags:   aquila lowG highG
+tags:   aquila lowG
 ---
 
 ## Ukulele
 
-| Ukulele       | Kamaka HF-1 |
-| Size / Scale  | Soprano     |
-| Body Material | Koa            |
+| Ukulele       | Flight Sophia Soundwave      |
+| Size / Scale  | Tenor                        |
+| Body Material | Spruce Top + Walnut Laminate |
 
 
-## Strings: Aquila Red Soprano Unwound Low G
+## Strings: Aquila Red Tenor Wound Low G
 
-| Name (Model)     | Aquila Red Unwound Low G (70U)                        |
+| Name (Model)     | Aquila Red Unwound Low G (88U)                       |
 | Color / Material | Red -- composite with metallic powder                 |
-| Url              | [Aquila Red Series](https://aquilacorde.com/en/shop/modern-instrument-string-sets/ukulele-banjouke-en/red-series/) / [Strings by Mail](https://www.stringsbymail.com/aquila-red-soprano-ukulele-string-4th-unwound-low-g-tuning-70u-single-11142.html)|
+| Url              | [Aquila Red Series](https://aquilacorde.com/en/shop/modern-instrument-string-sets/ukulele-banjouke-en/red-series/) / [Strings by Mail](https://www.stringsbymail.com/aquila-red-tenor-ukulele-strings-regular-low-g-tuning-wound-4th-88u-12436.html)|
 
 
 
 ### Visual / Tactical Impression
 
-This is a single low-G string -- which is dark red and looks good on the HF-1 with dark fluorocarbons ([Fremont Black Line Medium](https://tkuriyama.github.io/uke-strings/general/2021/08/27/Fremont-Blackline-LowG-STR-FMG.html)
+This is a single low-G string -- which is dark red and looks good on the HF-1 with dark fluorocarbons ([](http://localhost:4000/uke-strings/general/2021/08/27/Fremont-Blackline-LowG-STR-FMG.html)).
 
 ![Kamaka HF-1 Aquila Red Low G 70U](/uke-strings/assets/img/kamaka_hf1_aquila_70U.jpg){:class="img-responsive"}
 
