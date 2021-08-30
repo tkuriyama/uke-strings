@@ -36,7 +36,7 @@ Overall, it's pleasant to my tastes.
 
 ### Sound Impression / Comparison
 
-Although a low G strings is unlikely to produce volume that's in line with other strings on the HF-1 (due do its soprano size), the Aquila sounds relatively balanced when used with Fremont Black Line Mediums. 
+Although a low G string is unlikely to produce volume that's in line with other strings on the HF-1 (due do its soprano size), the Aquila sounds relatively balanced when used with Fremont Black Line Mediums. 
 
 Compared to the unwound low G string that comes with the Fremont Black Line low G set, it sounds louder and more resonant. 
 
