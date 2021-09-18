@@ -20,7 +20,7 @@ tags:   aquila lowG
 
 
 
-### Visual / Tactical Impression
+### Visual / Tactile Impression
 
 This is a single wound low-G string -- which is dark red and here paired with the default Worth Brown fluorocarbon strings that ship with the Sophia.
 

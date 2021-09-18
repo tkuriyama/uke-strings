@@ -1,4 +1,4 @@
----
+--
 layout: post
 title:  "Aquila Red Soprano Unwound Low G"
 date:   2021-08-28 09:00:00 -0500
@@ -20,7 +20,7 @@ tags:   aquila lowG highG
 
 
 
-### Visual / Tactical Impression
+### Visual / Tactile Impression
 
 This is a single low-G string -- which is dark red and looks good on the HF-1 with dark fluorocarbons ([Fremont Black Line Medium](https://tkuriyama.github.io/uke-strings/general/2021/08/27/Fremont-Blackline-LowG-STR-FMG.html)
 

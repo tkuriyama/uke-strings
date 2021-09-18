@@ -20,7 +20,7 @@ tags:   fremont lowG highG
 
 
 
-### Visual / Tactical Impression
+### Visual / Tactile Impression
 
 The Fremont's are a dark fluorocarbon string, similar in look and feel to Worth Browns. They are more or less the same color as the default Kamaka dark nylon strings, and as such they look good on the HF-1.
 

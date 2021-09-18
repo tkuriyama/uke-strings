@@ -21,7 +21,7 @@ tags:   fremont lowG
 
 
 
-### Visual / Tactical Impression
+### Visual / Tactile Impression
 
 This is a single low-G string -- the "squakless" polished wound string, which has a much smoother texture than regular wound strings. 
 

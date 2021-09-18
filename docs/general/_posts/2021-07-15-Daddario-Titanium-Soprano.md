@@ -26,7 +26,7 @@ tags:   daddario highG
 
 
 
-### Visual / Tactical Impression
+### Visual / Tactile Impression
 
 visually, the purplish clear hue of the Titanium series is striking.
 

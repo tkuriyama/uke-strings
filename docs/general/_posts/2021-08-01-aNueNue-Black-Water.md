@@ -22,7 +22,7 @@ tags:   anuenue highG
 
 
 
-### Visual / Tactical Impression
+### Visual / Tactile Impression
 
 Visually, they are similar to other dark fluorocarbons like Worth Brown and Fremont Black Line.
 
