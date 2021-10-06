@@ -51,6 +51,8 @@ None.
 
 ### Sound Sample
 
-None.
+[Sample mp3](/uke-strings/assets/samples/HF1_Fremont_Aquila_Unwound_LowG.mp3).
+
+
 
 
